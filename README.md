@@ -1,6 +1,8 @@
 # grupo_1-ventas-TFA
 armando un proyecto en grupo
+
 Nuestros productos para  mujeres y hombres:
+
 Remeras de  manga corta, Remeras musculosas, Remeras de manga larga.
 Pantalones largos, shors, calzas termicas.
 buzos, camperas, buzos unisex.
