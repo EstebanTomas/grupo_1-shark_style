@@ -11,7 +11,7 @@ Nuestros productos están enfocados en adolescentes y adultos, tanto masculino c
 
 DESCRIPCIONES DE LOS INTEGRANTES
 
-Riquelme Federico: me usta la musica , jugar videojuegos, mirar series , tomar mates y aprender de todo un poco.
+Riquelme Federico: me gusta la musica , jugar videojuegos, mirar series , tomar mates y aprender de todo un poco.
 
 Tomás Valiente: me gustan los deportes, la naturaleza, me agrada pasar tiempo con amigos y hacer actividades entre amigos y amigas.
 
