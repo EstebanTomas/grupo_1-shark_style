@@ -10,6 +10,7 @@ Calzado deportivo.
 Nuestros productos están enfocados en adolescentes y adultos, tanto masculino como femenino. Que residan en Argentina y tengan un poder adquisitivo medio-alto, posicionándose en una clase social media, y media-alta. En los que forme parte de sus hábitos cotidianos realizar deportes con frecuencia, participen en ámbitos deportivos o simplemente se sientan más cómodos usando ropa deportiva.
 
 DESCRIPCIONES DE LOS INTEGRANTES
+
 Tomás Valiente: me gustan los deportes, la naturaleza, me agrada pasar tiempo con amigos y hacer actividades entre amigos y amigas.
 
 Agustin Larralde: me gusta aprender cosas nuevas, y me da mucha intriga la programación y sus posibilidades. Además me gustan mucho las películas y series de todos los géneros.
