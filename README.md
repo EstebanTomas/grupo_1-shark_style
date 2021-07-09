@@ -1,6 +1,6 @@
 # Grupo_1_Tienda de ropa Deportiva
 >
-**NUESTRO CATÁLOGO DE PRODUCTOS PARA  MUJERES Y HOMBRES**
+**NUESTRO CATÁLOGO DE PRODUCTOS PARA  MUJERES Y HOMBRES**	
 
 >Remeras manga larga, manga corta, musculosas.
 
@@ -16,11 +16,11 @@ Nuestros productos están enfocados en adolescentes y adultos, tanto masculino c
 >
 **DESCRIPCIONES DE LOS INTEGRANTES**
 
-*Riquelme Federico:* me gusta la música, jugar videojuegos, mirar series, tomar mates y aprender de todo un poco.
+**Riquelme Federico:* me gusta la música, jugar videojuegos, mirar series, tomar mates y aprender de todo un poco.
 
-*Tomás Valiente:* me gustan los deportes, la naturaleza, me agrada pasar tiempo con amigos y hacer actividades entre amigos y amigas.
+**Tomás Valiente:* me gustan los deportes, la naturaleza, me agrada pasar tiempo con amigos y hacer actividades entre amigos y amigas.
 
-*Agustin Larralde:* me gusta aprender cosas nuevas, me da mucha intriga la programación y sus posibilidades. Además me gustan mucho las películas y series de cualquier género.
+**Agustin Larralde:* me gusta aprender cosas nuevas, me da mucha intriga la programación y sus posibilidades. Además me gustan mucho las películas y series de cualquier género.
 >
 **SITIOS DE REFERENCIA PARA EL DESARROLLO DEL WIREFRAME**
 
