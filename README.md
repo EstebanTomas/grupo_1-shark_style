@@ -37,3 +37,7 @@ Nuestros productos están enfocados en adolescentes y adultos, tanto masculino c
 **LINK DE LA CARPETA EN GOOGLE DRIVE**
 
 [***Wireframe-Primer Sprint***](https://drive.google.com/drive/folders/1OcWxKugjIgtP-cWyixxae7LUyMTi2l0y?usp=sharing)
+
+**LINK DEL TABLERO PARA ORGANIZAR EL TRABAJO**
+
+[***Trello***](https://trello.com/b/Qu4oy3C7/tablero-grupo-1)
