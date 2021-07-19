@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+}
+
+.section-logo {
+    background-color: #B5B3B3;
+}
+
+.shark-logo {
+    width: 100%;
+}
+
+.text-p {
+    display: none;
+}
+
+.section-form {
+    display         : flex;
+    flex-direction  : column;
+    align-items     : center;
+    padding         : 10;
+    background-color: rgb(180, 183, 182);
+
+}
+
+h2 {
+    font-family: 'PT Serif', serif;
+    font-size  : 35px;
+}
+
+.cam {
+    border-radius: 8px;
+    width        : 250px;
+    height       : 25px;
+}
+
+.nombre {
+    display      : block;
+    margin-bottom: 10px;
+    font-style   : italic;
+}
+
+.terminos {
+
+    margin-top: 25px;
+    text-align: center;
+}
+
+.data-field {
+    margin-top: 10px;
+}
+
+.button {
+    margin          : 20px;
+    width           : 200px;
+    height          : 40px;
+    background-color: #7195f1;
+    border-radius   : 10px;
+}
+
+@media (min-width: 480px) {
+    .main-form {
+        display: flex;
+    }
+
+    .shark-logo {
+        display: none;
+    }
+
+    .section-logo {
+        background-image : url('../img/ropa.jpg');
+        background-repeat: round;
+        width            : 60%;
+        display          : flex;
+        flex-direction   : column-reverse;
+        justify-content  : space-around;
+    }
+
+    .data-field {
+        margin-top: 10px;
+    }
+
+    .cam {
+        border-radius: 5px;
+        width        : 200px;
+    }
+
+    .section-form {
+        display         : flex;
+        flex-direction  : column;
+        background-color: #f3f3f3;
+        padding         : 10px;
+        flex-wrap       : wrap;
+    }
+
+    .button {
+        margin          : 20px;
+        width           : 200px;
+        height          : 40px;
+        background-color: #71f1e0;
+        border-radius   : 10px;
+    }
+}
+
+@media (min-width: 769px) {
+    h2 {
+        text-align: center;
+        border: solid 2px red;
+    }
+    .text-p {
+        border: solid 2px red;
+        display: block;
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+    }   
+
+    .title-form {
+        border: solid 2px green;
+        display: flex;
+        flex-direction: row;
+    }
+}

@@ -1,0 +1,22 @@
+ * {
+     box-sizing: border-box;
+ }
+
+.logotipo-shark {
+    width: 300px;
+}
+
+
+
+.article-header {
+    width: 1200px;
+    border: solid 2px red;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.icons2 {
+    display: flex;
+    flex-direction: row;  
+}
