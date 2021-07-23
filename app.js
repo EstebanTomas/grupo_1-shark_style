@@ -19,3 +19,7 @@ app.get('/register',(req,res) => {
 app.get('/home',(req,res) => {
     res.sendFile(path.resolve(__dirname,'./views/index.html'));
 });
+
+app.get('/arch',(req,res) => {
+    res.sendFile(path.resolve(__dirname,'./views/homehome.html'));
+});

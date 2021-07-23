@@ -2,8 +2,17 @@
     box-sizing: border-box;
 }
 
+body {
+    margin: auto;
+    font-family: 'Roboto', sans-serif;
+}
+
 .section-logo {
     background-color: #B5B3B3;
+}
+
+.hh2 {
+    display: none;
 }
 
 .shark-logo {
@@ -24,7 +33,7 @@
 }
 
 h2 {
-    font-family: 'PT Serif', serif;
+    font-family:  'Roboto', serif;
     font-size  : 35px;
 }
 
@@ -61,6 +70,7 @@ h2 {
 @media (min-width: 480px) {
     .main-form {
         display: flex;
+        justify-content: center;
     }
 
     .shark-logo {
@@ -91,6 +101,7 @@ h2 {
         background-color: #f3f3f3;
         padding         : 10px;
         flex-wrap       : wrap;
+        width: 50%;
     }
 
     .button {
@@ -103,20 +114,44 @@ h2 {
 }
 
 @media (min-width: 769px) {
-    h2 {
-        text-align: center;
-        border: solid 2px red;
+    .main-form {
+        margin: 0px 8%;
+        margin-top: 4vh;
     }
+
+    .section-logo {
+        background-image: url('../img/hojitas.jpg');
+        width: 50%;
+    } 
+
+    .hh2 {
+        display: block;
+        color: white;
+    }
+
+    .hh2 h2 {
+        margin: -10px;
+    }
+
+    .section-form {
+        background-color: #536162;
+    }
+
+    h2 {
+        font-family:  'Roboto', sans-serif;
+        text-align: center;
+        font-size: 4vw;
+        margin-top: 19px;
+        margin-bottom: 8px;
+    }
+
     .text-p {
-        border: solid 2px red;
         display: block;
         text-align: center;
-        font-family: 'Open Sans', sans-serif;
+        font-family:  'Roboto', sans-serif;
     }   
 
     .title-form {
-        border: solid 2px green;
-        display: flex;
-        flex-direction: row;
+      padding-bottom: 25px;
     }
 }
