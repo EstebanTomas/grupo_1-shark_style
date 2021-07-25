@@ -1,0 +1,179 @@
+header .header {
+    margin-bottom: 150px;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+main .picture {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 10%;
+}
+
+main section .p1, .p2, .p3, .p4 {
+    width: 50px;
+    height: 50px;
+    border: solid 2px black;
+    margin-bottom: 5px;
+}
+
+main section .conteiner {
+    width: 50%;
+}
+
+main section article .principalPicture {
+    width: 300px;
+    height: 350px;
+    border: solid 2px black;
+}
+
+main.detail {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+main section article .name {
+    text-align: left;
+}
+
+main section article .lastName {
+    text-align: left;
+    width: 200px;
+}
+
+main section article .price {
+    text-align: left;
+    font-size: 30px;;
+}
+
+main section article .color {
+    text-align: left;
+}
+
+main section article .model {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+main section article .m1, .m2, .m3, .m4 {
+    width: 20px;
+    height: 40px;
+    border: solid 2px black;
+    margin-right: auto;
+}
+
+main section article .talles {
+    text-align: left;
+}
+
+main section article .size {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+main section article .xs, .s, .m, .l, .xl {
+    width: 20px;
+    height: 20px;
+    border: solid 2px black;
+    margin-right: auto;
+    text-align: center;
+}
+
+main section .action {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+main section article .buy {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 200px;
+    height: 20px;
+    border: solid 2px black;
+    margin-top: 30px;
+    text-align: center;
+}
+
+main section article .save {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: black;
+    color: white;
+    width: auto;
+    height: auto;
+    margin-right: 5px;
+}
+
+main section article .follow {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    border: solid 2px black;
+}
+
+@media (max-width: 361px) {
+    main {
+        flex-direction: column;
+        justify-content: space-around;
+        font-family: 'Times New Roman', Times, serif;
+    }    
+    main .picture {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    main section .p1, .p2, .p3, .p4 {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    
+}
+
+@media (min-width: 769px) {
+    article { 
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+    .burger-menu {
+        visibility: hidden;
+    }
+}
+
+/*@keyframes agrandando {
+    0% {
+    width: 0x;
+    height: 0px;
+}
+
+100% {
+    width: 100px;
+    height: 100px;
+    color: yellow;
+}
+}
+
+.fas fa-truck {
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-name: agrandando;
+    animation-duration: 1000ms;
+
+}
+*/
