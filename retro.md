@@ -1,4 +1,4 @@
-#Retrospectiva del Primer Sprint
+*RETROSPECTIVA DEL PRIMER SPRINT*
 >
 *Que debemos comenzar a hacer como equipo.*
 >Ser mas responsable a la hora de comprometerse con el horario estipulado para las reuniones.
@@ -10,5 +10,5 @@
 *Que debemos seguir haciendo.*
 >Apoyarnos en los conocimientos indivuales para catapultar los resutados, trabajando colaborativamente, y superando los obstaculos de forma grupal.
 >
->*Que debemos dejar de hacer*.
+*Que debemos dejar de hacer*.
 >Tenemos que actuar de forma mas responsable y empatica, considerando el tiempo y el esfuerzo que los demas participantes le dedican a cada proyecto, respondiendo de manera recíproca
