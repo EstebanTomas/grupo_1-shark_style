@@ -9,7 +9,7 @@
 >Fomentar de manera individual la participacion del equipo.
 >
 *Que debemos seguir haciendo.*
->Apoyarnos en los conocimientos indivuales para catapultar los resutados, trabajando colaborativamente, y superando los obstaculos de forma grupal.
+>Apoyarnos en las capacidades indivuales para catapultar los resutados, trabajando colaborativamente, y superando los obstaculos de forma grupal.
 >
 *Que debemos dejar de hacer*.
 >Tenemos que actuar de forma mas responsable y empatica, considerando el tiempo y el esfuerzo que los demas participantes le dedican a cada proyecto, respondiendo de manera recíproca.
