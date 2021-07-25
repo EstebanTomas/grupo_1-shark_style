@@ -1,4 +1,4 @@
-*RETROSPECTIVA DEL PRIMER SPRINT*
+**RETROSPECTIVA DEL PRIMER SPRINT**
 >
 *Que debemos comenzar a hacer como equipo.*
 >Ser mas responsable a la hora de comprometerse con el horario estipulado para las reuniones.
