@@ -23,3 +23,11 @@ app.get('/register',(req,res) => {
 app.get ( "/productDetail", function ( req, res ) {
     res.sendFile ( path.join ( __dirname, "/views/productDetail.html"));
 })
+
+app.get('/home',(req,res) => {
+    res.sendFile(path.resolve(__dirname,'./views/index.html'));
+});
+
+app.get('/arch',(req,res) => {
+    res.sendFile(path.resolve(__dirname,'./views/homehome.html'));
+});

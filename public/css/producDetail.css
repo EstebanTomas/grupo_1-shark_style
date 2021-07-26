@@ -1,5 +1,13 @@
+body {
+    background-color: rgb(243, 244, 237);
+}
+
 header .header {
     margin-bottom: 150px;
+}
+
+main  section{
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 main {
@@ -18,10 +26,32 @@ main .picture {
 }
 
 main section .p1, .p2, .p3, .p4 {
-    width: 50px;
-    height: 50px;
-    border: solid 2px black;
-    margin-bottom: 5px;
+    width: 120px;
+    height: 160px;
+    border: solid 2px rgb(66, 70, 66);
+    margin-bottom: 10px;
+    border-radius: 5%;
+}
+
+main section .p1:hover {
+    box-shadow: 0px 0px 10px rgb(83, 97, 98);
+    border: solid 3px grey;
+}
+main section .p2:hover {
+    box-shadow: 0px 0px 10px rgb(83, 97, 98);
+    border: solid 3px grey;
+}
+main section .p3:hover {
+    box-shadow: 0px 0px 10px rgb(83, 97, 98);
+    border: solid 3px grey;
+}
+main section .p4:hover {
+    box-shadow: 0px 0px 10px rgb(83, 97, 98);
+    border: solid 3px grey;
+}
+
+main section .img-p1, .img-p2, .img-p3, .img-p4{
+    border-radius: 5%;
 }
 
 main section .conteiner {
@@ -29,9 +59,19 @@ main section .conteiner {
 }
 
 main section article .principalPicture {
-    width: 300px;
-    height: 350px;
-    border: solid 2px black;
+    width: 450px;
+    height: 595px;
+    border: solid 2px rgb(66, 70, 66);
+    border-radius: 2%;
+}
+
+main section .principalPicture:hover {
+    box-shadow: 0px 0px 10px rgb(83, 97, 98);
+    border: solid 3px grey;
+}
+
+main section article .img-principalPicture {
+    border-radius: 2%;
 }
 
 main.detail {
@@ -41,21 +81,31 @@ main.detail {
 }
 
 main section article .name {
+    font-size: 50px;
     text-align: left;
+    color: rgb(192, 96, 20);
+    font-weight: bold;
 }
 
 main section article .lastName {
+    font-size: 20px;
     text-align: left;
-    width: 200px;
+    color: rgb(83, 97, 98);
+    width: auto;
 }
 
 main section article .price {
+    font-size: 60px;;
     text-align: left;
-    font-size: 30px;;
+    color: rgb(66, 70, 66);
+    padding-top: 10px;
 }
 
-main section article .color {
+main section article .colorModel {
     text-align: left;
+    font-size: 40px;
+    color: rgb(83, 97, 98);
+    padding-top: 10px;
 }
 
 main section article .model {
@@ -65,14 +115,39 @@ main section article .model {
 }
 
 main section article .m1, .m2, .m3, .m4 {
-    width: 20px;
-    height: 40px;
-    border: solid 2px black;
-    margin-right: auto;
+    width: 80px;
+    height: 110px;
+    border: solid 2px rgb(66, 70, 66);
+    margin-right: 10px;
+    border-radius: 5%;
+}
+
+main section article .m1:hover {
+    box-shadow: 0px 0px 10px rgb(83, 97, 98);
+    border: solid 3px grey;
+}
+main section article .m2:hover {
+    box-shadow: 0px 0px 10px rgb(83, 97, 98);
+    border: solid 3px grey;
+}
+main section article .m3:hover {
+    box-shadow: 0px 0px 10px rgb(83, 97, 98);
+    border: solid 3px grey;
+}
+main section article .m4:hover {
+    box-shadow: 0px 0px 10px rgb(83, 97, 98);
+    border: solid 3px grey;
+}
+
+main section article .img-m1, .img-m2, .img-m3, .img-m4 {
+    border-radius: 5%;
 }
 
 main section article .talles {
     text-align: left;
+    font-size: 40px;
+    color: rgb(83, 97, 98);
+    padding-top: 10px;
 }
 
 main section article .size {
@@ -82,11 +157,35 @@ main section article .size {
 }
 
 main section article .xs, .s, .m, .l, .xl {
-    width: 20px;
-    height: 20px;
-    border: solid 2px black;
-    margin-right: auto;
+    width: 40px;
+    height: 30px;
+    border: solid 2px rgb(66, 70, 66);
+    margin-right: 10px;
     text-align: center;
+    font-size: 22px;
+    color:rgb(66, 70, 66);
+    border-radius: 30%;
+}
+
+main section article .xs:hover {
+    box-shadow: 0px 0px 10px rgb(83, 97, 98);
+    border: solid 3px grey;
+}
+main section article .s:hover {
+    box-shadow: 0px 0px 10px rgb(83, 97, 98);
+    border: solid 3px grey;
+}
+main section article .m:hover {
+    box-shadow: 0px 0px 10px rgb(83, 97, 98);
+    border: solid 3px grey;
+}
+main section article .l:hover {
+    box-shadow: 0px 0px 10px rgb(83, 97, 98);
+    border: solid 3px grey;
+}
+main section article .xl:hover {
+    box-shadow: 0px 0px 10px rgb(83, 97, 98);
+    border: solid 3px grey;
 }
 
 main section .action {
@@ -101,22 +200,36 @@ main section article .buy {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    width: 200px;
-    height: 20px;
-    border: solid 2px black;
-    margin-top: 30px;
+    width: auto;
+    height: auto;
+    border: solid 2px rgb(66, 70, 66);
+    color:rgb(66, 70, 66);
     text-align: center;
+    font-size: 30px;
+    border-radius: 5px;
+    margin-top: 20px;
 }
 
-main section article .save {
+main section article .buy:hover {
+    box-shadow: 0px 0px 10px rgb(83, 97, 98);
+    border: solid 2px grey;
+}
+
+main section article .saveCart {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    background-color: black;
-    color: white;
-    width: auto;
-    height: auto;
+    background-color: rgb(192, 96, 20);
+    color: rgb(243, 244, 237);
+    border: solid 2px rgb(192, 96, 20);
+    border-radius: 4px;
     margin-right: 5px;
+    font-size: 30px;
+}
+
+main section article .saveCart:hover {
+    box-shadow: 0px 0px 10px rgb(83, 97, 98);
+    border: solid 2px #b85b11;
 }
 
 main section article .follow {
@@ -125,55 +238,26 @@ main section article .follow {
     flex-direction: row;
     width: auto;
     height: auto;
-    border: solid 2px black;
+    border: solid 2px rgb(66, 70, 66);
+    color:rgb(66, 70, 66);
+    text-align: center;
+    font-size: 30px;
+    border-radius: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
-@media (max-width: 361px) {
+main section article .follow:hover {
+    box-shadow: 0px 0px 10px rgb(83, 97, 98);
+    border: solid 2px grey;
+}
+
+/* -No puedo hacer que esta parte funcione-
+@media (max-width: 665px) {
     main {
         flex-direction: column;
-        justify-content: space-around;
-        font-family: 'Times New Roman', Times, serif;
     }    
     main .picture {
-        display: flex;
-        flex-wrap: wrap;
         flex-direction: row;
     }
-    main section .p1, .p2, .p3, .p4 {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-    }
-    
-}
-
-@media (min-width: 769px) {
-    article { 
-        box-shadow: 0px 0px 10px rgb(100, 100, 100);
-    }
-    .burger-menu {
-        visibility: hidden;
-    }
-}
-
-/*@keyframes agrandando {
-    0% {
-    width: 0x;
-    height: 0px;
-}
-
-100% {
-    width: 100px;
-    height: 100px;
-    color: yellow;
-}
-}
-
-.fas fa-truck {
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-name: agrandando;
-    animation-duration: 1000ms;
-
-}
-*/
+}*/

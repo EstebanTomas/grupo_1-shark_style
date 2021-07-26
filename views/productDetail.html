@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/producDetail.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <!--el link de abajo es para la letra Roboto Condensed (Regular 400)-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <!--el link de abajo es para la letra Noto Sans KR (Bold 700)-->
     <title>Detalle del Producto</title>
 </head>
 
@@ -17,16 +20,16 @@
         <section class = "picture">
                 <!--aca voy a poner las fotos del producto a la izquierda-->
                 <div class = "p1">
-                    <img src="/img/img-productDetail/p1.jpg" alt=""/>
+                    <img class = "img-p1" src="/img/p1.jpg" width = "120px" height = "160px" alt="campera trasera"/>
                 </div>
                 <div class = "p2">
-                    <img src="/img/img-productDetail/p2.jpg" alt=""/>
+                    <img class = "img-p2" src="/img/p2.jpg" width = "120px" height = "160px" alt=""/>
                 </div>
                 <div class = "p3">
-                    <img src="/img/img-productDetail/p3.jpg" alt=""/>
+                    <img class = "img-p3" src="/img/p3.jpg" width = "120px" height = "160px" alt=""/>
                 </div>
                 <div class = "p4">
-                    <img src="/img/img-productDetail/p4.jpg" alt=""/>
+                    <img class = "img-p4" src="/img/p4.jpg" width = "120px" height = "160px" alt=""/>
                 </div>
         </section>
 
@@ -34,7 +37,7 @@
             <article class = "container">
                 <div class = "principalPicture">
                     <!--aca va la foto principal-->
-                    <img src="/img/producDetail/t-shirt.orange.jpg" alt=""/>
+                    <img class = "img-principalPicture" src="/img/t-shirt.orange.jpg" width = 450px heigth = 595px alt="    "/>
                 </div>
             </article>
         </section>
@@ -43,10 +46,12 @@
             <article>
                 <div class = "name">
                     <!--nombre del producto-->
-                    Camisetas con capucha
+                    Camiseta con capucha
                 </div>
                 <div class = "lastName">
-                manga corta con cordón de color sólido básico para hombre
+                Manga corta con cordón de color sólido básico para hombre.
+                    <br>
+                Materiales: Algodón, Poliester
                 </div>
                 <div class = "price">
                     <!--precio-->
@@ -55,23 +60,23 @@
             </article>
 
             <article>
-                <div class = "color">
+                <div class = "colorModel">
                     <!--colores y modelos disponibles-->
                     Modelos disponibles
                 </div>
                 <div class = "model">
                     <!--una pequeña imagen de el modelo de color (voy a probar con forma circular)-->
                     <div class = "m1">
-                        <img src="/img/img-productDetail/t-shirt.orange.jpg" alt=""/>
+                        <img class = "img-m1" src="/img/t-shirt.orange.jpg" width = "80px" height = "110px" alt=""/>
                     </div>
                     <div class = "m2">
-                        <img src="/img/img-productDetail/t-shirt.skyblue.jpg" alt=""/>
+                        <img class = "img-m2" src="/img/t-shirt.skyblue.jpg" width = "80px" height = "110px" alt=""/>
                     </div>
                     <div class = "m3">
-                        <img src="/img/img-productDetail/t-shirt.white.jpg" alt=""/>
+                        <img class = "img-m3" src="/img/t-shirt.white.jpg" width = "80px" height = "110px" alt=""/>
                     </div>
                     <div class = "m4">
-                        <img src="/img/img-productDetail/t-shirt.black.jpg" alt=""/>
+                        <img class = "img-m4" src="/img/t-shirt.black.jpg" width = "80px" height = "110px" alt=""/>
                     </div>
                 </div>
             </article>
@@ -98,13 +103,15 @@
             </article>
 
             <article class = "action">
-                <div>
-                    <!--imagen del carrito-->
-                    <i class="fas fa-cart-plus"></i>
-                </div>
-                <div class = "save">
-                    <!--agregar al carrito-->
-                    Agregar al carrito
+                <div class = "saveCart">
+                    <div>
+                        <!--imagen del carrito-->
+                        <i id = "cart" class="fas fa-cart-plus"></i>
+                    </div>
+                    <div class = "save">
+                        <!--agregar al carrito-->
+                        Agregar al carrito
+                    </div>    
                 </div>
                 <div><!--flecha--></div>
                 <div class = "follow">
@@ -113,8 +120,6 @@
                 </div>
             </article>
         </section>
-        <img src="/img/producDetail/t-shirt.orange.jpg" alt=""/>
-
     </main>
 </body>
 </html>
