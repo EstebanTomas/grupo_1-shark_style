@@ -16,18 +16,22 @@ app.get('/',(req,res) => {
     res.sendFile(path.resolve(__dirname,'./views/index.html'));
 });
 
+app.get('/arch',(req,res) => {
+    res.sendFile(path.resolve(__dirname,'./views/homehome.html'));
+});
+
 app.get('/register',(req,res) => {
     res.sendFile(path.resolve(__dirname,'./views/register.html'));
+});
+
+app.get('/shop',(req,res) => {
+    res.sendFile(path.resolve(__dirname,'./views/ShoppingCart.html'));
+});
+
+app.get('/shoping',(req,res) => {
+    res.sendFile(path.resolve(__dirname,'./views/PusharseCatalog.html'));
 });
 
 app.get ( "/productDetail", function ( req, res ) {
     res.sendFile ( path.join ( __dirname, "/views/productDetail.html"));
 })
-
-app.get('/home',(req,res) => {
-    res.sendFile(path.resolve(__dirname,'./views/index.html'));
-});
-
-app.get('/arch',(req,res) => {
-    res.sendFile(path.resolve(__dirname,'./views/homehome.html'));
-});
