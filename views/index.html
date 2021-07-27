@@ -5,50 +5,376 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/home.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <title>Shark Style</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <title>shark style</title>
 </head>
 
 <body>
     <header class="main-header">
-        <article class="article-header">
+        <article class="article-main-header">
+            <div class="conteiner-logo">
+                <img width="40%" src="/img/logo-shark.png" alt="logo Shark Style" class="logotipo-shark">
+            </div>
             <div class="conteiner-shark">
-                <div class="conteiner-logo">
-                    <img src="/img/logo-shark.png" alt="logo Shark Style" class="logotipo-shark">
-                </div>
                 <span class="icon"><i class="fa fa-search"></i></span>
-                <input type="search" id="search" placeholder="¿Que estás buscando?" class="campo"/>
+                <input type="search" id="search" placeholder="¿Que estás buscando?" class="search-main" />
+            </div>
+            <div class="inside-the-first-article-header">
+                <a href="/login"><i class="fas fa-user-plus"></i></a>
+            </div>
+            <div class="inside-the-first-article-header">
+                <a href=""><i class="fas fa-cart-plus"></i></a>
             </div>
             <section class="icons2">
-                <div class="iconos">
+                <div class="menu-hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <span class="three-icons">
+                    <i class="fa fa-search"></i>
+                </span>
+                <div class="three-icons">
                     <i class="fas fa-user-plus"></i>
                 </div>
-                <div class="iconos">
+                <div class="three-icons">
                     <i class="fas fa-cart-plus"></i>
                 </div>
             </section>
         </article>
         <article>
             <div>
-                <nav class="menu">
+                <nav class="navbar">
                     <ul>
-                        <input type="checkbox" name="" id="btn-modal">
-                        <li>Inicio</li>
-                        <li>Productos</li>
-                        <li>Hombres</li>
-                        <li>Mujeres</li>
-                        <li>Venta Mayorista</li>
-                    </ul>    
+                        <li><a href="" style="text-decoration: none;">Inicio</a></li>
+                        <li><a href="" style="text-decoration: none;">Productos</a></li>
+                        <li><a href="" style="text-decoration: none;">Hombres</a></li>
+                        <li><a href="" style="text-decoration: none;">Mujeres</a></li>
+                        <li><a href="" style="text-decoration: none;">Venta Mayorista</a></li>
+                    </ul>
                 </nav>
             </div>
         </article>
     </header>
-    <main>
 
+    <main>
+        <section class="two-slider-container">
+            <div class="container">
+
+                <ul class="slider">
+                    <li id="slide1">
+                        <div class="articulos">
+                            <img width="100%" height="250px" src="/img/28.jpg" alt="chamarra black y grey">
+                            <div class="descriptions">Campera Nike Essential</div>
+                            <div class="price">$1000</div>
+                            <div class="discount">-10%</div>
+                        </div>
+                    </li>
+                    <li id="slide2">
+                        <div class="articulos">
+                            <img width="300px" height="250px" src="/img/23.jpg" alt="chamarra deportiva">
+                            <div class="descriptions">Campera Nike Sportswear</div>
+                            <div class="price">$1000</div>
+                            <div class="discount">-10%</div>
+                        </div>
+                    </li>
+                    <li id="slide3">
+                        <div class="articulos">
+                            <img width="300px" height="300px" src="/img/29.jpg" alt="pantalon ellesse">
+                            <div class="descriptions">campera de Ben10</div>
+                            <div class="price">$1000</div>
+                            <div class="discount">-10%</div>
+                        </div>
+                    </li>
+                    <li id="slide4">
+                        <div class="articulos">
+                            <img width="300px" height="250px" src="/img/5.jpg" alt="buzo color blacky grey">
+                            <div class="descriptions">Nike run</div>
+                            <div class="price">$1200</div>
+                            <div class="discount">-10%</div>
+                        </div>
+                    </li>
+                </ul>
+
+                <ul class="menu">
+                    <li>
+                        <a href="#slide1">1</a>
+                    </li>
+                    <li>
+                        <a href="#slide2">2</a>
+                    </li>
+                    <li>
+                        <a href="#slide3">3</a>
+                    </li>
+                    <li>
+                        <a href="#slide4">4</a>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="container-two">
+
+                <ul class="slider-two">
+                    <li id="slider1">
+                        <div class="articulos">
+                            <img width="300px" height="300px" src="/img/17.jpg" alt="Buzo_shark_style">
+                            <div class="descriptions">campera termica</div>
+                            <div class="price">$1800</div>
+                            <div class="discount">-10%</div>
+                        </div>
+                    </li>
+                    <li id="slider2">
+                        <div class="articulos">
+                            <img width="300px" height="300px" src="/img/16.jpg" alt="campera deportiva al cuerpo">
+                            <div class="descriptions">Buzo flash combinado</div>
+                            <div class="price">$2000</div>
+                            <div class="discount">-10%</div>
+                        </div>
+                    </li>
+                    <li id="slider3">
+                        <div class="articulos">
+                            <img width="300px" height="300px" src="/img/27.jpg" alt="jogging pants">
+                            <div class="descriptions">Pantalon clasic</div>
+                            <div class="price">$2500</div>
+                            <div class="discount">-10%</div>
+                        </div>
+                    </li>
+                    <li id="slider4">
+                        <div class="articulos">
+                            <img width="300px" height="300px" src="/img/23.jpg" alt="campera deportiva para mujer">
+                            <div class="descriptions">Campera Flash Softshell</div>
+                            <div class="price">$1000</div>
+                            <div class="discount">-10%</div>
+                        </div>
+                    </li>
+                </ul>
+
+                <ul class="menu-two">
+                    <li>
+                        <a href="#slider1">1</a>
+                    </li>
+                    <li>
+                        <a href="#slider2">2</a>
+                    </li>
+                    <li>
+                        <a href="#slider3">3</a>
+                    </li>
+                    <li>
+                        <a href="#slider4">4</a>
+                    </li>
+                </ul>
+
+            </div>
+        </section>
+
+        <section class="image-session-two">
+            <div class="parent-container">
+                <ul class="parent-sub-container">
+                    <li id="displacement1">
+                        <div class="contents">
+                            <img src="/img/17.jpg" alt="Buzo shark style">
+                            <br>
+                            <img src="/img/13.jpg" alt="image one">
+                            <br>
+                            <img src="/img/6.jpg" alt="imagen">
+                        </div>
+                    </li>
+                    <li id="displacement2">
+                        <div class="contents">
+                            <img src="/img/27.jpg" alt="campera deportiva">
+                            <br>
+                            <img src="/img/2.jpg" alt="image two">
+                            <br>
+                            <img src="/img/7.jpg" alt="imagen">
+                        </div>
+                    </li>
+                    <li id="displacement3">
+                        <div class="contents">
+                            <img src="/img/4.jpg" alt="jogging pants">
+                            <br>
+                            <img src="/img/3.jpg" alt="image three">
+                            <br>
+                            <img src="/img/16.jpg" alt="image four">
+                        </div>
+                    </li>
+                    <li id="displacement4">
+                        <div class="contents">
+                            <img src="/img/11.jpg" alt="campera deportiva para mujer">
+                            <b></b>
+                            <img src="/img/14.jpg" alt="campera deportiva al cuerpo">
+                            <br>
+                            <img src="/img/5.jpg" alt="image seven">
+                        </div>
+                    </li>
+                </ul>
+
+                <ul class="command-menu">
+                    <li>
+                        <a href="#displacement1">1</a>
+                    </li>
+                    <li>
+                        <a href="#displacement2">2</a>
+                    </li>
+                    <li>
+                        <a href="#displacement3">3</a>
+                    </li>
+                    <li>
+                        <a href="#displacement4">4</a>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="parent-container">
+                <ul class="parent-sub-container">
+                    <li id="displacement01">
+                        <div class="contents">
+                            <img src="/img/18.jpg" alt="Buzo shark style">
+                            <br>
+                            <img src="/img/1.jpg" alt="image one">
+                            <br>
+                            <img src="/img/6.jpg" alt="imagen">
+                        </div>
+                    </li>
+                    <li id="displacement02">
+                        <div class="contents">
+                            <img src="/img/20.jpg" alt="campera deportiva">
+                            <br>
+                            <img src="/img/2.jpg" alt="image two">
+                            <br>
+                            <img src="/img/7.jpg" alt="imagen">
+                        </div>
+                    </li>
+                    <li id="displacement03">
+                        <div class="contents">
+                            <img src="/img/13.jpg" alt="jogging pants">
+                            <br>
+                            <img src="/img/3.jpg" alt="image three">
+                            <br>
+                            <img src="/img/4.jpg" alt="image four">
+                        </div>
+                    </li>
+                    <li id="displacement04">
+                        <div class="contents">
+                            <img src="/img/31.jpg" alt="campera deportiva para mujer">
+                            <b></b>
+                            <img src="/img/7.jpg" alt="Shors">
+                            <br>
+                            <img src="/img/5.jpg" alt="image seven">
+                        </div>
+                    </li>
+                </ul>
+
+                <ul class="command-menu">
+                    <li>
+                        <a href="#displacement01">1</a>
+                    </li>
+                    <li>
+                        <a href="#displacement02">2</a>
+                    </li>
+                    <li>
+                        <a href="#displacement03">3</a>
+                    </li>
+                    <li>
+                        <a href="#displacement04">4</a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </section>
+
+        <section class="image-session-three">
+            <article>
+                <div>
+                    <img width="300px" height="300px" src="/img/15.jpg" alt="estilo Shark Style">
+                </div>
+                <h4>Tempo Femme</h4>
+                <h4>$2000</h4>
+            </article>
+
+            <div>
+                <img width="300px" height="300px" src="/img/style-shark.png" alt="logo shark style"
+                    class="logo_shark_style">
+            </div>
+
+            <article>
+                <div>
+                    <img width="300px" height="300px" src="/img/10.jpg" alt="campera deportiva blanca y negra">
+                </div>
+                <h4>Jordan Jumpman Classics</h4>
+                <h4>$2500</h4>
+            </article>
+        </section>
+
+        <section class="image-session-four">
+            <article class="two-article">
+                <div class="logo-container">
+                    <img src="/img/style-shark.png" alt="logo shark style" class="logo-section-four">
+                    <h4>¡¡Comprando $5000 o más, el envio es completamente gratis!!</h4>
+                </div>
+            </article>
+            <article class="stuff-container">
+                <div>
+                    <label class="one-button">Envios
+                        <button name="bonton-envio" class="button-one">Enviar</button>
+                    </label>
+                </div>
+                <div>
+                    <img src="/img/gif-de-imagenes.gif" alt="this slowpoke moves" class="one-gif" />
+                </div>
+
+
+                <div>
+                    <label class="one-button">Cuotas sin intereses
+                        <button name="bonton-envio" class="button-two">Enviar</button>
+                    </label>
+                </div>
+            </article>
+        </section>
     </main>
-    <footer></footer>
+    <footer class="footer-botton">
+        <section class="footer-section-botton">
+
+            <div>
+                <img src="/img/style-shark.png" alt="logo shark style" class="logo-shark-botton">
+            </div>
+
+            <p>¿Quieres recibir nuestras ofertas? ¡Registrate ya mismo y comienzá a disfrutarlas!</p>
+
+            <nav class="one-footer-nav">
+                <ul class="first-list-footer">
+                    <h4>Categorías</h4>
+                    <li><a href="" style="text-decoration: none;">Inicio</a></li>
+                    <li><a href="" style="text-decoration: none;">Productos</a></li>
+                    <li><a href="" style="text-decoration: none;">Hombres</a></li>
+                    <li><a href="" style="text-decoration: none;">Mujeres</a></li>
+                    <li><a href="" style="text-decoration: none;">Venta Mayorista</a></li>
+                </ul>
+                <br>
+                <ul class="second-list-footer">
+                    <h4>Contactános</h4>
+                    <li><a href="" style="text-decoration: none;"><i class="fab fa-whatsapp"></i> 541176856412</a></li>
+                    <li><a href="" style="text-decoration: none;"><i class="fas fa-phone"></i> 11-7685-6412</a></li>
+                    <li><a href="" style="text-decoration: none;"><i class="far fa-envelope"></i>
+                            sharkstyle024@gmail.com</a></li>
+                </ul>
+            </nav>
+            <div class="container-email-social-networks">
+                <label>
+                    <h5>ingresa tu email</h5>
+                    <input type="email" placeholder="introduce tu email">
+                </label>
+                <nav>
+                    <ul class="social-media">
+                        <li class="facebook"><a href="http://www.facebook.com/"><i class="fab fa-facebook"></i></a></li>
+                        <li class="instagram"><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        <li class="twitter"><a href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    </footer>
 </body>
 
 </html>
