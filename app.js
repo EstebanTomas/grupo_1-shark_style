@@ -24,10 +24,6 @@ app.get('/arch',(req,res) => {
     res.sendFile(path.resolve(__dirname,'./views/homehome.html'));
 });
 
-app.get('/shop',(req,res) => {
+app.get('/shopping',(req,res) => {
     res.sendFile(path.resolve(__dirname,'./views/ShoppingCart.html'));
-});
-
-app.get('/shoping',(req,res) => {
-    res.sendFile(path.resolve(__dirname,'./views/PusharseCatalog.html'));
 });
