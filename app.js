@@ -20,14 +20,11 @@ app.get('/register',(req,res) => {
     res.sendFile(path.resolve(__dirname,'./views/register.html'));
 });
 
-app.get('/shop',(req,res) => {
+app.get('/shopping',(req,res) => {
     res.sendFile(path.resolve(__dirname,'./views/ShoppingCart.html'));
 });
 
-app.get('/shoping',(req,res) => {
-    res.sendFile(path.resolve(__dirname,'./views/PusharseCatalog.html'));
+app.get('/productDetail',(req,res) => {
+    res.sendFile(path.resolve(__dirname,'./views/productDetail.html'));
 });
 
-app.get ( "/productDetail", function ( req, res ) {
-    res.sendFile ( path.join ( __dirname, "/views/productDetail.html"));
-})

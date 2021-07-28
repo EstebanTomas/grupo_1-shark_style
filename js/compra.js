@@ -94,7 +94,11 @@ function procesarCompra() {
                         setTimeout(() => {
                             compra.vaciarLocalStorage();
                             enviado.remove();
+<<<<<<< HEAD
+                            window.location = "PusharseCatalog.html";
+=======
                             window.location = "index.html";
+>>>>>>> 43cbc6027b6c8e00eb46ad6b4e94a04f963a7b19
                         }, 2000);
                     }, (err) => {
                         cargandoGif.style.display = 'none';
