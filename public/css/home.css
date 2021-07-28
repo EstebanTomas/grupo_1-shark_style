@@ -36,18 +36,23 @@ body {
     border-radius: 100%;
 }
 
+.main-header {
+    background-color: rgb(180 , 183, 182);
+}
+
 .article-main-header {
     display: flex;
     flex-direction: column-reverse;
 }
 
 .icons2 {
+    padding: 20px 0px;
     background-color: rgb(180, 183, 182);
     display: flex;
     justify-content: space-around;
     font-size: 23px;
-    padding-top: 8px;
     color: #c06014;
+    border: solid 2px rgb(180,183,182);
 }
 
 .menu-hamburger {
@@ -140,6 +145,24 @@ ul.slider li:target {
     height: 30px;
     font-size: 20px;
     border-radius: 100%;
+}
+
+.two-subtitles02 {
+    color: black;
+    transition: color 400ms;
+}
+
+.two-subtitles02:hover {
+    color: firebrick;
+}
+
+.options {
+    color: black;
+    transition: color 450ms;
+}
+
+.options:hover {
+    color: #DA0037;
 }
 
 /*aquí comienza la edicion del segundo slider*/
@@ -261,9 +284,8 @@ ul.slider-two li:target {
 }
 
 .logo-section-four {
-    width: 90%;
-    height: 150px;
     border-radius: 50%;
+    width: 80%;
 }
 
 main section article div h4 {
@@ -281,20 +303,13 @@ main section article div h4 {
     align-items: center;
 }
 
-.logo-shark-botton {
-    width: 90%;
-    border-radius: 50%;
-    position: relative;
-    left: 5vw;
-    border: double 10px #C06014;
-}
 
 footer section nav {
     font-weight: 700;
     font-size: 120%;
     position: relative;
     left: 6vw;
-    color: #C06014;
+    color: black;
     margin-bottom: 5vh;
 }
 
@@ -341,14 +356,23 @@ h5 {
 }
 
 footer section div label input {
-    background-color: #F3F4ED;
-    margin-top: 2vh;
-    width: 100%;
+    margin: auto;
+    width: 70%;
     height: 5vh;
-    font-size: 15px;
-    border-radius: 8px;
+    font-size: 23px;
+    background-color: white;
+    border-radius: 10px;
     font-weight: 600;
     text-align: center;
+}
+
+.email-de-footer {
+    border: solid white 1px;
+    transition: border 400ms;
+}
+
+.email-de-footer:hover {
+    border: solid 4px black;
 }
 
 footer section div nav ul li a {
@@ -369,10 +393,8 @@ footer section div nav ul li {
 
     body {
         text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         margin: 0px 0px;
+        background-color: white;
     }
 
     main {
@@ -388,10 +410,27 @@ footer section div nav ul li {
         font-size: 30px;
     }
 
+    main section article div h4 {
+    color: black;
+    font-size: 25px;
+    margin: auto;
+    width: 80%;
+    }
+
     .menu-hamburger {
         font-size: 30px;
         position: relative;
         left: -10px;
+    }
+
+    .logo-section-four {
+        border-radius: 5%;
+        border: solid white;
+        transition: border 400ms;
+    }
+
+    .logo-section-four:hover {
+        border: solid 2px rebeccapurple;
     }
 
     .conteiner-logo img {
@@ -399,20 +438,20 @@ footer section div nav ul li {
     }
 
     ul.slider li img {
-        width: 88%;
-        height: 95vh;
+        width: 100%;
+        height: 75vh;
     }
 
     .menu {
-        margin-top: 55vh;
+        margin-top: 30vh;
     }
 
     .menu-two {
-        margin: 75vh 0px 0px 0px;
+        margin: 45vh 0px 0px 0px;
     }
 
     ul.slider-two li img {
-        height: 113vh;
+        height: 89vh;
     }
 
     .footer-section-botton {
@@ -421,16 +460,13 @@ footer section div nav ul li {
         align-items: center;
     }
 
-    .logo-shark-botton {
-        top: 3vh;
-        left: 1vw;
-    }
 
     footer section p {
         text-align: center;
-        color: white;
+        color: black;
         font-family: 'Roboto';
         font-size: 30px;
+        font-weight: 600;
         width: 80%;
     }
 
@@ -464,6 +500,10 @@ footer section div nav ul li {
         font-size: 35px;
         margin: auto;
     }
+
+    .footer-botton {
+        background-color: #a5a5a5;
+    }
 }
 
 
@@ -471,7 +511,11 @@ footer section div nav ul li {
 
 @media (min-width: 767px) {
     body {
-        background-color: grey
+        background-color: white;
+    }
+
+    .image-none {
+        display: none;
     }
 
     .menu-hamburger {
@@ -575,14 +619,17 @@ footer section div nav ul li {
 
     /*comenzamos*/
     .parent-container {
-        margin: auto;
-        width: 100%;
         padding: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     ul.parent-sub-container {
         position: relative;
         height: 40vh;
+        width: 100%;
+        margin: auto;
     }
 
     ul.parent-sub-container li {
@@ -634,7 +681,14 @@ footer section div nav ul li {
         font-size: 20px;
         border-radius: 100%;
     }  
-             /*fin de la edicion del slider*/
+    /*fin de la edicion del slider*/
+    main section article div h4 {
+    font-size: 31px;
+    width: 55%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+   }
+
     .image-session-three {
         display: block;
         display: flex;
@@ -647,8 +701,18 @@ footer section div nav ul li {
         border-radius: 30px;    
     }
 
+    .photo-article {
+        border: white solid 1px;
+        transition: border 450ms;
+    }
+
+    .photo-article:hover {
+        border: solid black 4px;
+    }
+
     .image-session-three article div img {
         width: 33vw;
+        border-radius: 22px;
     }
 
     .logo_shark_style {
@@ -666,9 +730,7 @@ footer section div nav ul li {
     }
 
     .logo-section-four {
-        width: 350px;
-        height: 150px;
-        box-shadow: 0px 0px 10px yellow;
+        display: none;
     }
                  /*edicion de la cuarta sección*/
     
@@ -744,4 +806,61 @@ footer section div nav ul li {
     }
 }
 
+@media (min-width: 1280px) {
+    .image-none {
+        display: block;
+    }
 
+    .main-header {
+        width: 100%;
+    }
+
+    .contents {
+        width: 80%;
+    }
+
+    main {
+        margin: 0px 10%;
+    }
+
+    .image-session-two {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    ul.parent-sub-container li {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    ul.parent-sub-container li img {
+        width: 25%;
+        height: 30vh;
+    }
+
+    ul.parent-sub-container {
+        width: 110%;
+    }
+
+    .parent-container {
+        width: 100%;
+    }
+    
+    .image-session-three {
+        width: 90%;
+        margin: auto;
+        margin-top: 20vh;
+    }
+
+    .image-session-three article {
+        width: 50%;
+    }
+
+    .image-session-three article div img {
+        width: 100%;
+    }
+
+}
