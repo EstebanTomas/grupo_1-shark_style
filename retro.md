@@ -13,3 +13,22 @@
 >
 *Que debemos dejar de hacer*.
 >Tenemos que actuar de forma mas responsable y empatica, considerando el tiempo y el esfuerzo que los demas participantes le dedican a cada proyecto, respondiendo de manera recíproca.
+
+
+
+**RETROSPECTIVA DEL TERCER SPRINT**
+
+*que debemos comenzar a hacer como equipo*
+> utilizar la daily con más frecuencia.
+>
+*Que podemos hacer para mejorar.*
+>actualizar el tablero de trabajo más seguido.
+
+*Que debemos seguir haciendo.*
+
+>mantener la buena comunicación y las reuniones por zoom.
+>seguir implementndo las observaciones del primer sprint.
+>organizar mejor la estructura de las carpetas y los nombres de los archivos en el código.
+
+*Que debemos dejar de hacer.*
+>no subir mas cosas en la rama master de github.

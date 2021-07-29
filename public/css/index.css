@@ -536,7 +536,7 @@ footer section div nav ul li {
         display: block;
     }
 
-    /*edito el header para una resolución de table o de más pixeles*/
+          /*edito el header para una resolución de table o de más pixeles*/
 
     .main-header {
         width: 100%;
@@ -617,7 +617,7 @@ footer section div nav ul li {
         display: block;
     }
 
-    /*comenzamos*/
+    
     .parent-container {
         padding: 30px;
         display: flex;
@@ -861,6 +861,21 @@ footer section div nav ul li {
 
     .image-session-three article div img {
         width: 100%;
+    }
+
+    ul.parent-sub-container li img {
+        width: 33%;
+        height: 36vh;
+        border-radius: 100%;
+        margin: 0px 5px;
+    }
+
+    ul.parent-sub-container li:first-child {
+        opacity: 1;
+    }
+
+    ul.parent-sub-container li:target {
+        opacity: 1;
     }
 
 }
