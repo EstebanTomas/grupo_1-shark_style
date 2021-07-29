@@ -28,7 +28,7 @@ _____________
 *Que debemos seguir haciendo.*
 >Mantener la buena comunicación y las reuniones por zoom.
 >
->Seguir implementndo las observaciones del primer sprint.
+>Seguir implementando las observaciones del primer sprint.
 >
 >Organizar mejor la estructura de las carpetas y los nombres de los archivos en el código.
 >
