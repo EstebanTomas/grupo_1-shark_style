@@ -15,6 +15,7 @@
 >Tenemos que actuar de forma mas responsable y empatica, considerando el tiempo y el esfuerzo que los demas participantes le dedican a cada proyecto, respondiendo de manera recíproca.
 >
 >
+_____________
 >
 **RETROSPECTIVA DEL SEGUNDO SPRINT**
 >
