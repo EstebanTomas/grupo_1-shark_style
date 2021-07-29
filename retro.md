@@ -15,6 +15,7 @@
 >Tenemos que actuar de forma mas responsable y empatica, considerando el tiempo y el esfuerzo que los demas participantes le dedican a cada proyecto, respondiendo de manera recíproca.
 >
 >
+_____________
 >
 **RETROSPECTIVA DEL SEGUNDO SPRINT**
 >
@@ -26,7 +27,9 @@
 >
 *Que debemos seguir haciendo.*
 >Mantener la buena comunicación y las reuniones por zoom.
->Seguir implementndo las observaciones del primer sprint.
+>
+>Seguir implementando las observaciones del primer sprint.
+>
 >Organizar mejor la estructura de las carpetas y los nombres de los archivos en el código.
 >
 *Que debemos dejar de hacer.*
