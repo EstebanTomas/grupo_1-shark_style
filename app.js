@@ -1,33 +1,31 @@
 const express = require('express');
-
 const path = require('path');
-
 const app = express();
-
 const publicpath = path.join(__dirname, './public');
+
+
+var indexRouter = require('./routes/index');
+var loginRouter = require('./routes/login');
+var registerRouter = require('./routes/register');
+var productDetailRouter = require('./routes/productDetail');
+var shoppingCartRouter = require('./routes/ShoppingCart');
 
 app.use(express.static(publicpath));
 
-app.listen(3000, () => {
+app.set('view engine', 'ejs');
+
+app.listen( 3000, () => {
     console.log('Servidor corriendo en el puerto 3000');
 });
 
-app.get('/',(req,res) => {
-    res.sendFile(path.resolve(__dirname,'./views/index.html'));
-});
 
-app.get('/register',(req,res) => {
-    res.sendFile(path.resolve(__dirname,'./views/register.html'));
-});
 
-app.get('/shopping',(req,res) => {
-    res.sendFile(path.resolve(__dirname,'./views/ShoppingCart.html'));
-});
+app.use('/', indexRouter);
 
-app.get('/productDetail',(req,res) => {
-    res.sendFile(path.resolve(__dirname,'./views/productDetail.html'));
-});
+app.use('/login', loginRouter);
 
-app.get('/login', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/login.html'));
-});
+app.use('/register', registerRouter);
+
+app.use('/product', productDetailRouter);
+
+app.use('/shopping', shoppingCartRouter);

@@ -12,7 +12,8 @@ body {
 }
 
 .shark-logo {
-    width: 100%;
+    width: 90%;
+    margin-left: 7%
 }
 
 .text-p {
@@ -30,15 +31,18 @@ body {
 
 h2 {
     font-family:  'Roboto', serif;
-    font-size  : 35px;
+    font-size: 28px;
+    margin: 8px 0px;
 }
 
 .cam {
-    border-radius: 8px;
-    width        : 280px;
-    height       : 30px;
+    border-radius: 5px;
+    width: 250px;
+    height: 25px;
     border: solid 2px white;
     transition: border 450ms;
+    padding-left: 12px;
+    font-weight: 600;
 }
 
 .cam:hover {
@@ -46,9 +50,11 @@ h2 {
 }
 
 .nombre {
-    display      : block;
-    margin-bottom: 10px;
-    font-style   : italic;
+    display: block;
+    margin-bottom: 6px;
+    font-style: italic;
+    padding-left: 10px;
+    font-size: 15px;
 }
 
 .terminos {
@@ -62,7 +68,6 @@ h2 {
 }
 
 .button {
-    margin          : 20px;
     width           : 200px;
     height          : 40px;
     background-color: #f3f3f3;
@@ -120,5 +125,4 @@ h2 {
         flex-wrap       : wrap;
         width: 50%;
     }
-
 }
