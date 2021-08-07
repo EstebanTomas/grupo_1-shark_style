@@ -191,11 +191,7 @@ class Carrito {
             })
         }
         else {
-<<<<<<< HEAD
             location.href = "ShoppingCart.html";
-=======
-            location.href = "compra.html";
->>>>>>> 43cbc6027b6c8e00eb46ad6b4e94a04f963a7b19
         }
     }
 

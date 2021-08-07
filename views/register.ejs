@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="/css/register.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -13,13 +13,11 @@
 </head>
 
 <body>
-    <main>
+    <div class="div-main">
         <form action="/process-data" method="POST" class="main-form">
             <section class="section-logo">
-                
-                <div class="hh2">
-                    <h2>Shark</h2>
-                    <h2>Style</h2>
+                <div>
+                    <img src="/img/logo-shark.png" alt="logo" class="shark-logo">
                 </div>
             </section>
             <section class="section-form">
@@ -49,11 +47,14 @@
                     <label>Acepta nuestras condiciones de servicio y política de privacidad</label>
                 </div>
                 <div>
-                    <button type="reset" class="button">Crear cuenta</button>
+     
+                    <a href="/">
+                        <input type="button" value="Crear cuenta" class="button">
+                    </a>
                 </div>
             </section>
         </form>
-    </main>
+    </div>
 </body>
 
 </html>

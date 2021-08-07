@@ -3,12 +3,8 @@
 }
 
 body {
-    margin: auto;
-    font-family: 'Roboto', sans-serif;
-}
-
-.section-logo {
-    background-color: #B5B3B3;
+        font-family: 'Roboto', sans-serif;
+        background-color: rgb(180, 183, 182);
 }
 
 .hh2 {
@@ -16,7 +12,8 @@ body {
 }
 
 .shark-logo {
-    width: 100%;
+    width: 90%;
+    margin-left: 7%
 }
 
 .text-p {
@@ -34,19 +31,30 @@ body {
 
 h2 {
     font-family:  'Roboto', serif;
-    font-size  : 35px;
+    font-size: 28px;
+    margin: 8px 0px;
 }
 
 .cam {
-    border-radius: 8px;
-    width        : 250px;
-    height       : 25px;
+    border-radius: 5px;
+    width: 250px;
+    height: 25px;
+    border: solid 2px white;
+    transition: border 450ms;
+    padding-left: 12px;
+    font-weight: 600;
+}
+
+.cam:hover {
+    border: solid 2px black;
 }
 
 .nombre {
-    display      : block;
-    margin-bottom: 10px;
-    font-style   : italic;
+    display: block;
+    margin-bottom: 6px;
+    font-style: italic;
+    padding-left: 10px;
+    font-size: 15px;
 }
 
 .terminos {
@@ -60,17 +68,29 @@ h2 {
 }
 
 .button {
-    margin          : 20px;
     width           : 200px;
     height          : 40px;
-    background-color: #7195f1;
+    background-color: #f3f3f3;
+    border: solid 1px #c7c7c7;
     border-radius   : 10px;
+    transition: background-color border .5s;
+}
+
+.button:hover {
+    background-color: #c7c7c7;
+    border: solid 1px black;
 }
 
 @media (min-width: 480px) {
+    .div-main {
+        margin: auto;
+        margin-top: 50px;
+    }
     .main-form {
         display: flex;
         justify-content: center;
+        max-width: 800px;
+        margin: auto;
     }
 
     .shark-logo {
@@ -78,21 +98,23 @@ h2 {
     }
 
     .section-logo {
-        background-image : url('../img/ropa.jpg');
+        background-image : url('../img/style-shark.png');
         background-repeat: round;
-        width            : 60%;
-        display          : flex;
-        flex-direction   : column-reverse;
-        justify-content  : space-around;
+        width            : 50%;
     }
 
     .data-field {
-        margin-top: 10px;
+        width: 100%;
+        margin-left: 5%;
+    }
+
+    .terminos {
+        width: 90%;
+        margin: 40px 8% 0px 0%;
     }
 
     .cam {
-        border-radius: 5px;
-        width        : 200px;
+        width: 90%;
     }
 
     .section-form {
@@ -102,56 +124,5 @@ h2 {
         padding         : 10px;
         flex-wrap       : wrap;
         width: 50%;
-    }
-
-    .button {
-        margin          : 20px;
-        width           : 200px;
-        height          : 40px;
-        background-color: #71f1e0;
-        border-radius   : 10px;
-    }
-}
-
-@media (min-width: 769px) {
-    .main-form {
-        margin: 0px 8%;
-        margin-top: 4vh;
-    }
-
-    .section-logo {
-        background-image: url('../img/hojitas.jpg');
-        width: 50%;
-    } 
-
-    .hh2 {
-        display: block;
-        color: white;
-    }
-
-    .hh2 h2 {
-        margin: -10px;
-    }
-
-    .section-form {
-        background-color: #536162;
-    }
-
-    h2 {
-        font-family:  'Roboto', sans-serif;
-        text-align: center;
-        font-size: 4vw;
-        margin-top: 19px;
-        margin-bottom: 8px;
-    }
-
-    .text-p {
-        display: block;
-        text-align: center;
-        font-family:  'Roboto', sans-serif;
-    }   
-
-    .title-form {
-    padding-bottom: 25px;
     }
 }

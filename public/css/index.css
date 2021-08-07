@@ -46,22 +46,17 @@ body {
 }
 
 .icons2 {
-    padding: 20px 0px;
-    background-color: rgb(180, 183, 182);
+    padding: 20px 0px 0px;
     display: flex;
     justify-content: space-around;
-    font-size: 23px;
-    color: #c06014;
-    border: solid 2px rgb(180,183,182);
+    font-size: 22px;
+    margin: 0px 10px;
 }
 
 .menu-hamburger {
     padding-right: 205px;
 }
 
-.three-icons {
-    margin: 0px 2px;
-}
 
 .conteiner-shark {
     display: none;
@@ -79,7 +74,6 @@ body {
 /*aqui comienza la edicion del primer slider*/
 
 .container {
-    margin: auto;
     background-color: white;
     width: 100%;
     padding: 30px;
@@ -168,7 +162,6 @@ ul.slider li:target {
 /*aquí comienza la edicion del segundo slider*/
 
 .container-two {
-    margin: auto;
     background-color: white;
     width: 100%;
     padding: 30px;
@@ -301,6 +294,7 @@ main section article div h4 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: rgb(180, 183, 182);
 }
 
 
@@ -319,8 +313,10 @@ footer section nav ul li {
 
 footer section p {
     text-align: center;
-    color: white;
+    color: black;
     font-family: 'Roboto';
+    font-size: 18px;
+    font-weight: 500;
 }
 
 footer section div label {
@@ -423,16 +419,6 @@ footer section div nav ul li {
         left: -10px;
     }
 
-    .logo-section-four {
-        border-radius: 5%;
-        border: solid white;
-        transition: border 400ms;
-    }
-
-    .logo-section-four:hover {
-        border: solid 2px rebeccapurple;
-    }
-
     .conteiner-logo img {
         margin-top: 7vh;
     }
@@ -478,11 +464,6 @@ footer section div nav ul li {
         text-align: initial;
     }
 
-
-    .first-list-footer {
-        margin-right: 12vw;
-    }
-
     .container-email-social-networks {
         width: 95%;
         position: relative;
@@ -501,8 +482,8 @@ footer section div nav ul li {
         margin: auto;
     }
 
-    .footer-botton {
-        background-color: #a5a5a5;
+    .first-list-footer {
+        margin-right: 50px;
     }
 }
 
@@ -532,19 +513,23 @@ footer section div nav ul li {
         background-color: #C06014;
     }
 
+    .option-navbar {
+        color: white;
+        transition: color 450ms;
+    }
+
+    .option-navbar:hover {
+        color: black;
+    }
+
     .inside-the-first-article-header {
         display: block;
     }
 
           /*edito el header para una resolución de table o de más pixeles*/
 
-    .main-header {
-        width: 100%;
-        background-color: rgb(180, 183, 182);
-    }
 
     .article-main-header {
-        display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-around;
@@ -561,20 +546,12 @@ footer section div nav ul li {
     }
 
     .conteiner-logo {
-        margin-bottom: 15px;
         margin-top: -40px
-    }
-
-    .conteiner-logo img {
-        margin-top: 7vh;
-        position: relative;
-        left: -9px;
     }
 
     .conteiner-shark {
         display: flex;
         flex-direction: inherit;
-        margin-left: 25px;
     }
 
     .logotipo-shark {
@@ -620,16 +597,12 @@ footer section div nav ul li {
     
     .parent-container {
         padding: 30px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
     }
 
     ul.parent-sub-container {
         position: relative;
         height: 40vh;
         width: 100%;
-        margin: auto;
     }
 
     ul.parent-sub-container li {
@@ -645,8 +618,6 @@ footer section div nav ul li {
     .contents {
         display: flex;
         flex-direction: row;
-        position: relative;
-        top: 32px;
     }
 
     ul.parent-sub-container li img {
@@ -690,14 +661,12 @@ footer section div nav ul li {
    }
 
     .image-session-three {
-        display: block;
         display: flex;
         flex-direction: row;
         justify-content: center;
     }
 
     .image-session-three article {
-        background-color: white;
         border-radius: 30px;    
     }
 
@@ -711,7 +680,6 @@ footer section div nav ul li {
     }
 
     .image-session-three article div img {
-        width: 33vw;
         border-radius: 22px;
     }
 
@@ -749,21 +717,9 @@ footer section div nav ul li {
         margin: 15px 40px;
     }
 
-    .footer-botton {
-        background-color: rgb(180, 183, 182);
-        width: 100%;
-    }
-
     .footer-section-botton {
-        display: flex;
         flex-direction: row;
         align-content: center;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-
-    .first-list-footer {
-        top: 0px;
     }
 
     .logo-shark-botton {
@@ -804,6 +760,15 @@ footer section div nav ul li {
     footer section div nav {
         margin-right: 5.5vw;
     }
+
+    .second-list-footer {
+        width: 248px;
+        margin-left: -10px;
+    }
+
+    .first-list-footer {
+        width: 141px;
+    }
 }
 
 @media (min-width: 1280px) {
@@ -824,9 +789,7 @@ footer section div nav ul li {
     }
 
     .image-session-two {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        margin-right: 5%;
     }
 
     ul.parent-sub-container li {
@@ -846,7 +809,7 @@ footer section div nav ul li {
     }
 
     .parent-container {
-        width: 100%;
+        padding: 30px 50px 30px 30px;
     }
     
     .image-session-three {
@@ -859,23 +822,8 @@ footer section div nav ul li {
         width: 50%;
     }
 
-    .image-session-three article div img {
-        width: 100%;
-    }
-
-    ul.parent-sub-container li img {
-        width: 33%;
-        height: 36vh;
-        border-radius: 100%;
-        margin: 0px 5px;
-    }
-
-    ul.parent-sub-container li:first-child {
-        opacity: 1;
-    }
-
-    ul.parent-sub-container li:target {
-        opacity: 1;
+    .command-menu {
+        margin-left: 95px;
     }
 
 }
