@@ -1,13 +1,10 @@
 body {
     background-color: rgb(243, 244, 237);
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 header .header {
     margin-bottom: 150px;
-}
-
-main  section{
-    font-family: 'Roboto Condensed', sans-serif;
 }
 
 main {
@@ -15,7 +12,7 @@ main {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
-    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 15px;
 }
 
 main .picture {
@@ -33,19 +30,7 @@ main section .p1, .p2, .p3, .p4 {
     border-radius: 5%;
 }
 
-main section .p1:hover {
-    box-shadow: 0px 0px 10px rgb(83, 97, 98);
-    border: solid 3px grey;
-}
-main section .p2:hover {
-    box-shadow: 0px 0px 10px rgb(83, 97, 98);
-    border: solid 3px grey;
-}
-main section .p3:hover {
-    box-shadow: 0px 0px 10px rgb(83, 97, 98);
-    border: solid 3px grey;
-}
-main section .p4:hover {
+main section #pic:hover {
     box-shadow: 0px 0px 10px rgb(83, 97, 98);
     border: solid 3px grey;
 }
@@ -122,22 +107,11 @@ main section article .m1, .m2, .m3, .m4 {
     border-radius: 5%;
 }
 
-main section article .m1:hover {
+main section article #mod:hover {
     box-shadow: 0px 0px 10px rgb(83, 97, 98);
     border: solid 3px grey;
 }
-main section article .m2:hover {
-    box-shadow: 0px 0px 10px rgb(83, 97, 98);
-    border: solid 3px grey;
-}
-main section article .m3:hover {
-    box-shadow: 0px 0px 10px rgb(83, 97, 98);
-    border: solid 3px grey;
-}
-main section article .m4:hover {
-    box-shadow: 0px 0px 10px rgb(83, 97, 98);
-    border: solid 3px grey;
-}
+
 
 main section article .img-m1, .img-m2, .img-m3, .img-m4 {
     border-radius: 5%;
@@ -167,26 +141,11 @@ main section article .xs, .s, .m, .l, .xl {
     border-radius: 30%;
 }
 
-main section article .xs:hover {
+main section article #siz:hover {
     box-shadow: 0px 0px 10px rgb(83, 97, 98);
     border: solid 3px grey;
 }
-main section article .s:hover {
-    box-shadow: 0px 0px 10px rgb(83, 97, 98);
-    border: solid 3px grey;
-}
-main section article .m:hover {
-    box-shadow: 0px 0px 10px rgb(83, 97, 98);
-    border: solid 3px grey;
-}
-main section article .l:hover {
-    box-shadow: 0px 0px 10px rgb(83, 97, 98);
-    border: solid 3px grey;
-}
-main section article .xl:hover {
-    box-shadow: 0px 0px 10px rgb(83, 97, 98);
-    border: solid 3px grey;
-}
+
 
 main section .action {
     display: flex;

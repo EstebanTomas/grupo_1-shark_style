@@ -288,101 +288,6 @@ main section article div h4 {
     margin: 3vh 5vw;
 }
 
-/*de aqui para abajo esta lo del footer*/
-
-.footer-botton {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgb(180, 183, 182);
-}
-
-
-footer section nav {
-    font-weight: 700;
-    font-size: 120%;
-    position: relative;
-    left: 6vw;
-    color: black;
-    margin-bottom: 5vh;
-}
-
-footer section nav ul li {
-    margin-top: 2vh;
-}
-
-footer section p {
-    text-align: center;
-    color: black;
-    font-family: 'Roboto';
-    font-size: 18px;
-    font-weight: 500;
-}
-
-footer section div label {
-    display: flex;
-    flex-direction: column;
-}
-
-h5 {
-    text-align: center;
-    font-family: 'Roboto';
-    font-size: 25px;
-    margin: auto;
-}
-
-.social-media {
-    display: flex;
-    justify-content: center;
-}
-
-.facebook {
-    position: relative;
-    right: 50px;
-}
-
-.instagram {
-    position: relative;
-    right: 20px;
-}
-
-.twitter {
-    position: relative;
-    right: -14px;
-}
-
-footer section div label input {
-    margin: auto;
-    width: 70%;
-    height: 5vh;
-    font-size: 23px;
-    background-color: white;
-    border-radius: 10px;
-    font-weight: 600;
-    text-align: center;
-}
-
-.email-de-footer {
-    border: solid white 1px;
-    transition: border 400ms;
-}
-
-.email-de-footer:hover {
-    border: solid 4px black;
-}
-
-footer section div nav ul li a {
-    color: black;
-}
-
-footer section nav ul li a {
-    color: black;
-}
-
-footer section div nav ul li {
-    font-size: 40px;
-}
-
 /*inicio la primera medida query*/
 
 @media (min-width: 481px) {
@@ -439,54 +344,7 @@ footer section div nav ul li {
     ul.slider-two li img {
         height: 89vh;
     }
-
-    .footer-section-botton {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-
-    footer section p {
-        text-align: center;
-        color: black;
-        font-family: 'Roboto';
-        font-size: 30px;
-        font-weight: 600;
-        width: 80%;
-    }
-
-    .one-footer-nav {
-        display: flex;
-        align-items: normal;
-        position: relative;
-        top: 250px;
-        text-align: initial;
-    }
-
-    .container-email-social-networks {
-        width: 95%;
-        position: relative;
-        bottom: 35vh;
-    }
-
-    footer section div nav ul li a {
-        font-size: 60px;
-        margin-right: 15px;
-    }
-
-    h5 {
-        text-align: center;
-        font-family: 'Roboto';
-        font-size: 35px;
-        margin: auto;
-    }
-
-    .first-list-footer {
-        margin-right: 50px;
-    }
 }
-
 
 /*inicio la segunda medida query y fin de la primera*/
 
@@ -658,7 +516,7 @@ footer section div nav ul li {
     width: 55%;
     margin-top: 30px;
     margin-bottom: 30px;
-   }
+    }
 
     .image-session-three {
         display: flex;
@@ -715,59 +573,6 @@ footer section div nav ul li {
         width: 400px;
         border-radius: 35px;
         margin: 15px 40px;
-    }
-
-    .footer-section-botton {
-        flex-direction: row;
-        align-content: center;
-    }
-
-    .logo-shark-botton {
-        display: none;
-    }
-
-    footer section div label h5 {
-        font-size: 30px;
-    }
-
-    .one-footer-nav {
-        top: 10px;
-        left: 2vw;
-    }
-
-    footer section p {
-        display: none;
-    }
-
-    .container-email-social-networks {
-        top: -5px;
-        left: 50px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .social-media li  {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .social-media li a {
-        font-size: 40px;
-    }
-    
-    footer section div nav {
-        margin-right: 5.5vw;
-    }
-
-    .second-list-footer {
-        width: 248px;
-        margin-left: -10px;
-    }
-
-    .first-list-footer {
-        width: 141px;
     }
 }
 
