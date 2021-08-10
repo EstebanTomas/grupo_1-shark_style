@@ -96,7 +96,7 @@ footer section div div ul .contact {
     padding-bottom: 5px;
 }
 
-footer section div ul li #sub-contact {
+footer section div ul li .sub-contact {
     text-decoration: none;
     color:rgb(66, 70, 66);
     font-size: 16px;
@@ -104,7 +104,7 @@ footer section div ul li #sub-contact {
     transition: 300ms;
     line-height: 22px;
 }
-footer section div ul li #sub-contact:hover {
+footer section div ul li .sub-contact:hover {
     border-color: rgb(66, 70, 66);
 }
 
@@ -146,86 +146,30 @@ footer section .copyright {
     margin-bottom: 10px;
 }
 
-/*@media (max-width: 665px) {
-    footer section {
-        display: flex;
+@media (max-width: 650px) {
+    footer section .sub-conteiner-first {
+    flex-direction: column;
+    justify-content: center;
+    }
+    footer section .suscriptor {
+        padding-bottom: 10px;
+    }
+    footer .conteiner-list-second-block {
         flex-direction: column;
-        align-items: center;
     }
-    footer section p {
-        text-align: center;
-        color: black;
-        font-family: 'Roboto';
-        font-size: 30px;
-        font-weight: 600;
-        width: 80%;
+    footer section .sub-conteiner-second-block {
+        justify-content: center;
     }
-    footer .one-footer-nav {
-        display: flex;
-        align-items: normal;
-        position: relative;
-        top: 250px;
-        text-align: initial;
-    }
-    footer .container-email-social-networks {
-        width: 95%;
-        position: relative;
-        bottom: 35vh;
-    }
-    footer section div nav ul li a {
-        font-size: 60px;
-        margin-right: 15px;
-    }
-    footer h5 {
-        text-align: center;
-        font-family: 'Roboto';
-        font-size: 35px;
-        margin: auto;
-    }
-    footer .first-list-footer {
-        margin-right: 50px;
+    footer section .social-media {
+        justify-content: center;
     }
 }
 
 @media (min-width: 1000px) {
-    footer section {
-        flex-direction: row;
-        align-content: center;
+    footer section .conteiner-first-list {
+        padding-right: 150px;
     }
-    footer .logo-shark-botton {
-        display: none;
-    }
-    footer .one-footer-nav {
-        top: 10px;
-        left: 2vw;
-    }
-    footer section p {
-        display: none;
-    }
-    footer .container-email-social-networks {
-        top: -5px;
-        left: 50px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    footer .social-media li  {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    footer .social-media li a {
-        font-size: 40px;
-    }
-    
-    footer section div nav {
-        margin-right: 5.5vw;
-    }
-    footer .second-list-footer {
-        width: 248px;
-        margin-left: -10px;
-    }
-    footer .first-list-footer {
-        width: 141px;
+    footer section #facebook, #instagram, #twitter {
+        padding-right: 40px;
     }
 }
