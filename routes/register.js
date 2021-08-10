@@ -5,4 +5,5 @@ var mainControllers = require('../controllers/mainControllers')
 
 router.get('/', mainControllers.register);
 
+
 module.exports = router;

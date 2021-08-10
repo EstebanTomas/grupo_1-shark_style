@@ -37,7 +37,7 @@ body {
 }
 
 .main-header {
-    background-color: rgb(180 , 183, 182);
+    background-color: rgb(180, 183, 182);
 }
 
 .article-main-header {
@@ -407,10 +407,10 @@ footer section div nav ul li {
     }
 
     main section article div h4 {
-    color: black;
-    font-size: 25px;
-    margin: auto;
-    width: 80%;
+        color: black;
+        font-size: 25px;
+        margin: auto;
+        width: 80%;
     }
 
     .menu-hamburger {
@@ -498,7 +498,7 @@ footer section div nav ul li {
     .image-none {
         display: none;
     }
-
+                      /*inicio header*/
     .menu-hamburger {
         display: none;
     }
@@ -525,10 +525,9 @@ footer section div nav ul li {
     .inside-the-first-article-header {
         display: block;
     }
-
-          /*edito el header para una resolución de table o de más pixeles*/
-
-
+                   /*fin*/
+    /*edito el header para una resolución de table o de más pixeles*/
+    
     .article-main-header {
         flex-direction: row;
         align-items: center;
@@ -569,7 +568,7 @@ footer section div nav ul li {
         color: #536162;
 
     }
-
+    /**/
     header article div nav ul {
         display: flex;
         flex-direction: row;
@@ -594,7 +593,7 @@ footer section div nav ul li {
         display: block;
     }
 
-    
+
     .parent-container {
         padding: 30px;
     }
@@ -651,14 +650,15 @@ footer section div nav ul li {
         height: 30px;
         font-size: 20px;
         border-radius: 100%;
-    }  
+    }
     /*fin de la edicion del slider*/
+
     main section article div h4 {
-    font-size: 31px;
-    width: 55%;
-    margin-top: 30px;
-    margin-bottom: 30px;
-   }
+        font-size: 31px;
+        width: 55%;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
 
     .image-session-three {
         display: flex;
@@ -667,7 +667,7 @@ footer section div nav ul li {
     }
 
     .image-session-three article {
-        border-radius: 30px;    
+        border-radius: 30px;
     }
 
     .photo-article {
@@ -700,9 +700,8 @@ footer section div nav ul li {
     .logo-section-four {
         display: none;
     }
-                 /*edicion de la cuarta sección*/
-    
 
+    /*edicion de la cuarta sección*/
     .stuff-container {
         display: flex;
         flex-direction: row;
@@ -747,7 +746,7 @@ footer section div nav ul li {
         align-items: center;
     }
 
-    .social-media li  {
+    .social-media li {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -756,7 +755,7 @@ footer section div nav ul li {
     .social-media li a {
         font-size: 40px;
     }
-    
+
     footer section div nav {
         margin-right: 5.5vw;
     }
@@ -811,7 +810,7 @@ footer section div nav ul li {
     .parent-container {
         padding: 30px 50px 30px 30px;
     }
-    
+
     .image-session-three {
         width: 90%;
         margin: auto;
@@ -825,5 +824,4 @@ footer section div nav ul li {
     .command-menu {
         margin-left: 95px;
     }
-
 }

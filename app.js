@@ -18,8 +18,6 @@ app.listen( 3000, () => {
     console.log('Servidor corriendo en el puerto 3000');
 });
 
-
-
 app.use('/', indexRouter);
 
 app.use('/login', loginRouter);
@@ -29,3 +27,5 @@ app.use('/register', registerRouter);
 app.use('/product', productDetailRouter);
 
 app.use('/shopping', shoppingCartRouter);
+
+
