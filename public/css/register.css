@@ -13,7 +13,8 @@ body {
 
 .shark-logo {
     width: 90%;
-    margin-left: 7%
+    margin-left: 7%;
+    display: none;
 }
 
 .text-p {
@@ -69,6 +70,7 @@ h2 {
 
 .button {
     margin-top: 15px;
+    margin-bottom: 20px;
     width           : 200px;
     height          : 40px;
     background-color: #f3f3f3;
@@ -84,18 +86,15 @@ h2 {
 @media (min-width: 480px) {
     .div-main {
         margin: auto;
-        margin-top: 180px;
+        margin-top: 40px;
+        margin-bottom: 40px;
     }
     .main-form {
         display: flex;
         justify-content: center;
-        max-width: 800px;
+        max-width: 550px;
         margin: auto;
         box-shadow: 0px 0px 10px rgb(83 97 98);
-    }
-
-    .shark-logo {
-        display: none;
     }
 
     .section-logo {
@@ -125,5 +124,14 @@ h2 {
         padding         : 10px;
         flex-wrap       : wrap;
         width: 50%;
+    }
+}
+
+@media (min-width: 767px) {
+    .div-main {
+        margin-top: 160px;
+    }
+    .main-form {
+        max-width: 800px;
     }
 }

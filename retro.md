@@ -22,7 +22,7 @@ _____________
 *Que debemos comenzar a hacer como equipo.*
 >Utilizar la daily con más frecuencia.
 >
-*Que podemos hacer para mejorar.*
+*Que podemos hacer para mejorar.*git 
 >Actualizar el tablero de trabajo más seguido.
 >
 *Que debemos seguir haciendo.*

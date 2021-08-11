@@ -8,54 +8,14 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/css/index.css">
-    <title>shark style</title>
+    <link rel="stylesheet" href="/css/footer.css">
+    <title>Shark Style</title>
 </head>
 
 <body>
-    <header class="main-header">
-        <article class="article-main-header">
-            <div class="conteiner-logo">
-                <img width="40%" src="/img/logo-shark.png" alt="logo Shark Style" class="logotipo-shark">
-            </div>
-            <div class="conteiner-shark">
-                <span class="icon"><i class="fa fa-search"></i></span>
-                <input type="search" id="search" placeholder="¿Que estás buscando?" class="search-main" />
-            </div>
-            <div class="inside-the-first-article-header">
-                <a href="/login"><i class="fas fa-user"></i></a>
-            </div>
-            <div class="inside-the-first-article-header">
-                <a href=""><i class="fas fa-cart-plus"></i></a>
-            </div>
-            <section class="icons2">
-                <div class="menu-hamburger">
-                    <a href=""><i class="fas fa-bars"></i></a>
-                </div>
-                <span class="three-icons">
-                    <a href=""><i class="fa fa-search"></i></a>
-                </span>
-                <div class="three-icons">
-                    <a href="/login"><i class="fas fa-user"></i></a>
-                </div>
-                <div class="three-icons">
-                    <a href="/shopping"><i class="fas fa-cart-plus"></i></a>
-                </div>
-            </section>
-        </article>
-        <article>
-            <div>
-                <nav class="navbar">
-                    <ul>
-                        <li><a href="" style="text-decoration: none;" class="option-navbar">Inicio</a></li>
-                        <li><a href="" style="text-decoration: none;" class="option-navbar">Productos</a></li>
-                        <li><a href="" style="text-decoration: none;" class="option-navbar">Hombres</a></li>
-                        <li><a href="" style="text-decoration: none;" class="option-navbar">Mujeres</a></li>
-                        <li><a href="" style="text-decoration: none;" class="option-navbar">Venta Mayorista</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </article>
-    </header>
+    <div>
+        <%- include('./partials/header') %>
+    </div>
 
     <main>
         <section class="two-slider-container">
@@ -345,44 +305,6 @@
             </article>
         </section>
     </main>
-    <footer class="footer-botton">
-        <section class="footer-section-botton">
-
-            <p>¿Quieres recibir nuestras ofertas? ¡Registrate ya mismo y comienzá a disfrutarlas!</p>
-
-            <nav class="one-footer-nav">
-                <ul class="first-list-footer">
-                    <h4 class="two-subtitles02">Categorías</h4>
-                    <li><a href="" style="text-decoration: none;" class="options">Inicio</a></li>
-                    <li><a href="" style="text-decoration: none;" class="options">Productos</a></li>
-                    <li><a href="" style="text-decoration: none;" class="options">Hombres</a></li>
-                    <li><a href="" style="text-decoration: none;" class="options">Mujeres</a></li>
-                    <li><a href="" style="text-decoration: none;" class="options">Venta Mayorista</a></li>
-                </ul>
-                <br>
-                <ul class="second-list-footer">
-                    <h4 class="two-subtitles02">Contactános</h4>
-                    <li><a href="" style="text-decoration: none;"><i class="fab fa-whatsapp"></i>  541176856412</a></li>
-                    <li><a href="" style="text-decoration: none;"><i class="fas fa-phone"></i>  11-7685-6412</a></li>
-                    <li><a href="" style="text-decoration: none;"><i class="far fa-envelope"></i>sharkstyle@gmail.com</a></li>
-                    <li><a href="" style="text-decoration: none;"><i class="fas fa-map-marker-alt"></i>   Lastra 6587</a></li>
-                </ul>
-            </nav>
-            <div class="container-email-social-networks">
-                <label>
-                    <h5>ingresa tu email</h5>
-                    <input type="email" placeholder="introduce tu email" class="email-de-footer">
-                </label>
-                <nav>
-                    <ul class="social-media">
-                        <li class="facebook"><a href="http://www.facebook.com/"><i class="fab fa-facebook"></i></a></li>
-                        <li class="instagram"><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-                        </li>
-                        <li class="twitter"><a href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li>
-                    </ul>
-                </nav>
-            </div>
-        </section>
-    </footer>
+    <%- include ( './partials/footer' ) %>
 </body>
 </html>

@@ -5,30 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/producDetail.css">
+    <link rel="stylesheet" href="/css/footer.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <!--el link de abajo es para la letra Roboto Condensed (Regular 400)-->
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
-    <!--el link de abajo es para la letra Noto Sans KR (Bold 700)-->
     <title>Detalle del Producto</title>
 </head>
 
 <body>
     <header>
-        <div class = "header"></div>
+        <div>
+            <%- include('./partials/header') %> 
+        </div>
     </header>
     <main>
         <section class = "picture">
                 <!--aca voy a poner las fotos del producto a la izquierda-->
-                <div class = "p1">
+                <div id = "pic" class = "p1">
                     <img class = "img-p1" src="/img/p1.jpg" width = "120px" height = "160px" alt="campera trasera"/>
                 </div>
-                <div class = "p2">
+                <div id = "pic" class = "p2">
                     <img class = "img-p2" src="/img/p2.jpg" width = "120px" height = "160px" alt=""/>
                 </div>
-                <div class = "p3">
+                <div id = "pic" class = "p3">
                     <img class = "img-p3" src="/img/p3.jpg" width = "120px" height = "160px" alt=""/>
                 </div>
-                <div class = "p4">
+                <div id = "pic" class = "p4">
                     <img class = "img-p4" src="/img/p4.jpg" width = "120px" height = "160px" alt=""/>
                 </div>
         </section>
@@ -66,16 +68,16 @@
                 </div>
                 <div class = "model">
                     <!--una pequeña imagen de el modelo de color (voy a probar con forma circular)-->
-                    <div class = "m1">
+                    <div id = "mod" class = "m1">
                         <img class = "img-m1" src="/img/t-shirt.orange.jpg" width = "80px" height = "110px" alt=""/>
                     </div>
-                    <div class = "m2">
+                    <div id = "mod" class = "m2">
                         <img class = "img-m2" src="/img/t-shirt.skyblue.jpg" width = "80px" height = "110px" alt=""/>
                     </div>
-                    <div class = "m3">
+                    <div id = "mod" class = "m3">
                         <img class = "img-m3" src="/img/t-shirt.white.jpg" width = "80px" height = "110px" alt=""/>
                     </div>
-                    <div class = "m4">
+                    <div id = "mod" class = "m4">
                         <img class = "img-m4" src="/img/t-shirt.black.jpg" width = "80px" height = "110px" alt=""/>
                     </div>
                 </div>
@@ -87,11 +89,11 @@
                     Talles
                 </div>
                 <div class = "size">
-                    <div class = "xs">XS</div>
-                    <div class = "s">S</div>
-                    <div class = "m">M</div>
-                    <div class = "l">L</div>
-                    <div class = "xl">XL</div>
+                    <div id = "siz" class = "xs">XS</div>
+                    <div id = "siz" class = "s">S</div>
+                    <div id = "siz" class = "m">M</div>
+                    <div id = "siz" class = "l">L</div>
+                    <div id = "siz" class = "xl">XL</div>
                 </div>
             </article>
 
@@ -121,5 +123,6 @@
             </article>
         </section>
     </main>
+    <%- include ( './partials/footer' ) -%>
 </body>
 </html>

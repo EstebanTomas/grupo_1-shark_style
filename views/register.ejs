@@ -6,59 +6,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/register.css">
+    <link rel="stylesheet" href="/css/footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>Shark Style</title>
 </head>
 
-<body> 
-
+<body>
     <div>
-        <%- include('./partials/header') -%>
+        <%- include('./partials/header') %> 
     </div>
-
-    <div class="div-main">
-        <form action="/process-data" method="POST" class="main-form">
-            <section class="section-logo">
-                <div>
-                    <img src="/img/logo-shark.png" alt="logo" class="shark-logo">
-                </div>
-            </section>
-            <section class="section-form">
-                <div class="title-form">
-                    <h2>¡Crea tu cuenta!</h2>
-                    <label class="text-p">¡Goza del estilo Shark Style y nuestros descuentos!</label>
-                </div>
-                <div class="data-field">
-                    <label class="nombre">Email:</label>
-                    <input type="email" name="email" id="correo-electronico" class="cam" placeholder="email">
-                </div>
-                <div class="data-field">
-                    <label class="nombre">Usuario:</label>
-                    <input type="text" name="usuario" id="name" class="cam" placeholder="nombre de usuario">
-                </div>
-                <div class="data-field">
-                    <label class="nombre">Contraseña:</label>
-                    <input type="password" name="password1" id="password" class="cam" placeholder="contraseña">
-                </div>
-                <div class="data-field">
-                    <label class="nombre">Confirmar contraseña:</label>
-                    <input type="password" name="password2" id="confirm-password" class="cam" placeholder="confirmar">
-                </div>
-                <div class="terminos">
-                    <input type="radio">
-                    <label>Acepta nuestras condiciones de servicio y política de privacidad</label>
-                </div>
-                <div>
-                    <a href="/">
-                        <input type="button" value="Crear cuenta" class="button">
-                    </a>
-                </div>
-            </section>
-        </form>
-    </div>
-    
+    <main>
+        <div class="div-main">
+            <form action="/process-data" method="POST" class="main-form">
+                <section class="section-logo">
+                    <div>
+                        <img src="/img/logo-shark.png" alt="logo" class="shark-logo">
+                    </div>
+                </section>
+                <section class="section-form">
+                    <div class="title-form">
+                        <h2>¡Crea tu cuenta!</h2>
+                        <label class="text-p">¡Goza del estilo Shark Style y nuestros descuentos!</label>
+                    </div>
+                    <div class="data-field">
+                        <label class="nombre">Email:</label>
+                        <input type="email" name="email" id="correo-electronico" class="cam" placeholder="email">
+                    </div>
+                    <div class="data-field">
+                        <label class="nombre">Usuario:</label>
+                        <input type="text" name="usuario" id="name" class="cam" placeholder="nombre de usuario">
+                    </div>
+                    <div class="data-field">
+                        <label class="nombre">Contraseña:</label>
+                        <input type="password" name="password1" id="password" class="cam" placeholder="contraseña">
+                    </div>
+                    <div class="data-field">
+                        <label class="nombre">Confirmar contraseña:</label>
+                        <input type="password" name="password2" id="confirm-password" class="cam"
+                            placeholder="confirmar">
+                    </div>
+                    <div class="terminos">
+                        <input type="radio">
+                        <label>Acepta nuestras condiciones de servicio y política de privacidad</label>
+                    </div>
+                    <div>
+                        <a href="/">
+                            <input type="button" value="Crear cuenta" class="button">
+                        </a>
+                    </div>
+                </section>
+            </form>
+        </div>
+    </main>
+    <%- include ( './partials/footer' ) -%>
 </body>
 
 </html>

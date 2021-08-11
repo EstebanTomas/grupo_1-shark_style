@@ -4,37 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <link rel="stylesheet" href="css/shopping.css">
-        <link rel="stylesheet" href="css/shoppestilos.css">
-    <script src="/js/popper.min.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/shopping.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <link rel="stylesheet" href="css/shoppsweetalert2.min.css">
-
-
     <title>Carrito Compras</title>
-
 </head>
 
 <body>
     <header>
-        <div class="container">
-            <div class="row justify-content-between mb-5">
-                <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-                    <a class="navbar-brand" href="index.html"></a>
-                   <img class="imagen" src="img/logo-shark.png" width="150px">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-                        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </nav>
-            </div>
+        <div>
+            <%- include('./partials/header') %>
         </div>
     </header>
-
-    <br>
-
     <main>
         <div class="container">
             <div class="row mt-3">
@@ -42,8 +25,8 @@
                     <form id="procesar-pago">
 
 
-                        <div id="carrito" class="form-group table-responsive" >
-                            <table class="form-group table" id="lista-compra" >
+                        <div id="carrito" class="form-group table-responsive">
+                            <table class="form-group table" id="lista-compra">
                                 <thead>
                                     <tr>
                                         <th scope="col">Producto</th>
@@ -55,7 +38,7 @@
                                     </tr>
 
                                 </thead>
-                                <tbody >
+                                <tbody>
 
                                 </tbody>
                                 <tr>
@@ -63,19 +46,20 @@
                                     <th scope="col">
                                         <p id="subtotal"></p>
                                     </th>
-                                  
+
                                 </tr>
                                 <tr>
                                     <th colspan="4" scope="col" class="text-right">ENVIOS :</th>
                                     <th scope="col">
                                         <p id="igv"></p>
                                     </th>
-                                 
+
                                 </tr>
                                 <tr>
                                     <th colspan="4" scope="col" class="text-right">SUB TOTAL :</th>
                                     <th scope="col">
-                                        <input id="total" name="monto" class="font-weight-bold border-0" readonly style="background-color: white;"></input>
+                                        <input id="total" name="monto" class="font-weight-bold border-0" readonly
+                                            style="background-color: white;"></input>
                                     </th>
                                 </tr>
 
@@ -91,7 +75,8 @@
                                 <a href="ShoppingCart.html" class="btn btn-info btn-block">Seguir comprando</a>
                             </div>
                             <div class="col-xs-12 col-md-4">
-                                <input type="submit" class="btn btn-success btn-block" id="procesar-compra" value="Realizar compra">
+                                <input type="submit" class="btn btn-success btn-block" id="procesar-compra"
+                                    value="Realizar compra">
                             </div>
                         </div>
                     </form>
@@ -104,24 +89,10 @@
 
         </div>
     </main>
-
-
-
-
-
+    <div>
+        <%- include ( './partials/footer' ) %>
     </div>
-
-    <script src="/js/jquery-3.4.1.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/sweetalert2.min.js"></script>
-
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
-
-    <script src="/js/carrito.js"></script>
-    <script src="/js/compra.js"></script>
-
-
+ 
 </body>
 
 </html>
