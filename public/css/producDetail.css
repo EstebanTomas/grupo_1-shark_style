@@ -1,13 +1,8 @@
-body {
-    background-color: rgb(243, 244, 237);
-    font-family: 'Roboto Condensed', sans-serif;
-}
-
-header .header {
-    margin-bottom: 150px;
-}
+/* Hacer un archivo aparte para el estilo del body */
 
 main {
+    background-color: rgb(243, 244, 237);
+    font-family: 'Roboto Condensed', sans-serif;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -22,7 +17,7 @@ main .picture {
     width: 10%;
 }
 
-main section .p1, .p2, .p3, .p4 {
+main section #p1, #p2, #p3, #p4 {
     width: 120px;
     height: 160px;
     border: solid 2px rgb(66, 70, 66);
@@ -30,7 +25,7 @@ main section .p1, .p2, .p3, .p4 {
     border-radius: 5%;
 }
 
-main section #pic:hover {
+main section .pic:hover {
     box-shadow: 0px 0px 10px rgb(83, 97, 98);
     border: solid 3px grey;
 }
@@ -99,7 +94,7 @@ main section article .model {
     flex-direction: row;
 }
 
-main section article .m1, .m2, .m3, .m4 {
+main section article #m1, #m2, #m3, #m4 {
     width: 80px;
     height: 110px;
     border: solid 2px rgb(66, 70, 66);
@@ -107,11 +102,10 @@ main section article .m1, .m2, .m3, .m4 {
     border-radius: 5%;
 }
 
-main section article #mod:hover {
+main section article .mod:hover {
     box-shadow: 0px 0px 10px rgb(83, 97, 98);
     border: solid 3px grey;
 }
-
 
 main section article .img-m1, .img-m2, .img-m3, .img-m4 {
     border-radius: 5%;
@@ -130,7 +124,7 @@ main section article .size {
     flex-direction: row;
 }
 
-main section article .xs, .s, .m, .l, .xl {
+main section article #xs, #s, #m, #l, #xl {
     width: 40px;
     height: 30px;
     border: solid 2px rgb(66, 70, 66);
@@ -141,11 +135,10 @@ main section article .xs, .s, .m, .l, .xl {
     border-radius: 30%;
 }
 
-main section article #siz:hover {
+main section article .siz:hover {
     box-shadow: 0px 0px 10px rgb(83, 97, 98);
     border: solid 3px grey;
 }
-
 
 main section .action {
     display: flex;
@@ -211,7 +204,7 @@ main section article .follow:hover {
     border: solid 2px grey;
 }
 
-/* -No puedo hacer que esta parte funcione-*/
+
 @media (max-width: 665px) {
     main {
         flex-direction: column;
