@@ -8,7 +8,9 @@ body {
     background-color: #536162;
     font-family: 'Roboto', sans-serif;
 }
-
+main {
+    margin-top: 122px;
+}
 .carousel-section {
     display: none;
 }
@@ -21,10 +23,6 @@ body {
     display: none;
 }
 
-.inside-the-first-article-header {
-    display: none;
-}
-
 .one-gif {
     width: 100%;
 }
@@ -34,41 +32,6 @@ body {
     height: 20px;
     background-color: #c06014;
     border-radius: 100%;
-}
-
-.main-header {
-    background-color: rgb(180 , 183, 182);
-}
-
-.article-main-header {
-    display: flex;
-    flex-direction: column-reverse;
-}
-
-.icons2 {
-    padding: 20px 0px 0px;
-    display: flex;
-    justify-content: space-around;
-    font-size: 22px;
-    margin: 0px 10px;
-}
-
-.menu-hamburger {
-    padding-right: 205px;
-}
-
-
-.conteiner-shark {
-    display: none;
-}
-
-.navbar {
-    display: none;
-}
-
-.logotipo-shark {
-    width: 100%;
-    height: 160px;
 }
 
 /*aqui comienza la edicion del primer slider*/
@@ -299,34 +262,19 @@ main section article div h4 {
     }
 
     main {
-        margin: auto;
+        margin-top: 170px
     }
 
-    .icons2 {
-        padding-right: 9px;
-        width: 100%;
-        height: 7vh;
-        position: absolute;
-        top: 2px;
-        font-size: 30px;
-    }
+   
 
     main section article div h4 {
-    color: black;
-    font-size: 25px;
-    margin: auto;
-    width: 80%;
+        color: black;
+        font-size: 25px;
+        margin: auto;
+        width: 80%;
     }
 
-    .menu-hamburger {
-        font-size: 30px;
-        position: relative;
-        left: -10px;
-    }
 
-    .conteiner-logo img {
-        margin-top: 7vh;
-    }
 
     ul.slider li img {
         width: 100%;
@@ -349,6 +297,10 @@ main section article div h4 {
 /*inicio la segunda medida query y fin de la primera*/
 
 @media (min-width: 767px) {
+    .conteiner-logo {
+        margin: -80px 0px 0px;
+    }
+
     body {
         background-color: white;
     }
@@ -356,78 +308,8 @@ main section article div h4 {
     .image-none {
         display: none;
     }
-
-    .menu-hamburger {
-        display: none;
-    }
-
-    .icons2 {
-        display: none;
-    }
-
-    .navbar {
-        padding: 0px 10%;
-        display: block;
-        background-color: #C06014;
-    }
-
-    .option-navbar {
-        color: white;
-        transition: color 450ms;
-    }
-
-    .option-navbar:hover {
-        color: black;
-    }
-
-    .inside-the-first-article-header {
-        display: block;
-    }
-
-          /*edito el header para una resolución de table o de más pixeles*/
-
-
-    .article-main-header {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-around;
-        font-size: 30px;
-        width: 90%;
-        margin: auto;
-    }
-
-    .search-main {
-        width: 240px;
-        height: 32px;
-        border: solid 2px black;
-        border-radius: 6px;
-    }
-
-    .conteiner-logo {
-        margin-top: -40px
-    }
-
-    .conteiner-shark {
-        display: flex;
-        flex-direction: inherit;
-    }
-
-    .logotipo-shark {
-        margin: 0px;
-        width: 250px;
-        height: 100px;
-    }
-
-    .inside-the-first-article-header a {
-        position: relative;
-        margin: -20px;
-        right: 8px;
-        top: -3px;
-        font-size: 38px;
-        color: #536162;
-
-    }
-
+  
+    /**/
     header article div nav ul {
         display: flex;
         flex-direction: row;
@@ -452,7 +334,7 @@ main section article div h4 {
         display: block;
     }
 
-    
+
     .parent-container {
         padding: 30px;
     }
@@ -509,13 +391,14 @@ main section article div h4 {
         height: 30px;
         font-size: 20px;
         border-radius: 100%;
-    }  
+    }
     /*fin de la edicion del slider*/
+
     main section article div h4 {
-    font-size: 31px;
-    width: 55%;
-    margin-top: 30px;
-    margin-bottom: 30px;
+        font-size: 31px;
+        width: 55%;
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
 
     .image-session-three {
@@ -525,7 +408,7 @@ main section article div h4 {
     }
 
     .image-session-three article {
-        border-radius: 30px;    
+        border-radius: 30px;
     }
 
     .photo-article {
@@ -558,9 +441,8 @@ main section article div h4 {
     .logo-section-four {
         display: none;
     }
-                 /*edicion de la cuarta sección*/
-    
 
+    /*edicion de la cuarta sección*/
     .stuff-container {
         display: flex;
         flex-direction: row;
@@ -574,6 +456,59 @@ main section article div h4 {
         border-radius: 35px;
         margin: 15px 40px;
     }
+
+    .footer-section-botton {
+        flex-direction: row;
+        align-content: center;
+    }
+
+    .logo-shark-botton {
+        display: none;
+    }
+
+    footer section div label h5 {
+        font-size: 30px;
+    }
+
+    .one-footer-nav {
+        top: 10px;
+        left: 2vw;
+    }
+
+    footer section p {
+        display: none;
+    }
+
+    .container-email-social-networks {
+        top: -5px;
+        left: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-media li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-media li a {
+        font-size: 40px;
+    }
+
+    footer section div nav {
+        margin-right: 5.5vw;
+    }
+
+    .second-list-footer {
+        width: 248px;
+        margin-left: -10px;
+    }
+
+    .first-list-footer {
+        width: 141px;
+    }
 }
 
 @media (min-width: 1280px) {
@@ -581,16 +516,14 @@ main section article div h4 {
         display: block;
     }
 
-    .main-header {
-        width: 100%;
-    }
+    
 
     .contents {
         width: 80%;
     }
 
     main {
-        margin: 0px 10%;
+        margin: 150px 10% 50px;
     }
 
     .image-session-two {
@@ -616,7 +549,7 @@ main section article div h4 {
     .parent-container {
         padding: 30px 50px 30px 30px;
     }
-    
+
     .image-session-three {
         width: 90%;
         margin: auto;
@@ -630,5 +563,4 @@ main section article div h4 {
     .command-menu {
         margin-left: 95px;
     }
-
 }

@@ -1,5 +1,9 @@
 /* Hacer un archivo aparte para el estilo del body */
 
+body {
+    background-color: rgb(243, 244, 237);
+}
+
 main {
     background-color: rgb(243, 244, 237);
     font-family: 'Roboto Condensed', sans-serif;
@@ -205,9 +209,9 @@ main section article .follow:hover {
 }
 
 
-@media (max-width: 665px) {
+@media (min-width: 665px) {
     main {
-        flex-direction: column;
+        margin-top: 150px;
     }    
     main .picture {
         flex-direction: row;

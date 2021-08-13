@@ -1,0 +1,192 @@
+/* Acá se encuentra el estilo en css de la creacion de productos */
+
+body {
+    background-color: rgb(243, 244, 237);
+}
+
+main .create {
+    background-color: rgb(243, 244, 237);
+    font-family: 'Roboto Condensed', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 150px;
+    margin-bottom: 40px;
+}
+
+main form .box {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px rgb(100, 100, 100);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-bottom: 20px;
+}
+
+main form .create-input {
+    margin-bottom: 10px;
+    width: 350px;
+    height: 35px;
+    font-size: 20px;
+}
+main form .create-input:hover{
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    border: solid 1px rgb(83, 97, 98);
+}
+
+main form .create-text {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+main form .create-img {
+    margin-bottom: 10px;
+    width: 100%;
+    height: 35px;
+    font-size: 20px;
+}
+
+main form .create-options {
+    margin-bottom: 10px;
+    width: 200px;
+    height: 35px;
+    font-size: 20px;
+}
+main form .create-options:hover{
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    border: solid 1px rgb(83, 97, 98);
+}
+
+main form .box-button {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px rgb(100, 100, 100);
+}
+
+main form .box-button-preview {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+main form #button-preview {
+    background-color: rgb(83, 97, 98);
+    color: white;
+    width: 150px;
+    height: 35px;
+    border-radius: 7px;
+    border: solid 1px rgb(83, 97, 98);
+}
+main form #button-preview:hover {
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+main form .box-button-send {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+main form #button-send {
+    background-color: rgb(192, 96, 20);
+    color: white;
+    width: 100px;
+    height: 35px;
+    border-radius: 7px;
+    border: solid 1px rgb(192, 96, 20);
+}
+main form #button-send:hover {
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+main form .box-button-delete {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+main form #button-delete {
+    background-color: rgb(66, 70, 66);
+    color: white;
+    width: 100px;
+    height: 35px;
+    border-radius: 7px;
+    border: solid 1px rgb(66, 70, 66);
+}
+main form #button-delete:hover {
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+main form .button:hover {
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+
+@media (max-width: 400px) {
+    main .create-form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    main form .box {
+        width: 250px;
+    }
+    main form .box-button {
+        flex-direction: column;
+        justify-content: center;
+        width: 200px;
+    }
+    main form .create-input {
+        width: 220px;
+    }
+    main form .create-img {
+        width: 200px;
+    }
+    main form #button-send {
+        width: 150px;
+    }
+    main form #button-delete {
+        width: 150px;
+    }
+}
+@media (min-width: 400px) {
+    main form .box-button-preview, .box-button-send {
+        padding-right: 10px;
+    }
+    main form .create-input {
+        width: 100%;
+    }
+}
+
+@media (max-width: 769px) {
+    main .create {
+        margin-top: 30px;
+    }
+}
+@media (min-width: 769px) {
+    main form .box, .box-button{
+        width: 700px;
+    }
+    main form .create-input {
+        width: 670px;
+    }
+}
+
+@media (min-width: 1000px) {
+    main .create-form {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    main form .box {
+        width: 42.5%;
+    }
+    main form .create-input {
+        width: 100%;
+    }
+}

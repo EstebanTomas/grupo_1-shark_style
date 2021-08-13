@@ -4,7 +4,7 @@
 
 body {
         font-family: 'Roboto', sans-serif;
-        background-color: rgb(180, 183, 182);
+        background-color: white;
 }
 
 .hh2 {
@@ -13,7 +13,8 @@ body {
 
 .shark-logo {
     width: 90%;
-    margin-left: 7%
+    margin-left: 7%;
+    display: none;
 }
 
 .text-p {
@@ -68,33 +69,32 @@ h2 {
 }
 
 .button {
+    margin-top: 15px;
+    margin-bottom: 20px;
     width           : 200px;
     height          : 40px;
     background-color: #f3f3f3;
-    border: solid 1px #c7c7c7;
+    border: solid 1px black;
     border-radius   : 10px;
-    transition: background-color border .5s;
+    transition: background-color 450ms;
 }
 
 .button:hover {
     background-color: #c7c7c7;
-    border: solid 1px black;
 }
 
 @media (min-width: 480px) {
     .div-main {
         margin: auto;
-        margin-top: 50px;
+        margin-top: 40px;
+        margin-bottom: 40px;
     }
     .main-form {
         display: flex;
         justify-content: center;
-        max-width: 800px;
+        max-width: 550px;
         margin: auto;
-    }
-
-    .shark-logo {
-        display: none;
+        box-shadow: 0px 0px 10px rgb(83 97 98);
     }
 
     .section-logo {
@@ -124,5 +124,14 @@ h2 {
         padding         : 10px;
         flex-wrap       : wrap;
         width: 50%;
+    }
+}
+
+@media (min-width: 767px) {
+    .div-main {
+        margin-top: 160px;
+    }
+    .main-form {
+        max-width: 800px;
     }
 }

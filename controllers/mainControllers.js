@@ -13,6 +13,9 @@ const mainControllers = {
     },
     shoppingCart: (req,res) => {
         res.render('ShoppingCart');
+    },
+    productCreate: (req,res) => {
+        res.render('productCreate');
     }
 }
 

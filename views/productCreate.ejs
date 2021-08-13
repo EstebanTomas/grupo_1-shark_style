@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/productCreate.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <!--el link de abajo es para la letra Roboto Condensed (Regular 400)-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <title>Creá un Nuevo Producto</title>
+</head>
+<body>
+    <header>
+        <div>
+            <%- include('./partials/header') %> 
+        </div>
+    </header>
+    <main>
+        <div class = "create">
+            <form class = "create-form" action="productCreate.ejs" method = "POST">
+                <div class = "box">
+                    <p>
+                        <label class = "create-text">Nombre del producto</label>
+                    </p>
+                    <p>
+                        <input class = "create-input" type = "text" name = "name"></input>
+                    </p>
+                </div>
+                <div class = "box">
+                    <p>
+                        <label class = "create-text">Descripción</label>
+                    </p>
+                    <p>
+                        <input class = "create-input" type = "text" name = "description"></input>
+                    </p>
+                </div>
+                <div class = "box">
+                    <p>
+                        <label class = "create-text">Precio</label>
+                    </p>
+                    <p>
+                        <input class = "create-input" type = "number" name ="price"></input> 
+                    </p>
+                </div>
+                <div class = "box">
+                    <p>
+                        <label class = "create-text">Imágen principal</label>
+                    </p>
+                    <p>
+                        <input class = "create-img" type = "file" accept = ".jpg" value = "foto" name = "img-principal"></input>
+                    </p>
+                </div>
+                <div class = "box">
+                    <p>
+                        <label class = "create-text">Imágenes de respaldo</label>
+                    </p>
+                    <p>
+                        <input class = "create-img" type = "file" accept = ".jpg" value = "foto" multiple name = "img-respaldo"></input>
+                    </p>
+                </div>
+                <div class = "box">
+                    <p>
+                        <label class = "create-text">Modelos disponibles</label>
+                    </p>
+                    <p>
+                        <input class = "create-img" type = "file" accept = ".jpg" value = "foto" multiple name = "img-modelos"></input>
+                    </p>
+                </div>
+                <div class = "box">
+                    <p>
+                        <label class = "create-text">Talles disponibles</label>
+                    </p>
+                    <p>
+                        <select class = "create-options" name="intereses">
+                            <option type = "checkbox" name = "size-xs">XS</option>
+                            <option type = "checkbox" name = "size-s">S</option>
+                            <option type = "checkbox" name = "size-m">M</option>
+                            <option type = "checkbox" name = "size-l">L</option>
+                            <option type = "checkbox" name = "size-xl">XL</option>
+                        </select>
+                    </p>
+                </div>
+                <div class = "box">
+                    <p>
+                        <label class = "create-text">Categorias</label>
+                    </p>
+                    <p>
+                        <select class = "create-options" name="intereses">
+                            <option type = "checkbox" name = "category-men">Hombres</option>
+                            <option type = "checkbox" name = "category-women">Mujeres</option>
+                            <option type = "checkbox" name = "category-venta-mayorista">Venta Mayorista</option>
+                        </select>
+                    </p>
+                </div>
+                <div class = "box-button">
+                    <p class = "box-button-preview">
+                        <a href="/product">
+                            <input id = "button-preview" class = "create-text" type="button" value="Previsualizar">
+                        </a>
+                    </p>
+                    <p class = "box-button-send">
+                        <a href="/productCreate">
+                            <input id = "button-send" class = "create-text" type="button" value="Enviar">
+                        </a>
+                    </p>
+                    <p class = "box-button-delete">
+                        <input id = "button-delete" class = "create-text" type = "button" type = "reset" value = "Borrar"></input>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </main>
+    <%- include ( './partials/footer' ) -%>    
+</body>
+</html>
+
+
