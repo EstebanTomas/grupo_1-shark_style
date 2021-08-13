@@ -8,6 +8,7 @@ body {
 .main-header {
     background-color: rgb(180, 183, 182);
     padding-top: 20px;
+    font-family: 'Roboto', sans-serif;
 }
 .inside-the-first-article-header {
     display: none;
@@ -17,7 +18,10 @@ body {
     flex-direction: column-reverse;
 }
 .conteiner-logo {
-    margin: auto;
+    margin: 27px 0px 0px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 .logotipo-shark {
     width: 100%;
@@ -56,11 +60,17 @@ body {
         font-size: 24px;
     }
     .conteiner-logo img {
-        padding-top: 20px;
+        width: 380px;
     }
 }
 /*segunda media queries*/
 @media (min-width: 767px) {
+    .conteiner-logo img {
+        width: 200px;
+        height: 105px;
+        object-fit: contain;
+    }
+
     .icons2 {
         display: none;
     }
