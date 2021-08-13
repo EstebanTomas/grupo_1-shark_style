@@ -1,21 +1,17 @@
 * {
     box-sizing: border-box;
 }
-
 main {
     font-family: 'Roboto', sans-serif;
     width: 90%;
     margin: auto;
-    margin-top: 200px;
-    margin-bottom: 100px;
-    max-width: 1000px;
-    box-shadow: 0px 0px 10px black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 6px black;
 }
 /* le doy estilo y posición a la section-one*/
 .div-conteiner-shark-style {
     text-align: center;
-    border-bottom: solid 3px #50CB93;
-    width: 90%;
     margin: auto;
 }
 
@@ -30,10 +26,7 @@ main {
 } 
 
 .options-of-nav {
-    width: 55%;
-    height: 40px;
-    padding-left: 20px;
-    font-size: 20px;
+    width: 100%;
     font-weight: 600;
 }
 
@@ -44,17 +37,18 @@ section nav ol li {
 section nav ol {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    padding-left: 0px;
 }
 
 .section-main {
     display: flex;
-    justify-content: center;
-    background-color: white;
+    flex-direction: column;
+    align-items: center;
 }
 /* le doy estilo y posición a section-two*/
 .section-two {
-    width: 60%;
+    width: 100%;
 }
 
 .section-two article div img {
@@ -62,7 +56,6 @@ section nav ol {
 }
 
 .section-two article p {
-    font-size: 18px;
     font-weight: 700;
 }
 .units {
@@ -84,7 +77,9 @@ section nav ol {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin: 5px 0px;
+    margin: auto;
+    width: 90%;
+    margin-top: 5px;
 }
 
 .return-button {
@@ -93,42 +88,37 @@ section nav ol {
 }
 
 .return-button a input {
-    width: 200px;
-    height: 30px;
     border-radius: 5px;
-    background-color: #8AB6D6;
+    background-color: #C06014;
+    color: white;
     transition: background-color 450ms;
 }
 
 .return-button a input:hover {
-    background-color: #2978B5;
+    background-color: #ad4e03;
 }
 
 .title-summary {
     font-size: 20px;
-    color: #2978B5;
 }
     /* le doy estilo y posición a section-three*/
 
 .section-three {
-    width: 40%;
-    border-left: solid 1px gray;
-    height: 400px;
-    margin: auto;
+    width: 100%;
+    border-top: solid 3px #810000;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+
 }
 
 .shipments-and-subtotal {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 70%;
+    width: 60%;
     font-weight: 600;
-    border-bottom: solid 1px black;
-    font-size: 17px;
 }
 
 .style-button {
@@ -144,10 +134,87 @@ section nav ol {
     width: 200px;
     height: 31px;
     border-radius: 8px;
-    background-color: #71EFA3;
+    color: white;
+    background-color: #C06014;
     transition: background-color 450ms;
 }
 
 .section-three div a input:hover {
-    background-color: #50CB93;
+    background-color: #ad4e03;
+}
+
+
+@media (min-width: 767px) {
+    main {
+        margin-top: 180px;
+        margin-bottom: 50px;
+        max-width: 1000px;
+        box-shadow: 0px 0px 10px black;
+        border-radius: 8px;
+    }
+    /* le doy estilo y posición a la section-one*/
+    .div-conteiner-shark-style {
+        border-bottom: solid 3px #810000;
+        width: 95%;
+    }
+    
+    .options-of-nav {
+        width: 55%;
+        height: 40px;
+        padding-left: 20px;
+        font-size: 20px;
+    }
+    
+    section nav ol {
+        justify-content: space-between;
+    }
+    
+    .section-main {
+      flex-direction: row;
+    }
+    /* le doy estilo y posición a section-two*/
+    .units a i {
+        color: #C06014;
+    }
+    .section-two {
+        width: 60%;
+    }
+    
+    .section-two article p {
+        font-size: 18px;
+    }
+    
+    .color {
+        background-color: #5a5757;
+        color: white;
+    }
+    
+    .return-button a input {
+        width: 200px;
+        height: 30px;
+    }
+        /* le doy estilo y posición a section-three*/
+    
+    .section-three {
+        width: 40%;
+        border-left: solid 1px gray;
+        border-top: none;
+        height: 400px;
+    }
+    
+    .shipments-and-subtotal {
+        display: flex;
+        width: 70%;
+        border-bottom: solid 1px black;
+        font-size: 17px;
+    }
+    
+    .style-button {
+        margin-bottom: 30px
+    }
+    
+    .shipments-and-subtotal a {
+        text-decoration: none;
+        color: black;
+    }
 }
