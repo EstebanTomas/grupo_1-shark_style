@@ -7,8 +7,9 @@
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="css/shopping.css">
     <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
-    <link rel="stylesheet" href="css/shoppsweetalert2.min.css">
+    <script src="https://kit.fontawesome.com/7a73fadbcd.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>Carrito Compras</title>
 </head>
 
@@ -19,80 +20,92 @@
         </div>
     </header>
     <main>
-        <div class="container">
-            <div class="row mt-3">
-                <div class="col">
-                    <form id="procesar-pago">
-
-
-                        <div id="carrito" class="form-group table-responsive">
-                            <table class="form-group table" id="lista-compra">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Producto</th>
-                                        <th scope="col">Nombre</th>
-                                        <th scope="col">Precio</th>
-                                        <th scope="col">Cantidad</th>
-                                        <th scope="col">Total</th>
-                                        <th scope="col">Eliminar</th>
-                                    </tr>
-
-                                </thead>
-                                <tbody>
-
-                                </tbody>
-                                <tr>
-                                    <th colspan="4" scope="col" class="text-right">TOTAL :</th>
-                                    <th scope="col">
-                                        <p id="subtotal"></p>
-                                    </th>
-
-                                </tr>
-                                <tr>
-                                    <th colspan="4" scope="col" class="text-right">ENVIOS :</th>
-                                    <th scope="col">
-                                        <p id="igv"></p>
-                                    </th>
-
-                                </tr>
-                                <tr>
-                                    <th colspan="4" scope="col" class="text-right">SUB TOTAL :</th>
-                                    <th scope="col">
-                                        <input id="total" name="monto" class="font-weight-bold border-0" readonly
-                                            style="background-color: white;"></input>
-                                    </th>
-                                </tr>
-
-                            </table>
-                        </div>
-
-                        <div class="row justify-content-center" id="loaders">
-                            <img id="cargando" src="img/cargando.gif" width="220">
-                        </div>
-
-                        <div class="row justify-content-between">
-                            <div class="col-md-4 mb-2">
-                                <a href="ShoppingCart.html" class="btn btn-info btn-block">Seguir comprando</a>
-                            </div>
-                            <div class="col-xs-12 col-md-4">
-                                <input type="submit" class="btn btn-success btn-block" id="procesar-compra"
-                                    value="Realizar compra">
-                            </div>
-                        </div>
-                    </form>
-
-
-                </div>
-
-
+        <section class="section-one">
+            <div class="div-conteiner-shark-style">
+                <img src="/img/style-shark.png" alt="shark style indumentaria">
             </div>
-
-        </div>
+            <nav class="options-of-nav">
+                <ol>
+                    <li>Producto</li>
+                    <li>Precio</li>
+                    <li>Cantidad</li>
+                    <li>Total</li>
+                </ol>
+            </nav>
+        </section>
+        <section class="section-main">
+            <section class="section-two">
+                <article>
+                    <div>
+                        <img width="100px" height="100px" src="/img/3.jpg" alt="">
+                    </div>
+                    <p>$1000</p>
+                    <div class="units">
+                        <a href="#"><i class="fas fa-minus"></i></a>
+                        <div class="color">0</div>
+                        <a href="#"><i class="fas fa-plus"></i></a>
+                    </div>
+                    <p>$1000</p>
+                </article>
+                <article>
+                    <div class="units">
+                        <img width="100px" height="100px" src="/img/4.jpg" alt="">
+                    </div>
+                    <p>$1000</p>
+                    <div class="units">
+                        <a href="#"><i class="fas fa-minus"></i></a>
+                        <div class="color">0</div>
+                        <a href="#"><i class="fas fa-plus"></i></a>
+                    </div>
+                    <p>$1000</p>
+                </article>
+                <article>
+                    <div>
+                        <img width="100px" height="100px" src="/img/5.jpg" alt="">
+                    </div>
+                    <p>$1000</p>
+                    <div class="units">
+                        <a href="#"><i class="fas fa-minus"></i></a>
+                        <div class="color">0</div>
+                        <a href="#"><i class="fas fa-plus"></i></a>
+                    </div>
+                    <p>$1000</p>
+                </article>
+                <article>
+                    <div>
+                        <img width="100px" height="100px" src="/img/17.jpg" alt="">
+                    </div>
+                    <p>$1000</p>
+                    <div class="units">
+                        <a href="#"><i class="fas fa-minus"></i></a>
+                        <div class="color">0</div>
+                        <a href="#"><i class="fas fa-plus"></i></a>
+                    </div>
+                    <p>$1000</p>
+                </article>
+                <div class="return-button">
+                    <a href="/home"><input type="button" value="Regresar"></a>
+                </div>
+            </section>
+            <section class="section-three">
+                <div class="title-summary">
+                    <h2>Resumen del pedido</h2>
+                </div>
+                <div class="shipments-and-subtotal">
+                    <p>Subtotal</p><a href="">$1000</a>
+                </div>
+                <div class="style-button">
+                    <a href="/shopping">
+                        <input type="button" value="Comprar">
+                    </a>
+                </div>
+            </section>
+        </section>
     </main>
     <div>
         <%- include ( './partials/footer' ) %>
     </div>
- 
+
 </body>
 
 </html>
