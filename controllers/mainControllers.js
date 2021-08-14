@@ -3,27 +3,25 @@ const mainControllers = {
         res.render('index');
     },
     login: (req, res) => {
-        res.render('login');
+        res.render('./users/login');
     },
     productDetail: (req,res) => {
-        res.render('productDetail');
+        res.render('./product/productDetail');
     },
     register: (req,res) => {
-        res.render('register');
+        res.render('./users/register');
     },
     shoppingCart: (req,res) => {
         res.render('shoppingCart');
     },
     productCreate: (req,res) => {
-        res.render('productCreate');
+        res.render('./product/productCreate');
     },
-<<<<<<< HEAD
     editProduct : (req, res) => {
-        res.render('editProduct');
-=======
+        res.render('./product/editProduct');
+    },
     productList: (req,res) => {
-        res.render('productList');
->>>>>>> 0a475053c415b0220ea2205cd4b42dc756f93ab7
+        res.render('./product/productList');
     }
 }
 
