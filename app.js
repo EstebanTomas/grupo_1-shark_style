@@ -8,7 +8,7 @@ var indexRouter = require('./routes/index');
 var loginRouter = require('./routes/login');
 var registerRouter = require('./routes/register');
 var productDetailRouter = require('./routes/productDetail');
-var shoppingCartRouter = require('./routes/ShoppingCart');
+var shoppingCartRouter = require('./routes/shoppingCart');
 var productCreateRouter = require('./routes/productCreate');
 
 app.use(express.static(publicpath));

@@ -39,6 +39,7 @@ main form .create-input:hover{
 main form .create-text {
     font-size: 20px;
     font-weight: bold;
+    color: rgb(83, 97, 98);
 }
 
 main form .create-img {

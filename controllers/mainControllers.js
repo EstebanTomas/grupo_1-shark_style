@@ -12,7 +12,7 @@ const mainControllers = {
         res.render('register');
     },
     shoppingCart: (req,res) => {
-        res.render('ShoppingCart');
+        res.render('shoppingCart');
     },
     productCreate: (req,res) => {
         res.render('productCreate');
