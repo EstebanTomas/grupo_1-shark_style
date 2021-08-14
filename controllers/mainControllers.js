@@ -12,13 +12,18 @@ const mainControllers = {
         res.render('register');
     },
     shoppingCart: (req,res) => {
-        res.render('ShoppingCart');
+        res.render('shoppingCart');
     },
     productCreate: (req,res) => {
         res.render('productCreate');
     },
+<<<<<<< HEAD
     editProduct : (req, res) => {
         res.render('editProduct');
+=======
+    productList: (req,res) => {
+        res.render('productList');
+>>>>>>> 0a475053c415b0220ea2205cd4b42dc756f93ab7
     }
 }
 
