@@ -1,120 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <%- include('./partials/head') -%> 
-    <link rel="stylesheet" href="/css/producDetail.css">    <link rel="stylesheet" href="/css/footer.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <!--el link de abajo es para la letra Roboto Condensed (Regular 400)-->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
-    <title>Detalle del Producto</title>
+    <%- include('./partials/head') -%>
+        <link rel="stylesheet" href="/css/producDetail.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+        <!--el link de abajo es para la letra Roboto Condensed (Regular 400)-->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+        <title>Detalle del Producto</title>
 </head>
 
 <body>
     <header>
         <div>
-            <%- include('./partials/header') %> 
+            <%- include('./partials/header') %>
         </div>
     </header>
 
     <main>
-        <section class = "picture">
-                <!--aca voy a poner las fotos del producto a la izquierda-->
-                <div id = "p1" class = "pic">
-                    <img class = "img-p1" src="/img/p1.jpg" width = "120px" height = "160px" alt="la parte trasera de la campera manga corta"/>
-                </div>
-                <div id = "p2" class = "pic">
-                    <img class = "img-p2" src="/img/p2.jpg" width = "120px" height = "160px" alt="capucha de la campera"/>
-                </div>
-                <div id = "p3" class = "pic">
-                    <img class = "img-p3" src="/img/p3.jpg" width = "120px" height = "160px" alt="manga de la campera"/>
-                </div>
-                <div id = "p4" class = "pic">
-                    <img class = "img-p4" src="/img/p4.jpg" width = "120px" height = "160px" alt="una muestra de tela naranja con la que se hizo la campera"/>
-                </div>
+        <section class="picture">
+            <!--aca voy a poner las fotos del producto a la izquierda-->
+            <div id="p1" class="pic">
+                <img class="img-p1" src="/img/p1.jpg" width="120px" height="160px"
+                    alt="la parte trasera de la campera manga corta" />
+            </div>
+            <div id="p2" class="pic">
+                <img class="img-p2" src="/img/p2.jpg" width="120px" height="160px" alt="capucha de la campera" />
+            </div>
+            <div id="p3" class="pic">
+                <img class="img-p3" src="/img/p3.jpg" width="120px" height="160px" alt="manga de la campera" />
+            </div>
+            <div id="p4" class="pic">
+                <img class="img-p4" src="/img/p4.jpg" width="120px" height="160px"
+                    alt="una muestra de tela naranja con la que se hizo la campera" />
+            </div>
         </section>
 
         <section>
-            <article class = "container">
-                <div class = "principalPicture">
+            <article class="container">
+                <div class="principalPicture">
                     <!--aca va la foto principal-->
-                    <img class = "img-principalPicture" src="/img/t-shirt.orange.jpg" width = 450px heigth = 595px alt="campera manga corta naranja fuerte"/>
+                    <img class="img-principalPicture" src="/img/t-shirt.orange.jpg" width=450px heigth=595px
+                        alt="campera manga corta naranja fuerte" />
                 </div>
             </article>
         </section>
 
-        <section class = "detail">
+        <section class="detail">
             <article>
-                <div class = "name">
+                <div class="name">
                     <!--nombre del producto-->
                     Camiseta con capucha
                 </div>
-                <div class = "lastName">
-                Manga corta con cordón de color sólido básico para hombre.
+                <div class="lastName">
+                    Manga corta con cordón de color sólido básico para hombre.
                     <br>
-                Materiales: Algodón, Poliester
+                    Materiales: Algodón, Poliester
                 </div>
-                <div class = "price">
+                <div class="price">
                     <!--precio-->
                     AR$1.558,08
                 </div>
             </article>
 
             <article>
-                <div class = "colorModel">
+                <div class="colorModel">
                     <!--colores y modelos disponibles-->
                     Modelos disponibles
                 </div>
-                <div class = "model">
+                <div class="model">
                     <!--una pequeña imagen de el modelo de color (voy a probar con forma circular)-->
-                    <div id = "m1" class = "mod">
-                        <img class = "img-m1" src="/img/t-shirt.orange.jpg" width = "80px" height = "110px" alt="campera manga corta naranja"/>
+                    <div id="m1" class="mod">
+                        <img class="img-m1" src="/img/t-shirt.orange.jpg" width="80px" height="110px"
+                            alt="campera manga corta naranja" />
                     </div>
-                    <div id = "m2" class = "mod">
-                        <img class = "img-m2" src="/img/t-shirt.skyblue.jpg" width = "80px" height = "110px" alt="campera manga corta celeste"/>
+                    <div id="m2" class="mod">
+                        <img class="img-m2" src="/img/t-shirt.skyblue.jpg" width="80px" height="110px"
+                            alt="campera manga corta celeste" />
                     </div>
-                    <div id = "m3" class = "mod">
-                        <img class = "img-m3" src="/img/t-shirt.white.jpg" width = "80px" height = "110px" alt="campera manga corta blanca"/>
+                    <div id="m3" class="mod">
+                        <img class="img-m3" src="/img/t-shirt.white.jpg" width="80px" height="110px"
+                            alt="campera manga corta blanca" />
                     </div>
-                    <div id = "m4" class = "mod">
-                        <img class = "img-m4" src="/img/t-shirt.black.jpg" width = "80px" height = "110px" alt="campera manga corta negra"/>
+                    <div id="m4" class="mod">
+                        <img class="img-m4" src="/img/t-shirt.black.jpg" width="80px" height="110px"
+                            alt="campera manga corta negra" />
                     </div>
                 </div>
             </article>
 
             <article>
-                <div class = "talles">
+                <div class="talles">
                     <!--talles-->
                     Talles
                 </div>
-                <div class = "size">
-                    <div id = "xs" class = "siz">XS</div>
-                    <div id = "s" class = "siz">S</div>
-                    <div id = "m" class = "siz">M</div>
-                    <div id = "l" class = "siz">L</div>
-                    <div id = "xl" class = "siz">XL</div>
+                <div class="size">
+                    <div id="xs" class="siz">XS</div>
+                    <div id="s" class="siz">S</div>
+                    <div id="m" class="siz">M</div>
+                    <div id="l" class="siz">L</div>
+                    <div id="xl" class="siz">XL</div>
                 </div>
             </article>
 
             <article>
-                <div class = "buy">
+                <div class="buy">
                     <!--boton de comprar te lleva al carrito de compras y agrega el producto-->
                     Comprar
                 </div>
             </article>
 
-            <article class = "action">
-                <div class = "saveCart">
+            <article class="action">
+                <div class="saveCart">
                     <div>
                         <!--imagen del carrito-->
-                        <i id = "cart" class="fas fa-cart-plus"></i>
+                        <i id="cart" class="fas fa-cart-plus"></i>
                     </div>
-                    <div class = "save">
+                    <div class="save">
                         <!--agregar al carrito-->
                         Agregar al carrito
-                    </div>    
+                    </div>
                 </div>
-                <div><!--flecha--></div>
-                <div class = "follow">
+                <div>
+                    <!--flecha-->
+                </div>
+                <div class="follow">
                     <!--compartir-->
                     Compartir
                 </div>
@@ -123,4 +134,5 @@
     </main>
     <%- include ( './partials/footer' ) -%>
 </body>
+
 </html>

@@ -16,6 +16,9 @@ const mainControllers = {
     },
     productCreate: (req,res) => {
         res.render('productCreate');
+    },
+    editProduct : (req, res) => {
+        res.render('editProduct');
     }
 }
 
