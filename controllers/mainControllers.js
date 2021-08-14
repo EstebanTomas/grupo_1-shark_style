@@ -1,3 +1,5 @@
+const path = require('path');
+
 const mainControllers = {
     home:  (req,res) => {
         res.render('index');
@@ -15,10 +17,13 @@ const mainControllers = {
         res.render('shoppingCart');
     },
     productCreate: (req,res) => {
-        res.render('productCreate');
+        res.render('./products/productCreate');
     }
 }
 
+/*(req,res) => {
+    res.render('productCreate');
+}*/
 
 
 module.exports = mainControllers;

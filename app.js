@@ -3,7 +3,7 @@ const path = require('path');
 const app = express();
 const publicpath = path.join(__dirname, './public');
 
-
+// variables with files inside the router
 var indexRouter = require('./routes/index');
 var loginRouter = require('./routes/login');
 var registerRouter = require('./routes/register');
@@ -12,6 +12,7 @@ var shoppingCartRouter = require('./routes/shoppingCart');
 var productCreateRouter = require('./routes/productCreate');
 
 app.use(express.static(publicpath));
+
 
 app.set('view engine', 'ejs');
 
