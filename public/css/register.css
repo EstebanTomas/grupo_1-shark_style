@@ -3,7 +3,7 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
     /* también le puse de color de fondo al cremita clarito de la paleta de colores que usamos */
     background-color: rgb(243, 244, 237);
 }
@@ -43,7 +43,6 @@ main .section-form {
 }
 
 h2 {
-    font-family:  'Roboto', serif;
     font-size: 28px;
     margin: 8px 0px;
 }

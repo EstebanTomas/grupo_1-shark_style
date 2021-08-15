@@ -3,7 +3,7 @@
 body {
     height: 100vh;
     /* agregue la letra roboto qeu fue la que elegimos para toda la página */
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
     /* tambien le puse de color de fondo al cremita clarito de la paleta de colores que usamos */
     background-color: rgb(243, 244, 237);
 } 
@@ -94,7 +94,7 @@ body {
     margin-top: 16px;
     height: 7vh;
     letter-spacing: 3px;
-    font-size: 20px;
+    font-size: 22px;
     text-transform: uppercase;
     color: white;
     background: #C06014;
