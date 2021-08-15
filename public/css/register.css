@@ -3,9 +3,22 @@
 }
 
 body {
-        font-family: 'Roboto', sans-serif;
-        background-color: white;
+    font-family: 'Roboto', sans-serif;
+    /* también le puse de color de fondo al cremita clarito de la paleta de colores que usamos */
+    background-color: rgb(243, 244, 237);
 }
+
+/* agregue esta estas lineas de código para darle un border radius */
+main .main-form {
+    border-radius: 8px;
+}
+main .section-logo {
+    border-radius: 8px;
+}
+main .section-form {
+    border-radius: 8px;
+}
+/* hasta aca */
 
 .hh2 {
     display: none;
@@ -27,7 +40,6 @@ body {
     align-items     : center;
     padding         : 10;
     background-color: rgb(180, 183, 182);
-
 }
 
 h2 {
@@ -59,7 +71,6 @@ h2 {
 }
 
 .terminos {
-
     margin-top: 25px;
     text-align: center;
 }
@@ -68,19 +79,21 @@ h2 {
     margin-top: 10px;
 }
 
+/* le cambie el color del boton y ajuste el tamaño de la letra */
 .button {
     margin-top: 15px;
     margin-bottom: 20px;
     width           : 200px;
     height          : 40px;
-    background-color: #f3f3f3;
-    border: solid 1px black;
-    border-radius   : 10px;
+    background-color: rgb(192, 96, 20);
+    color: white;
+    font-size: 18px;
+    border-radius: 7px;
+    border: solid 1px rgb(192, 96, 20);
     transition: background-color 450ms;
 }
-
 .button:hover {
-    background-color: #c7c7c7;
+    background-color: rgb(175, 89, 18);
 }
 
 @media (min-width: 480px) {
