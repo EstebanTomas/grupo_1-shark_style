@@ -10,6 +10,7 @@ var registerRouter = require('./routes/register');
 var productDetailRouter = require('./routes/productDetail');
 var shoppingCartRouter = require('./routes/shoppingCart');
 var productCreateRouter = require('./routes/productCreate');
+var editProductRouter = require('./routes/editProduct');
 var productListRouter = require('./routes/productList');
 
 app.use(express.static(publicpath));
@@ -32,5 +33,7 @@ app.use('/productDetail', productDetailRouter);
 app.use('/shopping', shoppingCartRouter);
 
 app.use('/productCreate', productCreateRouter);
+
+app.use('/editProduct', editProductRouter);
 
 app.use('/productList', productListRouter);

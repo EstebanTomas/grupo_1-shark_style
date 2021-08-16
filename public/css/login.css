@@ -2,15 +2,17 @@
 
 body {
     height: 100vh;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: white;
+    /* agregue la letra roboto qeu fue la que elegimos para toda la página */
+    font-family: 'Roboto Condensed', sans-serif;
+    /* tambien le puse de color de fondo al cremita clarito de la paleta de colores que usamos */
+    background-color: rgb(243, 244, 237);
 } 
 
 .login-container {
     max-width: 900px;
     width: 80%; 
     height: 590px;
-    border-radius: 10px;
+    border-radius: 8px;
     background: white;
     display: flex;
     margin: auto;
@@ -20,15 +22,12 @@ body {
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
-    box-shadow: 0px 0px 15px black;
+    box-shadow: 0px 0px 10px rgb(83 97 98);
 }
 
 .login-info-container {
-  
     text-align: center;
 }
-
-
 
 .title {
     text-transform: capitalize;
@@ -69,12 +68,13 @@ body {
     align-items: center;
 }
 
-.input, .botón {
+.input, .boton {
     width: 90%;
     height: 3.125rem;
     font-size: 1em;
 }
 
+/* le agregue una sombra en el hover */
 .input {
     padding-left: 20px;
     border-radius: 5px;
@@ -83,22 +83,27 @@ body {
     margin-top: 11px;
     height: 7vh;
     letter-spacing: 2px;
-   
 }
-
 .input:hover {
-    border: 2px solid ;
+    box-shadow: 0px 0px 10px rgb(83 97 98);
 }
 
-.botón {
+/* le agrande la letra del botón y le puse una transición */
+.boton {
     width: 30vw;
     margin-top: 16px;
     height: 7vh;
     letter-spacing: 3px;
+    font-size: 22px;
     text-transform: uppercase;
     color: white;
     background: #C06014;
     cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 450ms;
+}
+.boton:hover {
+    background-color: rgb(175, 89, 18);
 }
 
 .inputs-container p {
@@ -108,13 +113,13 @@ body {
 }
 
 .span {
-  
     font-weight: 600;
     cursor: pointer;
     margin-top: 5px;
 }
+
 @media (min-width : 400px) {
-   body.login-container{
+    body.login-container{
         width: 90%;
     }
 }
