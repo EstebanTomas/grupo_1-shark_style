@@ -17,13 +17,12 @@ const mainControllers = {
         res.render('shoppingCart');
     },
     productCreate: (req,res) => {
-        res.render('./products/productCreate');
+        res.render('productCreate');
+    },
+    productList: (req,res) => {
+        res.render('productList');
     }
 }
-
-/*(req,res) => {
-    res.render('productCreate');
-}*/
 
 
 module.exports = mainControllers;

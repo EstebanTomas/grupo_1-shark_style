@@ -113,4 +113,8 @@ body {
     cursor: pointer;
     margin-top: 5px;
 }
-
+@media (min-width : 400px) {
+   body.login-container{
+        width: 90%;
+    }
+}
