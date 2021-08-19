@@ -22,7 +22,7 @@ _____________
 *Que debemos comenzar a hacer como equipo.*
 >Utilizar la daily con más frecuencia.
 >
-*Que podemos hacer para mejorar.*git 
+*Que podemos hacer para mejorar.*
 >Actualizar el tablero de trabajo más seguido.
 >
 *Que debemos seguir haciendo.*
@@ -34,3 +34,26 @@ _____________
 >
 *Que debemos dejar de hacer.*
 >NO subir mas cosas en la rama master de github.
+>
+>
+_____________
+>
+**RETROSPECTIVA DEL TERCER SPRINT**
+>
+*Que debemos comenzar a hacer como equipo.*
+>Volver a comunicarnos como antes.
+>
+>Comenzar con la implementación de la daily para saber como va avanzando cada uno.
+>
+*Que podemos hacer para mejorar.*
+>Procurar dividir equitativamente las tareas de cada sprint.
+>
+>Actualizar el tablero de trabajo más seguido.
+>
+>Fomentar la counicación del equipo por slack, haciendo uso de las dailys.
+>
+*Que debemos seguir haciendo.*
+>Implementar las observaciones del segundo sprint.
+>
+*Que debemos dejar de hacer.*
+>Dejar de colgarnos con la división de las tareas, y comenzar a trabajar.
