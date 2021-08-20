@@ -23,6 +23,9 @@ app.listen( 3000, () => {
 });
 
 app.use('/', indexRouter);
+app.use('/cart', indexRouter);
+
+
 
 app.use('/login', loginRouter);
 

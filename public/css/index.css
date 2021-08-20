@@ -253,6 +253,9 @@ main section article div h4 {
     margin: 3vh 5vw;
 }
 
+.two-slider-container {
+    margin: -122px 0 0 0;
+}
 /*inicio la primera medida query*/
 
 @media (min-width: 481px) {
@@ -426,6 +429,7 @@ main section article div h4 {
     .photo-article {
         border: white solid 1px;
         transition: border 450ms;
+        width: 200px;
     }
 
     .photo-article:hover {
@@ -434,6 +438,7 @@ main section article div h4 {
 
     .image-session-three article div img {
         border-radius: 22px;
+        width: 100%;
     }
 
     .logo_shark_style {

@@ -5,6 +5,6 @@ var mainControllers = require('../controllers/mainControllers')
 
 router.get('/', mainControllers.home);
 
-
+router.get('/cart', mainControllers.carrousel);
 
 module.exports = router;

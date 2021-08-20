@@ -23,6 +23,9 @@ const mainControllers = {
     },
     productList: (req,res) => {
         res.render('./product/productList');
+    },
+    carrousel: (req,res) => {
+        res.render('carrousel');
     }
 }
 
