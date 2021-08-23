@@ -3,7 +3,10 @@ const router = express.Router();
 
 var mainControllers = require('../controllers/mainControllers')
 
-router.get('/', mainControllers.register);
+router.get('/login', mainControllers.login);
 
+router.get('/register', mainControllers.register);
+
+router.get('/shopping', mainControllers.shoppingCart);
 
 module.exports = router;
