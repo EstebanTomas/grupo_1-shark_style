@@ -6,10 +6,14 @@ const publicpath = path.join(__dirname, './public');
 // variables with files inside the router
 var indexRouter = require('./routes/index');
 
+// rutas a login y register de users.js
 var usersRouter = require('./routes/users');
 
-// rutas a products.js
-var ProductRouter = require('./routes/product');
+// rutas a detail, create, edit y list de products.js
+var productRouter = require('./routes/product');
+
+// ruta a shopping.js
+var shoppingRouter = require('./routes/shopping');
 
 
 app.use(express.static(publicpath));
@@ -25,8 +29,8 @@ app.use('/', indexRouter);
 app.use('/cart', indexRouter);
 
 
-
 app.use('/users', usersRouter);
 
-app.use('/products', ProductRouter);
+app.use('/products', productRouter);
 
+app.use('/shopping', shoppingRouter);
