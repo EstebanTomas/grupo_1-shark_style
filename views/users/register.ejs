@@ -2,18 +2,19 @@
 <html lang="en">
 
 <head>
-    <%- include('../partials/head') -%> 
-    <link rel="stylesheet" href="/css/register.css">
-    <title>Creá tu cuenta</title>
+    <%- include('../partials/head') -%>
+        <link rel="stylesheet" href="/css/register.css">
+        <title>Creá tu cuenta</title>
 </head>
 
 <body>
     <div>
-        <%- include('../partials/header') -%> 
+        <%- include('../partials/header') -%>
     </div>
     <main>
         <div class="div-main">
-            <form action="/process-data" method="POST" class="main-form">
+           
+            <form method="POST" action="/users/register" class="main-form">
                 <section class="section-logo">
                     <div>
                         <img src="/img/logo-shark.png" alt="logo" class="shark-logo">
@@ -22,32 +23,30 @@
                 <section class="section-form">
                     <div class="title-form">
                         <h2>¡Crea tu cuenta!</h2>
-                        <label class="text-p">¡Goza del estilo Shark Style y nuestros descuentos!</label>
+                        <p class="text-p">¡Goza del estilo Shark Style y nuestros descuentos!</p>
                     </div>
                     <div class="data-field">
-                        <label class="nombre" for="email">Email:</label>
-                        <input type="email" name="email" id="correo-electronico" class="cam" placeholder=" juanSimon@gmail.com.ar">
+                        <label class="nombre">Usuario:</label>
+                        <input type="text" name="name" class="cam" placeholder=" Juan Simón">
                     </div>
                     <div class="data-field">
-                        <label class="nombre" for="usuario">Usuario:</label>
-                        <input type="text" name="usuario" id="name" class="cam" placeholder=" Juan Simón">
+                        <label class="nombre">Apellido:</label>
+                        <input type="text" name="lastName" id="lastName" class="cam" placeholder=" avellaneda">
                     </div>
                     <div class="data-field">
-                        <label class="nombre" for="password1">Contraseña:</label>
-                        <input type="password" name="password1" id="password" class="cam" placeholder=" simon546789">
+                        <label class="nombre">Email:</label>
+                        <input type="email" name="email" id="email" class="cam" placeholder=" juanSimon@gmail.com.ar">
                     </div>
                     <div class="data-field">
-                        <label class="nombre" for="password2">Confirmar contraseña:</label>
-                        <input type="password" name="password2" id="confirm-password" class="cam" placeholder=" simon546789">
+                        <label class="nombre">Contraseña:</label>
+                        <input type="password" name="password" id="password" class="cam" placeholder=" simon546789">
                     </div>
                     <div class="terminos">
                         <input type="radio">
                         <label>Acepta nuestras condiciones de servicio y política de privacidad</label>
                     </div>
                     <div>
-                        <a href="/">
-                            <input type="button" value="Crear cuenta" class="button">
-                        </a>
+                        <button type="submit" class="button">Crear cuenta</button>
                     </div>
                 </section>
             </form>
