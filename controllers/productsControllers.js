@@ -13,6 +13,10 @@ const productsControllers = {
     productList: (req,res) => {
         res.render('./product/productList');
     },
+    productcamps: (req, res) => {
+        res.render(req.body);
+    }
+    
 }
 
 module.exports = productsControllers;

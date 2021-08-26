@@ -18,7 +18,6 @@ var shoppingRouter = require('./routes/shopping');
 
 app.use(express.static(publicpath));
 
-
 app.set('view engine', 'ejs');
 
 app.listen( 3000, () => {
@@ -26,8 +25,8 @@ app.listen( 3000, () => {
 });
 
 app.use('/', indexRouter);
-app.use('/cart', indexRouter);
 
+app.use('/cart', indexRouter);
 
 app.use('/users', usersRouter);
 

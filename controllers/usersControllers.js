@@ -6,6 +6,7 @@ const usersControllers = {
     register: (req,res) => {
         res.render('./users/register');
     }
+
 };
 
 
