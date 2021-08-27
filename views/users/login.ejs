@@ -8,14 +8,17 @@
 </head>
 
 <body>
-    <%- include('../partials/header') -%>
+    <div>
+        <%- include('../partials/header') %>
+    </div>
+
     <main>
         <div class="login-container">
             <div class="login-info-container">
 
-                <form class="inputs-container">
-                    <input class="input" type="email" placeholder="E-mail">
-                    <input class="input" type="text" placeholder="Password">
+                <form method = "POST" class="inputs-container" action = "/users/login">
+                    <input class="input" type="email" placeholder="E-mail" name = "email">
+                    <input class="input" type="password" placeholder="Password" name = "password">
                     
                     <a href="/"><input type="button" class="boton" value="Login"></a>
                     <span class="span"><a href="/users/register">¿no tienes una cuenta?</a></span>
@@ -39,8 +42,11 @@
 
             </div>
         </div>
-        </main>
+    </main>
+
+    <div>
         <%- include ( '../partials/footer' ) -%>
+    </div>
 </body>
 
 </html>

@@ -7,11 +7,10 @@
 </head>
 
 <body>
-    <header>
-        <div>
-            <%- include('../partials/header') %> 
-        </div>
-    </header>
+    <div>
+        <%- include('../partials/header') %>
+    </div>
+
     <main>
         <div class = "create">
             <form class = "create-form" action="productCreate.ejs" method = "POST">
@@ -107,7 +106,10 @@
             </form>
         </div>
     </main>
-    <%- include ( '../partials/footer' ) -%>    
+
+    <div>
+        <%- include ( '../partials/footer' ) -%>
+    </div>
 </body>
 </html>
 
