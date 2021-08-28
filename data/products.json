@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [{
     "id": "295e1294-91bf-4af3-88b4-bd665ca08e1f",
     "name": "tomi",
@@ -13,3 +14,16 @@
     "image": "hojas.jpg",
     "interests": "S"
 }]
+=======
+[
+    {
+        "id": "530bda07-dd73-4dea-92da-e11c35c38729"
+    },
+    {
+        "id": "8e48e3d5-d6c3-494e-8bdb-5bddac3e35e1"
+    },
+    {
+        "id": "785e817b-b7e8-46cb-bda1-6952e85e95c1"
+    }
+]
+>>>>>>> ebbd8ac68ef5119bce7f5950f0349cf1cf543d42
