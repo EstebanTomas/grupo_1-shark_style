@@ -1,114 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <%- include('../partials/head') -%> 
-    <link rel="stylesheet" href="/css/productCreate.css">
-    <title>Creá un Nuevo Producto</title>
+    <%- include('../partials/head') -%>
+        <link rel="stylesheet" href="/css/productCreate.css">
+        <title>Creá un Nuevo Producto</title>
 </head>
 
 <body>
     <header>
         <div>
-            <%- include('../partials/header') %> 
+            <%- include('../partials/header') %>
         </div>
     </header>
     <main>
-        <div class = "create">
-            <form class = "create-form" action="productCreate.ejs" method = "POST">
-                <div class = "box">
+        <div class="create">
+            <form class="create-form" action="/products/create?_method=" method="POST" enctype="multipart/form-data">
+                <div class="box">
                     <p>
-                        <label class = "create-text">Nombre del producto</label>
+                        <label class="create-text">Nombre del producto</label>
                     </p>
                     <p>
-                        <input class = "create-input" type = "text" name ="name"></input>
-                    </p>
-                </div>
-                <div class = "box">
-                    <p>
-                        <label class = "create-text">Descripción</label>
-                    </p>
-                    <p>
-                        <input class = "create-input" type = "text" name ="description"></input>
+                        <input class="create-input" type="text" name="name"></input>
                     </p>
                 </div>
-                <div class = "box">
+                <div class="box">
                     <p>
-                        <label class = "create-text">Precio</label>
+                        <label class="create-text">Descripción</label>
                     </p>
                     <p>
-                        <input class = "create-input" type = "number" name ="price"></input> 
-                    </p>
-                </div>
-                <div class = "box">
-                    <p>
-                        <label class = "create-text">Imágen principal</label>
-                    </p>
-                    <p>
-                        <input class = "create-img" type = "file" accept = ".jpg" value = "foto" name = "img-principal"></input>
+                        <input class="create-input" type="text" name="description"></input>
                     </p>
                 </div>
-                <div class = "box">
+                <div class="box">
                     <p>
-                        <label class = "create-text">Imágenes de respaldo</label>
+                        <label class="create-text">Precio</label>
                     </p>
                     <p>
-                        <input class = "create-img" type = "file" accept = ".jpg" value = "foto" multiple name = "img-respaldo"></input>
-                    </p>
-                </div>
-                <div class = "box">
-                    <p>
-                        <label class = "create-text">Modelos disponibles</label>
-                    </p>
-                    <p>
-                        <input class = "create-img" type = "file" accept = ".jpg" value = "foto" multiple name = "img-modelos"></input>
+                        <input class="create-input" type="number" name="price"></input>
                     </p>
                 </div>
-                <div class = "box">
+                <div class="box">
                     <p>
-                        <label class = "create-text">Talles disponibles</label>
+                        <label class="create-text">Imágen principal</label>
                     </p>
                     <p>
-                        <select class = "create-options" name="intereses">
-                            <option type = "checkbox" name = "size-xs">XS</option>
-                            <option type = "checkbox" name = "size-s">S</option>
-                            <option type = "checkbox" name = "size-m">M</option>
-                            <option type = "checkbox" name = "size-l">L</option>
-                            <option type = "checkbox" name = "size-xl">XL</option>
+                        <input class="create-img" type="file" accept=".jpg" value="foto" name="image"></input>
+                    </p>
+                </div>
+                <div class="box">
+                    <p>
+                        <label class="create-text">Talles disponibles</label>
+                    </p>
+                    <p>
+                        <select class="create-options" name="interests">
+                            <option type="checkbox" name="size-xs">XS</option>
+                            <option type="checkbox" name="size-s">S</option>
+                            <option type="checkbox" name="size-m">M</option>
+                            <option type="checkbox" name="size-l">L</option>
+                            <option type="checkbox" name="size-xl">XL</option>
                         </select>
                     </p>
                 </div>
-                <div class = "box">
+                <div class="box">
                     <p>
-                        <label class = "create-text">Categorias</label>
+                        <label class="create-text">Categorias</label>
                     </p>
                     <p>
-                        <select class = "create-options" name="intereses">
-                            <option type = "checkbox" name = "category-men">Hombres</option>
-                            <option type = "checkbox" name = "category-women">Mujeres</option>
-                            <option type = "checkbox" name = "category-venta-mayorista">Venta Mayorista</option>
+                        <select class="create-options" name="intereses">
+                            <option type="checkbox" name="category-men">Hombres</option>
+                            <option type="checkbox" name="category-women">Mujeres</option>
+                            <option type="checkbox" name="category-venta-mayorista">Venta Mayorista</option>
                         </select>
                     </p>
                 </div>
-                <div class = "box-button">
-                    <p class = "box-button-preview">
+                <div class="box-button">
+                    <p class="box-button-preview">
                         <a href="/productDetail">
-                            <input id = "button-preview" class = "create-text" type="button" value="Previsualizar">
+                            <input id="button-preview" class="create-text" type="button" value="Previsualizar">
                         </a>
                     </p>
-                    <p class = "box-button-send">
-                        <a href="/productCreate">
-                            <input id = "button-send" class = "create-text" type="button" value="Enviar">
-                        </a>
+                    <p class="box-button-send">
+                        <button type="submit" class="create-text">Enviar</button>
                     </p>
-                    <p class = "box-button-delete">
-                        <input id = "button-delete" class = "create-text" type = "button" type = "reset" value = "Borrar"></input>
+                    <p class="box-button-delete">
+                        <button type="reset" class="create-text">Eliminar</button>
                     </p>
                 </div>
             </form>
         </div>
     </main>
-    <%- include ( '../partials/footer' ) -%>    
+    <%- include ( '../partials/footer' ) -%>
 </body>
+
 </html>
-
-

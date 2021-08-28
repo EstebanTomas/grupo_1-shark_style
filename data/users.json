@@ -32,4 +32,16 @@
     "lastName": "riquelme",
     "email": "",
     "password": ""
+}, {
+    "id": "0bb8f6f2-f511-4196-ac19-6a69a579a8c6",
+    "name": "tomi",
+    "lastName": "riquelme",
+    "email": "sfff@gmail.com",
+    "password": "Hw2aRbdw8fanCFr"
+}, {
+    "id": "fbed3c84-17ff-4cef-bb3e-e79251792632",
+    "name": "tomi",
+    "lastName": "riquelme",
+    "email": "toriquel@gmail.com",
+    "password": "2yeQaAe4QL2xBaJ"
 }]

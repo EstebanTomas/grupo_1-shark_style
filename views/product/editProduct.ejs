@@ -2,115 +2,110 @@
 <html lang="en">
 
 <head>
-    <%- include('../partials/head') -%> 
-    <link rel="stylesheet" href="/css/editProduct.css">
-    <title>Creá un Nuevo Producto</title>
+    <%- include('../partials/head') -%>
+        <link rel="stylesheet" href="/css/editProduct.css">
+        <title>Creá un Nuevo Producto</title>
 </head>
 
 <body>
     <header>
         <div>
-            <%- include('../partials/header') %> 
+            <%- include('../partials/header') %>
         </div>
     </header>
     <main>
-        <div class = "edit">
-            <form class = "edit-form" action="editProduct.ejs" method = "POST">
-                <div class = "box">
+        
+        <div class="edit">
+            <form class="edit-form" action="/products/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+                <div class="box">
                     <p>
-                        <label class = "edit-text">Nombre del producto</label>
+                        <label class="edit-text">Nombre del producto</label>
                     </p>
                     <p>
-                        <input class = "edit-input" type = "text" name = "name"></input>
-                    </p>
-                </div>
-                <div class = "box">
-                    <p>
-                        <label class = "edit-text">Descripción</label>
-                    </p>
-                    <p>
-                        <input class = "edit-input" type = "text" name = "description"></input>
+                        <input class="edit-input" type="text" name="name"></input>
                     </p>
                 </div>
-                
-                <div class = "box">
+                <div class="box">
                     <p>
-                        <label class = "edit-text">Precio</label>
+                        <label class="edit-text">Descripción</label>
                     </p>
                     <p>
-                        <input class = "edit-input" type = "number" name ="price"></input> 
-                    </p>
-                </div>
-                <div class = "box">
-                    <p>
-                        <label class = "edit-text">Imágen principal</label>
-                    </p>
-                    <p>
-                        <input class = "edit-img-principal" type = "file" accept = ".jpg" value = "foto" name = "img-principal"></input>
+                        <input class="edit-input" type="text" name="description"></input>
                     </p>
                 </div>
-                <div class = "box">
+
+                <div class="box">
                     <p>
-                        <label class = "edit-text">Imágenes de respaldo</label>
+                        <label class="edit-text">Precio</label>
                     </p>
                     <p>
-                        <input class = "edit-img" type = "file" accept = ".jpg" value = "foto" multiple name = "img-respaldo"></input>
-                    </p>
-                </div>
-                <div class = "box">
-                    <p>
-                        <label class = "edit-text">Modelos disponibles</label>
-                    </p>
-                    <p>
-                        <input class = "edit-img" type = "file" accept = ".jpg" value = "foto" multiple name = "img-modelos"></input>
+                        <input class="edit-input" type="number" name="price"></input>
                     </p>
                 </div>
-                <div class = "box">
+                <div class="box">
                     <p>
-                        <label class = "edit-text">Talles disponibles</label>
+                        <label class="edit-text">Imágen principal</label>
                     </p>
                     <p>
-                        <select class = "edit-options" name="intereses">
-                            <option type = "checkbox" name = "size-xs">XS</option>
-                            <option type = "checkbox" name = "size-s">S</option>
-                            <option type = "checkbox" name = "size-m">M</option>
-                            <option type = "checkbox" name = "size-l">L</option>
-                            <option type = "checkbox" name = "size-xl">XL</option>
+                        <input class="edit-img-principal" type="file" accept=".jpg" value="foto"
+                            name="imgPrincipal"></input>
+                    </p>
+                </div>
+                <div class="box">
+                    <p>
+                        <label class="edit-text">Modelos disponibles</label>
+                    </p>
+                    <p>
+                        <input class="edit-img" type="file" accept=".jpg" value="foto" multiple
+                            name="img-modelos"></input>
+                    </p>
+                </div>
+                <div class="box">
+                    <p>
+                        <label class="edit-text">Talles disponibles</label>
+                    </p>
+                    <p>
+                        <select class="edit-options" name="intereses">
+                            <option type="checkbox" name="size-xs">XS</option>
+                            <option type="checkbox" name="size-s">S</option>
+                            <option type="checkbox" name="size-m">M</option>
+                            <option type="checkbox" name="size-l">L</option>
+                            <option type="checkbox" name="size-xl">XL</option>
                         </select>
                     </p>
                 </div>
-                <div class = "box">
+                <div class="box">
                     <p>
-                        <label class = "edit-text">Categorias</label>
+                        <label class="edit-text">Categorias</label>
                     </p>
                     <p>
-                        <select class = "edit-options" name="intereses">
-                            <option type = "checkbox" name = "category-men">Hombres</option>
-                            <option type = "checkbox" name = "category-women">Mujeres</option>
-                            <option type = "checkbox" name = "category-venta-mayorista">Venta Mayorista</option>
+                        <select class="edit-options" name="category">
+                            <option type="checkbox" name="category-men">Hombres</option>
+                            <option type="checkbox" name="category-women">Mujeres</option>
+                            <option type="checkbox" name="category-venta-mayorista">Venta Mayorista</option>
                         </select>
                     </p>
                 </div>
-                <div class = "box-button">
-                    <p class = "box-button-preview">
+                <div class="box-button">
+                    <p class="box-button-preview">
                         <a href="/product">
-                            <input id = "button-preview" class = "create-text" type="button" value="Previsualizar">
+                            <input id="button-preview" class="create-text" type="button" value="Previsualizar">
                         </a>
                     </p>
-                    <p class = "box-button-send">
+                    <p class="box-button-send">
                         <a href="/editProduct">
-                            <input id = "button-send" class = "create-text" type="button" value="Editar">
+                            <input id="button-send" class="create-text" type="button" value="Editar">
                         </a>
                     </p>
-                    <p class = "box-button-delete">
-                        <input id = "button-delete" class = "create-text" type = "button" type = "reset" value = "Borrar"></input>
+                    <p class="box-button-delete">
+                        <input id="button-delete" class="create-text" type="button" type="reset" value="Borrar"></input>
                     </p>
                 </div>
             </form>
         </div>
     </main>
-    <%- include ( '../partials/footer' ) -%>    
+    <%- include ( '../partials/footer' ) -%>
+    
 </body>
+
 </html>
-
-

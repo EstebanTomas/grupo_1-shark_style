@@ -1,15 +1,22 @@
 const express = require('express');
 const router = express.Router();
 
-var mainControllers = require('../controllers/productsControllers')
+var controllersOfProducts = require('../controllers/productsControllers')
 
+// paths to product list
+router.get('/', controllersOfProducts.productList);
+//router.get('/:id', controllersOfProducts.productList);
 
-router.get('/edit', mainControllers.editProduct);
+// this path shows the edit form
+router.get('/:idProducts/edit', controllersOfProducts.editProduct);
+router.put('/edit', controllersOfProducts.edit);
 
-router.get('/create', mainControllers.productCreate);
+// route of create
+router.get('/create', controllersOfProducts.productCreate);
+router.post('/create', controllersOfProducts.create)
 
-router.get('/detail', mainControllers.productDetail);
+// routes in detail
+router.get('/detail/:id', controllersOfProducts.productDetail);
 
-router.get('/list', mainControllers.productList);
-
+router.delete('/:id', controllersOfProducts.delete);
 module.exports = router;
