@@ -1,17 +1,20 @@
 const express = require('express');
 const router = express.Router();
+const { body } = require('express-validator');
 
 var mainControllers = require('../controllers/productsControllers')
 
 
-router.get('/edit', mainControllers.editProduct);
+const productsControllers = require('../controllers/productsControllers');
 
-router.get('/create', mainControllers.productCreate);
+router.get('/edit', productsControllers.editProduct);
 
-router.post('/create', mainControllers.productCreate)
+router.get('/create', productsControllers.productCreate);
 
-router.get('/detail', mainControllers.productDetail);
+router.post('/create', productsControllers.productCreate)
 
-router.get('/list', mainControllers.productList);
+router.get('/detail', productsControllers.productDetail);
 
-module.exports = router;
+router.get('/list', productsControllers.productList);
+
+module.exports = router

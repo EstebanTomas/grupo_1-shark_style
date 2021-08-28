@@ -20,10 +20,6 @@ app.use(express.json());
 // configuration 
 const publicpath = path.join(__dirname, './public');
 app.use(express.static(publicpath));
-<<<<<<< HEAD
-
-=======
->>>>>>> 00daba3f0132fe8a3dbeb41a92b895be024da272
 app.set('view engine', 'ejs');
 
 // server
