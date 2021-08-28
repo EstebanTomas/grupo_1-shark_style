@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <%- include('../partials/head') -%>
         <link rel="stylesheet" href="/css/productCreate.css">
         <title>Creá un Nuevo Producto</title>
 </head>
-
 <body>
     <header>
         <div>
@@ -15,7 +13,7 @@
     </header>
     <main>
         <div class="create">
-            <form class="create-form" action="/products/create" method="POST">
+            <form class="create-form" action="/products/create?_method=" method="POST" enctype="multipart/form-data">
                 <div class="box">
                     <p>
                         <label class="create-text">Nombre del producto</label>
@@ -45,25 +43,7 @@
                         <label class="create-text">Imágen principal</label>
                     </p>
                     <p>
-                        <input class="create-img" type="file" accept=".jpg" value="foto" name="img-principal"></input>
-                    </p>
-                </div>
-                <div class="box">
-                    <p>
-                        <label class="create-text">Imágenes de respaldo</label>
-                    </p>
-                    <p>
-                        <input class="create-img" type="file" accept=".jpg" value="foto" multiple
-                            name="img-respaldo"></input>
-                    </p>
-                </div>
-                <div class="box">
-                    <p>
-                        <label class="create-text">Modelos disponibles</label>
-                    </p>
-                    <p>
-                        <input class="create-img" type="file" accept=".jpg" value="foto" multiple
-                            name="img-modelos"></input>
+                        <input class="create-img" type="file" accept=".jpg" value="foto" name="image"></input>
                     </p>
                 </div>
                 <div class="box">
@@ -71,7 +51,7 @@
                         <label class="create-text">Talles disponibles</label>
                     </p>
                     <p>
-                        <select class="create-options" name="intereses">
+                        <select class="create-options" name="interests">
                             <option type="checkbox" name="size-xs">XS</option>
                             <option type="checkbox" name="size-s">S</option>
                             <option type="checkbox" name="size-m">M</option>
@@ -94,17 +74,15 @@
                 </div>
                 <div class="box-button">
                     <p class="box-button-preview">
-                        <a href="/products/detail">
-                            <input id="button-preview" class="create-text" type="submit" value="Previsualizar">
+                        <a href="/productDetail">
+                            <input id="button-preview" class="create-text" type="button" value="Previsualizar">
                         </a>
                     </p>
                     <p class="box-button-send">
-                        <a href="/products/create">
-                            <input id="button-send" class="create-text" type="submit" value="Enviar">
-                        </a>
+                        <button type="submit" class="create-text">Enviar</button>
                     </p>
                     <p class="box-button-delete">
-                        <input id="button-delete" class="create-text" type="button" type="reset" value="Borrar"></input>
+                        <button type="reset" class="create-text">Eliminar</button>
                     </p>
                 </div>
             </form>
@@ -112,5 +90,4 @@
     </main>
     <%- include ( '../partials/footer' ) -%>
 </body>
-
 </html>

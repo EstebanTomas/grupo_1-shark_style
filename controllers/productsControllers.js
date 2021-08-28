@@ -1,10 +1,32 @@
 const path = require("path");
 const fs = require("fs");
 const { json } = require("express");
+const { v4: uuidv4 } = require('uuid');
 
 const productsControllers = {
+
     productCreate: (req, res) => {
         res.render('./product/productCreate');
+    },
+
+    create: (req, res) => {
+        let productsJson = fs.readFileSync('./data/products.json', { encoding: 'utf-8' })
+        let dataOfProducts;
+        // if userJson is not empty I store it in a variable.
+        productsJson == '' ? dataOfProducts = [] : dataOfProducts = JSON.parse(productsJson);
+        let product = {
+            id: uuidv4(),
+            name: req.body.name,
+            description: req.body.description,
+            price: req.body.price,
+            image: req.body.image,
+            interests: req.body.interests,
+            category: req.body.category
+        }
+        dataOfProducts.push(product);
+        dataOfListProducts = JSON.stringify(dataOfProducts);
+        fs.writeFileSync('./data/products.json', dataOfListProducts);
+        res.redirect('/products/list')
     },
     productDetail: (req, res) => {
         res.render('./product/productDetail');
@@ -15,28 +37,7 @@ const productsControllers = {
     productList: (req, res) => {
         res.render('./product/productList');
     },
-    newProduct: (req, res) => {
 
-        let productJson = fs.readFileSync('./data/products.json', { encoding: 'utf-8' });
-
-        let productcreate;
-
-        productjson == '' ? dataOfProducts = [] : dataOfProducts = JSON.parse(productJson);
-
-        let product = {
-
-            name: req.body.name,
-            descriprtion: req.body.descriprtion,
-            price: req.body.price,
-
-        }
-        dataOfProducts.push(product);
-
-        dataOfFileJSON = JSON.stringify(dataOfProducts);
-        fs.writeFileSync('./data/products.json', dataOfFileJSON);
-
-        res.redirect('/products/list')
-    },
 }
 
 module.exports = productsControllers;
