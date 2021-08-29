@@ -1,0 +1,22 @@
+[{
+    "name": "ggg",
+    "description": "",
+    "price": "",
+    "image": "",
+    "interests": "XS"
+}, {
+    "id": "1a5d6eee-17da-4f73-bc19-8d3e1fb20823",
+    "name": "campera",
+    "description": "",
+    "price": "",
+    "image": "",
+    "interests": "XS"
+}, {
+    "id": "6ebcc899-340d-4e15-a69b-5bab78696045",
+    "name": "",
+    "description": "",
+    "price": "",
+    "image": "",
+    "interests": "XS",
+    "category": "Hombres"
+}]
