@@ -14,7 +14,7 @@
     </header>
     <main>
         <div class="create">
-            <form class="create-form" action="/products/create?_method=" method="POST" enctype="multipart/form-data">
+            <form class="create-form" action="/products/create" method="POST" >
                 <div class="box">
                     <p>
                         <label class="create-text">Nombre del producto</label>
@@ -48,17 +48,10 @@
                     </p>
                 </div>
                 <div class="box">
-<<<<<<< HEAD
                     <p>
                         <label class="create-text">Talles disponibles</label>
                     </p>
                     <p>
-=======
-                    <p>
-                        <label class="create-text">Talles disponibles</label>
-                    </p>
-                    <p>
->>>>>>> ebbd8ac68ef5119bce7f5950f0349cf1cf543d42
                         <select class="create-options" name="interests">
                             <option type="checkbox" name="size-xs">XS</option>
                             <option type="checkbox" name="size-s">S</option>
@@ -73,7 +66,7 @@
                         <label class="create-text">Categorias</label>
                     </p>
                     <p>
-                        <select class="create-options" name="intereses">
+                        <select class="create-options" name="category">
                             <option type="checkbox" name="category-men">Hombres</option>
                             <option type="checkbox" name="category-women">Mujeres</option>
                             <option type="checkbox" name="category-venta-mayorista">Venta Mayorista</option>
@@ -98,8 +91,4 @@
     </main>
     <%- include ( '../partials/footer' ) -%>
 </body>
-<<<<<<< HEAD
-
-=======
->>>>>>> ebbd8ac68ef5119bce7f5950f0349cf1cf543d42
 </html>

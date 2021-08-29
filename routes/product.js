@@ -20,4 +20,5 @@ router.post('/create', controllersOfProducts.create)
 router.get('/detail/:id', controllersOfProducts.productDetail);
 
 router.delete('/:id', controllersOfProducts.delete);
+
 module.exports = router;
