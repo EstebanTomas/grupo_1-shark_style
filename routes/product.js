@@ -21,4 +21,9 @@ router.get('/detail/:id', controllersOfProducts.productDetail);
 
 router.delete('/:id', controllersOfProducts.delete);
 
+// creo estas routas para trabajar con las vistas
+router.get('/edit', controllersOfProducts.editProduct);
+router.get('/detail', controllersOfProducts.productDetail);
+
+
 module.exports = router;
