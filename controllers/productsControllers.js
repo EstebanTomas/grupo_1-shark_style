@@ -13,28 +13,28 @@ const productsControllers = {
         let dataOfProducts;
         // if userJson is not empty I store it in a variable.
         productsJson == ''?  dataOfProducts = [] :  dataOfProducts= JSON.parse(productsJson);
-  
+
         let product = {
-          id: uuidv4(),
-          name: req.body.name,
-          description: req.body.description,
-          price: req.body.price,
-          image: req.body.image,
-          interests: req.body.interests,
-          category: req.body.category
+            id: uuidv4(),
+            name: req.body.name,
+            description: req.body.description,
+            price: req.body.price,
+            image: req.body.image,
+            interests: req.body.interests,
+            category: req.body.category
         }
         dataOfProducts.push(product);
-  
+
         dataOfListProducts = JSON.stringify(dataOfProducts);
         fs.writeFileSync('./data/products.json', dataOfListProducts);
-      
-      res.redirect('/products/')
+
+        res.redirect('/products/')
     },
     productDetail: (req,res) => {
         res.render('./product/productDetail');
     },
     editProduct : (req, res) => {
-        res.render('./product/editProduct');
+        res.render('./product/productEdit');
     },
     edit: (req,res)=> {
         // I store in name, the value that comes from the name field. 
