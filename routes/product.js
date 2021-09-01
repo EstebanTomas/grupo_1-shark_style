@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const { body } = require('express-validator');
+const { check } = require('express-validator');
 
-var controllersOfProducts = require('../controllers/productsControllers')
+var controllersOfProducts = require('../controllers/productsControllers');
+
 
 // paths to product list
 router.get('/', controllersOfProducts.productList);

@@ -19,4 +19,12 @@
     "image": "",
     "interests": "XS",
     "category": "Hombres"
+}, {
+    "id": "7cd99ba9-12a9-4c83-90e1-c5972c35e05c",
+    "name": "boxer ",
+    "description": "green ",
+    "price": "800",
+    "image": "17.jpg",
+    "interests": "L",
+    "category": "Hombres"
 }]

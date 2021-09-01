@@ -29,18 +29,30 @@
                     <div class="data-field">
                         <label class="nombre">Usuario:</label>
                         <input type="text" name="name" class="cam" placeholder=" Juan Simón">
+                        <% if ( locals.errors && errors.name ) {%> 
+                            <%= errors.name.msg %> 
+                        <% } %> 
                     </div>
                     <div class="data-field">
                         <label class="nombre">Apellido:</label>
                         <input type="text" name="lastName" id="lastName" class="cam" placeholder=" avellaneda">
+                        <% if ( locals.errors && errors.lastName ) {%> 
+                            <%= errors.lastname.msg %> 
+                        <% } %>
                     </div>
                     <div class="data-field">
                         <label class="nombre">Email:</label>
                         <input type="email" name="email" id="email" class="cam" placeholder=" juanSimon@gmail.com.ar">
+                        <% if ( locals.errors && errors.email ) {%> 
+                            <%= errors.email.msg %> 
+                        <% } %>
                     </div>
                     <div class="data-field">
                         <label class="nombre">Contraseña:</label>
                         <input type="password" name="password" id="password" class="cam" placeholder=" simon546789">
+                        <% if ( locals.errors && errors.password ) {%> 
+                            <%= errors.password.msg %> 
+                        <% } %>
                     </div>
                     <div class="terminos">
                         <input type="radio">

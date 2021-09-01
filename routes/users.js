@@ -1,12 +1,12 @@
 const express = require('express');
-
 const router = express.Router();
-const { body } = require('express-validator');
+const { check } = require('express-validator');
 
 const validations = [
-    body('name').notEmpty().withMessage('Debes escribir un nombre de usuario'),
-    body('email').notEmpty().withMessage('Debes escribir un email valido'),
-    body('password').isEmail().notEmpty().withMessage('Debes escribir una contraseña valida')
+    check('name').notEmpty().withMessage('Debes escribir un nombre de usuario'),
+    check('lastname').notEmpty().withMessage('Debes escribir un apellido'),
+    check('email').notEmpty().isEmail().withMessage('Debes escribir un email valido'),
+    check('password').isLength({min: 8}).withMessage('Debes escribir una contraseña de almenos 8 caracteres')
 ]
 // require files
 const usersControllers = require('../controllers/usersControllers');

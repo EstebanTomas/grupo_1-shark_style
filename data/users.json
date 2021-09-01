@@ -50,4 +50,40 @@
     "lastName": "riquelme",
     "email": "eltito@gmail.com",
     "password": "niidea"
+}, {
+    "id": "89b8847d-7e24-4f24-8276-a65c90c8e654",
+    "name": "tomi",
+    "lastName": "riquelme",
+    "email": "tomasta@gmail.com",
+    "password": "$2a$10$fanFI5PUxaEGhaIoehbAae8IQ36CK.6gVeZqHCX4fwATPzKaL23Vy"
+}, {
+    "id": "8d8774a7-cab1-4be0-80c2-726f2402fc5b",
+    "name": "",
+    "lastName": "riquelme",
+    "email": "",
+    "password": "$2a$10$aJ1Dvzdhd16VC0b0dITNZ.BLLdqQU.WlywiUDn9MqbNoP/8Njhu0u"
+}, {
+    "id": "94e2ca53-07d9-436c-a55d-40cd92bb3c0a",
+    "name": "homero",
+    "lastName": "simpson",
+    "email": "simpson@gmail.com",
+    "password": "$2a$10$LWp.2uFMYMATl8l9yrYuEO54vZpni.iBVUxYYcwzRRnCT9ts/AO1K"
+}, {
+    "id": "6f7414b7-6290-412a-aab7-cfa82072774c",
+    "name": "tomi",
+    "lastName": "fressini",
+    "email": "fressini@gmail.com",
+    "password": "$2a$10$Zwly2Pbg3kWJCEhz3BRWIugUUBieG/UBCym/grpnhypYkHqztR2wu"
+}, {
+    "id": "0b2b6966-b61c-4d51-b86f-455377d6b8e4",
+    "name": "",
+    "lastName": "fressini",
+    "email": "fressini@gmail.com",
+    "password": "$2a$10$wtRcqOtNbUpSKMrJhIyfLu6wb222dXFFrD6ioL/joXsKPRJQUL7gy"
+}, {
+    "id": "503db110-c15d-4b6b-a07f-0e4e9b366dd3",
+    "name": "campera",
+    "lastName": "",
+    "email": "",
+    "password": "$2a$10$ly2gMl/m21Y0cSwuOJkRuOnFfNvcD.5R6JDLrYhUCO13TMGHftnsW"
 }]
