@@ -24,7 +24,9 @@ const productsControllers = {
             description: req.body.description,
             price: req.body.price,
             image: req.body.image,
-            interests: req.body.interests,
+            size: req.body.size,
+            models: req.body.models,
+            gender: req.body.gender,
             category: req.body.category,
         };
         dataOfProducts.push(product);
