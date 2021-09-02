@@ -1,1 +1,64 @@
-[{ "name": "ggg", "description": "", "price": "", "image": "", "interests": "XS" }, { "id": "1a5d6eee-17da-4f73-bc19-8d3e1fb20823", "name": "campera", "description": "", "price": "", "image": "", "interests": "XS" }, { "id": "6ebcc899-340d-4e15-a69b-5bab78696045", "name": "", "description": "", "price": "", "image": "", "interests": "XS", "category": "Hombres" }, { "id": "7cd99ba9-12a9-4c83-90e1-c5972c35e05c", "name": "boxer ", "description": "green ", "price": "800", "image": "17.jpg", "interests": "L", "category": "Hombres" }, { "id": "d2f81001-9d41-4bea-b456-f651f4bbf59f", "name": ["", ""], "description": "", "price": "", "image": "", "interests": "XS", "category": "Remeras Manga Larga" }]
+[
+  {
+    "name": "ggg",
+    "description": "",
+    "price": "",
+    "image": "",
+    "interests": "XS"
+  },
+  {
+    "id": "1a5d6eee-17da-4f73-bc19-8d3e1fb20823",
+    "name": "campera",
+    "description": "",
+    "price": "",
+    "image": "",
+    "interests": "XS"
+  },
+  {
+    "id": "6ebcc899-340d-4e15-a69b-5bab78696045",
+    "name": "",
+    "description": "",
+    "price": "",
+    "image": "",
+    "interests": "XS",
+    "category": "Hombres"
+  },
+  {
+    "id": "7cd99ba9-12a9-4c83-90e1-c5972c35e05c",
+    "name": "boxer ",
+    "description": "green ",
+    "price": "800",
+    "image": "17.jpg",
+    "interests": "L",
+    "category": "Hombres"
+  },
+  {
+    "id": "d2f81001-9d41-4bea-b456-f651f4bbf59f",
+    "name": ["", ""],
+    "description": "",
+    "price": "",
+    "image": "",
+    "interests": "XS",
+    "category": "Remeras Manga Larga"
+  },
+  {
+    "id": "6c6ad0ec-ea95-40e5-b7b0-8bb8098dff1b",
+    "name": ["nike urban", "varios"],
+    "description": "color blanco",
+    "price": "4000",
+    "image": "5.jpg",
+    "interests": "XS",
+    "category": "Calzado Deportivo"
+  },
+  {
+    "id": "384c574f-3a21-4398-af75-ecdbb237288d",
+    "name": "remera nike ",
+    "description": "color negro",
+    "price": "1500",
+    "image": "remera-hombre.jpg",
+    "size": "M",
+    "models": "todos los talles",
+    "gender": "Hombre",
+    "category": "Remeras Manga Corta"
+  }
+]
