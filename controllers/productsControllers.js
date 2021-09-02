@@ -25,6 +25,7 @@ const productsControllers = {
             price: req.body.price,
             image: req.body.image,
             interests: req.body.interests,
+            
             category: req.body.category,
         };
         dataOfProducts.push(product);
