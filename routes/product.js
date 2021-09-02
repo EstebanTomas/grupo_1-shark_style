@@ -1,20 +1,24 @@
 const express = require('express');
 const router = express.Router();
+const multer = require("multer");
 const { body } = require('express-validator');
 
-var mainControllers = require('../controllers/productsControllers')
+var controllersOfProducts = require('../controllers/productsControllers')
 
+// paths to product list
+router.get('/', controllersOfProducts.productList);
+//router.get('/:id', controllersOfProducts.productList);
 
-const productsControllers = require('../controllers/productsControllers');
+// this path shows the edit form
+router.get('/:idProducts/edit', controllersOfProducts.editProduct);
+router.put('/edit', controllersOfProducts.edit);
 
-router.get('/edit', productsControllers.editProduct);
+// route of create
+router.get('/create', controllersOfProducts.productCreate);
+router.post('/create', controllersOfProducts.create)
 
-router.get('/create', productsControllers.productCreate);
+// routes in detail
+router.get('/detail/:id', controllersOfProducts.productDetail);
 
-router.post('/create', productsControllers.create)
-
-router.get('/detail', productsControllers.productDetail);
-
-router.get('/list', productsControllers.productList);
-
-module.exports = router
+router.delete('/:id', controllersOfProducts.delete);
+module.exports = router;

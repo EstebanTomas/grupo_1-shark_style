@@ -1,14 +1,27 @@
 [
     {
-        "id": "530bda07-dd73-4dea-92da-e11c35c38729"
+        "id": "295e1294-91bf-4af3-88b4-bd665ca08e1f",
+        "name": "tomi",
+        "description": "no hay",
+        "price": "33244",
+        "image": "",
+        "interests": "XS"
     },
     {
-        "id": "8e48e3d5-d6c3-494e-8bdb-5bddac3e35e1"
+        "id": "cbdc7868-8bf0-41ed-b0a0-672f242b4ba3",
+        "name": "hoja",
+        "description": "remera marca hoja",
+        "price": "33244",
+        "image": "hojas.jpg",
+        "interests": "S"
     },
     {
-        "id": "785e817b-b7e8-46cb-bda1-6952e85e95c1"
+        "id": "45ee7a20-b0c0-4306-986a-1d2437a6623c"
     },
     {
-        "id": "cb6027b1-ab4a-4f49-97ad-8454a4fdf11a"
+        "id": "edae60d3-385b-4186-b019-95075725ec89"
+    },
+    {
+        "id": "4625b467-7ed8-4c4f-a6ce-6c85095f2de7"
     }
 ]

@@ -1,9 +1,9 @@
-const express = require('express');
-const router = express.Router();
+    const express = require('express');
+    const router = express.Router();
 
-var mainControllers = require('../controllers/mainControllers')
+    var mainControllers = require('../controllers/mainControllers')
 
-router.get('/', mainControllers.home);
+    router.get('/', mainControllers.home);
 
 router.get('/cart', mainControllers.carrousel);
 
