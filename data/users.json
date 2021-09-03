@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 [{
     "id": "e3be26a0-a8cf-4d36-9234-a099a44da08f",
     "name": "doroti",
@@ -45,62 +44,46 @@
     "lastName": "riquelme",
     "email": "toriquel@gmail.com",
     "password": "2yeQaAe4QL2xBaJ"
+}, {
+    "id": "b339bb93-bceb-4982-9d83-a0c2394369d1",
+    "name": "tomi",
+    "lastName": "riquelme",
+    "email": "eltito@gmail.com",
+    "password": "niidea"
+}, {
+    "id": "89b8847d-7e24-4f24-8276-a65c90c8e654",
+    "name": "tomi",
+    "lastName": "riquelme",
+    "email": "tomasta@gmail.com",
+    "password": "$2a$10$fanFI5PUxaEGhaIoehbAae8IQ36CK.6gVeZqHCX4fwATPzKaL23Vy"
+}, {
+    "id": "8d8774a7-cab1-4be0-80c2-726f2402fc5b",
+    "name": "",
+    "lastName": "riquelme",
+    "email": "",
+    "password": "$2a$10$aJ1Dvzdhd16VC0b0dITNZ.BLLdqQU.WlywiUDn9MqbNoP/8Njhu0u"
+}, {
+    "id": "94e2ca53-07d9-436c-a55d-40cd92bb3c0a",
+    "name": "homero",
+    "lastName": "simpson",
+    "email": "simpson@gmail.com",
+    "password": "$2a$10$LWp.2uFMYMATl8l9yrYuEO54vZpni.iBVUxYYcwzRRnCT9ts/AO1K"
+}, {
+    "id": "6f7414b7-6290-412a-aab7-cfa82072774c",
+    "name": "tomi",
+    "lastName": "fressini",
+    "email": "fressini@gmail.com",
+    "password": "$2a$10$Zwly2Pbg3kWJCEhz3BRWIugUUBieG/UBCym/grpnhypYkHqztR2wu"
+}, {
+    "id": "0b2b6966-b61c-4d51-b86f-455377d6b8e4",
+    "name": "",
+    "lastName": "fressini",
+    "email": "fressini@gmail.com",
+    "password": "$2a$10$wtRcqOtNbUpSKMrJhIyfLu6wb222dXFFrD6ioL/joXsKPRJQUL7gy"
+}, {
+    "id": "503db110-c15d-4b6b-a07f-0e4e9b366dd3",
+    "name": "campera",
+    "lastName": "",
+    "email": "",
+    "password": "$2a$10$ly2gMl/m21Y0cSwuOJkRuOnFfNvcD.5R6JDLrYhUCO13TMGHftnsW"
 }]
-=======
-[
-    {
-        "id": "e3be26a0-a8cf-4d36-9234-a099a44da08f",
-        "name": "doroti",
-        "email": "doroti@gmail.com",
-        "password": "ladora",
-        "confirmPassword": "laora"
-    },
-    {
-        "id": "3614ac90-3aff-40bc-bcb2-18f8578fae53",
-        "name": "",
-        "email": "tito@ss",
-        "password": "PefL9HNksJP9Ntk"
-    },
-    {
-        "id": "39b85ca4-1376-4396-a637-86d0ff553631",
-        "name": "agos",
-        "email": "agos@gmail.com",
-        "password": "laagos"
-    },
-    {
-        "id": "4559eebb-3f7d-4e55-9fdc-c2386e463868",
-        "name": "juan",
-        "lastName": "riquelme",
-        "email": "juanrique@gmail.com",
-        "password": ""
-    },
-    {
-        "id": "c2f379f4-714b-4746-94a3-96914275dafe",
-        "name": "ggg",
-        "lastName": "riquelme",
-        "email": "",
-        "password": "Hw2aRbdw8fanCFr"
-    },
-    {
-        "id": "8d58d9d4-5db0-4026-9888-83fe4283aaa8",
-        "name": "",
-        "lastName": "riquelme",
-        "email": "",
-        "password": ""
-    },
-    {
-        "id": "97140d88-704f-4e58-868c-ad17f9e787c2",
-        "name": "asdasd",
-        "lastName": "messirveEso",
-        "email": "reloko@gmail.com",
-        "password": "gsdfsefweg"
-    },
-    {
-        "id": "bd183562-79c0-419c-a6c0-ed9d590d046d",
-        "name": "sfsdg",
-        "lastName": "dfgdfgd",
-        "email": "dhdfghdf@gmail.com",
-        "password": "ghdfh"
-    }
-]
->>>>>>> ebbd8ac68ef5119bce7f5950f0349cf1cf543d42

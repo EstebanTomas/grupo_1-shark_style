@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const multer = require("multer");
-const { body } = require('express-validator');
+const { check } = require('express-validator');
 
-var controllersOfProducts = require('../controllers/productsControllers')
+var controllersOfProducts = require('../controllers/productsControllers');
+
 
 // paths to product list
 router.get('/', controllersOfProducts.productList);
@@ -15,10 +15,16 @@ router.put('/edit', controllersOfProducts.edit);
 
 // route of create
 router.get('/create', controllersOfProducts.productCreate);
-router.post('/create', controllersOfProducts.create)
+router.post('/create', controllersOfProducts.create);
 
 // routes in detail
 router.get('/detail/:id', controllersOfProducts.productDetail);
 
 router.delete('/:id', controllersOfProducts.delete);
+
+// creo estas routas para trabajar con las vistas
+router.get('/edit', controllersOfProducts.editProduct);
+router.get('/detail', controllersOfProducts.productDetail);
+
+
 module.exports = router;
