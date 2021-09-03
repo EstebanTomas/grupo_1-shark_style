@@ -74,5 +74,26 @@
         "interests": "L",
         "category": "Buzos",
         "gender": "Hombre"
+    },
+    {
+        "id": "40dae63e-3ef7-44f8-a79e-55473699dab9",
+        "name": "riquelmefede07",
+        "description": "PRO",
+        "price": "1000000000000",
+        "image": "neeko.jpg",
+        "size": "XL",
+        "gender": "Hombre",
+        "category": "Buzos"
+    },
+    {
+        "id": "c2f75a1b-8ccb-4011-b776-3d05516027c0",
+        "name": "riquelmefede07",
+        "description": "gorro",
+        "price": "1.000",
+        "image": "neeko.jpg",
+        "size": "XS",
+        "models": "1",
+        "gender": "Hombre",
+        "category": "Remeras Manga Larga"
     }
 ]
