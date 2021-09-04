@@ -1,64 +1,99 @@
 [
-  {
-    "name": "ggg",
-    "description": "",
-    "price": "",
-    "image": "",
-    "interests": "XS"
-  },
-  {
-    "id": "1a5d6eee-17da-4f73-bc19-8d3e1fb20823",
-    "name": "campera",
-    "description": "",
-    "price": "",
-    "image": "",
-    "interests": "XS"
-  },
-  {
-    "id": "6ebcc899-340d-4e15-a69b-5bab78696045",
-    "name": "",
-    "description": "",
-    "price": "",
-    "image": "",
-    "interests": "XS",
-    "category": "Hombres"
-  },
-  {
-    "id": "7cd99ba9-12a9-4c83-90e1-c5972c35e05c",
-    "name": "boxer ",
-    "description": "green ",
-    "price": "800",
-    "image": "17.jpg",
-    "interests": "L",
-    "category": "Hombres"
-  },
-  {
-    "id": "d2f81001-9d41-4bea-b456-f651f4bbf59f",
-    "name": ["", ""],
-    "description": "",
-    "price": "",
-    "image": "",
-    "interests": "XS",
-    "category": "Remeras Manga Larga"
-  },
-  {
-    "id": "6c6ad0ec-ea95-40e5-b7b0-8bb8098dff1b",
-    "name": ["nike urban", "varios"],
-    "description": "color blanco",
-    "price": "4000",
-    "image": "5.jpg",
-    "interests": "XS",
-    "category": "Calzado Deportivo"
-  },
-  {
-    "id": "384c574f-3a21-4398-af75-ecdbb237288d",
-    "name": "remera nike ",
-    "description": "color negro",
-    "price": "1500",
-    "image": "remera-hombre.jpg",
-    "size": "M",
-    "models": "todos los talles",
-    "gender": "Hombre",
-    "category": "Remeras Manga Corta"
-  }
+    {
+        "name": "ggg",
+        "description": "",
+        "price": "",
+        "image": "",
+        "interests": "XS"
+    },
+    {
+        "id": "1a5d6eee-17da-4f73-bc19-8d3e1fb20823",
+        "name": "campera",
+        "description": "",
+        "price": "",
+        "image": "",
+        "interests": "XS"
+    },
+    {
+        "id": "6ebcc899-340d-4e15-a69b-5bab78696045",
+        "name": "",
+        "description": "",
+        "price": "",
+        "image": "",
+        "interests": "XS",
+        "category": "Hombres"
+    },
+    {
+        "id": "7cd99ba9-12a9-4c83-90e1-c5972c35e05c",
+        "name": "boxer ",
+        "description": "green ",
+        "price": "800",
+        "image": "17.jpg",
+        "interests": "L",
+        "category": "Hombres"
+    },
+    {
+        "id": "d2f81001-9d41-4bea-b456-f651f4bbf59f",
+        "name": [
+            "",
+            ""
+        ],
+        "description": "",
+        "price": "",
+        "image": "",
+        "interests": "XS",
+        "category": "Remeras Manga Larga"
+    },
+    {
+        "id": "38fea10a-8cc6-46b6-84a1-25e59e38f217",
+        "name": [
+            "fvdgs",
+            "3"
+        ],
+        "description": "sdfgsdfgsd",
+        "price": "234532452",
+        "image": "conjunto-jordan.jpg",
+        "interests": "XS",
+        "category": "Camperas de Abrigo"
+    },
+    {
+        "id": "dde71887-5b9a-4c77-bc1d-7d1f00b467a9",
+        "name": "asdasd",
+        "description": "dasdasd",
+        "price": "123123",
+        "image": "neeko.jpg",
+        "interests": "M",
+        "category": "Camperas Termicas"
+    },
+    {
+        "id": "96c68f20-2318-4bec-99bb-9c3958ce8cbe",
+        "name": "dasdasdasdasdasdasdasdasd",
+        "description": "dsdasda",
+        "price": "12121221",
+        "image": "",
+        "interests": "L",
+        "category": "Buzos",
+        "gender": "Hombre"
+    },
+    {
+        "id": "40dae63e-3ef7-44f8-a79e-55473699dab9",
+        "name": "riquelmefede07",
+        "description": "PRO",
+        "price": "1000000000000",
+        "image": "neeko.jpg",
+        "size": "XL",
+        "gender": "Hombre",
+        "category": "Buzos"
+    },
+    {
+        "id": "c2f75a1b-8ccb-4011-b776-3d05516027c0",
+        "name": "riquelmefede07",
+        "description": "gorro",
+        "price": "1.000",
+        "image": "neeko.jpg",
+        "size": "XS",
+        "models": "1",
+        "gender": "Hombre",
+        "category": "Remeras Manga Larga"
+    }
 ]

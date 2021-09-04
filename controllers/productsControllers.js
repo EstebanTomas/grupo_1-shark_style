@@ -28,6 +28,7 @@ const productsControllers = {
             models: req.body.models,
             gender: req.body.gender,
             category: req.body.category,
+ 
         };
         dataOfProducts.push(product);
 
