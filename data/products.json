@@ -1,99 +1,376 @@
 [
     {
-        "name": "ggg",
-        "description": "",
-        "price": "",
-        "image": "",
-        "interests": "XS"
-    },
-    {
-        "id": "1a5d6eee-17da-4f73-bc19-8d3e1fb20823",
-        "name": "campera",
-        "description": "",
-        "price": "",
-        "image": "",
-        "interests": "XS"
-    },
-    {
-        "id": "6ebcc899-340d-4e15-a69b-5bab78696045",
-        "name": "",
-        "description": "",
-        "price": "",
-        "image": "",
-        "interests": "XS",
-        "category": "Hombres"
-    },
-    {
-        "id": "7cd99ba9-12a9-4c83-90e1-c5972c35e05c",
-        "name": "boxer ",
-        "description": "green ",
-        "price": "800",
-        "image": "17.jpg",
-        "interests": "L",
-        "category": "Hombres"
-    },
-    {
-        "id": "d2f81001-9d41-4bea-b456-f651f4bbf59f",
-        "name": [
-            "",
-            ""
-        ],
-        "description": "",
-        "price": "",
-        "image": "",
-        "interests": "XS",
-        "category": "Remeras Manga Larga"
-    },
-    {
-        "id": "38fea10a-8cc6-46b6-84a1-25e59e38f217",
-        "name": [
-            "fvdgs",
-            "3"
-        ],
-        "description": "sdfgsdfgsd",
-        "price": "234532452",
-        "image": "conjunto-jordan.jpg",
-        "interests": "XS",
-        "category": "Camperas de Abrigo"
-    },
-    {
-        "id": "dde71887-5b9a-4c77-bc1d-7d1f00b467a9",
-        "name": "asdasd",
-        "description": "dasdasd",
-        "price": "123123",
-        "image": "neeko.jpg",
-        "interests": "M",
-        "category": "Camperas Termicas"
-    },
-    {
-        "id": "96c68f20-2318-4bec-99bb-9c3958ce8cbe",
-        "name": "dasdasdasdasdasdasdasdasd",
-        "description": "dsdasda",
-        "price": "12121221",
-        "image": "",
-        "interests": "L",
-        "category": "Buzos",
-        "gender": "Hombre"
-    },
-    {
-        "id": "40dae63e-3ef7-44f8-a79e-55473699dab9",
-        "name": "riquelmefede07",
-        "description": "PRO",
-        "price": "1000000000000",
-        "image": "neeko.jpg",
-        "size": "XL",
+        "id": "b6611901-cb79-4712-9485-202184f4341c",
+        "name": "Camiseta con capucha",
+        "description": "Manga corta con cordón de color sólido básico para hombre. Materiales: Algodón, Poliester.",
+        "price": "1558",
+        "image": "t-shirt.black.jpg",
+        "size": "L",
+        "models": "Color: negro",
         "gender": "Hombre",
         "category": "Buzos"
     },
     {
-        "id": "c2f75a1b-8ccb-4011-b776-3d05516027c0",
-        "name": "riquelmefede07",
-        "description": "gorro",
-        "price": "1.000",
-        "image": "neeko.jpg",
-        "size": "XS",
-        "models": "1",
+        "id": "fcc855b8-5d02-459a-aed6-c02115b8fb82",
+        "name": "Camiseta con capucha",
+        "description": "Manga corta con cordón de color sólido básico para hombre. Materiales: Algodón, Poliester.",
+        "price": "1558",
+        "image": "t-shirt.orange.jpg",
+        "size": "M",
+        "models": "Color: naranja",
         "gender": "Hombre",
-        "category": "Remeras Manga Larga"
+        "category": "Buzos"
+    },
+    {
+        "id": "447684c8-d194-453f-a191-cbbb273a1f98",
+        "name": "Camiseta con capucha",
+        "description": "Manga corta con cordón de color sólido básico para hombre. Materiales: Algodón, Poliester.",
+        "price": "1558",
+        "image": "t-shirt.skyblue.jpg",
+        "size": "M",
+        "models": "Color: celeste",
+        "gender": "Hombre",
+        "category": "Buzos"
+    },
+    {
+        "id": "8f2b909c-1a94-4064-94e1-e2291fe729d2",
+        "name": "Camiseta con capucha",
+        "description": "Manga corta con cordón de color sólido básico para hombre. Materiales: Algodón, Poliester.",
+        "price": "1558",
+        "image": "t-shirt.white.jpg",
+        "size": "M",
+        "models": "Color: blanca",
+        "gender": "Hombre",
+        "category": "Buzos"
+    },
+    {
+        "id": "b4903295-c92f-4a3a-9839-129e4f53eb00",
+        "name": "Buzo abrigado de invierno",
+        "description": ".",
+        "price": "2349",
+        "image": "16.jpg",
+        "size": "XL",
+        "models": "Color: gris y amarillo",
+        "gender": "Hombre",
+        "category": "Buzos"
+    },
+    {
+        "id": "f03e0948-7fb0-45ee-9c94-0815914e9d8b",
+        "name": "Campera floreada de neoprene",
+        "description": ".",
+        "price": "2799",
+        "image": "20.jpg",
+        "size": "S",
+        "models": "Color: azul y rosa salmón",
+        "gender": "Mujer",
+        "category": "Camperas Termicas"
+    },
+    {
+        "id": "e19aa88f-3cc6-4e53-b757-e1d24fe59994",
+        "name": "Campera de neoprene gris",
+        "description": ".",
+        "price": "2599",
+        "image": "23.jpg",
+        "size": "S",
+        "models": "Color: gris",
+        "gender": "Mujer",
+        "category": "Camperas Termicas"
+    },
+    {
+        "id": "f1c66f30-bb0f-4be4-a7bd-dea5a9d249d9",
+        "name": "Campera NIKE rompeviento",
+        "description": ".",
+        "price": "3299",
+        "image": "23.jpg",
+        "size": "S",
+        "models": "Color: verde agua",
+        "gender": "Mujer",
+        "category": "Camperas Termicas"
+    },
+    {
+        "id": "e8a30a0e-42c1-43c3-9be1-2d78ab4855fe",
+        "name": "Buzo abrigado de invierno terra",
+        "description": ".",
+        "price": "2349",
+        "image": "17.jpg",
+        "size": "L",
+        "models": "Color: gris y marrón",
+        "gender": "Hombre",
+        "category": "Buzos"
+    },
+    {
+        "id": "71696851-d8f4-4268-bdaa-132ac539882e",
+        "name": "Buzo abrigado de invierno grey",
+        "description": ".",
+        "price": "2349",
+        "image": "18.jpg",
+        "size": "L",
+        "models": "Color: negro, gris y blanco",
+        "gender": "Hombre",
+        "category": "Buzos"
+    },
+    {
+        "id": "b5795192-f214-4438-8abc-251b23408527",
+        "name": "Buzo abrigado de invierno red",
+        "description": ".",
+        "price": "2349",
+        "image": "21.jpg",
+        "size": "L",
+        "models": "Color: gris oscuro y rojo",
+        "gender": "Hombre",
+        "category": "Buzos"
+    },
+    {
+        "id": "369fe60c-46dd-479f-8387-f0d9629d177d",
+        "name": "Campera de neoprene ocean",
+        "description": ".",
+        "price": "2449",
+        "image": "11.jpg",
+        "size": "S",
+        "models": "Color: gris, azul y verde agua",
+        "gender": "Mujer",
+        "category": "Camperas Termicas"
+    },
+    {
+        "id": "4294daf5-7a76-49ba-926a-5e754cc24eb6",
+        "name": "Campera de neoprene gris",
+        "description": ".",
+        "price": "1999",
+        "image": "19.jpg",
+        "size": "S",
+        "models": "Color: gris y negro",
+        "gender": "Mujer",
+        "category": "Camperas Termicas"
+    },
+    {
+        "id": "22347acb-a44c-42cb-82b1-28f93a34dd08",
+        "name": "Zapatillas deportivas",
+        "description": ".",
+        "price": "10499",
+        "image": "4.jpg",
+        "size": "S",
+        "models": "Color: gris y verde",
+        "gender": "Unisex",
+        "category": "Calzado Deportivo"
+    },
+    {
+        "id": "f739713b-2b62-41a2-8f0a-efb4f8e214d1",
+        "name": "Conjunto deportivo JORDAN",
+        "description": ".",
+        "price": "4799",
+        "image": "10.jpg",
+        "size": "L",
+        "models": "Color: rojo y negro",
+        "gender": "Hombre",
+        "category": "Conjuntos"
+    },
+    {
+        "id": "fe550dd2-7027-48c9-bff7-cd47ce662637",
+        "name": "Campera de neoprene de mangas negras",
+        "description": ".",
+        "price": "1599",
+        "image": "Chamarra.jpg",
+        "size": "M",
+        "models": "Color: gris",
+        "gender": "Mujer",
+        "category": "Camperas Termicas"
+    },
+    {
+        "id": "53b20bac-4a5c-40d2-b55b-e543de5859d3",
+        "name": "Calza deportiva negra",
+        "description": ".",
+        "price": "1899",
+        "image": "13.jpg",
+        "size": "M",
+        "models": "Color: negra con franjas rojas",
+        "gender": "Mujer",
+        "category": "Calzas Termicas"
+    },
+    {
+        "id": "caa833e3-f318-4ac2-954e-dddbbc509a64",
+        "name": "Calza deportiva verde oscuro",
+        "description": ".",
+        "price": "1899",
+        "image": "2.jpg",
+        "size": "M",
+        "models": "Color: verde oscuro",
+        "gender": "Mujer",
+        "category": "Calzas Termicas"
+    },
+    {
+        "id": "5ce5776f-eb63-4b86-8825-b411e077e4f1",
+        "name": "Jogging negro",
+        "description": ".",
+        "price": "1768",
+        "image": "27.jpg",
+        "size": "M",
+        "models": "Color: negro con franjas blancas",
+        "gender": "Hombre",
+        "category": "Pantalones Largos"
+    },
+    {
+        "id": "945a0486-73ce-4ef0-a14a-35fb2f91ef92",
+        "name": "Jogging gris",
+        "description": ".",
+        "price": "1768",
+        "image": "26.jpg",
+        "size": "M",
+        "models": "Color: gris",
+        "gender": "Hombre",
+        "category": "Pantalones Largos"
+    },
+    {
+        "id": "b1d7251e-b89c-4d55-b6b2-82dc65aab09a",
+        "name": "Jogging verde oscuro",
+        "description": ".",
+        "price": "1768",
+        "image": "25.jpg",
+        "size": "M",
+        "models": "Color: verde oscuro",
+        "gender": "Hombre",
+        "category": "Pantalones Largos"
+    },
+    {
+        "id": "daec0e34-c0be-4138-bb1b-b457c05aa759",
+        "name": "Zapatillas deporivas blancas",
+        "description": ".",
+        "price": "9899",
+        "image": "5.jpg",
+        "size": "L",
+        "models": "Color: blanco",
+        "gender": "Unisex",
+        "category": "Calzado Deportivo"
+    },
+    {
+        "id": "f4b6b46c-6bd4-4e55-8403-eb5e2b9ada9c",
+        "name": "Remera negra para entrenar",
+        "description": ".",
+        "price": "999",
+        "image": "remera-mujer.jpg",
+        "size": "XS",
+        "models": "Color: negro",
+        "gender": "Mujer",
+        "category": "Remeras Manga Corta"
+    },
+    {
+        "id": "70b1ca08-2466-4caf-bb57-7a0a6db3c3fd",
+        "name": "Conjunto deportivo PUMA, calza + top",
+        "description": ".",
+        "price": "3899",
+        "image": "14.jpg",
+        "size": "XS",
+        "models": "Color: negro y naranja",
+        "gender": "Mujer",
+        "category": "Conjuntos"
+    },
+    {
+        "id": "fb2de92d-a104-48b7-931b-dc83a26678c5",
+        "name": "Conjunto deportivo, campera + pantalón",
+        "description": ".",
+        "price": "4099",
+        "image": "15.jpg",
+        "size": "XS",
+        "models": "Color: azul oscuro con detalles amarillos y blancos",
+        "gender": "Mujer",
+        "category": "Conjuntos"
+    },
+    {
+        "id": "7c0cfbb7-056f-4adb-a3eb-55c87e427277",
+        "name": "Pantalón largo",
+        "description": ".",
+        "price": "2658",
+        "image": "24.jpg",
+        "size": "M",
+        "models": "Color: negro con franjas blancas y rosas",
+        "gender": "Mujer",
+        "category": "Pantalones Largos"
+    },
+    {
+        "id": "a019c195-807b-441a-b8aa-00060c2d7ceb",
+        "name": "Buzo ocean",
+        "description": ".",
+        "price": "3299",
+        "image": "3.jpg",
+        "size": "L",
+        "models": "Color: blanco y azul",
+        "gender": "Unisex",
+        "category": "Camperas de Abrigo"
+    },
+    {
+        "id": "6a1e308a-c432-4266-a1fc-f65f6e7ce43c",
+        "name": "Campera old school",
+        "description": ".",
+        "price": "1870",
+        "image": "29.jpg",
+        "size": "L",
+        "models": "Color: blanco y negro",
+        "gender": "Hombre",
+        "category": "Buzos"
+    },
+    {
+        "id": "cd9b2932-3138-462b-a9af-83a60df6313d",
+        "name": "Tops NIKE",
+        "description": ".",
+        "price": "1199",
+        "image": "6.jpg",
+        "size": "XS",
+        "models": "Color: negro, blanco y gris",
+        "gender": "Mujer",
+        "category": "Remeras Manga Corta"
+    },
+    {
+        "id": "38a8cfa6-da91-4f87-be5f-f412ffe18e48",
+        "name": "Campera rompeviento gris y rosa",
+        "description": ".",
+        "price": "5499",
+        "image": "31.jpg",
+        "size": "M",
+        "models": "Color: gris con detalles rosas",
+        "gender": "Mujer",
+        "category": "Camperas Termicas"
+    },
+    {
+        "id": "b923b3fb-e122-47c4-a1f7-897a6f0432c0",
+        "name": "Kit -Blue- para comenzar tu entrenamiento!",
+        "description": "Incluye: remera deportiva, short deportivo, zapatillas, anteojos, reloj y botella de agua.",
+        "price": "11499",
+        "image": "8.jpg",
+        "size": "M",
+        "models": "Color: tonos azules",
+        "gender": "Unisex",
+        "category": "Conjuntos"
+    },
+    {
+        "id": "ddc19b92-b4e3-4a96-b022-735eb2599c1b",
+        "name": "Remera deportiva negra",
+        "description": ".",
+        "price": "1099",
+        "image": "remera-hombre.jpg",
+        "size": "M",
+        "models": "Color: negro",
+        "gender": "Hombre",
+        "category": "Remeras Manga Corta"
+    },
+    {
+        "id": "2b56fe43-4a08-4f50-b5c4-6f3d225f72c6",
+        "name": "Kit -Black- para comenzar tu entrenamiento!",
+        "description": "Incluye: pantalon largo, campera, zapatillas deportivas, anteojos y auriculares.",
+        "price": "11499",
+        "image": "1.jpg",
+        "size": "S",
+        "models": "Color: negro",
+        "gender": "Unisex",
+        "category": "Conjuntos"
+    },
+    {
+        "id": "880e7e8f-19e2-40b5-9ec7-d13d7819ce40",
+        "name": "Kit -Green- para comenzar tu entrenamiento!",
+        "description": "Incluye: campera deportiva rompe viento, un par de shorts, zapatillas deportivas, y reloj de mano.",
+        "price": "11499",
+        "image": "9.jpg",
+        "size": "L",
+        "models": "Color: verde intenso y negro",
+        "gender": "Unisex",
+        "category": "Conjuntos"
     }
 ]
