@@ -20,7 +20,7 @@ router.post('/create', controllersOfProducts.create);
 // routes in detail
 router.get('/detail/:id', controllersOfProducts.productDetail);
 
-router.delete('/:id', controllersOfProducts.delete);
+router.delete('/:idProducts', controllersOfProducts.delete);
 
 // creo estas routas para trabajar con las vistas
 router.get('/edit', controllersOfProducts.editProduct);

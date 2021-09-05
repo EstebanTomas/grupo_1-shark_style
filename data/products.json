@@ -60,5 +60,26 @@
     "models": "todos los talles",
     "gender": "Hombre",
     "category": "Remeras Manga Corta"
+  },
+  {
+    "id": "d7ade281-15af-4180-b4a7-2fb1864c132e",
+    "name": "Camiseta con capucha negra",
+    "description": "Camiseta con capucha negra",
+    "price": "1558",
+    "image": "t-shirt.black.jpg",
+    "size": "XS",
+    "models": "todos los talles",
+    "gender": "Hombre",
+    "category": "Remeras Manga Corta"
+  },
+  {
+    "name": "",
+    "description": "",
+    "price": "",
+    "image": "",
+    "size": "XS",
+    "models": "",
+    "gender": "Hombre",
+    "category": "Remeras Manga Larga"
   }
 ]
