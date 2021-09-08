@@ -94,7 +94,7 @@ div article div div p {
 @media (min-width: 767px) {
     div article div div p {
         display: block;
-        padding-right: 20px;
+        padding: 0px 20px 2px 0px;
     }
 
     .conteiner-logo {

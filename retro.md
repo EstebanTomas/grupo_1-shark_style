@@ -57,3 +57,24 @@ _____________
 >
 *Que debemos dejar de hacer.*
 >Dejar de colgarnos con la división de las tareas, y comenzar a trabajar.
+>
+>
+_____________
+>
+**RETROSPECTIVA DEL CUARTO SPRINT**
+>
+*Que debemos comenzar a hacer como equipo.*
+>Repartir equitativamente las tareas.
+>
+*Que podemos hacer para mejorar.*
+>Actualizar el tablero de trabajo más seguido.
+>
+>Fomentar la counicación del equipo por slack.
+>
+*Que debemos seguir haciendo.*
+>Mantener la comunicación entre nosotros.
+>
+>Implementar las observaciones del tercer sprint.
+>
+*Que debemos dejar de hacer.*
+>Dejar de colgarnos con la división de las tareas, y comenzar a trabajar.
