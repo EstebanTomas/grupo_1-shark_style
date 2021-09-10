@@ -4,24 +4,32 @@ const { json } = require("express");
 const { v4: uuidv4 } = require("uuid");
 const { validationResult } = require("express-validator");
 
-var functionalities = require('../models/functionalities');
+var functionalities = require("../models/functionalities");
 
 const productsControllers = {
+  administration: (req, res) => {
+    let products = JSON.parse(fs.readFileSync("./data/products.json", {encoding: "utf-8"}));
+    res.render('./product/productsAdmin', {products});
+  },
   productCreate: (req, res) => {
     res.render("./product/productCreate");
   },
   create: (req, res) => {
-    let productsJson = fs.readFileSync("./data/products.json", {
-      encoding: "utf-8",
-    });
+    let productsJson = fs.readFileSync("./data/products.json");
     let dataOfProducts;
     // if userJson is not empty I store it in a variable.
     productsJson == ""
       ? (dataOfProducts = [])
       : (dataOfProducts = JSON.parse(productsJson));
 
+    // I take out the last product, I store it in lastProduct.
+    let lastProduct = dataOfProducts.pop();
+    // I add it again
+    dataOfProducts.push(lastProduct);
+    console.log();
+    // now i have an id counter.
     let product = {
-      id: uuidv4(),
+      id: lastProduct.id++,
       name: req.body.name,
       description: req.body.description,
       price: req.body.price,
@@ -31,9 +39,10 @@ const productsControllers = {
       gender: req.body.gender,
       category: req.body.category,
     };
+
     dataOfProducts.push(product);
 
-    dataOfListProducts = JSON.stringify(dataOfProducts);
+    dataOfListProducts = JSON.stringify(dataOfProducts, null, 2);
     fs.writeFileSync("./data/products.json", dataOfListProducts);
 
     res.redirect("/products/");
@@ -62,16 +71,21 @@ const productsControllers = {
     res.send("hola");
   },
   productList: (req, res) => {
-    res.render("./product/productList");
+    let products = JSON.parse(fs.readFileSync("./data/products.json", {
+      encoding: "utf-8",
+    }));
+    res.render("./product/productList", {products});
   },
   delete: (req, res) => {
-    let productsOfJson = fs.readFileSync("./data/products.json", { encoding: "utf-8" });
-    let productsNotRemoved = productsOfJson.filter(function (content) {
-      return content.name != req.params.name;
+    let productsOfJson = fs.readFileSync("./data/products.json", {
+      encoding: "utf-8",
+    });
+    let productsNotRemoved = productsOfJson.filter(content => {
+      return content.id != req.params.id;
     });
 
-    let productosJSON = JSON.stringify(productsNotRemoved, null, '');
-    fs.writeFileSync( "./data/products.json" , productosJSON);
+    let productosJSON = JSON.stringify(productsNotRemoved, null);
+    fs.writeFileSync("./data/products.json", productosJSON);
     res.redirect("/products");
   },
 };

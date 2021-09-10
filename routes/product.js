@@ -9,6 +9,7 @@ var controllersOfProducts = require('../controllers/productsControllers');
 router.get('/', controllersOfProducts.productList);
 //router.get('/:id', controllersOfProducts.productList);
 
+router.get('/admin', controllersOfProducts.administration)
 // this path shows the edit form
 router.get('/:idProducts/edit', controllersOfProducts.editProduct);
 router.put('/edit', controllersOfProducts.edit);
@@ -20,7 +21,8 @@ router.post('/create', controllersOfProducts.create);
 // routes in detail
 router.get('/detail/:id', controllersOfProducts.productDetail);
 
-router.delete('/:idProducts', controllersOfProducts.delete);
+// routes in delete
+router.get('/delete/:id', controllersOfProducts.delete);
 
 // creo estas routas para trabajar con las vistas
 router.get('/edit', controllersOfProducts.editProduct);
