@@ -18,18 +18,16 @@ const productsControllers = {
     let productsJson = fs.readFileSync("./data/products.json");
     let dataOfProducts;
     // if userJson is not empty I store it in a variable.
-    productsJson == ""
-      ? (dataOfProducts = [])
-      : (dataOfProducts = JSON.parse(productsJson));
+    productsJson == "" ? dataOfProducts = [] : dataOfProducts = JSON.parse(productsJson);
 
     // I take out the last product, I store it in lastProduct.
     let lastProduct = dataOfProducts.pop();
     // I add it again
     dataOfProducts.push(lastProduct);
-    console.log();
+    
     // now i have an id counter.
     let product = {
-      id: lastProduct.id++,
+      id: lastProduct.id +1,
       name: req.body.name,
       description: req.body.description,
       price: req.body.price,
@@ -77,17 +75,18 @@ const productsControllers = {
     res.render("./product/productList", {products});
   },
   delete: (req, res) => {
-    let productsOfJson = fs.readFileSync("./data/products.json", {
-      encoding: "utf-8",
-    });
-    let productsNotRemoved = productsOfJson.filter(content => {
-      return content.id != req.params.id;
+    // I bring the data
+    let productsOfJson = fs.readFileSync("./data/products.json", {encoding: "utf-8"});
+    let datas = JSON.parse(productsOfJson);
+    // if what comes from "req" is not equal to the database id, I save it in productsNotRemoved, if it is equal, I discard it.
+    let productsNotRemoved = datas.filter( data => {
+      return data.id != req.params.id;
     });
 
-    let productosJSON = JSON.stringify(productsNotRemoved, null);
+    let productosJSON = JSON.stringify(productsNotRemoved, null, 2);
     fs.writeFileSync("./data/products.json", productosJSON);
-    res.redirect("/products");
+    res.redirect("/products/admin");
+    
   },
 };
-
 module.exports = productsControllers;
