@@ -4,7 +4,6 @@ const { json } = require("express");
 const { v4: uuidv4 } = require("uuid");
 const { validationResult } = require("express-validator");
 
-var functionalities = require("../models/functionalities");
 
 const productsControllers = {
   administration: (req, res) => {
@@ -46,7 +45,17 @@ const productsControllers = {
     res.redirect("/products/");
   },
   productDetail: (req, res) => {
-    res.render("./product/productDetail");
+    let dataOfJson = JSON.parse(fs.readFileSync('./data/products.json', {encoding: 'utf-8'}));
+    
+    let information;
+    for (let i = 0; i <= dataOfJson.length; i++) {
+      if (dataOfJson[i].id == req.params.id ) {
+        information = dataOfJson[i];
+        res.render('./product/productDetail', {information});
+      } else {
+        res.render('./product/productList');
+      }
+    }
   },
   editProduct: (req, res) => {
     //res.render("./product/productEdit");

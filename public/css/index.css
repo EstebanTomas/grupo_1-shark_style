@@ -36,7 +36,7 @@ main {
     border-radius: 100%;
 }
 
-/*aqui comienza la edicion del primer slider*/
+aqui comienza la edicion del primer slider*
 
 .container {
     background-color: white;
@@ -185,7 +185,7 @@ ul.slider-two li:target {
     border-radius: 100%;
 }
 
-/**/
+*
 .articulos {
     background-color: white;
 }
@@ -314,7 +314,7 @@ main section article div h4 {
         display: none;
     }
 
-    /**/
+    
     header article div nav ul {
         display: flex;
         flex-direction: row;
@@ -459,7 +459,7 @@ main section article div h4 {
         display: none;
     }
 
-    /*edicion de la cuarta sección*/
+    /*edicion de la cuarta secció*/
     .stuff-container {
         display: flex;
         flex-direction: row;
