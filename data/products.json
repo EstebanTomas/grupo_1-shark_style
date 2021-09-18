@@ -361,5 +361,44 @@
     "models": "Color: negro",
     "gender": "Unisex",
     "category": "Conjuntos"
+  },
+  {
+    "id": 34,
+    "name": "",
+    "description": "",
+    "price": "",
+    "image": [
+      null,
+      null
+    ],
+    "size": "XS",
+    "models": "",
+    "gender": "Hombre",
+    "category": "Remeras Manga Larga"
+  },
+  {
+    "id": 35,
+    "name": "",
+    "description": "",
+    "price": "",
+    "image": [
+      null,
+      null
+    ],
+    "size": "XS",
+    "models": "",
+    "gender": "Hombre",
+    "category": "Remeras Manga Larga"
+  },
+  {
+    "id": 36,
+    "name": "Nike Run ",
+    "description": "",
+    "price": "8.000",
+    "image": "",
+    "size": "XS",
+    "models": "todos los talles",
+    "gender": "Unisex",
+    "category": "Calzado Deportivo"
   }
 ]

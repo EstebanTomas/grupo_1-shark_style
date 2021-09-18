@@ -23,14 +23,13 @@ const productsControllers = {
     let lastProduct = dataOfProducts.pop();
     // I add it again
     dataOfProducts.push(lastProduct);
-    
     // now i have an id counter.
     let product = {
       id: lastProduct.id +1,
       name: req.body.name,
       description: req.body.description,
       price: req.body.price,
-      image: req.body.image,
+      image: req.file ? req.file.filename : "",
       size: req.body.size,
       models: req.body.models,
       gender: req.body.gender,
