@@ -1,15 +1,16 @@
+const { json } = require('express');
 const fs = require('fs');
-let articulo = fs.readFileSync("./data/products.json", {
-    encoding: "utf-8",
-  });
 
 
 const mainControllers = {
+    // envio los productos a la vista index.
     home:  (req,res) => {
-        res.render('index');
+        let database = JSON.parse(fs.readFileSync("./data/products.json", {encoding: "utf-8",}));
+        
+        res.render('index', { database });
     },
     carrousel: (req,res) => {
-        res.render('carrousel', {articulos: articulo});
+        res.render('carrousel');
     }
 }
 

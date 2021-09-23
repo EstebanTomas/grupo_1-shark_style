@@ -28,6 +28,10 @@
                             <p class="text-p">¡Goza del estilo Shark Style y nuestros descuentos!</p>
                         </div>
                         <div class="data-field">
+                            <label>Ingresa una imagen</label>
+                            <input type="file" name="avatar" id="avatar" class="file">
+                        </div>
+                        <div class="data-field">
                             <label class="nombre">Usuario:</label>
                             <input type="text" name="name" class="cam" placeholder=" Juan Simón">
                             <% if ( locals.errors && errors.name ) {%>
@@ -36,6 +40,7 @@
                                 </p>
                                 <% } %>
                         </div>
+                       
                         <div class="data-field">
                             <label class="nombre">Apellido:</label>
                             <input type="text" name="lastName" id="lastName" class="cam" placeholder=" avellaneda">
@@ -65,10 +70,7 @@
                                 </p>
                                 <% } %>
                         </div>
-                        <div>
-                            <label>Ingresa una imagen</label>
-                            <input type="file" >
-                        </div>
+                        
                         <div class="terminos">
                             <input type="radio">
                             <label>Acepta nuestras condiciones de servicio y política de privacidad</label>

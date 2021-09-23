@@ -4,7 +4,6 @@ const { json } = require("express");
 const { v4: uuidv4 } = require("uuid");
 const { validationResult } = require("express-validator");
 
-var functionalities = require("../models/functionalities");
 
 const productsControllers = {
   administration: (req, res) => {
@@ -24,14 +23,13 @@ const productsControllers = {
     let lastProduct = dataOfProducts.pop();
     // I add it again
     dataOfProducts.push(lastProduct);
-    
     // now i have an id counter.
     let product = {
       id: lastProduct.id +1,
       name: req.body.name,
       description: req.body.description,
       price: req.body.price,
-      image: req.body.image,
+      image: req.file ? req.file.filename : "",
       size: req.body.size,
       models: req.body.models,
       gender: req.body.gender,
@@ -46,9 +44,17 @@ const productsControllers = {
     res.redirect("/products/");
   },
   productDetail: (req, res) => {
-    // I bring the data
-    let productsOfJson = fs.readFileSync("./data/products.json", {encoding: "utf-8"});
-    res.render("./product/productDetail");
+    let dataOfJson = JSON.parse(fs.readFileSync('./data/products.json', {encoding: 'utf-8'}));
+    
+    let information;
+    for (let i = 0; i <= dataOfJson.length; i++) {
+      if (dataOfJson[i].id == req.params.id ) {
+        information = dataOfJson[i];
+        res.render('./product/productDetail', {information});
+      } else {
+        res.render('./product/productList');
+      }
+    }
   },
   editProduct: (req, res) => {
     //res.render("./product/productEdit");

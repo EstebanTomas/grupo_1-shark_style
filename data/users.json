@@ -33,5 +33,23 @@
     "password": "$2a$10$u6bBvMIN0lVLRgoTVThSoONTLmWolq1Hx3DQFSiszwFw4zM36ZYCm",
     "avatar": "",
     "role": 1
+  },
+  {
+    "id": 6,
+    "name": "santiago",
+    "lastName": "avellaneda",
+    "email": "savellane@gmail.com",
+    "password": "$2a$10$Mh0GnZL1XPd2mfZZZ3Tr8OkE4S4eY/g95zIwkoUQETw.cOIGU.EAW",
+    "avatar": "avatar-1631651611803.jpg",
+    "role": 1
+  },
+  {
+    "id": 7,
+    "name": "juan ",
+    "lastName": "caballo",
+    "email": "juancabal@gmail.com",
+    "password": "$2a$10$7fZfMtj91HxEoJ1X7yH/geHqXYnJv6fGR/SS9g6aq0DtzX5jLhS7G",
+    "avatar": "avatar-1631652390083.jpg",
+    "role": 1
   }
 ]

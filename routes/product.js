@@ -1,10 +1,25 @@
 const express = require('express');
+const path = require('path');
 const router = express.Router();
 const { check } = require('express-validator');
+const multer = require('multer');
 
 var controllersOfProducts = require('../controllers/productsControllers');
 
 
+
+const multerStorage = multer.diskStorage({
+    destination: (req, file, cb ) => {
+        cb(null, path.join(__dirname, '../public/img/products'));
+    },
+    filename:  (req, file, cb ) => {
+        let imagesFile =  'foto' + '-' + Date.now() + path.extname(file.originalname.match(/\..*$/)[0]);
+        cb(null, imagesFile);
+    }
+})
+
+const upload = multer({storage: multerStorage})
+;
 // paths to product list
 router.get('/', controllersOfProducts.productList);
 //router.get('/:id', controllersOfProducts.productList);
@@ -16,7 +31,7 @@ router.put('/edit', controllersOfProducts.edit);
 
 // route of create
 router.get('/create', controllersOfProducts.productCreate);
-router.post('/create', controllersOfProducts.create);
+router.post('/create', upload.array('image') ,controllersOfProducts.create);
 
 // routes in detail
 router.get('/detail/:id', controllersOfProducts.productDetail);

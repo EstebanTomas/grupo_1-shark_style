@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const methodOverride = require('method-override');
+const session = require('express-session');
 
 // variables with files inside the router
 var indexRouter = require('./routes/index');
@@ -22,6 +23,9 @@ app.use(methodOverride('_method'));
 //configuration to be able to capture the information of the form and process it.
 app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
+
+//configuration of Express-session.
+app.use(session({secret: 'keep secret'}));
 
 // view engine setup
 const publicpath = path.join(__dirname, './public');
@@ -43,3 +47,7 @@ app.use('/users', usersRouter);
 app.use('/products', productRouter);
 
 app.use('/shopping', shoppingRouter);
+
+app.use((req, res, next) => {
+    res.status(404).render('error')
+})

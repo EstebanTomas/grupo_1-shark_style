@@ -19,7 +19,6 @@ const usersController = {
   userCreate: function (req, res) {
     // error validation
     let errors = validationResult(req);
-
     if (errors.isEmpty()) {
       let dataUser;
       // if userJson is not empty I store it in a variable.
@@ -45,14 +44,12 @@ const usersController = {
 
       res.redirect("/");
     } else {
-      res.render("./users/register", {
-        errors: errors.mapped(),
-        incomingData: req.body,
-      });
+      res.render("./users/register", { errors: errors.mapped(), incomingData: req.body }) 
     }
     res.redirect("/");
   },
 };
 // bcrypt.compareSync(clavequebusco, clave que hay 'hash')
+
 
 module.exports = usersController;

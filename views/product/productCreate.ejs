@@ -13,7 +13,7 @@
     </div>
     <main>
         <div class="create">
-            <form class="create-form" action="/products/create" method="POST" >
+            <form class="create-form" action="/products/create" method="POST">
                 <div class="box">
                     <p>
                         <label class="create-text">Nombre del producto</label>
@@ -39,12 +39,7 @@
                     </p>
                 </div>
                 <div class="box">
-                    <p>
-                        <label class="create-text">Imágen principal</label>
-                    </p>
-                    <p>
-                        <input class="create-img" type="file" accept=".jpg" value="foto" name="image"></input>
-                    </p>
+                    <input class="create" type="file" for="image" name="image" id="image" required multiple>
                 </div>
                 <div class="box">
                     <p>
@@ -121,4 +116,5 @@
         <%- include ( '../partials/footer' ) -%>
     </div>
 </body>
+
 </html>

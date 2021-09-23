@@ -14,22 +14,24 @@
     <main>
         <section class="section">
             <article class="article-conteiner">
-                <% products.forEach(products=> { %>
+                <% products.forEach(product => { %>
                     <div class="article">
                         <div>
                             <div class="conteinerOfImages">
-                                <img class="img" src="/img/<%= products.image %>" width="300px" height="300px"/>
+                                <a href="/products/detail/<%= product.id %>">
+                                <img class="img" src="/img/<%= product.image %>" width="300px" height="300px" alt="" />
+                                </a>
                             </div>
                             <br>
                             <div class=line>
                                 <div class="shipping"><i class="fas fa-truck"></i></div>
                                 <div class="box-text">
                                     <div class="price">
-                                        $<%= products.price %>
+                                        <%= product.price %>
                                     </div>
                                 </div>
                                 <div class="description">
-                                    <%= products.name %>
+                                    <%= product.description %>
                                 </div>
                                 <div>
                                     <p class="box-button-save">
