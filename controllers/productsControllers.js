@@ -46,6 +46,8 @@ const productsControllers = {
     res.redirect("/products/");
   },
   productDetail: (req, res) => {
+    // I bring the data
+    let productsOfJson = fs.readFileSync("./data/products.json", {encoding: "utf-8"});
     res.render("./product/productDetail");
   },
   editProduct: (req, res) => {
