@@ -13,38 +13,38 @@ header article section p {
     left: 81px;
 }
 */
-.main-header {
+header .main-header {
     background-color: rgb(180, 183, 182);
     padding-top     : 13px;
     font-family     : 'Roboto', sans-serif;
 }
 
-.inside-the-first-article-header {
+header .inside-the-first-article-header {
     display: none;
 }
 
-.article-main-header {
+header .article-main-header {
     display       : flex;
     flex-direction: column-reverse;
 }
 
-.conteiner-logo {
+header .conteiner-logo {
     margin         : 27px 0px 0px 0px;
     display        : flex;
     flex-direction : row;
     justify-content: center;
 }
 
-.logotipo-shark {
+header .logotipo-shark {
     width : 100%;
     height: 120px;
 }
 
-.conteiner-shark {
+header .conteiner-shark {
     display: none;
 }
 
-.icons2 {
+header .icons2 {
     padding         : 15px 14px 0px;
     display         : flex;
     justify-content : space-around;
@@ -57,61 +57,61 @@ header article section p {
     z-index         : 8;
 }
 
-.icons2 div a {
+header .icons2 div a {
     color: black;
 }
 
-.menu-hamburger {
+header .menu-hamburger {
     padding-right: 130px;
 }
 
-.navbar {
+header .navbar {
     display: none;
 }
 
-div article div div p {
+header div article div div p {
     display: none;
 }
 
 /*primer media queries*/
 
 @media (min-width: 481px) {
-    .icons2 {
+    header .icons2 {
         font-size  : 20px;
         padding-top: 10px;
     }
 
-    .menu-hamburger {
+    header .menu-hamburger {
         font-size: 20px;
     }
 
-    .conteiner-logo img {
+    header .conteiner-logo img {
         width: 380px;
     }
 }
 
 /*segunda media queries*/
 @media (min-width: 767px) {
-    div article div div p {
+    header div article div div p {
         display: block;
         padding: 0px 20px 2px 0px;
     }
 
-    .conteiner-logo {
+    header .conteiner-logo {
         display: none;
     }
 
-    .conteiner-logo img {
+    header .conteiner-logo img {
         width     : 200px;
         height    : 105px;
         object-fit: contain;
     }
 
-    .icons2 {
+    header .icons2 {
         display: none;
     }
 
-    .main-header {
+    header .main-header {
         position: fixed;
         width   : 100%;
         height  : 90px;
@@ -119,7 +119,7 @@ div article div div p {
         z-index : 8;
     }
 
-    .article-main-header {
+    header .article-main-header {
         flex-direction : row;
         align-items    : center;
         justify-content: space-around;
@@ -128,39 +128,39 @@ div article div div p {
         margin         : auto;
     }
 
-    .search-main {
+    header .search-main {
         height       : 21px;
         border       : solid 1px black;
         border-radius: 4px;
     }
 
-    .conteiner-logo {
+    header .conteiner-logo {
         margin: -33px 0px 0px;
         ;
     }
 
-    .conteiner-shark {
+    header .conteiner-shark {
         display       : flex;
         align-items: center;
     }
 
-    .logotipo-shark {
+    header .logotipo-shark {
         margin: 0px;
         width : 250px;
         height: 100px;
     }
 
-    .inside-the-first-article-header a {
+    header .inside-the-first-article-header a {
         color: black;
     }
 
-    .navbar {
+    header .navbar {
         padding         : 0px 10%;
         display         : block;
         background-color: #C06014;
     }
 
-    div article div nav ul {
+    header div article div nav ul {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
@@ -170,25 +170,25 @@ div article div div p {
         font-size: 15px;
     }
 
-    ul,
+    header ul,
     li {
         list-style: none;
     }
 
-    .option-navbar {
+    header .option-navbar {
         color     : white;
         transition: color 450ms;
     }
 
-    .option-navbar:hover {
+    header .option-navbar:hover {
         color: black;
     }
 
-    .inside-the-first-article-header {
+    header .inside-the-first-article-header {
         display: block;
     }
 
-    .div-1-conteiner {
+    header .div-1-conteiner {
         display        : flex;
         width          : 400px;
         justify-content: flex-start;
@@ -197,7 +197,7 @@ div article div div p {
         font-weight    : 600;
     }
 
-    .div-2-conteiner {
+    header .div-2-conteiner {
         display        : flex;
         width          : 80px;
         justify-content: space-between;
