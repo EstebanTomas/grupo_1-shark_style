@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Camiseta con capucha",
+    "name": "Camiseta con capucha negra",
     "description": "Manga corta con cordón de color sólido básico para hombre. Materiales: Algodón, Poliester.",
     "price": "1558",
     "image": "t-shirt.black.jpg",
@@ -12,7 +12,7 @@
   },
   {
     "id": 2,
-    "name": "Camiseta con capucha",
+    "name": "Camiseta con capucha naranja",
     "description": "Manga corta con cordón de color sólido básico para hombre. Materiales: Algodón, Poliester.",
     "price": "1558",
     "image": "t-shirt.orange.jpg",
@@ -23,7 +23,7 @@
   },
   {
     "id": 3,
-    "name": "Camiseta con capucha",
+    "name": "Camiseta con capucha celeste",
     "description": "Manga corta con cordón de color sólido básico para hombre. Materiales: Algodón, Poliester.",
     "price": "1558",
     "image": "t-shirt.skyblue.jpg",
@@ -34,7 +34,7 @@
   },
   {
     "id": 4,
-    "name": "Camiseta con capucha",
+    "name": "Camiseta con capucha blanca",
     "description": "Manga corta con cordón de color sólido básico para hombre. Materiales: Algodón, Poliester.",
     "price": "1558",
     "image": "t-shirt.white.jpg",
@@ -361,44 +361,5 @@
     "models": "Color: negro",
     "gender": "Unisex",
     "category": "Conjuntos"
-  },
-  {
-    "id": 34,
-    "name": "",
-    "description": "",
-    "price": "",
-    "image": [
-      null,
-      null
-    ],
-    "size": "XS",
-    "models": "",
-    "gender": "Hombre",
-    "category": "Remeras Manga Larga"
-  },
-  {
-    "id": 35,
-    "name": "",
-    "description": "",
-    "price": "",
-    "image": [
-      null,
-      null
-    ],
-    "size": "XS",
-    "models": "",
-    "gender": "Hombre",
-    "category": "Remeras Manga Larga"
-  },
-  {
-    "id": 36,
-    "name": "Nike Run ",
-    "description": "",
-    "price": "8.000",
-    "image": "",
-    "size": "XS",
-    "models": "todos los talles",
-    "gender": "Unisex",
-    "category": "Calzado Deportivo"
   }
 ]
