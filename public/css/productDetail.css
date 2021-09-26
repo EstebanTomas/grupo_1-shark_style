@@ -15,7 +15,7 @@ main .general-box {
     flex-direction: row;
     justify-content: space-around;
     background-color: white;
-    box-shadow: 0px 0px 5px rgb(100, 100, 100);
+    box-shadow: 0px 0px 3px rgb(100, 100, 100);
     width: 90vw;
     width: 90%;
     margin: auto;
@@ -47,9 +47,10 @@ main section .pic:hover {
 main section div .img-principalPicture {
     width: 100%;
     border-radius: 10px;
+    transition: box-shadow 480ms;
 }
 main section div .img-principalPicture:hover {
-    box-shadow: 0px 0px 8px rgb(83, 97, 98);
+    box-shadow: 0px 0px 5px rgb(83, 97, 98);
 }
 
 main section .detail {
@@ -102,10 +103,10 @@ main section article .mod {
     border: solid 1.5px rgb(66, 70, 66);
     margin-right: 10px;
     border-radius: 5px;
+    transition: box-shadow 450ms;
 }
 main section article .mod:hover {
-    box-shadow: 0px 0px 10px rgb(83, 97, 98);
-    border: solid 2px grey;
+    box-shadow: 0px 0px 8px rgb(83, 97, 98);
 }
 
 main section article .measures {
@@ -199,7 +200,12 @@ main section article .follow:hover {
     box-shadow: 0px 0px 10px rgb(83, 97, 98);
     border: solid 2px grey;
 }
-
+.button-cart {
+    background-color: #C06014;
+    border: 0px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 0.8em;
+}
 
 @media (max-width: 365px) {
     main section article .category {

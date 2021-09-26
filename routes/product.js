@@ -26,8 +26,8 @@ router.get('/', controllersOfProducts.productList);
 
 router.get('/admin', controllersOfProducts.administration)
 // this path shows the edit form
-router.get('/:idProducts/edit', controllersOfProducts.editProduct);
-router.put('/edit', controllersOfProducts.edit);
+router.get('/edit/:id', controllersOfProducts.editProduct);
+router.put('/edit/:id', controllersOfProducts.edit);
 
 // route of create
 router.get('/create', controllersOfProducts.productCreate);

@@ -35,7 +35,7 @@
         <div class = "container">
                <div class="principalPicture">
                     <!--aca va la foto principal-->
-                    <img class="img-principalPicture" src="/img/<%= product.image[i] %> " alt="campera manga corta naranja fuerte" />
+                    <img class="img-principalPicture" src="/img/<%= product.image %> " alt="imagenes que varian"/>
                 </div>
             </div>
 
@@ -46,16 +46,15 @@
                         Categoría
                     </div>
                     <div class="name">
-                        <!--nombre del producto-->
-                        Camiseta con capucha
+                        <!--nombre del producto/ Camiseta con capucha-->
+                        <%= product.name %> 
                     </div>
                     <div class="description">
-                        Manga corta con cordón de color sólido básico para hombre.
-                        Materiales: Algodón, Poliester
+                        <%= product.description %> 
                     </div>
                     <div class="price">
                         <!--precio-->
-                        AR$1.558
+                        AR $<%= product.price %> 
                     </div>
                 </article>
 
@@ -111,7 +110,7 @@
                             </div>
                             <div class="save">
                                 <!--agregar al carrito-->
-                                Agregar al carrito
+                                <button type="submit" class="button-cart">Agregar al carrito</button>
                             </div>
                         </div>
                         <div>
@@ -122,14 +121,6 @@
                             Compartir
                         </div>
                     </article>
-                </div>
-                <div>
-                    <form action="/products/:idProducts?_method=DELETE" method="POST">
-                        <button type="reset" class="button-delete">Eliminar</button>
-                    </form>
-                    <form action="">
-                        <button type="submit">Editar</button>
-                    </form>
                 </div>
             </div>
         </section>
