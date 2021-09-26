@@ -57,7 +57,18 @@ const productsControllers = {
     }
   },
   editProduct: (req, res) => {
-    //res.render("./product/productEdit");
+    // let productsOfJson = fs.readFileSync("./data/products.json", {encoding: "utf-8"});
+    // let datas = JSON.parse(productsOfJson);
+    // if (datas.includes (1)) {
+    //   res.send('Hola como estas' + req.params.idProducts + datas)
+    // }
+    // let product;
+    // for (let i = 0; i <= dataOfJson.length; i++) {
+    //   if (dataOfJson[i].id == req.params.idProducts ) {
+    //     product = dataOfJson[i];
+    //   }
+    // }
+    // res.render("./product/productEdit");
   },
   edit: (req, res) => {
     // I store in name, the value that comes from the name field.

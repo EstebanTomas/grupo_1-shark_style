@@ -13,13 +13,13 @@
     </div>
     <main>
         <div class="create">
-            <form class="create-form" action="/products/edit?_method=PUT" method="POST" >
+            <form class="create-form" action="/products/edit<%= product.image %>?_method=PUT" method="POST" >
                 <div class="box">
                     <p>
                         <label class="create-text">Nombre del producto</label>
                     </p>
                     <p>
-                        <input class="create-input" type="text" name="name"></input>
+                        <input class="create-input" type="text" name="name" value="<%= product.name %>"></input>
                     </p>
                 </div>
                 <div class="box">
@@ -27,7 +27,7 @@
                         <label class="create-text">Descripción</label>
                     </p>
                     <p>
-                        <input class="create-input" type="text" name="description"></input>
+                        <input class="create-input" type="text" name="description" value="<%= product.name %>"></input>
                     </p>
                 </div>
                 <div class="box">
@@ -35,7 +35,7 @@
                         <label class="create-text">Precio</label>
                     </p>
                     <p>
-                        <input class="create-input" type="number" name="price"></input>
+                        <input class="create-input" type="number" name="price" value="<%= product.name %>"></input>
                     </p>
                 </div>
                 <div class="box">
@@ -43,7 +43,7 @@
                         <label class="create-text">Imágen principal</label>
                     </p>
                     <p>
-                        <input class="create-img" type="file" accept=".jpg" value="foto" name="image"></input>
+                        <input class="create-img" type="file" accept=".jpg" value="foto" name="image" value="<%= product.name %>"></input>
                     </p>
                 </div>
                 <div class="box">
@@ -65,7 +65,7 @@
                         <label class="create-text">Modelos Disponibles</label>
                     </p>
                     <p>
-                        <input class="create-input" type="text" name="name"></input>
+                        <input class="create-input" type="text" name="name" value="<%= product.name %>"></input>
                     </p>
                 </div>
                 <div class="box">
@@ -102,7 +102,7 @@
                 </div>
                 <div class="box-button">
                     <p class="box-button-preview">
-                        <a href="/productDetail">
+                        <a href="/productDetail/<%= product.id %>">
                             <input id="button-preview" class="create-text" type="button" value="Previsualizar">
                         </a>
                     </p>

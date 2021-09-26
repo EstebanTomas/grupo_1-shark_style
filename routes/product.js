@@ -25,8 +25,9 @@ router.get('/', controllersOfProducts.productList);
 //router.get('/:id', controllersOfProducts.productList);
 
 router.get('/admin', controllersOfProducts.administration)
+
 // this path shows the edit form
-router.get('/:idProducts/edit', controllersOfProducts.editProduct);
+router.get('/edit/:idProducts', controllersOfProducts.editProduct);
 router.put('/edit', controllersOfProducts.edit);
 
 // route of create
@@ -40,8 +41,8 @@ router.get('/detail/:id', controllersOfProducts.productDetail);
 router.get('/delete/:id', controllersOfProducts.delete);
 
 // creo estas routas para trabajar con las vistas
-router.get('/edit', controllersOfProducts.editProduct);
-router.get('/detail', controllersOfProducts.productDetail);
+// router.get('/edit', controllersOfProducts.editProduct);
+// router.get('/detail', controllersOfProducts.productDetail);
 
 
 module.exports = router;
