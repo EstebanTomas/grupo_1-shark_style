@@ -22,20 +22,19 @@
                                 <img class="img" src="/img/<%= product.image %>" width="300px" height="300px" alt="" />
                                 </a>
                             </div>
-                            <br>
                             <div class=line>
                                 <div class="shipping"><i class="fas fa-truck"></i></div>
                                 <div class="box-text">
                                     <div class="price">
-                                        <%= product.price %>
+                                        $ <%= product.price %>
                                     </div>
                                 </div>
-                                <div class="description">
-                                    <%= product.description %>
+                                <div class="productName">
+                                    <%= product.name %>
                                 </div>
                                 <div>
                                     <p class="box-button-save">
-                                        <a href="/shopping">
+                                        <a href='/shopping'>
                                             <input class="button-save" type="button" value="Agregar al carrito">
                                         </a>
                                     </p>
@@ -43,12 +42,12 @@
                             </div>
                         </div>
                     </div>
-                    <% }); %>
+                <% }); %>
             </article>
         </section>
     </main>
     <div>
-        <%- include ( '../partials/footer' ) -%>
+        <%- include('../partials/footer') -%>
     </div>
 </body>
 

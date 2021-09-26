@@ -3,8 +3,8 @@
 
 <head>
     <%- include('../partials/head') -%> 
-    <link rel="stylesheet" href="/css/productDetail.css">
-    <title>Detalle del Producto</title>
+        <link rel="stylesheet" href="/css/productDetail.css">
+        <title>Detalle del Producto</title>
 </head>
 
 <body>
@@ -31,9 +31,9 @@
                     </div>
             </section> -->
             <% information.forEach(product => { %> 
-         
+        
         <div class = "container">
-               <div class="principalPicture">
+                <div class="principalPicture">
                     <!--aca va la foto principal-->
                     <img class="img-principalPicture" src="/img/<%= product.image %> " alt="imagenes que varian"/>
                 </div>
@@ -127,7 +127,7 @@
     </main>
 
     <div>
-        <%- include ( '../partials/footer' ) -%>
+        <%- include ('../partials/footer') -%>
     </div>
 </body>
 
