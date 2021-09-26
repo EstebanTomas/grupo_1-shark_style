@@ -3,7 +3,33 @@
 }
 
 @media (min-width: 280px) {
-     /*inicio del slider banner*/
+    .element1:first-child {
+        opacity: 1;
+    }
+
+    .element1:target {
+        opacity: 1;
+    }
+
+    img {
+        width: 600px
+    }
+
+    section article ul div li {
+        width: 60vw
+    }
+
+    ul.sub-element-conteiner li:first-child {
+        opacity: 1;
+        /*Mostramos el primer <li>*/
+    }
+
+    ul.sub-element-conteiner li:target {
+        opacity: 1;
+        /*Mostramos el <li> del enlace que pulsemos*/
+    }
+
+    /*inicio del slider banner/
     .image-session-two {
         margin: 5px 0px;
         height: 150px;
@@ -43,12 +69,12 @@
 
     ul.sub-element-conteiner li:first-child {
         opacity: 1;
-        /*Mostramos el primer <li>*/
+        /*Mostramos el primer <li>
     }
 
     ul.sub-element-conteiner li:target {
         opacity: 1;
-        /*Mostramos el <li> del enlace que pulsemos*/
+        /*Mostramos el <li> del enlace que pulsemos/
     }
 
     .contents {
@@ -162,10 +188,12 @@
         height          : 15px;
         border-radius   : 60%;
     }
+    */
 
 }
 
-/*@media (max-width: 460px) {
+/*
+@media (max-width: 460px) {
     .conteinerOfCarousel {
         margin     : 0;
         padding    : 0;

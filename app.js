@@ -4,6 +4,7 @@ const path = require('path');
 const app = express();
 const methodOverride = require('method-override');
 const session = require('express-session');
+//const  ejsLint  =  require ( 'ejs-lint' );
 
 // variables with files inside the router
 var indexRouter = require('./routes/index');
@@ -30,6 +31,7 @@ app.use(session({secret: 'keep secret'}));
 // view engine setup
 const publicpath = path.join(__dirname, './public');
 app.use(express.static(publicpath));
+app.set('views', path.resolve(__dirname, './views'));
 app.set('view engine', 'ejs');
 
 // server

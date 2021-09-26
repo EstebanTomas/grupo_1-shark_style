@@ -35,27 +35,29 @@
         <div class = "container">
                 <div class="principalPicture">
                     <!--aca va la foto principal-->
-                    <img class="img-principalPicture" src="/img/<%= product.image[i] %>" alt="" />
+                    <img class="img-principalPicture" src="/img/<%= product.image %> " alt="imagenes que varian"/>
                 </div>
             </div>
 
             <div class="detail">
                 <article>
                     <div class = "category">
-                        Hombre/Mujer>
-                        Categoría 
+                        <!-- Hombre/Mujer>
+                        Categoría  -->
+                        <%= product.gender %>
+                        >
+                        <%= product.category %>
                     </div>
                     <div class="name">
                         <!--nombre del producto-->
-                        Camiseta con capucha
+                        <%= product.name %> 
                     </div>
                     <div class="description">
-                        Manga corta con cordón de color sólido básico para hombre.
-                        Materiales: Algodón, Poliester
+                        <%= product.description %> 
                     </div>
                     <div class="price">
                         <!--precio-->
-                        AR$1.558
+                        AR $<%= product.price %> 
                     </div>
                 </article>
 
@@ -64,8 +66,13 @@
                         <!--colores y modelos disponibles-->
                         Modelos disponibles
                     </div>
-                    <div class="model">
-                        <!--una pequeña imagen de el modelo de color (voy a probar con forma circular)-->
+                    <!-- *** Hasta que podamos mostrar mas de una foto *** -->
+                    <div class="modelDescription">
+                        <%= product.models %> 
+                    </div>
+
+                    <!-- *** Una pequeña imagen del modelo de color (voy a probar con forma circular) *** -->
+                    <!-- <div class="model">
                         <div>
                             <img id = "m1" class = "mod" src="/img/t-shirt.orange.jpg" width = "80px" height = "110px" alt="campera manga corta naranja"/>
                         </div>
@@ -78,7 +85,7 @@
                         <div>
                             <img id = "m4" class = "mod" src="/img/t-shirt.black.jpg" width = "80px" height = "110px" alt="campera manga corta negra"/>
                         </div>
-                    </div> 
+                    </div>  -->
                 </article>
 
                 <article>
@@ -87,20 +94,25 @@
                         Talles
                     </div>
                     <div class="size">
-                        <div id="xs" class="siz">XS</div>
+                        <!-- <div id="xs" class="siz">XS</div>
                         <div id="s" class="siz">S</div>
                         <div id="m" class="siz">M</div>
                         <div id="l" class="siz">L</div>
-                        <div id="xl" class="siz">XL</div>
+                        <div id="xl" class="siz">XL</div> -->
+                        <div id="xs" class="siz">
+                            <%= product.size %>
+                        </div>
                     </div>
                 </article>
                 <% }); %>
                 <div class = "article-action">
                     <article>
-                        <div class="buy">
-                            <!--boton de comprar te lleva al carrito de compras y agrega el producto-->
-                            Comprar
-                        </div>
+                        <a href="/shopping" style="text-decoration: none;">
+                            <div class="buy">
+                                <!--boton de comprar te lleva al carrito de compras y agrega el producto-->
+                                Comprar
+                            </div>
+                        </a>
                     </article>
 
                     <article class="action">
@@ -111,25 +123,14 @@
                             </div>
                             <div class="save">
                                 <!--agregar al carrito-->
-                                Agregar al carrito
+                                <button type="submit" class="button-cart">Agregar al carrito</button>
                             </div>
-                        </div>
-                        <div>
-                            <!--flecha-->
                         </div>
                         <div class="follow">
                             <!--compartir-->
                             Compartir
                         </div>
                     </article>
-                </div>
-                <div>
-                    <form action="/products/:idProducts?_method=DELETE" method="POST">
-                        <button type="reset" class="button-delete">Eliminar</button>
-                    </form>
-                    <form action="">
-                        <button type="submit">Editar</button>
-                    </form>
                 </div>
             </div>
         </section>

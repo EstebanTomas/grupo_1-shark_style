@@ -7,8 +7,8 @@ const { validationResult } = require("express-validator");
 
 const productsControllers = {
   administration: (req, res) => {
-    let products = JSON.parse(fs.readFileSync("./data/products.json", {encoding: "utf-8"}));
-    res.render('./product/productsAdmin', {products});
+    let products = JSON.parse(fs.readFileSync("./data/products.json", { encoding: "utf-8" }));
+    res.render('./product/productsAdmin', { products });
   },
   productCreate: (req, res) => {
     res.render("./product/productCreate");
@@ -25,7 +25,7 @@ const productsControllers = {
     dataOfProducts.push(lastProduct);
     // now i have an id counter.
     let product = {
-      id: lastProduct.id +1,
+      id: lastProduct.id + 1,
       name: req.body.name,
       description: req.body.description,
       price: req.body.price,
@@ -44,17 +44,12 @@ const productsControllers = {
     res.redirect("/products/");
   },
   productDetail: (req, res) => {
-    let dataOfJson = JSON.parse(fs.readFileSync('./data/products.json', {encoding: 'utf-8'}));
-    
-    let information;
-    for (let i = 0; i <= dataOfJson.length; i++) {
-      if (dataOfJson[i].id == req.params.id ) {
-        information = dataOfJson[i];
-        res.render('./product/productDetail', {information});
-      } else {
-        res.render('./product/productList');
-      }
-    }
+    let dataOfJson = JSON.parse(fs.readFileSync('./data/products.json', { encoding: 'utf-8' }));
+    let idProduct = req.params.id;
+    const element = dataOfJson.filter((product) => {
+      return product.id == idProduct;
+    });
+    res.render("./product/productDetail", { "information": element });
   },
   editProduct: (req, res) => {
     // let productsOfJson = fs.readFileSync("./data/products.json", {encoding: "utf-8"});
@@ -69,6 +64,10 @@ const productsControllers = {
     //   }
     // }
     // res.render("./product/productEdit");
+    const products = JSON.parse(fs.readFileSync('./data/products.json', { encoding: 'utf-8' }));
+    var productToEdit = req.params.idProducts;
+    const EditProduct = products.find(toEdit => { toEdit.id == productToEdit });
+    return res.render("./product/productEdit", { "object": EditProduct });
   },
   edit: (req, res) => {
     // I store in name, the value that comes from the name field.
@@ -91,21 +90,22 @@ const productsControllers = {
     let products = JSON.parse(fs.readFileSync("./data/products.json", {
       encoding: "utf-8",
     }));
-    res.render("./product/productList", {products});
+    res.render("./product/productList", { products });
   },
   delete: (req, res) => {
     // I bring the data
-    let productsOfJson = fs.readFileSync("./data/products.json", {encoding: "utf-8"});
+    let productsOfJson = fs.readFileSync("./data/products.json", { encoding: "utf-8" });
     let datas = JSON.parse(productsOfJson);
     // if what comes from "req" is not equal to the database id, I save it in productsNotRemoved, if it is equal, I discard it.
-    let productsNotRemoved = datas.filter( data => {
+    let productsNotRemoved = datas.filter(data => {
       return data.id != req.params.id;
     });
 
     let productosJSON = JSON.stringify(productsNotRemoved, null, 2);
     fs.writeFileSync("./data/products.json", productosJSON);
     res.redirect("/products/admin");
-    
+
   },
 };
+
 module.exports = productsControllers;
