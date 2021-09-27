@@ -43,16 +43,31 @@
                     </div>
                     <div class="box">
                         <p>
-                            <label class="create-text">Imágen principal</label>
+                            <label class="create-text">Modelos Disponibles</label>
                         </p>
                         <p>
-                            <input class="create-img" type="file" accept=".jpg" value="foto" name="image"
-                                value="<%= object.image %>">
+                            <input class="create-input" type="text" name="models" value="<%= object.models %>">
+                        </p>
+                    </div>
+                    <div class="box">
+                        <p>
+                            <label class="create-text">Imágen principal</label>
+                        </p>
+                        <p class="currentData">
+                            Imágen actual:
+                            <%= object.image %>
+                        </p>
+                        <p>
+                            <input class="create-img" type="file" accept=".jpg" name="image">
                         </p>
                     </div>
                     <div class="box">
                         <p>
                             <label class="create-text">Talles disponibles</label>
+                        </p>
+                        <p class="currentData">
+                            Talle actual:
+                            <%= object.size %>
                         </p>
                         <p>
                             <select class="create-options" name="interests">
@@ -66,15 +81,11 @@
                     </div>
                     <div class="box">
                         <p>
-                            <label class="create-text">Modelos Disponibles</label>
-                        </p>
-                        <p>
-                            <input class="create-input" type="text" name="models" value="<%= object.models %>">
-                        </p>
-                    </div>
-                    <div class="box">
-                        <p>
                             <label class="create-text">Género</label>
+                        </p>
+                        <p class="currentData">
+                            Género actual:
+                            <%= object.gender %>
                         </p>
                         <p>
                             <select class="create-options" name="gender">
@@ -87,6 +98,10 @@
                     <div class="box">
                         <p>
                             <label class="create-text">Categoría</label>
+                        </p>
+                        <p class="currentData">
+                            Categoría actual:
+                            <%= object.category %>
                         </p>
                         <p>
                             <select class="create-options" name="category">
@@ -105,11 +120,12 @@
                         </p>
                     </div>
                         <div class="box-button">
-                            <p class="box-button-preview">
-                                <a href="/productDetail">
+                            <!-- ***No se como hacerlo funcionar de momento***
+                                <p class="box-button-preview">
+                                <a href="/products/detail/<%= object.id %>">
                                     <input id="button-preview" class="create-text" type="button" value="Previsualizar">
                                 </a>
-                            </p>
+                            </p> -->
                             <p class="box-button-edit">
                                 <button id="button-edit" type="submit" class="create-text">Editar</button>
                             </p>

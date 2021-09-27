@@ -155,7 +155,10 @@ main form .button:hover {
     }
 }
 @media (min-width: 400px) {
-    main form .box-button-preview, .box-button-send {
+    /* main form .box-button-preview {
+        padding-right: 10px;
+    } */
+    main form .box-button-send {
         padding-right: 10px;
     }
     main form .create-input {

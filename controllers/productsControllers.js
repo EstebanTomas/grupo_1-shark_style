@@ -52,22 +52,12 @@ const productsControllers = {
     res.render("./product/productDetail", { "information": element });
   },
   editProduct: (req, res) => {
-    // let productsOfJson = fs.readFileSync("./data/products.json", {encoding: "utf-8"});
-    // let datas = JSON.parse(productsOfJson);
-    // if (datas.includes (1)) {
-    //   res.send('Hola como estas' + req.params.idProducts + datas)
-    // }
-    // let product;
-    // for (let i = 0; i <= dataOfJson.length; i++) {
-    //   if (dataOfJson[i].id == req.params.idProducts ) {
-    //     product = dataOfJson[i];
-    //   }
-    // }
-    // res.render("./product/productEdit");
     const products = JSON.parse(fs.readFileSync('./data/products.json', { encoding: 'utf-8' }));
-    var productToEdit = req.params.idProducts;
-    const EditProduct = products.find(toEdit => { toEdit.id == productToEdit });
-    return res.render("./product/productEdit", { "object": EditProduct });
+    let productToEdit = req.params.id;
+    const EditProduct = products.filter((toEdit) => { 
+      return toEdit.id == productToEdit;
+    });
+    res.render("./product/productEdit", { "object": EditProduct });
   },
   edit: (req, res) => {
     // I store in name, the value that comes from the name field.

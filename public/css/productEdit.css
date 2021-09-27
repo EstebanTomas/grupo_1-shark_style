@@ -48,6 +48,12 @@ main form .create-img {
     font-size: 20px;
 }
 
+main form .currentData {
+    font-size: 20px;
+    color: black;
+    margin-top: -8px;
+}
+
 main form .create-options {
     margin-bottom: 10px;
     width: 200px;
@@ -70,7 +76,7 @@ main form .box-button {
     box-shadow: 0px 0px 4px rgb(100, 100, 100);
 }
 
-main form .box-button-preview {
+/* main form .box-button-preview {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -85,7 +91,7 @@ main form #button-preview {
 }
 main form #button-preview:hover {
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
-}
+} */
 
 main form .box-button-edit {
     display: flex;
@@ -154,7 +160,10 @@ main form .button:hover {
     }
 }
 @media (min-width: 400px) {
-    main form .box-button-preview, .box-button-edit {
+    /* main form .box-button-preview {
+        padding-right: 10px;
+    } */
+    main form .box-button-send {
         padding-right: 10px;
     }
     main form .create-input {
@@ -174,6 +183,10 @@ main form .button:hover {
     main form .create-input {
         width: 670px;
     }
+    main form .box-button {
+        width: 350px;
+        margin-left: 175px;
+    }
 }
 
 @media (min-width: 1000px) {
@@ -188,5 +201,8 @@ main form .button:hover {
     }
     main form .create-input {
         width: 100%;
+    }
+    main form .box-button {
+        margin-left: 0px;
     }
 }
