@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box;
+}
+
+main {
+    margin-top: 50px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.title {
+    text-align: center;
+    font-size: 20px;
+    font-family: MD Primer Bold,Rubik,Lato;
+}
+
+main section {
+    border: solid 2px #1F3F4E;
+    box-shadow: 0px 0px 10px gray;
+    margin: auto;
+    border-radius: 10px;
+    width: 85%;
+    margin-bottom: 50px
+}
+
+.bar-conteiner {
+    height: 40px;
+    border-bottom: solid 2px black;
+}
+
+main section article nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+main section article nav ul li {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+main section article div {
+    border-bottom: solid 1px grey;
+}
+
+.Administrator-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+}
+
+main section article div ul .text {
+    width: 20%;
+    margin-left: 0%;
+}
+
+main section article div ul .edit {
+    position: relative;
+    left: -8%;
+}
+
+main section article div ul .edit a i {
+    color: gray;
+    font-size: 20px;
+    box-shadow: 0px 0px 0px;
+    transition: color box-shadow 450ms;
+}
+
+main section article div ul .edit a i:hover {
+    color: black;
+    background-color: rgb(197, 197, 197);
+    box-shadow: -1px 1px 20px rgb(162, 159, 159);
+}
+
+main section article div ul .delete {
+    position: relative;
+    left: -3%;
+}
+
+main section article div ul .delete a i {
+    color: gray;
+    font-size: 20px;
+    box-shadow: 0px 0px 0px;
+    transition: color box-shadow 450ms;
+}
+
+main section article div ul .delete a i:hover {
+    color: black;
+    background-color: rgb(162, 162, 162);
+    box-shadow: 0px 0px 20px rgb(162, 159, 159);
+}
+
+@media (min-width: 767px) {
+    main {
+        margin-top: 120px;
+    }
+}

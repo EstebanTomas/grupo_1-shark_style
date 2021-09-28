@@ -1,0 +1,125 @@
+
+
+body {
+    height: 100vh;
+    /* agregue la letra roboto qeu fue la que elegimos para toda la página */
+    font-family: 'Roboto Condensed', sans-serif;
+    /* tambien le puse de color de fondo al cremita clarito de la paleta de colores que usamos */
+    background-color: rgb(243, 244, 237);
+} 
+
+.login-container {
+    max-width: 900px;
+    width: 80%; 
+    height: 590px;
+    border-radius: 8px;
+    background: white;
+    display: flex;
+    margin: auto;
+    margin-top: 160px;
+    overflow: hidden;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0px 0px 10px rgb(83 97 98);
+}
+
+.login-info-container {
+    text-align: center;
+}
+
+.title {
+    text-transform: capitalize;
+    font-size: 113%;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.redes-login {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+
+.redes-login-element {
+    width: 8vw;
+}
+
+.redes-login-element img {
+    position: relative;
+    top: 7px;
+}
+
+.redes-login-element:hover {
+    background-color: #fff;
+}
+
+.login-info-container > p {
+    font-size: 126%;
+    color: #C06014;
+    margin: 0;
+}
+
+.inputs-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input, .boton {
+    width: 90%;
+    height: 3.125rem;
+    font-size: 1em;
+}
+
+/* le agregue una sombra en el hover */
+.input {
+    padding-left: 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    width: 78%;
+    margin-top: 11px;
+    height: 7vh;
+    letter-spacing: 2px;
+}
+.input:hover {
+    box-shadow: 0px 0px 10px rgb(83 97 98);
+}
+
+/* le agrande la letra del botón y le puse una transición */
+.boton {
+    width: 30vw;
+    margin-top: 16px;
+    height: 7vh;
+    letter-spacing: 3px;
+    font-size: 22px;
+    text-transform: uppercase;
+    color: white;
+    background: #C06014;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 450ms;
+}
+.boton:hover {
+    background-color: rgb(175, 89, 18);
+}
+
+.inputs-container p {
+    font-size: 121%;
+    margin-top: 9px;
+    margin-bottom: 8px;
+}
+
+.span {
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+@media (min-width : 400px) {
+    body.login-container{
+        width: 90%;
+    }
+}

@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image : url('../img/relevant-images/error-404.jpg');
+    background-position: top center;
+}
+
+main {
+    width: 90%;
+    margin: auto;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.div-conteiner-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main div h1 {
+    color: #7193a0;
+    position: relative;
+    top: 265px;
+    left: -275px;
+    font-size: 3em;
+}
+
+.button {
+    width: 130px;
+    height: 40px;
+    border: solid #63AABC 1px;
+    border-radius: 5px;
+    background-color: #63AABC;
+    color: white;
+    box-shadow: 0px 0px 0px;
+    transition: box-shadow 450ms;
+    position: relative;
+    top: 190px;
+    right: -227px;
+}
+
+.button:hover {
+    box-shadow: 0px 0px 10px black;
+}

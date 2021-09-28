@@ -1,0 +1,224 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: rgb(243, 244, 237);
+}
+
+main {
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 10px rgb(83 97 98);
+    border-radius: 8px;
+    background-color: white;
+}
+/* le doy estilo y posición a la section-one*/
+.div-conteiner-shark-style {
+    text-align: center;
+    margin: auto;
+}
+
+.div-conteiner-shark-style img {
+    width: 200px;
+    margin-top: 10px;
+    object-fit: none;
+}
+
+.section-one {
+    border-bottom: solid 1px black
+} 
+
+.options-of-nav {
+    width: 100%;
+    font-weight: 600;
+}
+
+section nav ol li {
+    list-style: none
+}
+
+section nav ol {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-left: 0px;
+}
+
+.section-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* le doy estilo y posición a section-two*/
+.section-two {
+    width: 100%;
+}
+
+.section-two article div img {
+    border-radius: 10px
+}
+
+.section-two article p {
+    font-weight: 700;
+}
+.units {
+    display: flex;
+    justify-content: space-around;
+    width: 100px;
+}
+.units a i {
+    color: #C06014;
+}
+
+.color {
+    background-color: gray;
+    text-align: center;
+    padding-bottom: 20px;
+    width: 35px;
+    height: 16px;
+    border-radius: 2px;
+}
+
+.section-two article {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    width: 90%;
+    margin-top: 5px;
+}
+
+.return-button {
+    margin: 0px 0px 10px 10%;
+
+}
+
+.return-button a input {
+    border-radius: 5px;
+    background-color: #C06014;
+    color: white;
+    transition: background-color 450ms;
+}
+
+.return-button a input:hover {
+    background-color: #ad4e03;
+}
+
+.title-summary {
+    font-size: 20px;
+}
+    /* le doy estilo y posición a section-three*/
+
+.section-three {
+    width: 100%;
+    border-top: solid 3px #810000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.shipments-and-subtotal {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+    font-weight: 600;
+}
+
+.style-button {
+    margin-bottom: 30px
+}
+
+.shipments-and-subtotal a {
+    text-decoration: none;
+    color: black;
+}
+
+.section-three div a input {
+    width: 200px;
+    height: 35px;
+    border-radius: 8px;
+    font-size: 20px;
+    color: white;
+    background-color: #C06014;
+    transition: background-color 450ms;
+}
+
+.section-three div a input:hover {
+    background-color: #ad4e03;
+}
+
+
+@media (min-width: 767px) {
+    main {
+        margin-top: 180px;
+        margin-bottom: 50px;
+        max-width: 1000px;
+    }
+    /* le doy estilo y posición a la section-one*/
+    .div-conteiner-shark-style {
+        border-bottom: solid 3px #810000;
+        width: 95%;
+    }
+    
+    .options-of-nav {
+        width: 55%;
+        height: 40px;
+        padding-left: 20px;
+        font-size: 20px;
+    }
+    
+    section nav ol {
+        justify-content: space-between;
+    }
+    
+    .section-main {
+    flex-direction: row;
+    }
+    /* le doy estilo y posición a section-two*/
+    .section-two {
+        width: 60%;
+    }
+    
+    .section-two article p {
+        font-size: 18px;
+    }
+    
+    .color {
+        background-color: #5a5757;
+        color: white;
+    }
+    
+    .return-button a input {
+        width: 200px;
+        height: 30px;
+    }
+        /* le doy estilo y posición a section-three*/
+    
+    .section-three {
+        width: 40%;
+        border-left: solid 1px gray;
+        border-top: none;
+        height: 400px;
+    }
+    
+    .shipments-and-subtotal {
+        display: flex;
+        width: 70%;
+        border-bottom: solid 1px black;
+        font-size: 17px;
+    }
+    
+    .style-button {
+        margin-bottom: 30px
+    }
+    
+    .shipments-and-subtotal a {
+        text-decoration: none;
+        color: black;
+    }
+}
