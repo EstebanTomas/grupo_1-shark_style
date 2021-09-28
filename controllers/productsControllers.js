@@ -7,13 +7,16 @@ const { validationResult } = require("express-validator");
 
 const productsControllers = {
   administration: (req, res) => {
+    // I bring all the products
     let products = JSON.parse(fs.readFileSync("./data/products.json", { encoding: "utf-8" }));
+    // I send the data to the views
     res.render('./product/productsAdmin', { products });
   },
   productCreate: (req, res) => {
     res.render("./product/productCreate");
   },
   create: (req, res) => {
+    // I bring all the products
     let productsJson = fs.readFileSync("./data/products.json");
     let dataOfProducts;
     // if userJson is not empty I store it in a variable.
@@ -29,7 +32,7 @@ const productsControllers = {
       name: req.body.name,
       description: req.body.description,
       price: req.body.price,
-      image: req.file ? req.file.filename : "",
+      image: [[req.files[0].filename], [req.files[1].filename],[req.files[2].filename]],
       size: req.body.size,
       models: req.body.models,
       gender: req.body.gender,
@@ -44,17 +47,22 @@ const productsControllers = {
     res.redirect("/products/");
   },
   productDetail: (req, res) => {
+    // I bring all the products
     let dataOfJson = JSON.parse(fs.readFileSync('./data/products.json', { encoding: 'utf-8' }));
     let idProduct = req.params.id;
     const element = dataOfJson.filter((product) => {
       return product.id == idProduct;
     });
+    // I send the data to the views
     res.render("./product/productDetail", { "information": element });
   },
   editProduct: (req, res) => {
+    // I bring all the products
     const products = JSON.parse(fs.readFileSync('./data/products.json', { encoding: 'utf-8' }));
     var productToEdit = req.params.idProducts;
-    const EditProduct = products.find(toEdit => { toEdit.id == productToEdit });
+    const EditProduct = products.filter(toEdit => { 
+      return toEdit.id == productToEdit });
+      // I send the data to the views
     return res.render("./product/productEdit", { "object": EditProduct });
   },
   edit: (req, res) => {
@@ -75,13 +83,15 @@ const productsControllers = {
     res.send("hola");
   },
   productList: (req, res) => {
+    // I bring all the products
     let products = JSON.parse(fs.readFileSync("./data/products.json", {
       encoding: "utf-8",
     }));
+    // I send the data to the views
     res.render("./product/productList", { products });
   },
   delete: (req, res) => {
-    // I bring the data
+    // I bring all the products
     let productsOfJson = fs.readFileSync("./data/products.json", { encoding: "utf-8" });
     let datas = JSON.parse(productsOfJson);
     // if what comes from "req" is not equal to the database id, I save it in productsNotRemoved, if it is equal, I discard it.

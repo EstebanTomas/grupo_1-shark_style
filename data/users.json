@@ -51,5 +51,14 @@
     "password": "$2a$10$7fZfMtj91HxEoJ1X7yH/geHqXYnJv6fGR/SS9g6aq0DtzX5jLhS7G",
     "avatar": "avatar-1631652390083.jpg",
     "role": 1
+  },
+  {
+    "id": 8,
+    "name": "usuario02",
+    "lastName": "apellido11",
+    "email": "usuario@gmail.com",
+    "password": "$2a$10$c.e85vUTHI3ubblpTiQnpei/1QUbscDSq1b.YwvgOASdb1w9QwRzS",
+    "avatar": "avatar-1632784753661.jpg",
+    "role": 1
   }
 ]
