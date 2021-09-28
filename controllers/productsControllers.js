@@ -17,7 +17,7 @@ const productsControllers = {
   },
   create: (req, res) => {
     // I bring all the products
-    let productsJson = fs.readFileSync("./data/products.json");
+    let productsJson = fs.readFileSync("./data/products.json", {encoding: "utf-8"});
     let dataOfProducts;
     // if userJson is not empty I store it in a variable.
     productsJson == "" ? dataOfProducts = [] : dataOfProducts = JSON.parse(productsJson);
