@@ -8,11 +8,11 @@ var controllersOfProducts = require('../controllers/productsControllers');
 
 const multerStorage = multer.diskStorage({
     destination: ( req, file, cb ) => {
-        var location = path.resolve(__dirname, "../public/img/image");
+        var location = path.resolve(__dirname, "../public/img/productImage");
         cb( null, location );
     },
     filename: ( req, file, cb ) => {
-        var format = 'foto' + '-' + Date.now() + path.extname(file.originalname);
+        var format = 'producto' + '-' + Date.now() + path.extname(file.originalname);
         cb( null, format);
     }
 });

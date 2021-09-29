@@ -3,6 +3,7 @@ const fs = require("fs");
 const { json } = require("express");
 const { v4: uuidv4 } = require("uuid");
 const { validationResult } = require("express-validator");
+const multer = require('multer');
 
 
 const productsControllers = {
@@ -32,7 +33,7 @@ const productsControllers = {
       name: req.body.name,
       description: req.body.description,
       price: req.body.price,
-      image: [req.files[0].filename, req.files[1].filename, req.files[2].filename],
+      image: [[req.files[0].filename], [req.files[1].filename], [req.files[2].filename]],
       size: req.body.size,
       models: req.body.models,
       gender: req.body.gender,
