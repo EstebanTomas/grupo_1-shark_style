@@ -18,7 +18,7 @@ Nuestros productos están enfocados en adolescentes y adultos, tanto masculino c
 
 **Riquelme Federico:* me gusta la música, jugar videojuegos, mirar series, tomar mates y aprender de todo un poco.
 
-**Tomás Valiente:* me gustan los deportes, la naturaleza, me agrada pasar tiempo con amigos y hacer actividades entre amigos y amigas.
+**Tomás Valiente:* me gustan los deportes, la naturaleza, me agrada pasar tiempo con mis amistades y hacer actividades entre amigos y amigas.
 
 **Agustin Larralde:* me gusta aprender cosas nuevas, me da mucha intriga la programación y sus posibilidades. Además me gustan mucho las películas y series de cualquier género.
 
