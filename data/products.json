@@ -19,5 +19,47 @@
     "models": "todos los talles",
     "gender": "Mujer",
     "category": "Remeras Manga Corta"
+  },
+  {
+    "id": 2,
+    "name": "Remera Fila Salem",
+    "description": "Fila Salem liviana  ",
+    "price": "1999",
+    "image": [
+      [
+        "producto-1632972489058.jpg"
+      ],
+      [
+        "producto-1632972489066.jpg"
+      ],
+      [
+        "producto-1632972489081.jpg"
+      ]
+    ],
+    "size": "S",
+    "models": "todos los talles",
+    "gender": "Mujer",
+    "category": "Remeras Manga Corta"
+  },
+  {
+    "id": 3,
+    "name": "Remera Nike Runner Victory",
+    "description": "Nike Runner Victory light",
+    "price": "6499",
+    "image": [
+      [
+        "producto-1632972862115.jpg"
+      ],
+      [
+        "producto-1632972862222.jpg"
+      ],
+      [
+        "producto-1632972862273.jpg"
+      ]
+    ],
+    "size": "L",
+    "models": "todos los talles",
+    "gender": "Hombre",
+    "category": "Remeras Manga Corta"
   }
 ]

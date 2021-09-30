@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <%- include('../partials/head') -%> 
+    <%- include('../partials/head') -%>
         <link rel="stylesheet" href="/css/productDetail.css">
         <title>Detalle del Producto</title>
 </head>
@@ -13,66 +13,69 @@
     </div>
 
     <main>
-        <section class = "general-box">
-            <!-- ****Fotos de respaldo a la izquierda****
-            <section class = "picture">
-                    aca voy a poner las fotos del producto a la izquierda
-                    <div>
-                        <img id = "p1" class = "pic" src="/img/p1.jpg" width = "120px" height = "160px" alt="la parte trasera de la campera manga corta"/>
+        <section class="general-box">
+            <!-- ****Fotos de respaldo a la izquierda**** -->
+            <!-- aca voy a poner las fotos del producto a la izquierda-->
+            <% information.forEach(product=> { %>
+                <section class="picture">
+
+                    <div class="photos">
+                        <img id="p1" class="pic" src="/img/productImage/<%= product.image[0] %>" width="50px"
+                            height="55px" alt="la parte trasera de la campera manga corta" />
                     </div>
-                    <div>
-                        <img id = "p2" class = "pic" src="/img/p2.jpg" width = "120px" height = "160px" alt="capucha de la campera"/>
+                    <div class="photos">
+                        <img id="p2" class="pic" src="/img/productImage/<%= product.image[1] %>" width="50px"
+                            height="55px" alt="capucha de la campera" />
                     </div>
-                    <div>
-                        <img id = "p3" class = "pic" src="/img/p3.jpg" width = "120px" height = "160px" alt="manga de la campera"/>
+                    <div class="photos">
+                        <img id="p3" class="pic" src="/img/productImage/<%= product.image[2] %>" width="50px"
+                            height="55px" alt="manga de la campera" />
                     </div>
-                    <div>
-                        <img id = "p4" class = "pic" src="/img/p4.jpg" width = "120px" height = "160px" alt="una muestra de tela naranja con la que se hizo la campera"/>
+                </section>
+
+
+                <div class="container">
+                    <div class="principalPicture">
+                        <!--aca va la foto principal-->
+                        <img class="img-principalPicture" src="/img/productImage/<%= product.image[0] %> "
+                            alt="imagenes que varian" />
                     </div>
-            </section> -->
-            <% information.forEach(product => { %> 
-        
-        <div class = "container">
-                <div class="principalPicture">
-                    <!--aca va la foto principal-->
-                    <img class="img-principalPicture" src="/img/productImage/<%= product.image[0] %> " alt="imagenes que varian"/>
                 </div>
-            </div>
 
-            <div class="detail">
-                <article>
-                    <div class = "category">
-                        <!-- Hombre/Mujer>
+                <div class="detail">
+                    <article>
+                        <div class="category">
+                            <!-- Hombre/Mujer>
                         Categoría  -->
-                        <%= product.gender %>
-                        >
-                        <%= product.category %>
-                    </div>
-                    <div class="name">
-                        <!--nombre del producto-->
-                        <%= product.name %> 
-                    </div>
-                    <div class="description">
-                        <%= product.description %> 
-                    </div>
-                    <div class="price">
-                        <!--precio-->
-                        ARS $<%= product.price %> 
-                    </div>
-                </article>
+                            <%= product.gender %>
+                                >
+                                <%= product.category %>
+                        </div>
+                        <div class="name">
+                            <!--nombre del producto-->
+                            <%= product.name %>
+                        </div>
+                        <div class="description">
+                            <%= product.description %>
+                        </div>
+                        <div class="price">
+                            <!--precio-->
+                            ARS $<%= product.price %>
+                        </div>
+                    </article>
 
-                <article>
-                    <div class="colorModel">
-                        <!--colores y modelos disponibles-->
-                        Modelos disponibles
-                    </div>
-                    <!-- *** Hasta que podamos mostrar mas de una foto *** -->
-                    <div class="modelDescription">
-                        <%= product.models %> 
-                    </div>
+                    <article>
+                        <div class="colorModel">
+                            <!--colores y modelos disponibles-->
+                            Modelos disponibles
+                        </div>
+                        <!-- *** Hasta que podamos mostrar mas de una foto *** -->
+                        <div class="modelDescription">
+                            <%= product.models %>
+                        </div>
 
-                    <!-- *** Una pequeña imagen del modelo de color (voy a probar con forma circular) *** -->
-                    <!-- <div class="model">
+                        <!-- *** Una pequeña imagen del modelo de color (voy a probar con forma circular) *** -->
+                        <!-- <div class="model">
                         <div>
                             <img id = "m1" class = "mod" src="/img/t-shirt.orange.jpg" width = "80px" height = "110px" alt="campera manga corta naranja"/>
                         </div>
@@ -86,53 +89,53 @@
                             <img id = "m4" class = "mod" src="/img/t-shirt.black.jpg" width = "80px" height = "110px" alt="campera manga corta negra"/>
                         </div>
                     </div>  -->
-                </article>
+                    </article>
 
-                <article>
-                    <div class = "measures">
-                        <!--talles-->
-                        Talles
-                    </div>
-                    <div class="size">
-                        <!-- <div id="xs" class="siz">XS</div>
+                    <article>
+                        <div class="measures">
+                            <!--talles-->
+                            Talles
+                        </div>
+                        <div class="size">
+                            <!-- <div id="xs" class="siz">XS</div>
                         <div id="s" class="siz">S</div>
                         <div id="m" class="siz">M</div>
                         <div id="l" class="siz">L</div>
                         <div id="xl" class="siz">XL</div> -->
-                        <div id="xs" class="siz">
-                            <%= product.size %>
-                        </div>
-                    </div>
-                </article>
-                <% }); %>
-                <div class = "article-action">
-                    <article>
-                        <a href="/shopping" style="text-decoration: none;">
-                            <div class="buy">
-                                <!--boton de comprar te lleva al carrito de compras y agrega el producto-->
-                                Comprar
+                            <div id="xs" class="siz">
+                                <%= product.size %>
                             </div>
-                        </a>
+                        </div>
                     </article>
+                    <% }); %>
+                        <div class="article-action">
+                            <article>
+                                <a href="/shopping" style="text-decoration: none;">
+                                    <div class="buy">
+                                        <!--boton de comprar te lleva al carrito de compras y agrega el producto-->
+                                        Comprar
+                                    </div>
+                                </a>
+                            </article>
 
-                    <article class="action">
-                        <div class="saveCart">
-                            <div>
-                                <!--imagen del carrito-->
-                                <i id="cart" class="fas fa-cart-plus"></i>
-                            </div>
-                            <div class="save">
-                                <!--agregar al carrito-->
-                                <button type="submit" class="button-cart">Agregar al carrito</button>
-                            </div>
+                            <article class="action">
+                                <div class="saveCart">
+                                    <div>
+                                        <!--imagen del carrito-->
+                                        <i id="cart" class="fas fa-cart-plus"></i>
+                                    </div>
+                                    <div class="save">
+                                        <!--agregar al carrito-->
+                                        <button type="submit" class="button-cart">Agregar al carrito</button>
+                                    </div>
+                                </div>
+                                <div class="follow">
+                                    <!--compartir-->
+                                    Compartir
+                                </div>
+                            </article>
                         </div>
-                        <div class="follow">
-                            <!--compartir-->
-                            Compartir
-                        </div>
-                    </article>
                 </div>
-            </div>
         </section>
     </main>
 
