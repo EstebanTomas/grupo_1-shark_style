@@ -20,14 +20,11 @@ var shoppingRouter = require('./routes/shopping');
 
 //configuration to be able to use put and delete.
 app.use(methodOverride('_method'));
-
 //configuration to be able to capture the information of the form and process it.
 app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
-
 //configuration of Express-session.
 app.use(session({secret: 'keep secret'}));
-
 // view engine setup
 const publicpath = path.join(__dirname, './public');
 app.use(express.static(publicpath));

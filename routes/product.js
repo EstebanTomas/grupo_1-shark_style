@@ -6,20 +6,31 @@ const multer = require('multer');
 
 var controllersOfProducts = require('../controllers/productsControllers');
 
+const multerStorage = multer.diskStorage({
+    destination: ( req, file, cb ) => {
+        var location = path.resolve(__dirname, "../public/img/productImage");
+        cb( null, location );
+    },
+    filename: ( req, file, cb ) => {
+        var format = 'producto' + '-' + Date.now() + path.extname(file.originalname);
+        cb( null, format);
+    }
+});
 
-
+/*
 const multerStorage = multer.diskStorage({
     destination: (req, file, cb ) => {
-        cb(null, path.join(__dirname, '../public/img/products'));
+        cb(null, path.resolve(__dirname, '../public/img/product'));
     },
     filename:  (req, file, cb ) => {
-        let imagesFile =  'foto' + '-' + Date.now() + path.extname(file.originalname.match(/\..*$/)[0]);
+        let imagesFile =  'foto' + '-' + Date.now() + path.extname(file.originalname);
         cb(null, imagesFile);
     }
-})
+});
+*/
 
-const upload = multer({storage: multerStorage})
-;
+const upload = multer({storage: multerStorage});
+
 // paths to product list
 router.get('/', controllersOfProducts.productList);
 //router.get('/:id', controllersOfProducts.productList);
@@ -32,7 +43,7 @@ router.put('/edit/:id', controllersOfProducts.edit);
 
 // route of create
 router.get('/create', controllersOfProducts.productCreate);
-router.post('/create', upload.array('image') ,controllersOfProducts.create);
+router.post('/create', upload.array('image', 3) ,controllersOfProducts.create);
 
 // routes in detail
 router.get('/detail/:id', controllersOfProducts.productDetail);

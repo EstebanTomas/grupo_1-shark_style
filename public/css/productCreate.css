@@ -1,122 +1,110 @@
-
 body {
-    background-color: rgb(243, 244, 237);
+    background-color: #f2f2f2;
 }
 
 main .create {
-    background-color: rgb(243, 244, 237);
     font-family: 'Roboto Condensed', sans-serif;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    width: 82%;
+    border-radius: 5px;
+    margin: auto;
     margin-top: 100px;
     margin-bottom: 40px;
+    background-color: white;
+    box-shadow: 0px 0px 3px black;
 }
 
 main form .box {
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0px 0px 4px rgb(100, 100, 100);
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 1px;
+    border-radius : 3px;
+    box-shadow    : 0px 0px 2px rgb(100 100 100);
+    padding-left  : 15px;
+    padding-right : 15px;
+    padding-top   : 1px;
     padding-bottom: 1px;
-    margin-bottom: 20px;
+    margin-bottom : 20px;
+    text-align    : center;
 }
 
 main form .create-input {
     margin-bottom: 10px;
-    width: 350px;
-    height: 35px;
-    font-size: 20px;
+    width        : 350px;
+    height       : 35px;
+    font-size    : 20px;
+    transition: box-shadow 450ms;
 }
-main form .create-input:hover{
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
-    border: solid 1px rgb(83, 97, 98);
+
+main form .create-input:hover {
+    box-shadow: 0px 0px 4px black;
 }
 
 main form .create-text {
-    font-size: 20px;
+    font-size  : 20px;
     font-weight: bold;
-    color: rgb(83, 97, 98);
+    color      : rgb(83, 97, 98);
 }
 
 main form .create-img {
     margin-bottom: 10px;
-    width: 100%;
-    height: 35px;
-    font-size: 20px;
+    width        : 100%;
+    height       : 35px;
+    font-size    : 20px;
 }
 
 main form .create-options {
     margin-bottom: 10px;
-    width: 200px;
-    height: 35px;
-    font-size: 20px;
+    width        : 200px;
+    height       : 35px;
+    font-size    : 20px;
 }
-main form .create-options:hover{
+
+main form .create-options:hover {
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
-    border: solid 1px rgb(83, 97, 98);
+    border    : solid 1px rgb(83, 97, 98);
 }
 
 main form .box-button {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    display         : flex;
+    flex-wrap       : wrap;
+    justify-content : space-around;
     background-color: white;
-    padding-left: 15px;
-    padding-right: 15px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 4px rgb(100, 100, 100);
+    padding-left    : 15px;
+    padding-right   : 15px;
+    border-radius   : 5px;
 }
-
-/* main form .box-button-preview {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-main form #button-preview {
-    background-color: rgb(83, 97, 98);
-    color: white;
-    width: 150px;
-    height: 35px;
-    border-radius: 7px;
-    border: solid 1px rgb(83, 97, 98);
-}
-main form #button-preview:hover {
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
-} */
 
 main form .box-button-send {
-    display: flex;
-    flex-direction: row;
+    display        : flex;
+    flex-direction : row;
     justify-content: center;
 }
+
 main form #button-send {
     background-color: rgb(192, 96, 20);
-    color: white;
-    width: 100px;
-    height: 35px;
-    border-radius: 7px;
-    border: solid 1px rgb(192, 96, 20);
+    color           : white;
+    width           : 100px;
+    height          : 35px;
+    border-radius   : 7px;
+    border          : solid 1px rgb(192, 96, 20);
 }
+
 main form #button-send:hover {
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
 main form .box-button-delete {
-    display: flex;
-    flex-direction: row;
+    display        : flex;
+    flex-direction : row;
     justify-content: center;
 }
+
 main form #button-delete {
     background-color: rgb(66, 70, 66);
-    color: white;
-    width: 100px;
-    height: 35px;
-    border-radius: 7px;
-    border: solid 1px rgb(66, 70, 66);
+    color           : white;
+    width           : 100px;
+    height          : 35px;
+    border-radius   : 7px;
+    border          : solid 1px rgb(66, 70, 66);
 }
+
 main form #button-delete:hover {
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
@@ -129,38 +117,45 @@ main form .button:hover {
 
 @media (max-width: 400px) {
     main .create-form {
-        display: flex;
-        flex-wrap: wrap;
+        display        : flex;
+        flex-wrap      : wrap;
         justify-content: center;
     }
+
     main form .box {
         width: 250px;
     }
+
     main form .box-button {
-        flex-direction: column;
+        flex-direction : column;
         justify-content: center;
-        width: 200px;
+        width          : 200px;
     }
+
     main form .create-input {
         width: 220px;
     }
+
     main form .create-img {
         width: 200px;
     }
+
     main form #button-send {
         width: 150px;
     }
+
     main form #button-delete {
         width: 150px;
     }
 }
+
 @media (min-width: 400px) {
-    /* main form .box-button-preview {
-        padding-right: 10px;
-    } */
-    main form .box-button-send {
+
+    main form .box-button-preview,
+    .box-button-send {
         padding-right: 10px;
     }
+
     main form .create-input {
         width: 100%;
     }
@@ -171,32 +166,39 @@ main form .button:hover {
         margin-top: 30px;
     }
 }
+
 @media (min-width: 769px) {
     main form .box {
         width: 700px;
     }
+
     main form .create-input {
         width: 670px;
     }
+
     main form .box-button {
-        width: 350px;
+        width      : 350px;
         margin-left: 175px;
     }
 }
 
 @media (min-width: 1000px) {
     main .create-form {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
+        display        : flex;
+        flex-wrap      : wrap;
+        flex-direction : row;
         justify-content: space-around;
+        padding        : 20px 0px;
     }
+
     main form .box {
         width: 42.5%;
     }
+
     main form .create-input {
         width: 100%;
     }
+
     main form .box-button {
         margin-left: 0px;
     }

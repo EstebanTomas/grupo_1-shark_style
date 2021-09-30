@@ -13,7 +13,7 @@
     </div>
     <main>
         <div class="create">
-            <form class="create-form" action="/products/create" method="POST">
+            <form class="create-form" action="/products/create" method="POST" enctype="multipart/form-data">
                 <div class="box">
                     <p>
                         <label class="create-text">Nombre del producto</label>
@@ -43,7 +43,7 @@
                         <label class="create-text">Imagen del producto</label>
                     </p>
                     <p>
-                        <input class="create-img" type="file" for="image" name="image" id="image" required multiple>
+                        <input class="create-img" type="file" accept="image/*" name="image" id="image" multiple>
                     </p>
                 </div>
                 <div class="box">
