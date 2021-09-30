@@ -60,21 +60,67 @@ const productsControllers = {
     res.render("./product/productEdit", { "object": EditProduct });
   },
   edit: (req, res) => {
-    // I store in name, the value that comes from the name field.
-    var Name = req.body.name;
-    // I bring the file products.json and convert it to either literal or array object format.
-    let productsJson = fs.readFileSync("./data/products.json", {
-      encoding: "utf-8",
+    let productsJson = fs.readFileSync("./data/products.json", { encoding: 'utf-8' });
+    let dataOfProducts = JSON.parse(productsJson);
+    let idProduct = req.params.id;
+    let productNew;
+
+    let oldProduct = dataOfProducts.filter((product) => {
+      return product.id == idProduct;
     });
-    let dataJSON = JSON.parse(productsJson);
-    for (let i = 0; i <= dataJSON.length; i++) {
-      if (dataJSON[i] == Name) {
-        var data = dataJSON[i];
-        return data;
-      } else {
-      }
-    }
-    res.send("hola");
+
+    oldProduct.forEach(product => {
+      productNew = {
+      id: idProduct,
+      name: req.body.name,
+      description: req.body.description,
+      price: req.body.price,
+      image: req.file ? req.file.filename : "",
+      size: req.body.size,
+      models: req.body.models,
+      gender: req.body.gender,
+      category: req.body.category,
+      };
+    });
+
+    // function cambiarValor( id, newProduct) {
+    //   for (let i = 0; i <= dataOfProducts.length; i++) {
+    //     if ( dataOfProducts[i].id === id ) {
+    //       dataOfProducts[i] = newProduct;
+    //     }
+    //   }
+    // }
+
+    // let valorCambiado = cambiarValor(idProduct, productNew);
+    // dataOfProducts.forEach ( function ( product ) {
+    //   if ( product.id !== productNew.id) {
+    //     date = dataOfProducts.shift()
+    //     dateNew = dateNew + date;
+    //   }else {
+    //     dateNew = dateNew + productNew;
+    //   }
+    // })
+
+    // dataOfListProducts = JSON.stringify( dataNew, null, 2);
+    // fs.writeFileSync("./data/products.json", dataOfListProducts);
+
+    // res.send("Hola " + idProduct + valorCambiado);
+    // res.redirect("/products/");
+    // I store in name, the value that comes from the name field.
+    // var Name = req.body.name;
+    // I bring the file products.json and convert it to either literal or array object format.
+    // let productsJson = fs.readFileSync("./data/products.json", {
+    //   encoding: "utf-8",
+    // });
+    // let dataJSON = JSON.parse(productsJson);
+    // for (let i = 0; i <= dataJSON.length; i++) {
+    //   if (dataJSON[i] == Name) {
+    //     var data = dataJSON[i];
+    //     return data;
+    //   } else {
+    //   }
+    // }
+    // res.send("hola");
   },
   productList: (req, res) => {
     let products = JSON.parse(fs.readFileSync("./data/products.json", {
