@@ -78,3 +78,26 @@ _____________
 >
 *Que debemos dejar de hacer.*
 >Dejar de colgarnos con la división de las tareas, y comenzar a trabajar.
+>
+>
+_____________
+>
+**RETROSPECTIVA DEL QUINTO SPRINT**
+>
+*Que debemos comenzar a hacer como equipo.*
+>Repartir equitativamente las tareas al comienzo del sprint.
+>
+>Ayudarnos entro nosotros cuando surge algo que no podemos resolver. Y sobre todo comunicar al resto del equipo sobre estos inconvenientes lo antes posible, para evitar retrasos en el tiempo estipulado de entrega.
+>
+*Que podemos hacer para mejorar.*
+>Actualizar el tablero de trabajo más seguido.
+>
+>Fomentar la counicación del equipo por slack.
+>
+*Que debemos seguir haciendo.*
+>Mantener la comunicación entre nosotros.
+>
+*Que debemos dejar de hacer.*
+>Dejar de colgarnos con la división de las tareas, y comenzar a trabajar.
+>
+>Procurar no atrasarse con las actividades que demanda el nuevo sprint, en post de terminar las del sprint pasado.
