@@ -4,6 +4,7 @@ const path = require('path');
 const app = express();
 const methodOverride = require('method-override');
 const session = require('express-session');
+//const cookieParser = require('cookie-parser');
 //const  ejsLint  =  require ( 'ejs-lint' );
 
 // variables with files inside the router
@@ -25,6 +26,9 @@ app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
 //configuration of Express-session.
 app.use(session({secret: 'keep secret'}));
+//   setting globally to cookie
+//app.use(cookieParser);
+
 // view engine setup
 const publicpath = path.join(__dirname, './public');
 app.use(express.static(publicpath));

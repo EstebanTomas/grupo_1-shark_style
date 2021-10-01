@@ -13,110 +13,6 @@
     </div>
     <main>
         <div class="create">
-<<<<<<< HEAD
-            <form class="create-form" action="/products/edit/<%=object.id%>?_method=PUT" method="POST"
-                enctype="multipart/form-data">
-
-                <div class="box">
-                    <p>
-                        <label class="create-text">Nombre del producto</label>
-                    </p>
-                    <p>
-    <input class="create-input" type="text" name="name" value="<%=object.name %>">
-                    </p>
-                </div>
-                <div class="box">
-                    <p>
-                        <label class="create-text">Descripción</label>
-                    </p>
-                    <p>
-                        <input class="create-input" type="text" name="description" value="<%= object.description %> ">
-                    </p>
-                </div>
-                <div class="box">
-                    <p>
-                        <label class="create-text">Precio</label>
-                    </p>
-                    <p>
-                        <input class="create-input" type="number" name="price" value="<%= object.price %>">
-                    </p>
-                </div>
-                <div class="box">
-                    <p>
-                        <label class="create-text">Imágen principal</label>
-                    </p>
-                    <p>
-                        <input class="create-img" type="file" accept=".jpg" value="foto" name="image" value="<%= object.image %>">
-                    </p>
-                </div>
-                <div class="box">
-                    <p>
-                        <label class="create-text">Talles disponibles</label>
-                    </p>
-                    <p>
-                        <select class="create-options" name="interests">
-                            <option type="checkbox" name="size-xs">XS</option>
-                            <option type="checkbox" name="size-s">S</option>
-                            <option type="checkbox" name="size-m">M</option>
-                            <option type="checkbox" name="size-l">L</option>
-                            <option type="checkbox" name="size-xl">XL</option>
-                        </select>
-                    </p>
-                </div>
-                <div class="box">
-                    <p>
-                        <label class="create-text">Modelos Disponibles</label>
-                    </p>
-                    <p>
-                        <input class="create-input" type="text" name="models">
-                    </p>
-                </div>
-                <div class="box">
-                    <p>
-                        <label class="create-text">Género</label>
-                    </p>
-                    <p>
-                        <select class="create-options" name="gender">
-                            <option type="checkbox" name="gender-men">Hombre</option>
-                            <option type="checkbox" name="gender-women">Mujere</option>
-                            <option type="checkbox" name="gender-unisex">Unisex</option>
-                        </select>
-                    </p>
-                </div>
-                <div class="box">
-                    <p>
-                        <label class="create-text">Categoría</label>
-                    </p>
-                    <p>
-                        <select class="create-options" name="category">
-                            <option type="checkbox" name="category-long-tshirt">Remeras Manga Larga</option>
-                            <option type="checkbox" name="category-short-tshirt">Remeras Manga Corta</option>
-                            <option type="checkbox" name="category-sleeveless">Musculosas</option>
-                            <option type="checkbox" name="category-long-pants">Pantalones Largos</option>
-                            <option type="checkbox" name="category-short-pants">Shorts</option>
-                            <option type="checkbox" name="category-sports-tights">Calzas Termicas</option>
-                            <option type="checkbox" name="category-warm-jacket">Camperas de Abrigo</option>
-                            <option type="checkbox" name="category-thermal-jacket">Camperas Termicas</option>
-                            <option type="checkbox" name="category-divers">Buzos</option>
-                            <option type="checkbox" name="category-socks">Medias</option>
-                            <option type="checkbox" name="category-sports-shoes">Calzado Deportivo</option>
-                        </select>
-                    </p>
-                </div>
-                <div class="box-button">
-                    <p class="box-button-preview">
-                        <a href="/productDetail">
-                            <input id="button-preview" class="create-text" type="button" value="Previsualizar">
-                        </a>
-                    </p>
-                    <p class="box-button-edit">
-                        <button id="button-edit" type="submit" class="create-text">Editar</button>
-                    </p>
-                    <p class="box-button-delete">
-                        <button id="button-delete" type="reset" class="create-text">Eliminar</button>
-                    </p>
-                </div>
-=======
         <% object.forEach(object => { %> 
             <form class="create-form" action="/products/edit/<%= object.id %>?_method=PUT" method="POST">
                 
@@ -237,7 +133,6 @@
                                 <button id="button-delete" type="reset" class="create-text">Eliminar</button>
                             </p>
                         </div>
->>>>>>> 15b96f3ee2ad909c043f47d14368c1d99076df9b
             </form>
         </div>
     </main>
