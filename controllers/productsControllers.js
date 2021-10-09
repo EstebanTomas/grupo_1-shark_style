@@ -90,13 +90,30 @@ const productsControllers = {
       };
     });
 
-    // function cambiarValor( id, newProduct) {
-    //   for (let i = 0; i <= dataOfProducts.length; i++) {
-    //     if ( dataOfProducts[i].id === id ) {
-    //       dataOfProducts[i] = newProduct;
-    //     }
-    //   }
-    // }
+    let dataNew = dataOfProducts.map ( product =>{
+      if (product.id = idProduct) {
+        return product = productNew;
+      }
+      return product;
+    })
+
+    let dataOfListProducts = JSON.stringify( dataNew, null, 2);
+    fs.writeFileSync("./data/products.json", dataOfListProducts);
+
+    res.send("Hola " + idProduct + dataOfListProducts);
+    // res.redirect("/products/");
+
+        // let motos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/motos.json')));
+        // req.body.id = req.params.id;
+        // req.body.imagen = req.file ? req.file.filename : req.body.oldImagen;
+        // let motosUpdate = motos.map(moto =>{
+        //     if(moto.id == req.body.id){
+        //         return moto = req.body;
+        //     }
+        //     return moto;
+        // })
+        // let motoActualizar = JSON.stringify(motosUpdate,null,2);
+        // fs.writeFileSync(path.resolve(__dirname,'../database/motos.json'),motoActualizar)
 
     // let valorCambiado = cambiarValor(idProduct, productNew);
     // dataOfProducts.forEach ( function ( product ) {
@@ -107,27 +124,6 @@ const productsControllers = {
     //     dateNew = dateNew + productNew;
     //   }
     // })
-
-    // dataOfListProducts = JSON.stringify( dataNew, null, 2);
-    // fs.writeFileSync("./data/products.json", dataOfListProducts);
-
-    // res.send("Hola " + idProduct + valorCambiado);
-    // res.redirect("/products/");
-    // I store in name, the value that comes from the name field.
-    // var Name = req.body.name;
-    // I bring the file products.json and convert it to either literal or array object format.
-    // let productsJson = fs.readFileSync("./data/products.json", {
-    //   encoding: "utf-8",
-    // });
-    // let dataJSON = JSON.parse(productsJson);
-    // for (let i = 0; i <= dataJSON.length; i++) {
-    //   if (dataJSON[i] == Name) {
-    //     var data = dataJSON[i];
-    //     return data;
-    //   } else {
-    //   }
-    // }
-    // res.send("hola");
   },
   productList: (req, res) => {
     // I bring all the products
