@@ -87,12 +87,12 @@ _____________
 *Que debemos comenzar a hacer como equipo.*
 >Repartir equitativamente las tareas al comienzo del sprint.
 >
->Ayudarnos entro nosotros cuando surge algo que no podemos resolver. Y sobre todo comunicar al resto del equipo sobre estos inconvenientes lo antes posible, para evitar retrasos en el tiempo estipulado de entrega.
+>Ayudarnos entre nosotros cuando surge algo que no podemos resolver. Y sobre todo comunicar al resto del equipo sobre estos inconvenientes lo antes posible, para evitar retrasos en el tiempo estipulado de entrega.
 >
 *Que podemos hacer para mejorar.*
 >Actualizar el tablero de trabajo más seguido.
 >
->Fomentar la counicación del equipo por slack.
+>Fomentar la comunicación del equipo por slack.
 >
 *Que debemos seguir haciendo.*
 >Mantener la comunicación entre nosotros.
