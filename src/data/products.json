@@ -1,0 +1,191 @@
+[
+  {
+    "id": 1,
+    "name": "Adidas Aeroready Designed To Move ",
+    "description": "Remera Adidas Aeroready Designed To Move, rosa",
+    "price": "2299",
+    "image": [
+      [
+        "producto-1632883804572.jpg"
+      ],
+      [
+        "producto-1632883804576.jpg"
+      ],
+      [
+        "producto-1632883804577.jpg"
+      ]
+    ],
+    "size": "S",
+    "models": "todos los talles",
+    "gender": "Mujer",
+    "category": "Remeras Manga Corta"
+  },
+  {
+    "id": 2,
+    "name": "Remera Fila Salem",
+    "description": "Fila Salem liviana  ",
+    "price": "1999",
+    "image": [
+      [
+        "producto-1632972489058.jpg"
+      ],
+      [
+        "producto-1632972489066.jpg"
+      ],
+      [
+        "producto-1632972489081.jpg"
+      ]
+    ],
+    "size": "S",
+    "models": "todos los talles",
+    "gender": "Mujer",
+    "category": "Remeras Manga Corta"
+  },
+  {
+    "id": 3,
+    "name": "Remera Nike Runner Victory",
+    "description": "Nike Runner Victory light",
+    "price": "6499",
+    "image": [
+      [
+        "producto-1632972862115.jpg"
+      ],
+      [
+        "producto-1632972862222.jpg"
+      ],
+      [
+        "producto-1632972862273.jpg"
+      ]
+    ],
+    "size": "L",
+    "models": "todos los talles",
+    "gender": "Hombre",
+    "category": "Remeras Manga Corta"
+  },
+  {
+    "id": 4,
+    "name": "Remera Topper Brand Gtm Mc de hombre",
+    "description": "Remera Topper Brand Gtm Mc de hombre",
+    "price": "2599",
+    "image": [
+      [
+        "producto-1633045770445.jpg"
+      ],
+      [
+        "producto-1633045770458.jpg"
+      ],
+      [
+        "producto-1633045770519.jpg"
+      ]
+    ],
+    "size": "M",
+    "models": "todos los talles",
+    "gender": "Hombre",
+    "category": "Remeras Manga Corta"
+  },
+  {
+    "id": 5,
+    "name": " Adidas Selección Argentina 2021",
+    "description": "Camiseta Adidas De La Selección Argentina De Mujer",
+    "price": "4899",
+    "image": [
+      [
+        "producto-1633056049174.jpg"
+      ],
+      [
+        "producto-1633056049231.jpg"
+      ],
+      [
+        "producto-1633056049340.jpg"
+      ]
+    ],
+    "size": "L",
+    "models": "todos los talles",
+    "gender": "Mujer",
+    "category": "Remeras Manga Corta"
+  },
+  {
+    "id": 6,
+    "name": "Puma Essential Fz Hoody ",
+    "description": "Campera Puma Essential Fz Hoody De Mujer",
+    "price": "6899",
+    "image": [
+      [
+        "producto-1633056166868.jpg"
+      ],
+      [
+        "producto-1633056166993.jpg"
+      ],
+      [
+        "producto-1633056167031.jpg"
+      ]
+    ],
+    "size": "M",
+    "models": "todos los talles",
+    "gender": "Mujer",
+    "category": "Camperas Termicas"
+  },
+  {
+    "id": 7,
+    "name": " Puma Alpha",
+    "description": "Remera Puma Alpha liviana",
+    "price": "2599",
+    "image": [
+      [
+        "producto-1633056319267.jpg"
+      ],
+      [
+        "producto-1633056319357.jpg"
+      ],
+      [
+        "producto-1633056319406.jpg"
+      ]
+    ],
+    "size": "M",
+    "models": "todos los talles",
+    "gender": "Mujer",
+    "category": "Remeras Manga Corta"
+  },
+  {
+    "id": 8,
+    "name": "Adidas Runner Black",
+    "description": "Campera Adidas Runner Color Black liviana",
+    "price": "7399",
+    "image": [
+      [
+        "producto-1633056485977.jpg"
+      ],
+      [
+        "producto-1633056486013.jpg"
+      ],
+      [
+        "producto-1633056486087.jpg"
+      ]
+    ],
+    "size": "M",
+    "models": "todos los talles",
+    "gender": "Hombre",
+    "category": "Camperas Termicas"
+  },
+  {
+    "id": 9,
+    "name": " Fila Colors",
+    "description": "Zapatillas Fila Colors livianas",
+    "price": "7699",
+    "image": [
+      [
+        "producto-1633057004836.jpg"
+      ],
+      [
+        "producto-1633057004955.jpg"
+      ],
+      [
+        "producto-1633057004971.jpg"
+      ]
+    ],
+    "size": "37-38",
+    "models": "todos los talles",
+    "gender": "Mujer",
+    "category": "Calzado Deportivo"
+  }
+]
