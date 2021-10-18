@@ -7,7 +7,7 @@ const bcryptjs = require("bcryptjs");
 const { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } = require("constants");
 
 // require the json file and store it in a variable.
-let usersJson = fs.readFileSync("./data/user.json", { encoding: "utf-8" });
+let usersJson = fs.readFileSync("../data/users.json", { encoding: "utf-8" });
 
 const usersController = {
   login: (req, res) => {
@@ -40,7 +40,7 @@ const usersController = {
       dataUser.push(users);
 
       dataOfFileJSON = JSON.stringify(dataUser);
-      fs.writeFileSync("./data/user.json", dataOfFileJSON);
+      fs.writeFileSync("../data/users.json", dataOfFileJSON);
 
       res.redirect("/");
     } else {
