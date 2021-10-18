@@ -34,7 +34,7 @@ const usersController = {
         lastName: req.body.lastName,
         email: req.body.email,
         password: bcryptjs.hashSync(req.body.password, 10),
-        avatar: req.file ? req.file.filename : "",
+        avatar: req.file ? req.file.filename : "user_anonimo.jpg",
         role: 1,
       };
       dataUser.push(users);

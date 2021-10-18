@@ -17,18 +17,6 @@ const multerStorage = multer.diskStorage({
     }
 });
 
-/*
-const multerStorage = multer.diskStorage({
-    destination: (req, file, cb ) => {
-        cb(null, path.resolve(__dirname, '../public/img/product'));
-    },
-    filename:  (req, file, cb ) => {
-        let imagesFile =  'foto' + '-' + Date.now() + path.extname(file.originalname);
-        cb(null, imagesFile);
-    }
-});
-*/
-
 const upload = multer({storage: multerStorage});
 
 // paths to product list
