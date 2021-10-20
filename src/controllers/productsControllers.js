@@ -9,7 +9,7 @@ const multer = require('multer');
 const productsControllers = {
   administration: (req, res) => {
     // I bring all the products
-    let products = JSON.parse(fs.readFileSync("./data/products.json", { encoding: "utf-8" }));
+    let products = JSON.parse(fs.readFileSync("../data/products.json", { encoding: "utf-8" }));
     // I send the data to the views
     res.render('./product/productsAdmin', { products });
   },
@@ -18,7 +18,7 @@ const productsControllers = {
   },
   create: (req, res) => {
     // I bring all the products
-    let productsJson = fs.readFileSync("./data/products.json", {encoding: "utf-8"});
+    let productsJson = fs.readFileSync("../data/products.json", {encoding: "utf-8"});
     let dataOfProducts;
     // if userJson is not empty I store it in a variable.
     productsJson == "" ? dataOfProducts = [] : dataOfProducts = JSON.parse(productsJson);
@@ -43,13 +43,13 @@ const productsControllers = {
     dataOfProducts.push(product);
 
     dataOfListProducts = JSON.stringify(dataOfProducts, null, 2);
-    fs.writeFileSync("./data/products.json", dataOfListProducts);
+    fs.writeFileSync("../data/products.json", dataOfListProducts);
 
     res.redirect("/products/");
   },
   productDetail: (req, res) => {
     // I bring all the products
-    let dataOfJson = JSON.parse(fs.readFileSync('./data/products.json', { encoding: 'utf-8' }));
+    let dataOfJson = JSON.parse(fs.readFileSync('../data/products.json', { encoding: 'utf-8' }));
     let idProduct = req.params.id;
     const element = dataOfJson.filter((product) => {
       return product.id == idProduct;
@@ -59,7 +59,7 @@ const productsControllers = {
   },
   editProduct: (req, res) => {
     // I bring all the products
-    const products = JSON.parse(fs.readFileSync('./data/products.json', { encoding: 'utf-8' }));
+    const products = JSON.parse(fs.readFileSync('../data/products.json', { encoding: 'utf-8' }));
     var productToEdit = req.params.idProducts;
     const EditProduct = products.filter(toEdit => { 
       return toEdit.id == productToEdit });
@@ -67,7 +67,7 @@ const productsControllers = {
     return res.render("./product/productEdit", { "object": EditProduct });
   },
   edit: (req, res) => {
-    let productsJson = fs.readFileSync("./data/products.json", { encoding: 'utf-8' });
+    let productsJson = fs.readFileSync("../data/products.json", { encoding: 'utf-8' });
     let dataOfProducts = JSON.parse(productsJson);
     let idProduct = req.params.id;
     let productNew;
@@ -98,7 +98,7 @@ const productsControllers = {
     })
 
     let dataOfListProducts = JSON.stringify( dataNew, null, 2);
-    fs.writeFileSync("./data/products.json", dataOfListProducts);
+    fs.writeFileSync("../data/products.json", dataOfListProducts);
 
     res.send("Hola " + idProduct + dataOfListProducts);
     // res.redirect("/products/");
@@ -127,7 +127,7 @@ const productsControllers = {
   },
   productList: (req, res) => {
     // I bring all the products
-    let products = JSON.parse(fs.readFileSync("./data/products.json", {
+    let products = JSON.parse(fs.readFileSync("../data/products.json", {
       encoding: "utf-8",
     }));
     // I send the data to the views
@@ -135,7 +135,7 @@ const productsControllers = {
   },
   delete: (req, res) => {
     // I bring all the products
-    let productsOfJson = fs.readFileSync("./data/products.json", { encoding: "utf-8" });
+    let productsOfJson = fs.readFileSync("../data/products.json", { encoding: "utf-8" });
     let datas = JSON.parse(productsOfJson);
     // if what comes from "req" is not equal to the database id, I save it in productsNotRemoved, if it is equal, I discard it.
     let productsNotRemoved = datas.filter(data => {
@@ -143,7 +143,7 @@ const productsControllers = {
     });
 
     let productosJSON = JSON.stringify(productsNotRemoved, null, 2);
-    fs.writeFileSync("./data/products.json", productosJSON);
+    fs.writeFileSync("../data/products.json", productosJSON);
     res.redirect("/products/admin");
 
   },

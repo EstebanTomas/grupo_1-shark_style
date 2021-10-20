@@ -30,7 +30,7 @@ app.use(session({secret: 'keep secret'}));
 //app.use(cookieParser);
 
 // view engine setup
-const publicpath = path.join(__dirname, './public');
+const publicpath = path.join(__dirname, '../public');
 app.use(express.static(publicpath));
 app.set('views', path.resolve(__dirname, './views'));
 app.set('view engine', 'ejs');
@@ -54,3 +54,4 @@ app.use('/shopping', shoppingRouter);
 app.use((req, res, next) => {
     res.status(404).render('error')
 })
+

@@ -13,7 +13,7 @@ const validationsOfRegister = [
 
 const storage = multer.diskStorage({
     destination: (req, file, cb ) => {
-        cb(null, path.resolve(__dirname, '../public/img/user_photo'));
+        cb(null, path.resolve(__dirname, '/img/user_photo'));
     },
     filename:  (req, file, cb ) => {
         cb(null, 'avatar' + '-' + Date.now() + path.extname(file.originalname));

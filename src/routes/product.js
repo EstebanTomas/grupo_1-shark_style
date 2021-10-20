@@ -8,7 +8,7 @@ var controllersOfProducts = require('../controllers/productsControllers');
 
 const multerStorage = multer.diskStorage({
     destination: ( req, file, cb ) => {
-        var location = path.resolve(__dirname, "../public/img/productImage");
+        var location = path.resolve(__dirname, "/img/productImage");
         cb( null, location );
     },
     filename: ( req, file, cb ) => {
@@ -38,10 +38,6 @@ router.get('/detail/:id', controllersOfProducts.productDetail);
 
 // routes in delete
 router.get('/delete/:id', controllersOfProducts.delete);
-
-// creo estas routas para trabajar con las vistas
-// router.get('/edit', controllersOfProducts.editProduct);
-// router.get('/detail', controllersOfProducts.productDetail);
 
 
 module.exports = router;
