@@ -10,7 +10,7 @@ const session = require('express-session');
 // variables with files inside the router
 var indexRouter = require('./routes/index');
 
-// route to login and register of users.js
+// route to login and register of users.js,
 var usersRouter = require('./routes/users');
 
 // route to detail, create, edit and list of products.js

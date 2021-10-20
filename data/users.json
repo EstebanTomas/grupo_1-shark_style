@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "usuario02",
+    "lastName": "apellido11",
+    "email": "usuario@gmail.com",
+    "password": "$2a$10$c.e85vUTHI3ubblpTiQnpei/1QUbscDSq1b.YwvgOASdb1w9QwRzS",
+    "avatar": "avatar-1632784753661.jpg",
+    "role": 1
+  },
+  {
+    "id": 2,
+    "name": "primer",
+    "lastName": "usuario",
+    "email": "primerusuario@gmail.com",
+    "password": "$2a$10$TIxbSqYfkGCJF7l3MItvRugMCthvBuv/lEy4qHWzrz6q48fOS8TP2",
+    "avatar": "user_anonimo.jpg",
+    "role": 1
+  }
+]

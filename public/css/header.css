@@ -155,7 +155,7 @@ header div article div div p {
     }
 
     header .navbar {
-        padding         : 0px 10%;
+        padding         : 0px 9%;
         display         : block;
         height          : 27px;
         background-color: rgb(180, 183, 182);
@@ -166,21 +166,23 @@ header div article div div p {
         display        : flex;
         justify-content: center;
         align-items    : center;
-        height         : 23px;
+        height         : 100%;
         margin-top     : -7px;
         padding        : 0px 0px 0px;
         font-size      : 15px;
     }
 
     header ul li {
-        list-style: none;
-        padding   : 0px 29px;
+        list-style   : none;
+        padding      : 4px 29px;
+        height       : 100%;
+        border-radius: 2px;
         background-color: rgb(180, 183, 182);
-        transition: background-color 450ms;
+        transition      : background-color 450ms;
     }
 
     header ul li:hover {
-        background-color:rgb(144, 146, 146);
+        background-color: rgb(144, 146, 146);
     }
 
     header .option-navbar {
