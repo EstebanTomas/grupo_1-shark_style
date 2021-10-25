@@ -38,7 +38,7 @@ module.exports = ( sequelize, DataTypes ) => {
         timestamps: false
     };
     
-    const Size = sequileze.define( alias, cols, config);
+    const Size = sequelize.define( alias, cols, config);
 
     return Size;
 }

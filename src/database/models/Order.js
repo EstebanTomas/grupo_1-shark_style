@@ -26,7 +26,7 @@ module.exports = ( sequelize, DataTypes ) => {
         timestamps: false
     };
     
-    const Order = sequileze.define( alias, cols, config);
+    const Order = sequelize.define( alias, cols, config);
 
     return Order;
 }

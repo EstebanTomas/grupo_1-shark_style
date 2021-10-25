@@ -1,4 +1,4 @@
-module.exports = ( sequelize, DataTypes ) => {
+module.exports = (sequelize, DataTypes) => {
 
     let alias = 'User';
     let cols = {
@@ -9,15 +9,15 @@ module.exports = ( sequelize, DataTypes ) => {
             allowNull: false
         },
         name: {
-            type: DataTypes.STRING(100),
+            type: DataTypes.STRING(60),
             allowNull: false
         },
-        last_name: {
-            type: DataTypes.STRING(100),
+        lastname: {
+            type: DataTypes.STRING(60),
             allowNull: false
         },
         email: {
-            type: DataTypes.STRING(100),
+            type: DataTypes.STRING(60),
             allowNull: false,
             unique: true
         },
@@ -35,8 +35,21 @@ module.exports = ( sequelize, DataTypes ) => {
         tableName: 'users',
         timestamps: false
     };
-    
-    const User = sequileze.define( alias, cols, config);
+
+    const User = sequelize.define(alias, cols, config);
+    User.associate = function (models) {
+        User.hasMany(models.User_Img, {
+            foreignKey: "user_id",
+            as: "users"
+        });
+        User.belongsToMany(models.Product_Shop, {
+            as: "productShop",
+            through: "shopping",
+            foreignKey: "user_id",
+            otherKey: "product_shop_id",
+            timestamps: false
+        });
+    }
 
     return User;
 }

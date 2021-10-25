@@ -22,7 +22,7 @@ module.exports = ( sequelize, DataTypes ) => {
         timestamps: false
     };
     
-    const Image = sequileze.define( alias, cols, config);
+    const Image = sequelize.define( alias, cols, config);
 
     return Image;
 }

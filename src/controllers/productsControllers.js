@@ -4,6 +4,9 @@ const { json } = require("express");
 const { v4: uuidv4 } = require("uuid");
 const { validationResult } = require("express-validator");
 const multer = require('multer');
+const db = require("../database/models");
+const sequelize = db.sequelize;
+const Op = require("sequelize");
 
 
 const productsControllers = {

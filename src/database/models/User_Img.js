@@ -1,3 +1,5 @@
+const User = require("./User");
+
 module.exports = ( sequelize, DataTypes ) => {
 
     let alias = 'User_Img';
@@ -11,7 +13,7 @@ module.exports = ( sequelize, DataTypes ) => {
         avatar: {
             type: DataTypes.STRING(200),
             // Definir la foto de perfil que vamos a dejar como default****
-            defaultValue: "/img/user_photo/avatar-1631652390083" 
+            defaultValue: "user_anonimo.jpg" 
         },
         user_id: {
             type: DataTypes.INTEGER,
@@ -22,8 +24,13 @@ module.exports = ( sequelize, DataTypes ) => {
         tableName: 'user_img',
         timestamps: false
     };
-    
-    const User_Img = sequileze.define( alias, cols, config);
+    const User_Img = sequelize.define( alias, cols, config);
 
+    User_Img.associate = function (models) {
+        User_Img.belongsTo(models.User, {
+            foreignKey: "user_id",
+            as: "imageOfUser"
+        });
+    }
     return User_Img;
 }

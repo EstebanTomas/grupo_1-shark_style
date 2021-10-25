@@ -4,7 +4,6 @@ module.exports = ( sequelize, DataTypes ) => {
     let cols = {
         id: {
             type: DataTypes.INTEGER,
-            unsidgned: true,
             autoIncrement: true,
             primaryKey: true,
             allowNull: false
@@ -35,7 +34,7 @@ module.exports = ( sequelize, DataTypes ) => {
         timestamps: false
     };
     
-    const Product = sequileze.define( alias, cols, config);
+    const Product = sequelize.define( alias, cols, config);
 
     return Product;
 }

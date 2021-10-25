@@ -21,7 +21,7 @@ module.exports = ( sequelize, DataTypes ) => {
         timestamps: false
     };
     
-    const Model = sequileze.define( alias, cols, config);
+    const Model = sequelize.define( alias, cols, config);
 
     return Model;
 }

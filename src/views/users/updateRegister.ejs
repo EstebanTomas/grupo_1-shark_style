@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head') -%>
+        <link rel="stylesheet" href="/css/updateRegister.css">
+        <title>Creá tu cuenta</title>
+</head>
+
+<body>
+    <div>
+        <%- include('../partials/header') %>
+    </div>
+
+    <main>
+        <div class="div-main">
+
+            <form method="POST" action="/admin/update" class="main-form" enctype="multipart/form-data">
+                <section class="section-logo">
+                    <div>
+                        <img src="/img/logo-shark.png" alt="logo" class="shark-logo">
+                    </div>
+                </section>
+                <section class="section-form">
+                    <div class="conteiner">
+                        <div class="title-form">
+                            <h2>¡Crea tu cuenta!</h2>
+                            <p class="text-p">¡Goza del estilo Shark Style y nuestros descuentos!</p>
+                        </div>
+                        <div class="data-field">
+                            <label>Ingresa una imagen</label>
+                            <input type="file" name="avatar" id="avatar" class="file">
+                        </div>
+                        <div class="data-field">
+                            <label class="nombre">Usuario:</label>
+                            <input type="text" name="name" class="cam" placeholder=" Juan Simón">
+                            <% if ( locals.errors && errors.name ) {%>
+                                <p class="msg-error">
+                                    <%= errors.name.msg %>
+                                </p>
+                                <% } %>
+                        </div>
+                    
+                        <div class="data-field">
+                            <label class="nombre">Apellido:</label>
+                            <input type="text" name="lastName" id="lastName" class="cam" placeholder=" avellaneda">
+                            <% if ( locals.errors && errors.lastName ) {%>
+                                <p class="msg-error">
+                                    <%= errors.lastName.msg %>
+                                </p>
+                                <% } %>
+                        </div>
+                        <div class="data-field">
+                            <label class="nombre">Email:</label>
+                            <input type="email" name="email" id="email" class="cam"
+                                placeholder=" juanSimon@gmail.com.ar">
+                            <% if ( locals.errors && errors.email ) {%>
+                                <p class="msg-error">
+                                    <%= errors.email.msg %>
+                                </p>
+                                <% } %>
+                        </div>
+                        <div class="data-field">
+
+                            <label class="nombre">Contraseña:</label>
+                            <input type="password" name="password" id="password" class="cam" placeholder=" simon546789">
+                            <% if ( locals.errors && errors.password ) {%>
+                                <p class="msg-error">
+                                    <%= errors.password.msg %>
+                                </p>
+                                <% } %>
+                        </div>
+                        <!---
+                        <div class="terminos">
+                            <input type="radio">
+                            <label>Acepta nuestras condiciones de servicio y política de privacidad</label>
+                        </div>-->
+                        <div class="conteiner-button">
+                            <button type="submit" class="button">Crear cuenta</button>
+                        </div>
+                    </div>
+                </section>
+            </form>
+        </div>
+    </main>
+
+    <div>
+        <%- include('../partials/footer') %>
+    </div>
+</body>
+
+</html>

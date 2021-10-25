@@ -27,8 +27,8 @@ const { devNull } = require('os');
 
 router.get('/login', usersControllers.login);
 
-router.get('/register', usersControllers.register);
-router.post('/register', upload.single('avatar') ,validationsOfRegister ,usersControllers.userCreate);
+router.get('/register', usersControllers.createRegister);
+router.post('/register', upload.single('avatar') ,validationsOfRegister ,usersControllers.saveRegister);
 
 
 module.exports = router;
