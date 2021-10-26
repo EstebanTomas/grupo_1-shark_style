@@ -3,7 +3,7 @@ const fs = require("fs");
 const { json } = require("express");
 //const { v4: uuidv4 } = require("uuid");
 const { validationResult } = require("express-validator");
-const bcryptjs = require("bcryptjs");
+//const bcryptjs = require("bcryptjs");
 const { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } = require("constants");
 const db = require("../database/models");
 const sequelize = db.sequelize;
@@ -22,26 +22,6 @@ const usersController = {
   },
   createRegister: (req, res) => {
     res.render("./users/register");
-  },
-  saveRegister: function (req, res) {
-    let errors = validationResult(req);
-    if (errors.isEmpty()) {
-      User.create({
-        name: req.body.name,
-        lastname: req.body.lastName,
-        email: req.body.email,
-        password: bcryptjs.hashSync(req.body.password, 10),
-        role: 1
-      }).then(() => {
-        return res.redirect("/");
-      }).catch((error) => {
-        return res.send(error)
-      });
-
-    } else {
-      res.render("./users/register", { errors: errors.mapped(), incomingData: req.body })
-    }
-
   },
   /*userCreate: function (req, res) {
     // error validation
