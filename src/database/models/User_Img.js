@@ -29,7 +29,7 @@ module.exports = ( sequelize, DataTypes ) => {
     User_Img.associate = function (models) {
         User_Img.belongsTo(models.User, {
             foreignKey: "user_id",
-            as: "imageOfUser"
+            as: "users"
         });
     }
     return User_Img;

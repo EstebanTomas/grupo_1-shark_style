@@ -40,9 +40,9 @@ module.exports = (sequelize, DataTypes) => {
     User.associate = function (models) {
         User.hasMany(models.User_Img, {
             foreignKey: "user_id",
-            as: "users"
+            as: "image"
         });
-        Order.belongsToMany(models.Order, {
+        User.hasMany(models.Order, {
             foreignKey: "user_id",
             as: "order"
         });

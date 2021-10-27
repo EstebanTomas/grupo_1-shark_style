@@ -6,8 +6,7 @@ const { validationResult } = require("express-validator");
 const multer = require('multer');
 const db = require("../database/models");
 const sequelize = db.sequelize;
-const Op = require("sequelize");
-
+const { Op } = require("sequelize");
 
 const productsControllers = {
   administration: (req, res) => {
@@ -20,7 +19,23 @@ const productsControllers = {
     res.render("./product/productCreate");
   },
   create: (req, res) => {
-    // I bring all the products
+    db.Product.create({
+      name: req.body.name,
+      description: req.body.description,
+      price: req.body.price,
+      gender: req.body.gender,
+      category:  req.body.category
+    }).then(userOne => {
+      db.image.create({
+        img: [[req.files[0].filename], [req.files[1].filename], [req.files[2].filename]],
+        product_id: userOne.id
+      }).then(() => {
+        db.Size.create({
+          product_id: userOne.id,
+        })
+      })
+    })
+    /* I bring all the products
     let productsJson = fs.readFileSync("../data/products.json", {encoding: "utf-8"});
     let dataOfProducts;
     // if userJson is not empty I store it in a variable.
@@ -49,6 +64,7 @@ const productsControllers = {
     fs.writeFileSync("../data/products.json", dataOfListProducts);
 
     res.redirect("/products/");
+    */
   },
   productDetail: (req, res) => {
     // I bring all the products

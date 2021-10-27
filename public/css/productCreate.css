@@ -136,26 +136,33 @@ main form .button:hover {
         justify-content: space-around;
         padding        : 20px 0px;
     }
+
     .create-form {
         margin-top: 100px;
     }
+
     main form .box {
         width: 42.5%;
     }
+
     main form .create-input {
         width: 100%;
     }
+
     main form .box-button {
         margin-left: 0px;
     }
+
     main form .create-input {
         width: 85%;
     }
 }
+
 @media (min-width: 767px) {
     main .create {
         max-width: 950px;
     }
+
     main form .box {
         width: 40%;
     }

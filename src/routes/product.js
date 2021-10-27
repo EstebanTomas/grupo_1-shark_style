@@ -2,22 +2,9 @@ const express = require('express');
 const path = require('path');
 const router = express.Router();
 const { check } = require('express-validator');
-const multer = require('multer');
 
 var controllersOfProducts = require('../controllers/productsControllers');
-
-const multerStorage = multer.diskStorage({
-    destination: ( req, file, cb ) => {
-        var location = path.resolve(__dirname, "/img/productImage");
-        cb( null, location );
-    },
-    filename: ( req, file, cb ) => {
-        var format = 'producto' + '-' + Date.now() + path.extname(file.originalname);
-        cb( null, format);
-    }
-});
-
-const upload = multer({storage: multerStorage});
+const upload = require("../../middlewares/saveImgProductsMiddlewares");
 
 // paths to product list
 router.get('/', controllersOfProducts.productList);

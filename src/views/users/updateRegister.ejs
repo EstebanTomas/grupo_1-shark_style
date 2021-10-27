@@ -13,48 +13,34 @@
     </div>
     <main>
         <div class="div-main">
-            <form method="POST" action="/admin/update" class="main-form" enctype="multipart/form-data">
-                <section class="section-logo">
-                    <div>
-                        <img src="/img/logo-shark.png" alt="logo" class="shark-logo">
-                    </div>
-                </section>
+            <form action="/users/update/<%=dataOfUser.id%>?_method=PUT" method="POST">
                 <section class="section-form">
                     <div class="conteiner">
-                        <div class="title-form">
-                            <!--<h2>¡Crea tu cuenta!</h2>-->
-                            <p class="text-p">¡Goza del estilo Shark Style y nuestros descuentos!</p>
+                        <div>
+                            <img src="/img/user_photo/<%= dataOfUser.image%>%>" alt="image of users to edit">
                         </div>
                         <div class="data-field">
                             <label>Ingresa una imagen</label>
-                            <input type="file" name="avatar" id="avatar" class="file"
-                                placeholder="<%= dataOfUser.avatar %> ">
+                            <input type="file" name="avatar" id="avatar" class="file" value="<%= dataOfUser.image.avatar %>"> 
                         </div>
                         <div class="data-field">
                             <label class="nombre">Usuario:</label>
-                            <input type="text" name="name" class="cam" placeholder="<%= dataOfUser.name %>">
+                            <input type="text" name="name" class="cam" value="<%= dataOfUser.name %>">
                         </div>
-
                         <div class="data-field">
                             <label class="nombre">Apellido:</label>
                             <input type="text" name="lastName" id="lastName" class="cam"
-                                placeholder="<%= dataOfUser.lastname %> ">
+                                value="<%= dataOfUser.lastname%>">
                             <div class="data-field">
                                 <label class="nombre">Email:</label>
                                 <input type="email" name="email" id="email" class="cam"
-                                    placeholder="<%= dataOfUser.email %> ">
+                                    value="<%= dataOfUser.email %>">
                             </div>
                             <div class="data-field">
-
                                 <label class="nombre">Contraseña:</label>
                                 <input type="password" name="password" id="password" class="cam"
-                                    placeholder="<%= dataOfUser.password %> ">
+                                    value="<%= dataOfUser.password %>">
                             </div>
-                            <!---
-                        <div class="terminos">
-                            <input type="radio">
-                            <label>Acepta nuestras condiciones de servicio y política de privacidad</label>
-                        </div>-->
                             <div class="conteiner-button">
                                 <button type="submit" class="button">Editar Usuario</button>
                             </div>

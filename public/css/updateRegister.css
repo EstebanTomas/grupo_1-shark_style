@@ -7,7 +7,12 @@ body {
     /* también le puse de color de fondo al cremita clarito de la paleta de colores que usamos */
 }
 
-/* agregue esta estas lineas de código para darle un border radius */
+main {
+    padding: 0px 30%;
+    margin: 100px 0px;
+}
+
+/* agregue esta estas lineas de código para darle un border radius *
 main .main-form {
     border-radius: 8px;
 }
@@ -16,7 +21,7 @@ main .section-logo {
     border-radius: 8px;
 }
 
-/* hasta aca */
+/* hasta aca *
 
 .hh2 {
     display: none;
@@ -70,14 +75,14 @@ h2 {
 .terminos {
     margin-top: 25px;
     text-align: center;
-}*/
+}*
 
 .data-field {
     width : 80%;
     margin: auto;
 }
 
-/* le cambie el color del boton y ajuste el tamaño de la letra */
+/* le cambie el color del boton y ajuste el tamaño de la letra *
 .conteiner-button {
     text-align: center;
 }
@@ -135,7 +140,7 @@ h2 {
     }
 
     .section-logo {
-       /* background-image : url('../img/style-shark.png');*/
+       /* background-image : url('../img/style-shark.png');
         background-repeat: round;
         width            : 50%;
     }
@@ -182,3 +187,4 @@ h2 {
         display: block;
     }
 }
+*/
