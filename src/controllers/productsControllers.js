@@ -9,6 +9,16 @@ const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 
 const productsControllers = {
+  productList: (req, res) => {
+    db.Product.findAll({
+      include: ['images']
+    })
+    .then(products => {
+      console.log(products);
+      res.send('Hola');
+      // res.render("./product/productList", { products });
+    })
+  },
   administration: (req, res) => {
     // I bring all the products
     let products = JSON.parse(fs.readFileSync("../data/products.json", { encoding: "utf-8" }));
@@ -143,14 +153,6 @@ const productsControllers = {
     //     dateNew = dateNew + productNew;
     //   }
     // })
-  },
-  productList: (req, res) => {
-    // I bring all the products
-    let products = JSON.parse(fs.readFileSync("../data/products.json", {
-      encoding: "utf-8",
-    }));
-    // I send the data to the views
-    res.render("./product/productList", { products });
   },
   delete: (req, res) => {
     // I bring all the products

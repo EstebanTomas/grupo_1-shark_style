@@ -1,5 +1,3 @@
-const User = require("./User");
-
 module.exports = ( sequelize, DataTypes ) => {
 
     let alias = 'User_Img';

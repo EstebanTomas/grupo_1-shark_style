@@ -14,6 +14,8 @@ module.exports = ( sequelize, DataTypes ) => {
         },
         product_id: {
             type: DataTypes.INTEGER,
+            references: 'product',
+            referencesKey: 'id',
             allowNull: false
         }
     };
@@ -25,9 +27,9 @@ module.exports = ( sequelize, DataTypes ) => {
     const Image = sequelize.define( alias, cols, config);
 
     Image.associate = function (models) {
-        Image.hasMany(models.Product, {
+        Image.belongsTo(models.Product, {
             foreignKey: "product_id",
-            as: "products"
+            as: "product"
         });
     }
 
