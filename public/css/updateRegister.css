@@ -7,9 +7,50 @@ body {
     /* también le puse de color de fondo al cremita clarito de la paleta de colores que usamos */
 }
 
+/* 
 main {
     padding: 0px 30%;
-    margin: 100px 0px;
+    margin : 100px 0px;
+}
+ */
+.div-container {
+    margin: 100px auto;
+    /* border: solid 1px green; */
+    max-width: 900px;
+}
+
+form {
+    display        : flex;
+    justify-content: space-evenly;
+    align-items    : center;
+}
+
+body main div form section div {
+    padding: 15px;
+    margin : 20px 0px;/* 
+    border : 1px red solid; */
+    display: block;
+}
+
+body main div form section {
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+}
+
+.container-image {
+    text-align: center;/* 
+    border    : 1px forestgreen solid; */
+    width     : 80%;
+    margin    : 15px 0px 0px 35px;
+    padding: 0px;
+}
+
+.container-image img {
+    object-fit: cover;
+    width: 200px;
+    border-radius: 50%;/* 
+    border: 1px black solid; */
 }
 
 /* agregue esta estas lineas de código para darle un border radius *

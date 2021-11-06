@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <%- include('../partials/head') -%> 
+    <%- include('../partials/head') -%>
         <link rel="stylesheet" href="/css/login.css">
         <title> Ingresá tu cuenta</title>
 </head>
@@ -16,11 +16,17 @@
         <div class="login-container">
             <div class="login-info-container">
 
-                <form method = "POST" class="inputs-container" action = "/users/login">
-                    <input class="input" type="email" placeholder="E-mail" name = "email">
-                    <input class="input" type="password" placeholder="Password" name = "password">
-                    
-                    <a href="/"><input type="button" class="boton" value="Login"></a>
+                <form class="inputs-container" action="/users/login" method="POST">
+                    <input class="input" type="email" placeholder="E-mail" name="email">
+                    <% if(locals.errors && errors.email){ %>
+                    <div>
+                        <%= errors.email.msg %>
+                    </div>
+                    <% } %>
+
+                    <input class="input" type="password" placeholder="Password" name="password">
+
+                    <button type="submit" class="boton">Login</button>
                     <span class="span"><a href="/users/register">¿no tienes una cuenta?</a></span>
                     <span class="span">olvidaste tu contraseña?</span>
                 </form>

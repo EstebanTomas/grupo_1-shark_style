@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head') -%>
+        <link rel="stylesheet" href="/css/updateRegister.css">
+        <title>Creá tu cuenta</title>
+</head>
+
+<body>
+    <div>
+        <%- include('../partials/header') %>
+    </div>
+    <main>
+        <div class="div-container">
+            <form action="/administration/edit/<%= user.id %>" method="post" enctype="multipart/form-data">
+                <section>
+                    <div class="container-image">
+                        <img src="/img/user_photo/<%= user.userImages.avatar %> " alt="imagen del usuario">
+                    </div>
+
+                    <div>
+                        <label>Ingresa una imagen
+                            <br>
+                            <input type="file" name="avatarEdit" id="avatarEdit" value="<%= user.userImages.avatar%>">
+                        </label>
+                    </div>
+                    <div>
+                        <label class="nombre">Usuario:
+                            <br>
+                            <input type="text" name="name" class="cam" value="<%= user.name %>">
+                        </label>
+                    </div>
+                    <div>
+                        <label class="nombre">Apellido:
+                            <br>
+                            <input type="text" name="lastName" id="lastName" class="cam" value="<%= user.lastname%>">
+                        </label>
+                    </div>
+                </section>
+                <section>
+                    <div>
+                        <label class="nombre">email:
+                            <br>
+                            <input type="email" name="email" id="email" value="<%= user.email %>">
+                        </label>
+                    </div>
+                    <div>
+                        <label class="nombre">contraseña:
+                            <br>
+                            <input type="password" name="password" id="password" value="<%= user.password %>">
+                        </label>
+                    </div>
+
+                    <div>
+                        <button type="submit" class="button">Editar Usuario</button>
+                    </div>
+                </section>
+            </form>
+        </div>
+    </main>
+    <div>
+        <%- include('../partials/footer') %>
+    </div>
+</body>
+
+</html>

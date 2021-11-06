@@ -2,14 +2,17 @@ const express = require("express");
 const router = express.Router();
 const multer = require('multer');
 const path = require("path")
-
-const upload = require("../../middlewares/saveImgUserMidlewares");
 const adminControllers = require("../controllers/adminControllers");
-const validationsOfRegister = require("../../middlewares/validationsOfUser")
+
+const Upload = require("../../middlewares/saveImgUserMidlewares");
+const ValidationsOfRegister = require("../../middlewares/validationsOfUser")
 
 
-router.post("/register", upload.single('avatar') ,validationsOfRegister ,adminControllers.saveRegister);
+router.post("/register", Upload.single('avatar') , ValidationsOfRegister ,adminControllers.saveRegister);
 
+
+router.get("/edit/:id", adminControllers.updateRegister);
+router.post("/edit/:id", Upload.single("avatarEdit"), ValidationsOfRegister, adminControllers.save);
 //router.post("/update/id", adminControllers.update);
 
 module.exports = router;

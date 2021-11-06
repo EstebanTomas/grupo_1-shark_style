@@ -10,6 +10,8 @@ module.exports = ( sequelize, DataTypes ) => {
         },
         product_id: {
             type: DataTypes.INTEGER,
+            references: 'products',
+            referencesKey: 'id',
             allowNull: false
         },
         xs: {
@@ -41,7 +43,7 @@ module.exports = ( sequelize, DataTypes ) => {
     const Size = sequelize.define( alias, cols, config);
 
     Size.associate = function (models) {
-        Size.hasMany(models.Product, {
+        Size.belongsTo(models.Product, {
             foreignKey: "product_id",
             as: "product"
         });
