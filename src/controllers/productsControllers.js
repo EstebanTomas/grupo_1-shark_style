@@ -14,9 +14,17 @@ const productsControllers = {
       include: ['images']
     })
     .then(products => {
-      console.log(products);
-      res.send('Hola');
-      // res.render("./product/productList", { products });
+      console.log(products[0].images[0].img);
+      res.render("./product/productList", { products });
+    })
+  },
+  productDetail: (req, res) => {
+    db.Product.findByPk(req.params.id, {
+      include: ['images', 'sizes', 'models']
+    })
+    .then(product => {
+      console.log(product.images);
+      res.render("./product/productDetail", { product });
     })
   },
   administration: (req, res) => {
@@ -75,16 +83,6 @@ const productsControllers = {
 
     res.redirect("/products/");
     */
-  },
-  productDetail: (req, res) => {
-    // I bring all the products
-    let dataOfJson = JSON.parse(fs.readFileSync('../data/products.json', { encoding: 'utf-8' }));
-    let idProduct = req.params.id;
-    const element = dataOfJson.filter((product) => {
-      return product.id == idProduct;
-    });
-    // I send the data to the views
-    res.render("./product/productDetail", { "information": element });
   },
   editProduct: (req, res) => {
     // I bring all the products
