@@ -15,7 +15,7 @@ const productsControllers = {
       include: ['images']
     })
     .then(products => {
-      console.log(products[0].images[0].img);
+      // console.log(products[0].images[0].img);
       res.render("./product/productList", { products });
     })
   },
@@ -24,7 +24,7 @@ const productsControllers = {
       include: ['images', 'sizes', 'models']
     })
     .then(product => {
-      console.log(product.images);
+      // console.log(product.images);
       res.render("./product/productDetail", { product });
     })
   },
