@@ -14,6 +14,8 @@ module.exports = ( sequelize, DataTypes ) => {
         },
         product_id: {
             type: DataTypes.INTEGER,
+            references: 'product',
+            referencesKey: 'id',
             allowNull: false
         }
     };
@@ -22,7 +24,14 @@ module.exports = ( sequelize, DataTypes ) => {
         timestamps: false
     };
     
-    const Image = sequileze.define( alias, cols, config);
+    const Image = sequelize.define( alias, cols, config);
+
+    Image.associate = function (models) {
+        Image.belongsTo(models.Product, {
+            foreignKey: "product_id",
+            as: "product"
+        });
+    }
 
     return Image;
 }

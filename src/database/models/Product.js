@@ -34,7 +34,36 @@ module.exports = ( sequelize, DataTypes ) => {
         timestamps: false
     };
     
-    const Product = sequileze.define( alias, cols, config);
+    const Product = sequelize.define( alias, cols, config);
+
+    Product.associate = function (models) {
+        Product.hasMany(models.Image, {
+            foreignKey: "product_id",
+            as: "images"
+        });
+        Product.hasMany(models.Size, {
+            foreignKey: "product_id",
+            as: "sizes"
+        });
+        Product.hasMany(models.Product_Shop, {
+            foreignKey: "product_id",
+            as: "products_shop"
+        });
+        Product.belongsToMany(models.Model, {
+            as: "models",
+            through: "product_model",
+            foreignKey: "product_id",
+            otherKey: "model_id",
+            timestamps: false
+        });
+        Product.belongsToMany(models.Order, {
+            as: "orders",
+            through: "product_order",
+            foreignKey: "product_id",
+            otherKey: "order_id",
+            timestamps: false
+        });
+    }
 
     return Product;
 }

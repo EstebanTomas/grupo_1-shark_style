@@ -18,6 +18,8 @@ module.exports = ( sequelize, DataTypes ) => {
         },
         user_id: {
             type: DataTypes.INTEGER,
+            references: 'user',
+            referencesKey: 'id',
             allowNull: false
         }
     };
@@ -26,7 +28,21 @@ module.exports = ( sequelize, DataTypes ) => {
         timestamps: false
     };
     
-    const Order = sequileze.define( alias, cols, config);
+    const Order = sequelize.define( alias, cols, config);
+
+    Order.associate = function (models) {
+        Order.belongsTo(models.User, {
+            foreignKey: "user_id",
+            as: "user"
+        });
+        Order.belongsToMany(models.Product, {
+            as: "products",
+            through: "product_order",
+            foreignKey: "product_id",
+            otherKey: "order_id",
+            timestamps: false
+        });
+    }
 
     return Order;
 }

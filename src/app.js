@@ -9,7 +9,8 @@ const session = require('express-session');
 
 // variables with files inside the router
 var indexRouter = require('./routes/index');
-
+// 
+var administrationRouter = require('./routes/admin');
 // route to login and register of users.js,
 var usersRouter = require('./routes/users');
 
@@ -41,15 +42,12 @@ app.listen( 3000, () => {
 });
 
 // main routes
-app.use('/', indexRouter);
-
-app.use('/cart', indexRouter);
-
-app.use('/users', usersRouter);
-
-app.use('/products', productRouter);
-
-app.use('/shopping', shoppingRouter);
+app.use("/", indexRouter);
+app.use("/admin", administrationRouter)
+app.use("/cart", indexRouter);
+app.use( "/users", usersRouter);
+app.use("/products", productRouter);
+app.use("/shopping", shoppingRouter);
 
 app.use((req, res, next) => {
     res.status(404).render('error')

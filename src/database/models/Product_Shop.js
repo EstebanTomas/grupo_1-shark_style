@@ -1,6 +1,6 @@
 module.exports = ( sequelize, DataTypes ) => {
 
-    let alias = 'Product_Shop';
+    let alias = "Product_Shop";
     let cols = {
         id: {
             type: DataTypes.INTEGER,
@@ -10,6 +10,8 @@ module.exports = ( sequelize, DataTypes ) => {
         },
         product_id: {
             type: DataTypes.INTEGER,
+            references: 'product',
+            referencesKey: 'id',
             allowNull: false
         },
         amount: {
@@ -23,11 +25,24 @@ module.exports = ( sequelize, DataTypes ) => {
         }
     };
     let config = {
-        tableName: 'product_shop',
+        tableName: "product_shop",
         timestamps: false
     };
     
-    const Product_Shop = sequileze.define( alias, cols, config);
+    const Product_Shop = sequelize.define( alias, cols, config);
 
+    Product_Shop.associate = function (models) {
+        Product_Shop.belongsTo(models.Product, {
+            foreignKey: "product_id",
+            as: "product"
+        });
+        Product_Shop.belongsToMany(models.User, {
+            as: "userShop",
+            through: "shopping",
+            foreignKey: "product_shop_id",
+            otherKey: "user_id",
+            timestamps: false
+        });
+    }
     return Product_Shop;
 }

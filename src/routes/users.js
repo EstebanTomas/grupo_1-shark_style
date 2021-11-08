@@ -1,34 +1,20 @@
 const express = require('express');
 const path = require('path');
 const router = express.Router();
-const { check } = require('express-validator');
-const multer = require('multer');
+const { check, validationResult } = require('express-validator');
 
-const validationsOfRegister = [
-    check('name').notEmpty().withMessage('Debes escribir un nombre de usuario'),
-    check('lastName').notEmpty().withMessage('Debes escribir tu apellido'),
-    check('email').isEmail().withMessage('Debes escribir un email valido'),
-    check('password').isLength({min: 8}).withMessage('Debes escribir una contraseña de almenos 8 caracteres')
-]
+const upload = require("../../middlewares/saveImgUserMidlewares");
+const validationsOfRegister = require("../../middlewares/validationsOfUser")
 
-const storage = multer.diskStorage({
-    destination: (req, file, cb ) => {
-        cb(null, path.resolve(__dirname, '/img/user_photo'));
-    },
-    filename:  (req, file, cb ) => {
-        cb(null, 'avatar' + '-' + Date.now() + path.extname(file.originalname));
-    }
-})
-
-const upload = multer({storage});
 // require files
 const usersControllers = require('../controllers/usersControllers');
 const { devNull } = require('os');
 
 router.get('/login', usersControllers.login);
 
-router.get('/register', usersControllers.register);
-router.post('/register', upload.single('avatar') ,validationsOfRegister ,usersControllers.userCreate);
+router.get('/register', usersControllers.createRegister);
 
+router.get("/update/:id", usersControllers.updateRegister);
+router.put("/update/:id", upload.single("avatar"), validationsOfRegister, usersControllers.saveEdit);
 
 module.exports = router;

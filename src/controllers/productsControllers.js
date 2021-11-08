@@ -4,9 +4,29 @@ const { json } = require("express");
 const { v4: uuidv4 } = require("uuid");
 const { validationResult } = require("express-validator");
 const multer = require('multer');
-
+const db = require("../database/models");
+const sequelize = db.sequelize;
+const { Op } = require("sequelize");
 
 const productsControllers = {
+  productList: (req, res) => {
+    db.Product.findAll({
+      include: ['images']
+    })
+    .then(products => {
+      // console.log(products[0].images[0].img);
+      res.render("./product/productList", { products });
+    })
+  },
+  productDetail: (req, res) => {
+    db.Product.findByPk(req.params.id, {
+      include: ['images', 'sizes', 'models']
+    })
+    .then(product => {
+      // console.log(product.images);
+      res.render("./product/productDetail", { product });
+    })
+  },
   administration: (req, res) => {
     // I bring all the products
     let products = JSON.parse(fs.readFileSync("../data/products.json", { encoding: "utf-8" }));
@@ -17,7 +37,23 @@ const productsControllers = {
     res.render("./product/productCreate");
   },
   create: (req, res) => {
-    // I bring all the products
+    db.Product.create({
+      name: req.body.name,
+      description: req.body.description,
+      price: req.body.price,
+      gender: req.body.gender,
+      category:  req.body.category
+    }).then(userOne => {
+      db.image.create({
+        img: [[req.files[0].filename], [req.files[1].filename], [req.files[2].filename]],
+        product_id: userOne.id
+      }).then(() => {
+        db.Size.create({
+          product_id: userOne.id,
+        })
+      })
+    })
+    /* I bring all the products
     let productsJson = fs.readFileSync("../data/products.json", {encoding: "utf-8"});
     let dataOfProducts;
     // if userJson is not empty I store it in a variable.
@@ -46,16 +82,7 @@ const productsControllers = {
     fs.writeFileSync("../data/products.json", dataOfListProducts);
 
     res.redirect("/products/");
-  },
-  productDetail: (req, res) => {
-    // I bring all the products
-    let dataOfJson = JSON.parse(fs.readFileSync('../data/products.json', { encoding: 'utf-8' }));
-    let idProduct = req.params.id;
-    const element = dataOfJson.filter((product) => {
-      return product.id == idProduct;
-    });
-    // I send the data to the views
-    res.render("./product/productDetail", { "information": element });
+    */
   },
   editProduct: (req, res) => {
     // I bring all the products
@@ -124,14 +151,6 @@ const productsControllers = {
     //     dateNew = dateNew + productNew;
     //   }
     // })
-  },
-  productList: (req, res) => {
-    // I bring all the products
-    let products = JSON.parse(fs.readFileSync("../data/products.json", {
-      encoding: "utf-8",
-    }));
-    // I send the data to the views
-    res.render("./product/productList", { products });
   },
   delete: (req, res) => {
     // I bring all the products

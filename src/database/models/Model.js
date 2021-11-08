@@ -21,7 +21,17 @@ module.exports = ( sequelize, DataTypes ) => {
         timestamps: false
     };
     
-    const Model = sequileze.define( alias, cols, config);
+    const Model = sequelize.define( alias, cols, config);
+
+    Model.associate = function (models) {
+        Model.belongsToMany(models.Product, {
+            as: "products",
+            through: "product_model",
+            foreignKey: "product_id",
+            otherKey: "model_id",
+            timestamps: false
+        });
+    }
 
     return Model;
 }
