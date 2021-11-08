@@ -155,7 +155,7 @@ CREATE TABLE `product_model` (
 
 LOCK TABLES `product_model` WRITE;
 /*!40000 ALTER TABLE `product_model` DISABLE KEYS */;
-INSERT INTO `product_model` VALUES (1,1,1),(2,1,2),(3,1,3),(4,2,2),(5,2,3),(6,2,3),(7,2,4),(8,3,1),(9,3,2),(10,3,2),(11,3,4),(12,4,1),(13,4,3),(14,4,4);
+INSERT INTO `product_model` VALUES (1,1,1),(2,1,2),(3,1,3),(4,2,2),(5,2,3),(6,2,4),(7,3,1),(8,3,2),(9,3,4),(10,4,1),(11,4,3),(12,4,4);
 /*!40000 ALTER TABLE `product_model` ENABLE KEYS */;
 UNLOCK TABLES;
 
