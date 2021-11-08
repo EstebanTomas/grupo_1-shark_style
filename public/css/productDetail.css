@@ -94,15 +94,7 @@ main section article .colorModel {
     padding-top: 10px;
 }
 
-/* TEMPORAL */
-main section article .modelDescription {
-    text-align: left;
-    font-size: 25px;
-    color: rgb(83, 97, 98);
-    font-weight: bold;
-}
-
-/* main section article .model {
+main section article .model {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -116,7 +108,7 @@ main section article .mod {
 }
 main section article .mod:hover {
     box-shadow: 0px 0px 8px rgb(83, 97, 98);
-} */
+}
 
 main section article .measures {
     text-align: left;
@@ -235,14 +227,10 @@ main section article .follow:hover {
     main section article .colorModel {
         font-size: 16px;
     }
-    /* TEMPORAL */
-    main section article .modelDescription {
-        font-size: 18px;
-    }
-    /* main section article .mod {
+    main section article .mod {
         width: 60px;
         height: 80px;
-    } */
+    }
     main section article .measures {
         font-size: 16px;
     }
@@ -318,16 +306,14 @@ main section article .follow:hover {
     }
 }
 
-
-
 @media (min-width: 1000px) {
     main .general-box {
         width: 75%;
     }
     main section .detail {
         width: 45%;
-    } */
+    }
     main section .article-action {
-        width: 60%;
+        width: 90%;
     }
 }

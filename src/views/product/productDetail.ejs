@@ -15,29 +15,20 @@
     <main>
         <section class="general-box">
             <!-- ****Fotos de respaldo a la izquierda**** -->
-            <!-- aca voy a poner las fotos del producto a la izquierda-->
-            <% information.forEach(product=> { %>
                 <section class="picture">
-
-                    <div class="photos">
-                        <img id="p1" class="pic" src="/img/productImage/<%= product.image[0] %>" width="50px"
-                        height="55px" alt="la parte trasera de la campera manga corta" />
-                    </div>
-                    <div class="photos">
-                        <img id="p2" class="pic" src="/img/productImage/<%= product.image[1] %>" width="50px"
-                        height="55px" alt="capucha de la campera" />
-                    </div>
-                    <div class="photos">
-                        <img id="p3" class="pic" src="/img/productImage/<%= product.image[2] %>" width="50px"
-                        height="55px" alt="manga de la campera" />
-                    </div>
+                    <% for (let i = 0; i < product.images.length; i++) { %> 
+                        <div class="photos">
+                            <img id="p1" class="pic" src="/img/productImage/<%= product.images[i].img %>" width="50px"
+                            height="55px" alt="" />
+                        </div>
+                    <% } %> 
                 </section>
 
 
                 <div class="container">
                     <div class="principalPicture">
                         <!--aca va la foto principal-->
-                        <img class="img-principalPicture" id="imagen-principal" src="/img/productImage/<%= product.image[0] %>"
+                        <img class="img-principalPicture" id="imagen-principal" src="/img/productImage/<%= product.images[0].img %>"
                             alt="imagenes que varian" />
                     </div>
                 </div>
@@ -69,26 +60,15 @@
                             <!--colores y modelos disponibles-->
                             Modelos disponibles
                         </div>
-                        <!-- *** Hasta que podamos mostrar mas de una foto *** -->
-                        <div class="modelDescription">
-                            <%= product.models %>
-                        </div>
 
                         <!-- *** Una pequeña imagen del modelo de color (voy a probar con forma circular) *** -->
-                        <!-- <div class="model">
-                        <div>
-                            <img id = "m1" class = "mod" src="/img/t-shirt.orange.jpg" width = "80px" height = "110px" alt="campera manga corta naranja"/>
-                        </div>
-                        <div>
-                            <img id = "m2" class = "mod" src="/img/t-shirt.skyblue.jpg" width = "80px" height = "110px" alt="campera manga corta celeste"/>
-                        </div>
-                        <div>
-                            <img id = "m3" class = "mod" src="/img/t-shirt.white.jpg" width = "80px" height = "110px" alt="campera manga corta blanca"/>
-                        </div>
-                        <div>
-                            <img id = "m4" class = "mod" src="/img/t-shirt.black.jpg" width = "80px" height = "110px" alt="campera manga corta negra"/>
-                        </div>
-                    </div>  -->
+                        <div class="model">
+                            <% for (let i = 0; i < product.models.length; i++) { %> 
+                                <div>
+                                    <img class = "mod" src="/img/productImage/<%= product.models[i].img %>" width = "80px" height = "110px" alt="<%= product.models[i].colors %>"/>
+                                </div>
+                            <% } %> 
+                        </div> 
                     </article>
 
                     <article>
@@ -97,17 +77,23 @@
                             Talles
                         </div>
                         <div class="size">
-                            <!-- <div id="xs" class="siz">XS</div>
-                        <div id="s" class="siz">S</div>
-                        <div id="m" class="siz">M</div>
-                        <div id="l" class="siz">L</div>
-                        <div id="xl" class="siz">XL</div> -->
-                            <div id="xs" class="siz">
-                                <%= product.size %>
-                            </div>
+                            <% if (product.sizes[0].xs == true) { %> 
+                                <div id="xs" class="siz">XS</div>
+                            <% } %> 
+                            <% if (product.sizes[0].s == true) { %> 
+                                <div id="s" class="siz">S</div>
+                            <% } %> 
+                            <% if (product.sizes[0].m == true) { %> 
+                                <div id="m" class="siz">M</div>
+                            <% } %> 
+                            <% if (product.sizes[0].l == true) { %> 
+                                <div id="l" class="siz">L</div>
+                            <% } %> 
+                            <% if (product.sizes[0].xl == true) { %> 
+                                <div id="xl" class="siz">XL</div>
+                            <% } %> 
                         </div>
                     </article>
-                    <% }); %>
                         <div class="article-action">
                             <article>
                                 <a href="/shopping" style="text-decoration: none;">

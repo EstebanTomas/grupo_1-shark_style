@@ -39,11 +39,11 @@ module.exports = ( sequelize, DataTypes ) => {
     Product.associate = function (models) {
         Product.hasMany(models.Image, {
             foreignKey: "product_id",
-            as: "imageOfProducts"
+            as: "images"
         });
         Product.hasMany(models.Size, {
             foreignKey: "product_id",
-            as: "size"
+            as: "sizes"
         });
         Product.hasMany(models.Product_Shop, {
             foreignKey: "product_id",

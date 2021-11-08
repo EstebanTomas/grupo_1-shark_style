@@ -1,6 +1,6 @@
-module.exports = (sequelize, DataTypes) => {
+module.exports = ( sequelize, DataTypes ) => {
 
-    let alias = "User_Img";
+    let alias = 'User_Img';
     let cols = {
         id: {
             type: DataTypes.INTEGER.UNSIGNED,
@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         avatar: {
-            type: DataTypes.BLOB(),
+            type: DataTypes.STRING(200),
             // Definir la foto de perfil que vamos a dejar como default****
             defaultValue: "user_anonimo.jpg"
         },

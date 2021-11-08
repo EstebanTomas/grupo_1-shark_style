@@ -10,6 +10,24 @@ const { Op } = require("sequelize");
 const { data } = require("jquery");
 
 const productsControllers = {
+  productList: (req, res) => {
+    db.Product.findAll({
+      include: ['images']
+    })
+    .then(products => {
+      console.log(products[0].images[0].img);
+      res.render("./product/productList", { products });
+    })
+  },
+  productDetail: (req, res) => {
+    db.Product.findByPk(req.params.id, {
+      include: ['images', 'sizes', 'models']
+    })
+    .then(product => {
+      console.log(product.images);
+      res.render("./product/productDetail", { product });
+    })
+  },
   administration: (req, res) => {
     // I bring all the products
     let products = JSON.parse(fs.readFileSync("../data/products.json", { encoding: "utf-8" }));
@@ -60,18 +78,6 @@ const productsControllers = {
     }).catch((error) => {
       return res.send(error);
     }); */
-  },
-  productDetail: (req, res) => {
-    // I bring all the products
-    let dataOfJson = JSON.parse(fs.readFileSync(path.join(__dirname, "../../data/products.json"), {
-      encoding: "utf-8",
-    }));
-    let idProduct = req.params.id;
-    const element = dataOfJson.filter((product) => {
-      return product.id == idProduct;
-    });
-    // I send the data to the views
-    res.render("./product/productDetail", { "information": element });
   },
   editProduct: (req, res) => {
     // I bring all the products
@@ -128,25 +134,6 @@ const productsControllers = {
     ).catch(error => {
       return res.send(error);
     });
-  },
-  productList: (req, res) => {
-    // I bring all the 
-    
-    let products = JSON.parse(fs.readFileSync(path.join(__dirname, "../../data/products.json"), {
-      encoding: "utf-8",
-    }));
-    
-    db.Product.findAll().then(
-      function (product) {
-        return res.render("./product/productList", { "data": product, "products":  products});
-      }
-    ).catch(error => {
-      console.log("naaa",error, "jjoala");
-      return res.send(error);
-    });
-    // I send the data to the views
-    /* 
-    res.render("./product/productList", { products }); */
   },
   delete: (req, res) => {
     // I bring all the products
