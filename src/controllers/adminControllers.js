@@ -45,11 +45,11 @@ const adminControllers = {
   },
   updateRegister: function (req, res) {
     User.findByPk(req.params.id, {
-      include: ["userImages"]
+      include: ["image"]
     })
-      .then(user => {
-        return res.render("./users/edit-users", { "user": user });
-      })
+      .then(users => {
+        return res.render("./users/edit-users", { "user": users });
+      }).catch(error => { res.send(error) });
   },
   save: function (req, res) {
     User.update({
@@ -73,6 +73,6 @@ const adminControllers = {
         return res.redirect('/')
       }).catch(error => res.send(error))
   }
-}/* 
-*/
+}
+
 module.exports = adminControllers;

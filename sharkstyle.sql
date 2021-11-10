@@ -273,37 +273,6 @@ LOCK TABLES `product_shop` WRITE;
 UNLOCK TABLES;
 
 --
-<<<<<<< HEAD
--- Table structure for table `products`
---
-
-DROP TABLE IF EXISTS `products`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `products` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
-  `description` text COLLATE utf8mb4_general_ci,
-  `price` mediumint(8) unsigned NOT NULL,
-  `gender` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `category` varchar(150) COLLATE utf8mb4_general_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `products`
---
-
-LOCK TABLES `products` WRITE;
-/*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'tito','fff',1,'Hombre','Remeras Manga Larga');
-/*!40000 ALTER TABLE `products` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
-=======
->>>>>>> e9dd6148d746ee46d0ec485f9343ce97fcbd5e82
 -- Table structure for table `shopping`
 --
 
@@ -359,41 +328,6 @@ INSERT INTO `user_img` VALUES (1,'user_anonimo.jpg',1);
 /*!40000 ALTER TABLE `user_img` ENABLE KEYS */;
 UNLOCK TABLES;
 
-<<<<<<< HEAD
---
--- Table structure for table `users`
---
-
-DROP TABLE IF EXISTS `users`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `users` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(60) COLLATE utf8mb4_general_ci NOT NULL,
-  `lastname` varchar(60) COLLATE utf8mb4_general_ci NOT NULL,
-  `email` varchar(60) COLLATE utf8mb4_general_ci NOT NULL,
-  `password` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `role` tinyint(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `email_UNIQUE` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `users`
---
-
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'federico','scarlesh','tscarlesh@gmail.com','$2a$10$uETGlF.XjUmkp3i6zfl4dugd1pfldAE3n3EPDu9BJXlq9Sjksms0e',1);
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Dumping routines for database 'sharkstyle'
---
-=======
->>>>>>> e9dd6148d746ee46d0ec485f9343ce97fcbd5e82
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -404,8 +338,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
-<<<<<<< HEAD
--- Dump completed on 2021-10-30 13:27:59
-=======
 -- Dump completed on 2021-10-19 18:14:25
->>>>>>> e9dd6148d746ee46d0ec485f9343ce97fcbd5e82

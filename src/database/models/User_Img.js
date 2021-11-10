@@ -31,7 +31,7 @@ module.exports = ( sequelize, DataTypes ) => {
             as: "users",
             foreignKey: "user_id",
             constraint: "user_id_3"
-        })
+        });
     }
     return User_Img;
 }
