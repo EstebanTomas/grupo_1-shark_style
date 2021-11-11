@@ -38,7 +38,7 @@ module.exports = (sequelize, DataTypes) => {
 
     const User = sequelize.define(alias, cols, config);
     User.associate = function (models) {
-        User.hasMany(models.User_Img, {
+        User.hasMany(models.UserImg, {
             foreignKey: "user_id",
             as: "image"
         });
@@ -46,12 +46,9 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: "user_id",
             as: "orders"
         });
-        User.belongsToMany(models.Product_Shop, {
-            as: "productShop",
-            through: "shopping",
+        User.hasMany(models.Shopping, {
             foreignKey: "user_id",
-            otherKey: "product_shop_id",
-            timestamps: false
+            as: "shopping"
         });
     }
 

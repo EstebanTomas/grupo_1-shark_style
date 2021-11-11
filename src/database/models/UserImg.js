@@ -1,6 +1,6 @@
 module.exports = ( sequelize, DataTypes ) => {
 
-    let alias = 'User_Img';
+    let alias = 'UserImg';
     let cols = {
         id: {
             type: DataTypes.INTEGER.UNSIGNED,
@@ -24,14 +24,15 @@ module.exports = ( sequelize, DataTypes ) => {
         tableName: 'user_img',
         timestamps: false
     };
-    const User_Img = sequelize.define(alias, cols, config);
+    
+    const UserImg = sequelize.define(alias, cols, config);
 
-    User_Img.associate = function (models) {
-        User_Img.belongsTo(models.User, {
+    UserImg.associate = function (models) {
+        UserImg.belongsTo(models.User, {
             as: "users",
             foreignKey: "user_id",
             constraint: "user_id_3"
         });
     }
-    return User_Img;
+    return UserImg;
 }

@@ -1,6 +1,6 @@
 module.exports = ( sequelize, DataTypes ) => {
 
-    let alias = "Product_Shop";
+    let alias = "ProductShop";
     let cols = {
         id: {
             type: DataTypes.INTEGER,
@@ -29,20 +29,18 @@ module.exports = ( sequelize, DataTypes ) => {
         timestamps: false
     };
     
-    const Product_Shop = sequelize.define( alias, cols, config);
+    const ProductShop = sequelize.define( alias, cols, config);
 
-    Product_Shop.associate = function (models) {
-        Product_Shop.belongsTo(models.Product, {
+    ProductShop.associate = function (models) {
+        ProductShop.belongsTo(models.Product, {
             foreignKey: "product_id",
             as: "product"
         });
-        Product_Shop.belongsToMany(models.User, {
-            as: "userShop",
-            through: "shopping",
+        ProductShop.hasMany(models.Shopping, {
             foreignKey: "product_shop_id",
-            otherKey: "user_id",
-            timestamps: false
+            as: "shopping"
         });
+
     }
-    return Product_Shop;
+    return ProductShop;
 }
