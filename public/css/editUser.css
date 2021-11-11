@@ -1,17 +1,80 @@
 * {
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Roboto Condensed', sans-serif;
+    background-color: #f2f2f2;
     /* también le puse de color de fondo al cremita clarito de la paleta de colores que usamos */
 }
-
-main {
-    padding: 0px 30%;
-    margin: 100px 0px;
+.main {
+    margin: 150px 0px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
 }
-
+.div-container {
+    display: inline-flex;
+    background-color: white;
+    width: 100%;
+    max-width: 1100px;
+    justify-content: center;
+    align-items: center;
+}/* 
+.container-image {
+    text-align: center;
+    width     : 80%;
+    padding: 0px 10px 0px 0px;
+} */
+.container-image img {
+    object-fit: cover;
+    width: 200px;
+    border-radius: 50%;
+}
+h2 {
+    text-align: center;
+}
+/* comienza la edición dentro del formulario */
+form {
+    width: 70%;
+}
+input {
+    width: 100%;
+}
+.campo {
+    height: 28px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid rgb(255, 0, 0);
+}
+.nombre {
+    letter-spacing: 1px;
+}
+section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly
+}
+.article {
+    width: 40%;
+}
+.boxes {
+    padding: 15px;
+    margin : 20px 0px;
+}
+.box {
+    margin-top: 47px;
+    margin-left: 20px;
+}
+button {
+    font-size: 18px;
+}
+body main div form section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 /* agregue esta estas lineas de código para darle un border radius *
 main .main-form {
     border-radius: 8px;

@@ -315,7 +315,7 @@ CREATE TABLE `user_img` (
   PRIMARY KEY (`id`),
   KEY `user_id_idx` (`user_id`),
   CONSTRAINT `user_id_3` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -324,6 +324,7 @@ CREATE TABLE `user_img` (
 
 LOCK TABLES `user_img` WRITE;
 /*!40000 ALTER TABLE `user_img` DISABLE KEYS */;
+INSERT INTO `user_img` VALUES (1,'user_anonimo.jpg',1);
 /*!40000 ALTER TABLE `user_img` ENABLE KEYS */;
 UNLOCK TABLES;
 

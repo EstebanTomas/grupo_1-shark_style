@@ -10,10 +10,14 @@ module.exports = ( sequelize, DataTypes ) => {
         },
         product_shop_id: {
             type: DataTypes.INTEGER,
+            references: 'product_shop',
+            referencesKey: 'id',
             allowNull: false
         },
         user_id: {
             type: DataTypes.INTEGER,
+            references: 'users',
+            referencesKey: 'id',
             allowNull: false
         },
         total: {
