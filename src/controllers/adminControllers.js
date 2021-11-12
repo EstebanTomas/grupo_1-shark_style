@@ -10,7 +10,7 @@ const { reset } = require('nodemon');
 const { error } = require('jquery');
 
 const User = db.User;
-const Image = db.User_Img;
+const Image = db.UserImg;
 
 const adminControllers = {
   saveRegister: function (req, res) {

@@ -13,7 +13,7 @@ const { error } = require("console");
 // require the json file and store it in a variable.
 //let usersJson = fs.readFileSync(path.join(__dirname, "../../data/users.json"), { encoding: "utf-8" });
 // models of database
-const Image = db.User_img;
+const Image = db.UserImg;
 const User = db.User;
 
 const usersController = {
