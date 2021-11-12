@@ -22,15 +22,6 @@ const productsControllers = {
       return res.send(error);
     });
   },
-  administration: (req, res) => {
-    db.Product.findAll()
-    .then(products => {
-      res.render("./product/productsAdmin", { products });
-    })
-    .catch(error => {
-      return res.send(error);
-    });
-  },
   productDetail: (req, res) => {
     db.Product.findByPk(req.params.id, {
       include: ['images', 'sizes', 'models']
@@ -102,7 +93,6 @@ const productsControllers = {
       include: ['images', 'sizes', 'models']
     })
     .then(product => {
-      // console.log(product.images);
       res.render("./product/productEdit", { product });
     })
     .catch(error => {

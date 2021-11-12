@@ -13,43 +13,50 @@ const User = db.User;
 const Image = db.UserImg;
 
 const adminControllers = {
+  // ***USERS***
   saveRegister: function (req, res) {
     let errors = validationResult(req);
     db.User.findAll()
-      .then(users => {
-        if (users.email != req.body.email) {
-          if (errors.isEmpty()) {
-            db.User.create({
-              name: req.body.name,
-              lastname: req.body.lastName,
-              email: req.body.email,
-              password: bcryptjs.hashSync(req.body.password, 10),
-              role: 1
-            }).then((user) => {
-              db.User_Img.create({
-                avatar: req.file ? req.file.filename : "user_anonimo.jpg",
-                user_id: user.id
-              });
-            }).then(() => {
-              return res.redirect("/");
-            }).catch((error) => {
-              return res.send(error)
+    .then(users => {
+      if (users.email != req.body.email) {
+        if (errors.isEmpty()) {
+          db.User.create({
+            name: req.body.name,
+            lastname: req.body.lastName,
+            email: req.body.email,
+            password: bcryptjs.hashSync(req.body.password, 10),
+            role: 1
+          })
+          .then((user) => {
+            db.User_Img.create({
+              avatar: req.file ? req.file.filename : "user_anonimo.jpg",
+              user_id: user.id
             });
-          } else {
-            res.render("./users/register", { errors: errors.mapped(), incomingData: req.body })
-          }
+          })
+          .then(() => {
+            return res.redirect("/");
+          })
+          .catch((error) => {
+            return res.send(error)
+          });
         } else {
-          return res.render("./users/register", { errors: errors.mapped(), incomingData: req.body })
+          res.render("./users/register", { errors: errors.mapped(), incomingData: req.body })
         }
-      });
+      } else {
+        return res.render("./users/register", { errors: errors.mapped(), incomingData: req.body })
+      }
+    });
   },
   updateRegister: function (req, res) {
     User.findByPk(req.params.id, {
       include: ["image"]
     })
-      .then(users => {
-        return res.render("./users/edit-users", { "user": users });
-      }).catch(error => { res.send(error) });
+    .then(users => {
+      return res.render("./admin/edit-users", { "user": users });
+    })
+    .catch((error) => {
+      return res.send(error)
+    });
   },
   save: function (req, res) {
     User.update({
@@ -61,17 +68,30 @@ const adminControllers = {
     }, {
       where: { id: req.params.id }
     })
-      .then(() => {
-        Image.update({
-          avatar: req.file ? req.file.filename : "user_anonimo.jpg",
-          user_id: req.params.id
-        }, {
-          where: { user_id: req.params.id }
-        })
+    .then(() => {
+      Image.update({
+        avatar: req.file ? req.file.filename : "user_anonimo.jpg",
+        user_id: req.params.id
+      }, {
+        where: { user_id: req.params.id }
       })
-      .then(() => {
-        return res.redirect('/')
-      }).catch(error => res.send(error))
+    })
+    .then(() => {
+      return res.redirect('/')
+    })          
+    .catch((error) => {
+      return res.send(error)
+    });
+  },
+  // ***PRODUCTS***
+  adminProducts: (req, res) => {
+    db.Product.findAll()
+    .then(products => {
+      res.render("./admin/productsAdmin", { products });
+    })
+    .catch(error => {
+      return res.send(error);
+    });
   }
 }
 

@@ -8,8 +8,6 @@ const Upload = require("../../middlewares/saveImgProductsMiddlewares");
 
 // paths to product list
 router.get('/', controllersOfProducts.productList);
-//router.get('/:id', controllersOfProducts.productList);
-router.get('/admin', controllersOfProducts.administration)
 // routes in detail
 router.get('/detail/:id', controllersOfProducts.productDetail);
 // route of create

@@ -7,12 +7,13 @@ const adminControllers = require("../controllers/adminControllers");
 const Upload = require("../../middlewares/saveImgUserMidlewares");
 const ValidationsOfRegister = require("../../middlewares/validationsOfUser")
 
-
+// **USERS**
 router.post("/register", Upload.single('avatar') , ValidationsOfRegister ,adminControllers.saveRegister);
-
 
 router.get("/edit/:id", adminControllers.updateRegister);
 router.post("/edit/:id", Upload.single("avatarEdit"), ValidationsOfRegister, adminControllers.save);
-//router.post("/update/id", adminControllers.update);
+
+// **PRODUCTS**
+router.get('/products', adminControllers.adminProducts)
 
 module.exports = router;
