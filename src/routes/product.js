@@ -10,14 +10,14 @@ const Upload = require("../../middlewares/saveImgProductsMiddlewares");
 router.get('/', controllersOfProducts.productList);
 //router.get('/:id', controllersOfProducts.productList);
 router.get('/admin', controllersOfProducts.administration)
-// this path shows the edit form
-router.get('/edit/:id', controllersOfProducts.editProduct);
-router.put('/edit/:id', controllersOfProducts.edit);
+// routes in detail
+router.get('/detail/:id', controllersOfProducts.productDetail);
 // route of create
 router.get('/create', controllersOfProducts.productCreate);
 router.post('/create', Upload.array("img", 3), controllersOfProducts.create);
-// routes in detail
-router.get('/detail/:id', controllersOfProducts.productDetail);
+// this path shows the edit form
+router.get('/edit/:id', controllersOfProducts.editProduct);
+router.put('/edit/:id', controllersOfProducts.edit);
 // routes in delete
 router.get('/delete/:id', controllersOfProducts.delete);
 

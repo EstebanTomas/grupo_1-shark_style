@@ -18,6 +18,18 @@ const productsControllers = {
       // console.log(products[0].images[0].img);
       res.render("./product/productList", { products });
     })
+    .catch(error => {
+      return res.send(error);
+    });
+  },
+  administration: (req, res) => {
+    db.Product.findAll()
+    .then(products => {
+      res.render("./product/productsAdmin", { products });
+    })
+    .catch(error => {
+      return res.send(error);
+    });
   },
   productDetail: (req, res) => {
     db.Product.findByPk(req.params.id, {
@@ -27,27 +39,22 @@ const productsControllers = {
       // console.log(product.images);
       res.render("./product/productDetail", { product });
     })
-  },
-  administration: (req, res) => {
-    // I bring all the products
-    let products = JSON.parse(fs.readFileSync("../data/products.json", { encoding: "utf-8" }));
-    // I send the data to the views
-    res.render('./product/productsAdmin', { products });
+    .catch(error => {
+      return res.send(error);
+    });
   },
   productCreate: (req, res) => {
     res.render("./product/productCreate");
   },
   create: (req, res) => {
-    /* var image1;
-    var image2;
-    var image3; */
     db.Product.create({
       name: req.body.name,
       description: req.body.description,
       price: req.body.price,
       gender: req.body.gender,
       category: req.body.category
-    }).then((data) => {
+    })
+    .then((data) => {
       db.Image.bulkcreate([{
         img: req.file[0].filename,
         product_id: data.id
@@ -57,37 +64,50 @@ const productsControllers = {
       },{
         img: req.file[2].filename,
         product_id: data.id
-      }])/* 
-      image1 = db.Image.create({
-        img: req.file[0].filename,
-        product_id: data.id
-      });
-      image2 = db.Image.create({
-        img: req.file[1].filename,
-        product_id: data.id
-      });
-      image3 = db.Image.create({
-        img: req.file[2].filename,
-        product_id: data.id
-      }); */
+      }])
       return res.render("/")
     })
-      .catch(error => { res.send(error) });/* 
-    Promise.all([image1, image2, image3]).then((allData) => {
-      return res.redirect("/");
-    }).catch((error) => {
+    .catch(error => {
       return res.send(error);
-    }); */
-  },
-  editProduct: (req, res) => {
-    // I bring all the products
-    const products = JSON.parse(fs.readFileSync('../data/products.json', { encoding: 'utf-8' }));
-    var productToEdit = req.params.idProducts;
-    const EditProduct = products.filter(toEdit => {
-      return toEdit.id == productToEdit
     });
-    // I send the data to the views
-    return res.render("./product/productEdit", { "object": EditProduct });
+  },
+   /* I bring all the products
+    let productsJson = fs.readFileSync("../data/products.json", {encoding: "utf-8"});
+    let dataOfProducts;
+    // if userJson is not empty I store it in a variable.
+    productsJson == "" ? dataOfProducts = [] : dataOfProducts = JSON.parse(productsJson);
+    // I take out the last product, I store it in lastProduct.
+    let lastProduct = dataOfProducts.pop();
+    // I add it again
+    dataOfProducts.push(lastProduct);
+    // now i have an id counter.
+    let product = {
+      id: lastProduct.id + 1,
+      name: req.body.name,
+      description: req.body.description,
+      price: req.body.price,
+      image: [[req.files[0].filename], [req.files[1].filename], [req.files[2].filename]],
+      size: req.body.size,
+      models: req.body.models,
+      gender: req.body.gender,
+      category: req.body.category,
+    };
+    dataOfProducts.push(product);
+    dataOfListProducts = JSON.stringify(dataOfProducts, null, 2);
+    fs.writeFileSync("../data/products.json", dataOfListProducts);
+    res.redirect("/products/");
+    */
+  editProduct: (req, res) => {
+    db.Product.findByPk(req.params.id, {
+      include: ['images', 'sizes', 'models']
+    })
+    .then(product => {
+      // console.log(product.images);
+      res.render("./product/productEdit", { product });
+    })
+    .catch(error => {
+      return res.send(error);
+    });
   },
   edit: (req, res) => {
     let productsJson = fs.readFileSync("../data/products.json", { encoding: 'utf-8' });
@@ -125,15 +145,6 @@ const productsControllers = {
 
     res.send("Hola " + idProduct + dataOfListProducts);
     // res.redirect("/products/");
-  },
-  lista: (req, res) => {
-    db.Product.findAll().then(
-      function (product) {
-        return res.render("./product/productList", { "data": product });
-      }
-    ).catch(error => {
-      return res.send(error);
-    });
   },
   delete: (req, res) => {
     // I bring all the products
