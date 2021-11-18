@@ -114,8 +114,8 @@ DROP TABLE IF EXISTS `models`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `models` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `img` varchar(200) NOT NULL,
-  `colors` varchar(100) DEFAULT NULL,
+  `img` varchar(200) DEFAULT NULL,
+  `colors` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
