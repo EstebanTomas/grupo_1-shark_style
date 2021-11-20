@@ -154,7 +154,7 @@ const adminControllers = {
         product_id: product.id
       })
       Promise.all([img0, img1, img2])
-      // // ** models
+      // // ** models ++TODAVIA NO FUNCIONA CREAR LOS MODELOS++
       // let models = req.body.models;
       // for ( model of models) {
       //   db.Model.create({
@@ -226,7 +226,7 @@ const adminControllers = {
       }, {
         where: {product_id: req.params.id}
       })
-      // // ** models
+      // // ** models ++TODAVIA NO FUNCIONA EDITAR LOS MODELOS++
       // let models = req.body.models;
       // for ( model of models) {
       //   db.Model.create({
@@ -235,37 +235,37 @@ const adminControllers = {
       //   })
       // })
     })
-    //** images 
-    db.Product.findByPk(req.params.id, {
-      include: ['images', 'sizes', 'models']
-    })
-    .then((product) => {
-      if (req.files != '') {
-        fs.unlinkSync(`./public/img/productImage/${product.images[0].img}`);
-        fs.unlinkSync(`./public/img/productImage/${product.images[1].img}`);
-        fs.unlinkSync(`./public/img/productImage/${product.images[2].img}`);
+    //** images ++TODAVIA NO FUNCIONA EDITAR LAS IMAGENES++
+    // db.Product.findByPk(req.params.id, {
+    //   include: ['images', 'sizes', 'models']
+    // })
+    // .then((product) => {
+    //   if (req.files != '') {
+    //     fs.unlinkSync(`./public/img/productImage/${product.images[0].img}`);
+    //     fs.unlinkSync(`./public/img/productImage/${product.images[1].img}`);
+    //     fs.unlinkSync(`./public/img/productImage/${product.images[2].img}`);
 
-        let img0 = db.Image.update({
-          img: req.files[0].filename,
-        }, {
-          where: { id: product.images[0].id }
-        });
+    //     let img0 = db.Image.update({
+    //       img: req.files[0].filename,
+    //     }, {
+    //       where: { id: product.images[0].id }
+    //     });
 
-        let img1 = db.Image.update({
-          img: req.files[1].filename,
-        }, {
-          where: { id: product.images[1].id }
-        });
+    //     let img1 = db.Image.update({
+    //       img: req.files[1].filename,
+    //     }, {
+    //       where: { id: product.images[1].id }
+    //     });
 
-        let img2 = db.Image.update({
-          img: req.files[2].filename,
-        }, {
-          where: { id: product.images[2].id }
-        });
+    //     let img2 = db.Image.update({
+    //       img: req.files[2].filename,
+    //     }, {
+    //       where: { id: product.images[2].id }
+    //     });
 
-        Promise.all([img0, img1, img2])
-      }
-    })
+    //     Promise.all([img0, img1, img2])
+    //   }
+    // })
     .then(() => {
       res.redirect("/products/");
     })
@@ -279,6 +279,7 @@ const adminControllers = {
         product_id: req.params.id
       }
     })
+    // ++TODAVIA NO FUNCIONA BORRAR LOS MODELOS++
     // .then(() => {
     //   db.Model.destroy({
     //     where: {
