@@ -9,11 +9,11 @@ module.exports = ( sequelize, DataTypes ) => {
             allowNull: false
         },
         img: {
-            type: DataTypes.STRING(200),
-            allowNull: false
+            type: DataTypes.STRING(200)
         },
         colors: {
-            type: DataTypes.STRING(150)
+            type: DataTypes.STRING(150),
+            allowNull: false
         }
     };
     let config = {
