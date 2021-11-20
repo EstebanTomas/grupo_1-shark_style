@@ -33,6 +33,7 @@ const usersController = {
         if (isOkThePassword) {
           delete userLogin.password;
           req.session.userToLogged = userLogin;
+          console.log(userLogin,"hea");
           console.log(req.session.userToLogged);
           return res.redirect("/users/profile/" + userLogin.id );
         } else {

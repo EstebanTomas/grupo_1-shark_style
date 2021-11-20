@@ -6,7 +6,8 @@ const adminControllers = require("../controllers/adminControllers");
 
 const Upload = require("../../middlewares/saveImgUserMidlewares");
 const ValidationsOfRegister = require("../../middlewares/validationsOfUser")
-
+const profileMiddlewares = require("../../middlewares/profileMiddlewares");
+const administratorMiddlewares = require("../../middlewares/administratorMiddkeware");
 // **USERS**
 router.post("/register", Upload.single('avatar') , ValidationsOfRegister ,adminControllers.saveRegister);
 
