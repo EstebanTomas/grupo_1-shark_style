@@ -40,7 +40,7 @@ module.exports = (sequelize, DataTypes) => {
     User.associate = function (models) {
         User.hasMany(models.UserImg, {
             foreignKey: "user_id",
-            as: "image"
+            as: "Image"
         });
         User.hasMany(models.Order, {
             foreignKey: "user_id",

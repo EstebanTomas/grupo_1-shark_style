@@ -28,7 +28,7 @@ const adminControllers = {
             role: 1
           })
           .then((user) => {
-            db.User_Img.create({
+            db.UserImg.create({
               avatar: req.file ? req.file.filename : "user_anonimo.jpg",
               user_id: user.id
             });
@@ -49,7 +49,7 @@ const adminControllers = {
   },
   updateRegister: function (req, res) {
     User.findByPk(req.params.id, {
-      include: ["image"]
+      include: ["Image"]
     })
     .then(users => {
       return res.render("./admin/edit-users", { "user": users });
