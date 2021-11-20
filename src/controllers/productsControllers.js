@@ -166,6 +166,7 @@ const productsControllers = {
     res.redirect("/products/admin");
 
   },
+  
 };
 
 module.exports = productsControllers;

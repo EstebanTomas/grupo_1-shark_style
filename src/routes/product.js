@@ -1,4 +1,4 @@
-const express = require('express');
+ const express = require('express');
 const path = require('path');
 const router = express.Router();
 const { check } = require('express-validator');
@@ -8,9 +8,12 @@ const upload = require("../../middlewares/saveImgProductsMiddlewares");
 
 // paths to product list
 router.get('/', controllersOfProducts.productList);
-//router.get('/:id', controllersOfProducts.productList);
 
+//router.get('/:id', controllersOfProducts.productList);
 router.get('/admin', controllersOfProducts.administration)
+
+//productSearch .
+router.get('/productSearch', controllersOfProducts.productSearch)
 
 // this path shows the edit form
 router.get('/edit/:id', controllersOfProducts.editProduct);
