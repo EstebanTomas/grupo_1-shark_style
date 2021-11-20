@@ -77,26 +77,6 @@ main section article .productName {
     color: #666;
 }
 
-main section article .box-button-save {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-main section article .button-save {
-    background-color: rgb(192, 96, 20);
-    color: white;
-    width: 150px;
-    height: 35px;
-    border-radius: 7px;
-    border: solid 1px rgb(192, 96, 20);
-    box-shadow: 0px 0px 0px;
-    transition:  box-shadow 450ms;
-}
-main section article .button-save:hover {
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
-}
-
 
 @media (max-width: 768px) {
     main {

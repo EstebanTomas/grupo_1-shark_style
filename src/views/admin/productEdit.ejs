@@ -13,13 +13,13 @@
     </div>
     <main>
         <div class="create">
-            <form class="create-form" action="/products/edit/<%= product.id %>?_method=PUT" method="POST">
+            <form class="create-form" action="/administration/products/edit/<%= product.id %>?_method=PUT" method="POST">
                 <div class="box">
                     <p>
                         <label class="create-text">Nombre del producto</label>
                     </p>
                     <p>
-                        <input class="create-input" type="text" name="name" value="<%= product.name%>">
+                        <input class="create-input" type="text" name="name" value="<%= product.name%>"></input>
                     </p>
                 </div>
                 <div class="box">
@@ -27,7 +27,7 @@
                         <label class="create-text">Descripción</label>
                     </p>
                     <p>
-                        <input class="create-input" type="text" name="description" value="<%= product.description %> ">
+                        <input class="create-input" type="text" name="description" value="<%= product.description %>"></input>
                     </p>
                 </div>
                 <div class="box">
@@ -35,35 +35,7 @@
                         <label class="create-text">Precio</label>
                     </p>
                     <p>
-                        <input class="create-input" type="number" name="price" value="<%= product.price %>">
-                    </p>
-                </div>
-                <div class="box">
-                    <p>
-                        <label class="create-text">Modelos Disponibles</label>
-                    </p>
-                    <p class="currentData">
-                        Modelos actuales:
-                        <% for (let i=0; i < product.models.length; i++) { %>
-                            <%= product.models[i].colors %>
-                        <% } %>
-                    </p>
-                    <p>
-                        <input class="create-input" type="text" name="models">
-                    </p>
-                </div>
-                <div class="box">
-                    <p>
-                        <label class="create-text">Imágen principal</label>
-                    </p>
-                    <p class="currentData">
-                        Imágenes actuales:
-                        <% for (let i=0; i < product.images.length; i++) { %>
-                            <%= product.images[i].img %>
-                        <% } %>
-                    </p>
-                    <p>
-                        <input class="create-img" type="file" accept=".jpg" name="image">
+                        <input class="create-input" type="number" name="price" value="<%= product.price %>"></input>
                     </p>
                 </div>
                 <div class="box">
@@ -89,13 +61,42 @@
                         <% } %>
                     </p>
                     <p>
-                        <select class="create-options" name="interests">
-                            <option type="checkbox" name="size-xs">XS</option>
-                            <option type="checkbox" name="size-s">S</option>
-                            <option type="checkbox" name="size-m">M</option>
-                            <option type="checkbox" name="size-l">L</option>
-                            <option type="checkbox" name="size-xl">XL</option>
-                        </select>
+                        <div class="create-options" name="size" multiple>
+                            <label><input type="checkbox" name="sizes" value="xs">XS</label>
+                            <label><input type="checkbox" name="sizes" value="s">S</label>
+                            <label><input type="checkbox" name="sizes" value="m">M</label>
+                            <label><input type="checkbox" name="sizes" value="l">L</label>
+                            <label><input type="checkbox" name="sizes" value="xl">XL</label>
+                        </div>
+                    </p>
+                </div>
+                <div class="box">
+                    <p>
+                        <label class="create-text">Imagenes del producto</label>
+                    </p>
+                    <p class="currentData">
+                        Imágenes actuales:
+                        <% for (let i=0; i < product.images.length; i++) { %>
+                            <%= product.images[i].img %>
+                        <% } %>
+                    </p>
+                    <p>
+                        <input class="create-img" type="file" accept="image/*" name="img" id="img" multiple>
+                    </p>
+                </div>
+                <div class="box">
+                    <p>
+                        <label class="create-text">Colores Disponibles</label>
+                    </p>
+                    <p class="currentData">
+                        Modelos actuales:
+                        <% for (let i=0; i < product.models.length; i++) { %>
+                            <%= product.models[i].colors %>
+                        <% } %>
+                    </p>
+                    <p>
+                        <button class="addButton">Agregar mas colores +</button>
+                        <input class="create-input" type="color" name="models"></input>
                     </p>
                 </div>
                 <div class="box">
@@ -109,7 +110,7 @@
                     <p>
                         <select class="create-options" name="gender">
                             <option type="checkbox" name="gender-men">Hombre</option>
-                            <option type="checkbox" name="gender-women">Mujere</option>
+                            <option type="checkbox" name="gender-women">Mujer</option>
                             <option type="checkbox" name="gender-unisex">Unisex</option>
                         </select>
                     </p>
@@ -133,6 +134,7 @@
                             <option type="checkbox" name="category-warm-jacket">Camperas de Abrigo</option>
                             <option type="checkbox" name="category-thermal-jacket">Camperas Termicas</option>
                             <option type="checkbox" name="category-divers">Buzos</option>
+                            <option type="checkbox" name="category-sets">Conjuntos</option>
                             <option type="checkbox" name="category-socks">Medias</option>
                             <option type="checkbox" name="category-sports-shoes">Calzado Deportivo</option>
                         </select>
@@ -150,8 +152,6 @@
         </div>
     </main>
     <div>
-        <%- include ('../partials/footer') -%>
+        <%- include('../partials/footer') -%>
     </div>
 </body>
-
-</html>

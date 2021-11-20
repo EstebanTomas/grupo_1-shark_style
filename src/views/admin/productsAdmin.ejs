@@ -14,7 +14,7 @@
     <main>
         <div class="title">
             <h1>Administra tus productos </h1>
-            <h4><a href="/products/create">Crear producto</a></h4>
+            <h4><a class="link" href="/administration/products/create">Crear producto</a></h4>
         </div>
         <section>
             <article class="bar-conteiner">
@@ -30,18 +30,20 @@
             <article>
                 <% products.forEach( products=> { %>
                     <div>
-                        <ul class="Administrator-options">
-                            <li>
+                        <ul class="administrator-options">
+                            <li class="id">
                                 <%= products.id %>
                             </li>
                             <li class="text">
                                 <%= products.name %>
                             </li>
                             <li class="edit">
-                                <a href="/products/edit/<%= products.id %>"><i class="fas fa-edit"></i></a>
+                                <a href="/administration/products/edit/<%= products.id %>"><i class="fas fa-edit"></i></a>
                             </li>
                             <li class="delete">
-                                <a href="/products/delete/<%= products.id %>"><i class="fas fa-trash-alt"></i></a>
+                                <form action="/administration/products/delete/<%= products.id %>?_method=DELETE" method="POST">
+                                    <button type="submit"><i class="fas fa-trash-alt"></i></button>
+                                </form>
                             </li>
                         </ul>
                     </div>

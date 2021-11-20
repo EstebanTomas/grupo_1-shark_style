@@ -1,4 +1,9 @@
 window.onload = function () {
-    let image = document.getElementById("imagen-principal");
-    let p1 = document.getElementById("p3");
+    let follow = document.querySelector(".follow");
+
+    follow.addEventListener('click', function () {
+        let url = location.href;
+        navigator.clipboard.writeText(url);
+        alert('Copiado en el portapapeles "'+ url + '"')
+    })
 }
