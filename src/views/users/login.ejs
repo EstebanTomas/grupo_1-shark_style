@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <%- include('../partials/head') -%> 
+    <%- include('../partials/head') -%>
         <link rel="stylesheet" href="/css/login.css">
         <title> Ingresá tu cuenta</title>
 </head>
@@ -11,18 +11,29 @@
     <div>
         <%- include('../partials/header') %>
     </div>
-
+    
     <main>
         <div class="login-container">
             <div class="login-info-container">
-
-                <form method = "POST" class="inputs-container" action = "/users/login">
-                    <input class="input" type="email" placeholder="E-mail" name = "email">
-                    <input class="input" type="password" placeholder="Password" name = "password">
-                    
-                    <a href="/"><input type="button" class="boton" value="Login"></a>
-                    <span class="span"><a href="/users/register">¿no tienes una cuenta?</a></span>
-                    <span class="span">olvidaste tu contraseña?</span>
+                <form class="inputs-container" action="/users/login" method="POST">
+                    <% if(locals.errors && errors.email){ %>
+                        <div>
+                            <%= errors.email.msg %>
+                        </div>
+                        <% } %>
+                    <input class="input" type="email" placeholder="E-mail" name="email"
+                        value="<%= locals.values_olds && values_olds.email ? values_olds.email : " " %>">
+                        <% if(locals.errors && errors.password){ %>
+                            <div>
+                                <%= errors.password.msg %>
+                            </div>
+                            <% } %>
+                            <input class="input" type="password" placeholder="Password" name="password" value="<%# locals.values_olds && values_olds.email ? values_olds.email : " " %>"">
+                           
+                                    <button type="submit" class="boton">Login</button>
+                                    <span class="span"><a href="/users/register">¿no tienes una
+                                            cuenta?</a></span>
+                                    <span class="span">olvidaste tu contraseña?</span>
                 </form>
                 <p>or</p>
                 <h1 class="title">Log in with</h1>
@@ -43,7 +54,6 @@
             </div>
         </div>
     </main>
-
     <div>
         <%- include('../partials/footer') -%>
     </div>

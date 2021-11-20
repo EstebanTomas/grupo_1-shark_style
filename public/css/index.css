@@ -671,7 +671,7 @@ ul.sub-element-conteiner li:target {
         height  : 80px;
     }
 
-
+/* 
     ul.sub-element-conteiner li img {
         width     : 100vw;
         object-fit: contain;
@@ -683,7 +683,7 @@ ul.sub-element-conteiner li:target {
 
     ul.sub-element-conteiner li:target {
         opacity: 1;
-    }
+    } */
 
     .contents {
         background-color: white;

@@ -1,7 +1,7 @@
 
 const shoppingControllers = {
     shopping: (req,res) => {
-        res.render('shopping');
+        res.render('./shopping/shoppingCart');
     }
 }
 

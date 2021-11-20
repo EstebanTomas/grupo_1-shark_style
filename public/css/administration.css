@@ -7,10 +7,14 @@ main {
     font-family: 'Roboto Condensed', sans-serif;
 }
 
-.title {
+main .title {
     text-align: center;
     font-size: 20px;
     font-family: MD Primer Bold,Rubik,Lato;
+}
+
+main div .link {
+    color: blue;
 }
 
 main section {
@@ -19,7 +23,7 @@ main section {
     margin: auto;
     border-radius: 10px;
     width: 85%;
-    margin-bottom: 50px
+    margin-bottom: 50px;
 }
 
 .bar-conteiner {
@@ -36,22 +40,28 @@ main section article nav ul {
 main section article nav ul li {
     font-size: 20px;
     font-weight: 400;
+    color: black;
 }
 
 main section article div {
     border-bottom: solid 1px grey;
 }
 
-.Administrator-options {
+.administrator-options {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     list-style: none;
 }
 
+main section article div ul .id {
+    color: black;
+}
+
 main section article div ul .text {
     width: 20%;
     margin-left: 0%;
+    color: black;
 }
 
 main section article div ul .edit {

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head') %>
+        <link rel="stylesheet" href="/css/shopping.css">
+        <script src="https://kit.fontawesome.com/7a73fadbcd.js" crossorigin="anonymous"></script>
+        <title>Carrito Compras</title>
+</head>
+
+<body>
+    <div>
+        <%- include('../partials/header') %>
+    </div>
+
+    <main>
+        <section class="section-one">
+            <nav class="options-of-nav">
+                <ol>
+                    <li>Producto</li>
+                    <li>Precio</li>
+                    <li>Cantidad</li>
+                    <li>Total</li>
+                </ol>
+            </nav>
+        </section>
+        <section class="section-main">
+            <section class="section-two">
+                <article>
+                    <div>
+                        <img width="100px" height="100px" src="/img/3.jpg" alt="">
+                    </div>
+                    <p>$1000</p>
+                    <div class="units">
+                        <a href="#"><i class="fas fa-minus"></i></a>
+                        <div class="color">0</div>
+                        <a href="#"><i class="fas fa-plus"></i></a>
+                    </div>
+                    <p>$1000</p>
+                </article>
+                <article>
+                    <div class="units">
+                        <img width="100px" height="100px" src="/img/4.jpg" alt="">
+                    </div>
+                    <p>$1000</p>
+                    <div class="units">
+                        <a href="#"><i class="fas fa-minus"></i></a>
+                        <div class="color">0</div>
+                        <a href="#"><i class="fas fa-plus"></i></a>
+                    </div>
+                    <p>$1000</p>
+                </article>
+                <article>
+                    <div>
+                        <img width="100px" height="100px" src="/img/5.jpg" alt="">
+                    </div>
+                    <p>$1000</p>
+                    <div class="units">
+                        <a href="#"><i class="fas fa-minus"></i></a>
+                        <div class="color">0</div>
+                        <a href="#"><i class="fas fa-plus"></i></a>
+                    </div>
+                    <p>$1000</p>
+                </article>
+                <article>
+                    <div>
+                        <img width="100px" height="100px" src="/img/17.jpg" alt="">
+                    </div>
+                    <p>$1000</p>
+                    <div class="units">
+                        <a href="#"><i class="fas fa-minus"></i></a>
+                        <div class="color">0</div>
+                        <a href="#"><i class="fas fa-plus"></i></a>
+                    </div>
+                    <p>$1000</p>
+                </article>
+                <div class="return-button">
+                    <a href="/"><input type="button" value="Seguir comprando"></a>
+                </div>
+            </section>
+            <section class="section-three">
+                <div class="title-summary">
+                    <h2>Resumen del pedido</h2>
+                </div>
+                <div class="shipments-and-subtotal">
+                    <p>Subtotal</p><a href="">$1000</a>
+                </div>
+                <div class="style-button">
+                    <a href="/shopping">
+                        <input type="button" value="Comprar">
+                    </a>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <div>
+        <%- include('../partials/footer') %>
+    </div>
+</body>
+
+</html>

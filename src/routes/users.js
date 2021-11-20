@@ -2,19 +2,22 @@ const express = require('express');
 const path = require('path');
 const router = express.Router();
 const { check, validationResult } = require('express-validator');
-
-const upload = require("../../middlewares/saveImgUserMidlewares");
-const validationsOfRegister = require("../../middlewares/validationsOfUser")
-
+const Upload = require("../../middlewares/saveImgUserMidlewares");
+const ValidationsOfRegister = require("../../middlewares/validationsOfUser");
+const Validation = require("../../middlewares/loginOfUserMiddlewares");
+const guestMiddlewares = require("../../middlewares/guestMiddleware");
+const profile = require("../../middlewares/profileMiddlewares");
 // require files
 const usersControllers = require('../controllers/usersControllers');
 const { devNull } = require('os');
 
-router.get('/login', usersControllers.login);
+router.get('/login', guestMiddlewares , usersControllers.login);
+router.post('/login', Validation ,usersControllers.confirmSessionOfUser);
 
-router.get('/register', usersControllers.createRegister);
+router.get("/profile/:id", profile , usersControllers.profile)
 
-router.get("/update/:id", usersControllers.updateRegister);
-router.put("/update/:id", upload.single("avatar"), validationsOfRegister, usersControllers.saveEdit);
+router.get('/register', guestMiddlewares , usersControllers.createRegister);
+
+router.get("/destroy", usersControllers.deleteSession);
 
 module.exports = router;

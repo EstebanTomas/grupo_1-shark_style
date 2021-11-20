@@ -166,6 +166,8 @@ const productsControllers = {
     res.redirect("/products/admin");
 
   },
+
+  
   
 };
 

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head') -%>
+        <link rel="stylesheet" href="/css/profile.css">
+        <title>perfil</title>
+</head>
+
+<body class="all_container">
+    <div>
+        <%- include('../partials/header') %>
+    </div>
+    <main>
+        <article class="container_user">
+            <div>
+                <img src="/img/user_photo/<%= users.Image[0].avatar %>" alt="photo user" class="user_photo">
+            </div>
+            <div>
+                <h2 class="name">
+                    <%= users.name +" "+ users.lastname %> </h2>
+            </div>
+        </article>
+        <div class=" options_of_users">
+                        <h5>¿Deaseas editar tu perfil?
+                            <a href=" /administration/edit/<%=users.id %>" class="button_edit">Toca aqui
+                            </a>
+                        </h5><!-- 
+                        <button type="submit" class="colorChange">
+                            <di>" "
+            </div>
+            </button> -->
+            </div>
+    </main>
+    <div>
+        <%- include('../partials/footer') -%>
+    </div>
+    <script src="/js/profile.js" text="text/javascript"></script>
+</body>
+
+</html>

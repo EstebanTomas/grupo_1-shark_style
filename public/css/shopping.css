@@ -15,20 +15,9 @@ main {
     border-radius: 8px;
     background-color: white;
 }
-/* le doy estilo y posición a la section-one*/
-.div-conteiner-shark-style {
-    text-align: center;
-    margin: auto;
-}
-
-.div-conteiner-shark-style img {
-    width: 200px;
-    margin-top: 10px;
-    object-fit: none;
-}
 
 .section-one {
-    border-bottom: solid 1px black
+    border-bottom: solid 1px black;
 } 
 
 .options-of-nav {

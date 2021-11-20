@@ -114,8 +114,8 @@ DROP TABLE IF EXISTS `models`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `models` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `img` varchar(200) NOT NULL,
-  `colors` varchar(100) DEFAULT NULL,
+  `img` varchar(200) DEFAULT NULL,
+  `colors` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -155,7 +155,7 @@ CREATE TABLE `product_model` (
 
 LOCK TABLES `product_model` WRITE;
 /*!40000 ALTER TABLE `product_model` DISABLE KEYS */;
-INSERT INTO `product_model` VALUES (1,1,1),(2,1,2),(3,1,3),(4,2,2),(5,2,3),(6,2,3),(7,2,4),(8,3,1),(9,3,2),(10,3,2),(11,3,4),(12,4,1),(13,4,3),(14,4,4);
+INSERT INTO `product_model` VALUES (1,1,1),(2,1,2),(3,1,3),(4,2,2),(5,2,3),(6,2,4),(7,3,1),(8,3,2),(9,3,4),(10,4,1),(11,4,3),(12,4,4);
 /*!40000 ALTER TABLE `product_model` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -315,7 +315,7 @@ CREATE TABLE `user_img` (
   PRIMARY KEY (`id`),
   KEY `user_id_idx` (`user_id`),
   CONSTRAINT `user_id_3` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -324,6 +324,7 @@ CREATE TABLE `user_img` (
 
 LOCK TABLES `user_img` WRITE;
 /*!40000 ALTER TABLE `user_img` DISABLE KEYS */;
+INSERT INTO `user_img` VALUES (1,'user_anonimo.jpg',1);
 /*!40000 ALTER TABLE `user_img` ENABLE KEYS */;
 UNLOCK TABLES;
 
