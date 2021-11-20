@@ -13,7 +13,7 @@
     </div>
     <main>
         <div class="create">
-            <form class="create-form" action="/products/create" method="POST" enctype="multipart/form-data">
+            <form class="create-form" action="/administration/products/create" method="POST" enctype="multipart/form-data">
                 <div class="box">
                     <p>
                         <label class="create-text">Nombre del producto</label>
@@ -40,7 +40,21 @@
                 </div>
                 <div class="box">
                     <p>
-                        <label class="create-text">Imagen del producto</label>
+                        <label class="create-text">Talles disponibles</label>
+                    </p>
+                    <p>
+                        <div class="create-options" name="size" multiple>
+                            <label><input type="checkbox" name="sizes" value="xs">XS</label>
+                            <label><input type="checkbox" name="sizes" value="s">S</label>
+                            <label><input type="checkbox" name="sizes" value="m">M</label>
+                            <label><input type="checkbox" name="sizes" value="l">L</label>
+                            <label><input type="checkbox" name="sizes" value="xl">XL</label>
+                        </div>
+                    </p>
+                </div>
+                <div class="box">
+                    <p>
+                        <label class="create-text">Imagenes del producto</label>
                     </p>
                     <p>
                         <input class="create-img" type="file" accept="image/*" name="img" id="img" multiple>
@@ -48,38 +62,11 @@
                 </div>
                 <div class="box">
                     <p>
-                        <label class="create-text">Talles disponibles</label>
+                        <label class="create-text">Colores Disponibles</label>
                     </p>
                     <p>
-                        <select class="create-options" name="size">
-                            <option type="checkbox" name="size-xs">XS</option>
-                            <option type="checkbox" name="size-s">S</option>
-                            <option type="checkbox" name="size-m">M</option>
-                            <option type="checkbox" name="size-l">L</option>
-                            <option type="checkbox" name="35-36">35-36</option>
-                            <option type="checkbox" name="36-37">36-37</option>
-                            <option type="checkbox" name="37-38">37-38</option>
-                            <option type="checkbox" name="38-39">38-39</option>
-                            <option type="checkbox" name="39-40">39-40</option>
-                            <option type="checkbox" name="41-42">41-42</option>
-                            <option type="checkbox" name="43-44">43-44</option>
-                        </select>
-                    </p>
-                </div>
-                <div class="box">
-                    <p>
-                        <label class="create-text">Modelos Disponibles</label>
-                    </p>
-                    <p>
-                        <input class="create-input" type="text" name="models"></input>
-                    </p>
-                </div>
-                <div class="box">
-                    <p>
-                        <label class="create-text">Colores de los Modelos</label>
-                    </p>
-                    <p>
-                        <input class="create-input" type="text" name="colors"></input>
+                        <button class="addButton">Agregar mas colores +</button>
+                        <input class="create-input" type="color" name="models"></input>
                     </p>
                 </div>
                 <div class="box">
@@ -116,12 +103,6 @@
                     </p>
                 </div>
                 <div class="box-button">
-                    <!-- ***No se como hacerlo funcionar de momento***
-                        <p class="box-button-preview">
-                        <a href="/productDetail">
-                            <input id="button-preview" class="create-text" type="button" value="Previsualizar">
-                        </a>
-                    </p> -->
                     <p class="box-button-send">
                         <button id="button-send" type="submit" class="create-text">Crear</button>
                     </p>
