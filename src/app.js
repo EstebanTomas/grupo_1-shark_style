@@ -4,9 +4,9 @@ const path = require('path');
 const app = express();
 const methodOverride = require('method-override');
 const session = require('express-session');
-//const cookieParser = require('cookie-parser');
+const cookieParser = require('cookie-parser');
 //const  ejsLint  =  require ( 'ejs-lint' );
-
+const userLoggued = require("../middlewares/userLogguedMiddlewares");
 // variables with files inside the router
 var indexRouter = require('./routes/index');
 var administrationRouter = require('./routes/admin');
@@ -18,16 +18,22 @@ var productRouter = require('./routes/product');
 
 // route to shopping.js
 var shoppingRouter = require('./routes/shopping');
-
 //configuration to be able to use put and delete.
 app.use(methodOverride('_method'));
 //configuration to be able to capture the information of the form and process it.
 app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
 //configuration of Express-session.
-app.use(session({secret: 'keep secret'}));
+app.use(session({
+    secret: 'keep secret',
+    resave: false,
+    saveUninitialized: false
+}));
+
+app.use(userLoggued);
+
 //   setting globally to cookie
-//app.use(cookieParser);
+app.use(cookieParser());
 
 // view engine setup
 const publicpath = path.join(__dirname, '../public');

@@ -51,7 +51,7 @@ const adminControllers = {
   },
   updateRegister: function (req, res) {
     User.findByPk(req.params.id, {
-      include: ["image"]
+      include: ["Image"]
     })
     .then(users => {
       return res.render("./users/userEdit", { "user": users });
