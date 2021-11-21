@@ -6,18 +6,18 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 //const  ejsLint  =  require ( 'ejs-lint' );
-const userLoggued = require("./middlewares/userLogguedMiddlewares");
+const userLoggued = require("../middlewares/userLogguedMiddlewares");
 // variables with files inside the router
-var indexRouter = require('./src/routes/index');
-var administrationRouter = require('./src/routes/admin');
+var indexRouter = require('./routes/index');
+var administrationRouter = require('./routes/admin');
 // route to login and register of users.js,
-var usersRouter = require('./src/routes/users');
+var usersRouter = require('./routes/users');
 
 // route to detail, create, edit and list of products.js
-var productRouter = require('./src/routes/product');
+var productRouter = require('./routes/product');
 
 // route to shopping.js
-var shoppingRouter = require('./src/routes/shopping');
+var shoppingRouter = require('./routes/shopping');
 //configuration to be able to use put and delete.
 app.use(methodOverride('_method'));
 //configuration to be able to capture the information of the form and process it.

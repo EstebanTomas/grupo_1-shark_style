@@ -7,25 +7,27 @@ const multer = require('multer');
 const db = require("../database/models");
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
+const { data } = require("jquery");
+const { search } = require("../routes/product");
 
 const productsControllers = {
   productList: (req, res) => {
     db.Product.findAll({
       include: ['images']
     })
-    .then(products => {
-      // console.log(products[0].images[0].img);
-      res.render("./product/productList", { products });
-    })
+      .then(products => {
+        // console.log(products[0].images[0].img);
+        res.render("./product/productList", { products });
+      })
   },
   productDetail: (req, res) => {
     db.Product.findByPk(req.params.id, {
       include: ['images', 'sizes', 'models']
     })
-    .then(product => {
-      // console.log(product.images);
-      res.render("./product/productDetail", { product });
-    })
+      .then(product => {
+        // console.log(product.images);
+        res.render("./product/productDetail", { product });
+      })
   },
   administration: (req, res) => {
     // I bring all the products
@@ -42,7 +44,7 @@ const productsControllers = {
       description: req.body.description,
       price: req.body.price,
       gender: req.body.gender,
-      category:  req.body.category
+      category: req.body.category
     }).then(userOne => {
       db.image.create({
         img: [[req.files[0].filename], [req.files[1].filename], [req.files[2].filename]],
@@ -88,9 +90,10 @@ const productsControllers = {
     // I bring all the products
     const products = JSON.parse(fs.readFileSync('../data/products.json', { encoding: 'utf-8' }));
     var productToEdit = req.params.idProducts;
-    const EditProduct = products.filter(toEdit => { 
-      return toEdit.id == productToEdit });
-      // I send the data to the views
+    const EditProduct = products.filter(toEdit => {
+      return toEdit.id == productToEdit
+    });
+    // I send the data to the views
     return res.render("./product/productEdit", { "object": EditProduct });
   },
   edit: (req, res) => {
@@ -105,52 +108,29 @@ const productsControllers = {
 
     oldProduct.forEach(product => {
       productNew = {
-      id: idProduct,
-      name: req.body.name,
-      description: req.body.description,
-      price: req.body.price,
-      image: req.file ? req.file.filename : "",
-      size: req.body.size,
-      models: req.body.models,
-      gender: req.body.gender,
-      category: req.body.category,
+        id: idProduct,
+        name: req.body.name,
+        description: req.body.description,
+        price: req.body.price,
+        image: req.file ? req.file.filename : "",
+        size: req.body.size,
+        models: req.body.models,
+        gender: req.body.gender,
+        category: req.body.category,
       };
     });
 
-    let dataNew = dataOfProducts.map ( product =>{
+    let dataNew = dataOfProducts.map(product => {
       if (product.id = idProduct) {
         return product = productNew;
       }
       return product;
     })
 
-    let dataOfListProducts = JSON.stringify( dataNew, null, 2);
+    let dataOfListProducts = JSON.stringify(dataNew, null, 2);
     fs.writeFileSync("../data/products.json", dataOfListProducts);
 
     res.send("Hola " + idProduct + dataOfListProducts);
-    // res.redirect("/products/");
-
-        // let motos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/motos.json')));
-        // req.body.id = req.params.id;
-        // req.body.imagen = req.file ? req.file.filename : req.body.oldImagen;
-        // let motosUpdate = motos.map(moto =>{
-        //     if(moto.id == req.body.id){
-        //         return moto = req.body;
-        //     }
-        //     return moto;
-        // })
-        // let motoActualizar = JSON.stringify(motosUpdate,null,2);
-        // fs.writeFileSync(path.resolve(__dirname,'../database/motos.json'),motoActualizar)
-
-    // let valorCambiado = cambiarValor(idProduct, productNew);
-    // dataOfProducts.forEach ( function ( product ) {
-    //   if ( product.id !== productNew.id) {
-    //     date = dataOfProducts.shift()
-    //     dateNew = dateNew + date;
-    //   }else {
-    //     dateNew = dateNew + productNew;
-    //   }
-    // })
   },
   delete: (req, res) => {
     // I bring all the products
@@ -167,8 +147,23 @@ const productsControllers = {
 
   },
 
-  
-  
+  //barra de busqueda
+  searchProduct: function (req, res) {
+    db.Product.findAll({
+      where: {
+        name: { [Op.LIKE] : `%${req.body.search}%` },
+        let= 
+      }
+      
+    })
+      .then(function (product) {
+        res.render('searchResults', { result: product });
+      });
+      console.log(searchProduct);
+  },
+
+
+
 };
 
 module.exports = productsControllers;
