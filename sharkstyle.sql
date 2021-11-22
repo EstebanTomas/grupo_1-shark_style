@@ -255,6 +255,8 @@ DROP TABLE IF EXISTS `product_shop`;
 CREATE TABLE `product_shop` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `product_id` int(10) unsigned NOT NULL,
+  `size` varchar(100) NOT NULL,
+  `color` varchar(100) NOT NULL,
   `amount` smallint(5) unsigned NOT NULL,
   `subtotal` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`),

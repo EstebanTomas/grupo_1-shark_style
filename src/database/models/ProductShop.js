@@ -14,6 +14,14 @@ module.exports = ( sequelize, DataTypes ) => {
             referencesKey: 'id',
             allowNull: false
         },
+        size: {
+            type: DataTypes.STRING(100),
+            allowNull: false
+        },
+        color: {
+            type: DataTypes.STRING(100),
+            allowNull: false
+        },
         amount: {
         // revisar este tipo de dato, no encontre *SMALLINT UNSIGNED*
             type: DataTypes.INTEGER,
