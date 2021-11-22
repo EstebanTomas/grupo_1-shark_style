@@ -23,12 +23,23 @@ const productsControllers = {
     });
   },
   productDetail: (req, res) => {
-    db.Product.findByPk(req.params.id, {
-      include: ['images', 'sizes', 'models']
+    db.ProductModel.findAll({
+      where: { 
+        product_id: req.params.id 
+      },
+      include: ['model']
     })
-    .then(product => {
-      // console.log(product.images);
-      res.render("./product/productDetail", { product });
+    .then(data => {
+      db.Product.findByPk(req.params.id, {
+        include: ['images', 'sizes', 'product_models']
+      })
+      .then(product => {
+        // console.log(data[0].model.colors);
+        res.render("./product/productDetail", { product, data });
+      })
+      .catch(error => {
+        return res.send(error);
+      });  
     })
     .catch(error => {
       return res.send(error);
