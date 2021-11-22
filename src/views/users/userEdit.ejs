@@ -4,7 +4,7 @@
 <head>
     <%- include('../partials/head') -%>
         <link rel="stylesheet" href="/css/editUser.css">
-        <title>Creá tu cuenta</title>
+        <title>Edita tu perfil</title>
 </head>
 
 <body>
@@ -15,19 +15,19 @@
         <div class="div-container">
             <article class="profileUser">
                 <div class="container-image">
-                    <img src="/img/user_photo/<%= user.Image[0].avatar %> " alt="imagen del usuario">
+                    <img src="/img/user_photo/<%= user.Image[0].avatar %>" alt="imagen del usuario">
                 </div>
                 <h2>
                     <%= user.name + " " + user.lastname %>
                 </h2>
             </article>
-            <form action="/administration/edit/<%= user.id %>" method="post" enctype="multipart/form-data">
+            <form action="/administration/edit/<%= user.id %>?_method=PUT" method="post" enctype="multipart/form-data">
                 <section>
                     <article class="article">
                         <div class="boxes">
                             <label>Cambiar foto de perfil
                                 <br>
-                                <input type="file" name="avatarEdit" id="avatarEdit" class="file">
+                                <input type="file" name="avatarEdit" id="avatarEdit" class="file" value="<%= user.Image[0].avatar %>">
                             </label>
                         </div>
                         <div class="boxes">
@@ -35,6 +35,11 @@
                                 <br>
                                 <input type="text" name="name" class="campo" value="<%= user.name %>">
                             </label>
+                            <% if(locals.errors && errors.name){ %>
+                                <h4>
+                                    <%= errors.name.msg %>
+                                </h4>
+                                <% } %>
                         </div>
                         <div class="boxes">
                             <label class="nombre">Cambiar apellido:
@@ -42,6 +47,11 @@
                                 <input type="text" name="lastName" id="lastName" class="campo"
                                     value="<%= user.lastname%>">
                             </label>
+                            <% if(locals.errors && errors.lastName){ %>
+                                <h4>
+                                    <%= errors.lastName.msg %>
+                                </h4>
+                                <% } %>
                         </div>
                     </article>
                     <article class="article">
@@ -50,17 +60,29 @@
                                 <br>
                                 <input type="email" name="email" id="email" value="<%= user.email %>" class="campo">
                             </label>
+                            <% if(locals.errors && errors.email){ %>
+                                <h4>
+                                    <%= errors.email.msg %>
+                                </h4>
+                                <% } %>
                         </div>
                         <div class="boxes">
                             <label class="nombre">Cambiar contraseña:
                                 <br>
-                                <input type="password" name="password" id="password" value="<%= user.password %>" class="campo">
+                                <input type="password" name="password" id="password" value="<%= user.password %>"
+                                    class="campo">
                             </label>
-                        </div><!-- 
+                            <% if(locals.errors && errors.email){ %>
+                                <h4>
+                                    <%= errors.email.msg %>
+                                </h4>
+                                <% } %>
+                        </div>
+                        <!-- 
                         <div class="boxes">
                             <label class="nombre">Role:
                                 <br>
-                                <input type="number" name="Role" id="Role" value="<%= user.Role %>" class="campo">
+                                <input type="number" name="Role" id="Role" value="<%# user.Role %>" class="campo">
                             </label>
                         </div> -->
                         <div class="box">

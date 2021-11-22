@@ -1,22 +1,18 @@
 const express = require("express");
 const router = express.Router();
-const multer = require('multer');
-const path = require("path")
 const adminControllers = require("../controllers/adminControllers");
 
 const Upload = require("../../middlewares/saveImgUserMidlewares");
-const ValidationsOfRegister = require("../../middlewares/validationsOfUser");
+const ValidationsOfUser = require("../../middlewares/validationsOfUser");
 const UploadProducts = require("../../middlewares/saveImgProductsMiddlewares");
 const administratorMiddlewares = require("../../middlewares/administratorMiddkeware");
-const guestMiddlewares = require("../../middlewares/guestMiddleware");
 const profileMiddlewares = require("../../middlewares/profileMiddlewares");
 
-
 // **USERS**
-router.post("/register", Upload.single('avatar'), ValidationsOfRegister, adminControllers.saveRegister);
+router.post("/register", Upload.single('avatar'), ValidationsOfUser, adminControllers.saveRegister);
 
 router.get("/edit/:id", profileMiddlewares, adminControllers.updateRegister);
-router.post("/edit/:id", Upload.single("avatarEdit"), ValidationsOfRegister, adminControllers.save);
+router.put("/edit/:id", Upload.single("avatarEdit"), ValidationsOfUser, adminControllers.save);
 
 // **PRODUCTS**
 router.get('/products', profileMiddlewares, administratorMiddlewares, adminControllers.adminProducts)
