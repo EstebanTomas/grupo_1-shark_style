@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head') -%>
+        <link rel="stylesheet" href="">
+        <title>Lista de Productos</title>
+</head>
+
+<body>
+    <div>
+        <%- include('../partials/header') %>
+    </div>
+    <main>
+        <section class="section">
+            <h4><%= result.name %>
+            </h4>
+        </section>
+    </main>
+    <div>
+        <%- include('../partials/footer') -%>
+    </div>
+</body>
+
+</html>

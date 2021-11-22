@@ -8,31 +8,51 @@ const db = require("../database/models");
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 const { data } = require("jquery");
+const { search } = require("../routes/product");
 
 const productsControllers = {
   productList: (req, res) => {
     db.Product.findAll({
       include: ['images']
     })
-    .then(products => {
-      // console.log(products[0].images[0].img);
-      res.render("./product/productList", { products });
-    })
-    .catch(error => {
-      return res.send(error);
-    });
+      .then(products => {
+        // console.log(products[0].images[0].img);
+        res.render("./product/productList", { products });
+      })
   },
   productDetail: (req, res) => {
-    db.Product.findByPk(req.params.id, {
-      include: ['images', 'sizes', 'models']
+    db.ProductModel.findAll({
+      where: { 
+        product_id: req.params.id 
+      },
+      include: ['model']
     })
-    .then(product => {
-      // console.log(product.images);
-      res.render("./product/productDetail", { product });
+    .then(data => {
+      db.Product.findByPk(req.params.id, {
+        include: ['images', 'sizes', 'product_models']
+      })
+      .then(product => {
+        // console.log(data[0].model.colors);
+        res.render("./product/productDetail", { product, data });
+      })
+      .catch(error => {
+        return res.send(error);
+      });  
     })
-    .catch(error => {
-      return res.send(error);
-    });
+  },
+  //barra de busqueda
+  searchProduct: function (req, res) {
+  //   db.Product.findAll({
+  //     where: {
+  //       name: { [Op.LIKE] : `%${req.body.search}%` },
+  //       let= 
+  //     }
+      
+  //   })
+  //     .then(function (product) {
+  //       res.render('searchResults', { result: product });
+  //     });
+  //     console.log(searchProduct);
   },
 };
 

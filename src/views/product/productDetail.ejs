@@ -58,14 +58,14 @@
                     <article>
                         <div class="colorModel">
                             <!--colores y modelos disponibles-->
-                            Modelos disponibles
+                            Colores disponibles
                         </div>
 
                         <!-- *** Una pequeña imagen del modelo de color (voy a probar con forma circular) *** -->
                         <div class="model">
-                            <% for (let i = 0; i < product.models.length; i++) { %> 
+                            <% for (let i = 0; i < data.length; i++) { %> 
                                 <div>
-                                    <img class = "mod" src="/img/productImage/<%= product.models[i].img %>" width = "80px" height = "110px" alt="<%= product.models[i].colors %>"/>
+                                    <img class = "mod" src="/img/productImage/<%= data[i].model.img %>" width = "80px" height = "110px" alt="<%= data[i].model.colors %>"/>
                                 </div>
                             <% } %> 
                         </div> 

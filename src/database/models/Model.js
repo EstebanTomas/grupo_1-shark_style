@@ -12,7 +12,7 @@ module.exports = ( sequelize, DataTypes ) => {
             type: DataTypes.STRING(200)
         },
         colors: {
-            type: DataTypes.STRING(150),
+            type: DataTypes.STRING(100),
             allowNull: false
         }
     };
@@ -24,12 +24,9 @@ module.exports = ( sequelize, DataTypes ) => {
     const Model = sequelize.define( alias, cols, config);
 
     Model.associate = function (models) {
-        Model.belongsToMany(models.Product, {
-            as: "products",
-            through: "product_model",
-            foreignKey: "product_id",
-            otherKey: "model_id",
-            timestamps: false
+        Model.hasMany(models.ProductModel, {
+            foreignKey: "model_id",
+            as: "product_models"
         });
     }
 
