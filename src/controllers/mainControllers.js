@@ -7,7 +7,6 @@ const { data } = require("jquery");
 
 
 const mainControllers = {
-
     "views": (req, res) => {
         let productData = db.Product.findAll()
             .then(function (allProducts) {
