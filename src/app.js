@@ -12,10 +12,8 @@ var indexRouter = require('./routes/index');
 var administrationRouter = require('./routes/admin');
 // route to login and register of users.js,
 var usersRouter = require('./routes/users');
-
 // route to detail, create, edit and list of products.js
 var productRouter = require('./routes/product');
-
 // route to shopping.js
 var shoppingRouter = require('./routes/shopping');
 //configuration to be able to use put and delete.
@@ -29,9 +27,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }));
-
 app.use(userLoggued);
-
 //   setting globally to cookie
 app.use(cookieParser());
 
@@ -40,20 +36,18 @@ const publicpath = path.join(__dirname, '../public');
 app.use(express.static(publicpath));
 app.set('views', path.resolve(__dirname, './views'));
 app.set('view engine', 'ejs');
-
 // server
 app.listen( 3000, () => {
     console.log('Server on port 3000');
 });
-
 // main routes
 app.use("/", indexRouter);
-app.use("/administration", administrationRouter)
+app.use("/administration", administrationRouter);
 app.use("/cart", indexRouter);
 app.use( "/users", usersRouter);
 app.use("/products", productRouter);
 app.use("/shopping", shoppingRouter);
 
 app.use((req, res, next) => {
-    res.status(404).render('error')
-})
+    res.status(404).render('error');
+});

@@ -3,12 +3,11 @@ const path = require("path");
 const db = require("../database/models");
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
-const multer = require('multer');
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const { Association } = require('sequelize');
 const { reset } = require('nodemon');
-const { error } = require('jquery');
+//const { error } = require('jquery');
 const { data } = require("jquery");
 
 const User = db.User;
@@ -54,15 +53,18 @@ const adminControllers = {
       include: ["Image"]
     })
       .then(users => {
-        return res.render("./users/userEdit", { "user": users });
+        res.locals.user = users;
+        console.log(req.locals.userToEdit, "naa");
+        return res.render("./users/userEdit", { "user": res.locals.user });
       })
       .catch((error) => {
-        return res.send(error)
+        return res.send(error);
       });
   },
   save: function (req, res) {
-    let errors = validationResult(req);
-    if (errors.isEmpty()) {
+    var validations = validationResult(req);
+    console.log(validations);
+    if (validations.isEmpty()) {
       User.update({
         name: req.body.name,
         lastname: req.body.lastName,
@@ -81,15 +83,14 @@ const adminControllers = {
           })
         })
         .then(() => {
-          return res.redirect('/')
+          return res.redirect('/');
         })
         .catch((error) => {
-          return res.send(error)
+          return res.send(error);
         });
     } else {
       return res.render("./users/userEdit", {
-        "errors": errors,
-        "data": req.body
+        "errors": validations.mapped(),
       });
     }
   },

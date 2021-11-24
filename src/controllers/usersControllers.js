@@ -17,14 +17,17 @@ const Image = db.UserImg;
 const User = db.User;
 
 const usersController = {
+  createRegister: (req, res) => {
+    return res.render("./users/register");
+  },
   login: (req, res) => {
-    res.render("./users/login");
+    return res.render("./users/login");
   },
   confirmSessionOfUser: (req, res) => {
     let loginErrors = validationResult(req);
     if (loginErrors.isEmpty()) {
       db.User.findOne({
-        include: [{association: "Image"}],
+        include: [{ association: "Image" }],
         where: {
           email: req.body.email
         }
@@ -33,7 +36,10 @@ const usersController = {
         if (isOkThePassword) {
           delete userLogin.password;
           req.session.userToLogged = userLogin;
-          return res.redirect("/users/profile/" + userLogin.id );
+          if ( req.body.remember_user ) {
+            res.cookie("userEmail", req.body.email, {maxAge : (1000 * 60) * 2});
+          }
+          return res.redirect("/users/profile/" + userLogin.id);
         } else {
           return res.render("./users/login", { errors: loginErrors.mapped(), values_olds: req.body });
         }
@@ -46,12 +52,9 @@ const usersController = {
   profile: (req, res) => {
     return res.render("./users/profile", { users: req.session.userToLogged });
   },
-  deleteSession: ( req, res ) => {
+  deleteSession: (req, res) => {
     req.session.destroy();
     return res.redirect("/users/login");
-  },
-  createRegister: (req, res) => {
-    res.render("./users/register");
   }
 };
 
