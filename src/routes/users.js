@@ -11,12 +11,12 @@ const profile = require("../../middlewares/profileMiddlewares");
 const usersControllers = require('../controllers/usersControllers');
 const { devNull } = require('os');
 
-router.get('/login', guestMiddlewares , usersControllers.login);
+router.get('/login', guestMiddlewares, usersControllers.login);
 router.post('/login', Validation ,usersControllers.confirmSessionOfUser);
 
-router.get("/profile/:id", profile , usersControllers.profile)
+router.get("/profile/:id", profile, usersControllers.profile)
 
-router.get('/register', guestMiddlewares , usersControllers.createRegister);
+router.get('/register', guestMiddlewares, usersControllers.createRegister);
 
 router.get("/destroy", usersControllers.deleteSession);
 

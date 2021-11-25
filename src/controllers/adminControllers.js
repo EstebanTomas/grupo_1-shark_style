@@ -3,12 +3,11 @@ const path = require("path");
 const db = require("../database/models");
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
-const multer = require('multer');
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const { Association } = require('sequelize');
 const { reset } = require('nodemon');
-const { error } = require('jquery');
+//const { error } = require('jquery');
 const { data } = require("jquery");
 
 const User = db.User;
@@ -19,82 +18,94 @@ const adminControllers = {
   saveRegister: function (req, res) {
     let errors = validationResult(req);
     User.findAll()
-    .then(users => {
-      if (users.email != req.body.email) {
-        if (errors.isEmpty()) {
-          User.create({
-            name: req.body.name,
-            lastname: req.body.lastName,
-            email: req.body.email,
-            password: bcryptjs.hashSync(req.body.password, 10),
-            role: 1
-          })
-          .then((user) => {
-            Image.create({
-              avatar: req.file ? req.file.filename : "user_anonimo.jpg",
-              user_id: user.id
-            });
-          })
-          .then(() => {
-            return res.redirect("/");
-          })
-          .catch((error) => {
-            return res.send(error)
-          });
+      .then(users => {
+        if (users.email != req.body.email) {
+          if (errors.isEmpty()) {
+            User.create({
+              name: req.body.name,
+              lastname: req.body.lastName,
+              email: req.body.email,
+              password: bcryptjs.hashSync(req.body.password, 10),
+              role: 1
+            })
+              .then((user) => {
+                Image.create({
+                  avatar: req.file ? req.file.filename : "user_anonimo.jpg",
+                  user_id: user.id
+                });
+              })
+              .then(() => {
+                return res.redirect("/users/login");
+              })
+              .catch((error) => {
+                return res.send(error)
+              });
+          } else {
+            res.render("./users/register", { errors: errors.mapped(), incomingData: req.body })
+          }
         } else {
-          res.render("./users/register", { errors: errors.mapped(), incomingData: req.body })
+          return res.render("./users/register", { errors: errors.mapped(), incomingData: req.body })
         }
-      } else {
-        return res.render("./users/register", { errors: errors.mapped(), incomingData: req.body })
-      }
-    });
+      });
   },
   updateRegister: function (req, res) {
     User.findByPk(req.params.id, {
       include: ["Image"]
     })
-    .then(users => {
-      return res.render("./users/userEdit", { "user": users });
-    })
-    .catch((error) => {
-      return res.send(error)
-    });
+      .then(users => {
+        res.locals.user = users;
+        console.log(req.locals.userToEdit, "naa");
+        return res.render("./users/userEdit", { "user": res.locals.user });
+      })
+      .catch((error) => {
+        return res.send(error);
+      });
   },
   save: function (req, res) {
-    User.update({
-      name: req.body.name,
-      lastname: req.body.lastName,
-      email: req.body.email,
-      password: bcryptjs.hashSync(req.body.password, 10),
-      role: 1
-    }, {
-      where: { id: req.params.id }
-    })
-    .then(() => {
-      Image.update({
-        avatar: req.file ? req.file.filename : "user_anonimo.jpg",
-        user_id: req.params.id
+    var validations = validationResult(req);
+    console.log(validations);
+    if (validations.isEmpty()) {
+      User.update({
+        name: req.body.name,
+        lastname: req.body.lastName,
+        email: req.body.email,
+        password: bcryptjs.hashSync(req.body.password, 10),
+        role: 1
       }, {
-        where: { user_id: req.params.id }
+        where: { id: req.params.id }
       })
-    })
-    .then(() => {
-      return res.redirect('/')
-    })          
-    .catch((error) => {
-      return res.send(error)
-    });
+        .then(() => {
+          Image.update({
+            avatar: req.file ? req.file.filename : "user_anonimo.jpg",
+            user_id: req.params.id
+          }, {
+            where: { user_id: req.params.id }
+          })
+        })
+        .then(() => {
+          return res.redirect('/');
+        })
+        .catch((error) => {
+          return res.send(error);
+        });
+    } else {
+      return res.render("./users/userEdit", {
+        "errors": validations.mapped(),
+      });
+    }
   },
 
   // ***PRODUCTS***
   adminProducts: (req, res) => {
-    db.Product.findAll()
-    .then(products => {
-      res.render("./admin/productsAdmin", { products });
+    db.Product.findAll({
+      include: [{ Association: "images" }, { Association: "sizes" }]
     })
-    .catch(error => {
-      return res.send(error);
-    });
+      .then(products => {
+        res.render("./admin/productsAdmin", { products });
+      })
+      .catch(error => {
+        return res.send(error);
+      });
   },
   productCreate: (req, res) => {
     res.render("./admin/productCreate");
@@ -313,12 +324,28 @@ const adminControllers = {
     
     Promise.all([sizes, images, colors, product])
 
-    .then(() => {
-      res.redirect("/administration/products");
-    })
-    .catch(error => {
-      return res.send(error);
+      .then(() => {
+        res.redirect("/administration/products");
+      })
+      .catch(error => {
+        return res.send(error);
+      });
+  },
+  deleteUsers: (req, res) => {
+    let imgUser = db.User.destroy({
+      where: {
+        user_id: req.params.id
+      }
     });
+    let user = db.User.destroy({
+      where: {
+        id: req.params.id
+      }
+    });
+    Promise.all([imgUser, user])
+      .then(() => {
+
+      });
   }
 }
 

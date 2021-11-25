@@ -9,7 +9,16 @@ const storage = multer.diskStorage({
         cb(null, 'avatar' + '-' + Date.now() + path.extname(file.originalname));
     }
 });
-
-const upload = multer({ storage });
-
+/* >■ Deberá ser un archivo válido (JPG, JPEG, PNG, GIF). */
+const upload = multer({
+    storage: storage,
+    fileFilter: function (req, file, callback) {
+        let ext = path.extname(file.originalname);
+        //aca se especifica los archivos q admite
+        if ( ext !== ".jpg" && ext !== ".jpeg" && ext !== ".png" && ext !== ".gif" ) {
+            return callback(new Error('Solo aceptamos imagenes con extensión JPG, JPEG, PNG, GIF'));
+        }
+        callback(null, true);
+    }
+});
 module.exports = upload;

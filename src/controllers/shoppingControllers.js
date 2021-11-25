@@ -11,18 +11,18 @@ const { error } = require('jquery');
 const shoppingControllers = {
     shopping: (req, res) => {
         // preguntar si hay un usuario loogeado
-        db.Shopping.findAll({
-            where: { 
-                user_id: req.session.userToLogged.id 
-            },
-            include: ['product_shop']
-        })
-        .then(products => {
-            res.render('./shopping/shoppingCart', { products });
-        })
-        .catch(error => {
-            return res.send(error);
-        })
+        // db.Shopping.findAll({
+        //     where: { 
+        //         user_id: req.session.userToLogged.id 
+        //     },
+        //     include: ['product_shop']
+        // })
+        // .then(products => {
+        //     res.render('./shopping/shoppingCart', { products });
+        // })
+        // .catch(error => {
+        //     return res.send(error);
+        // })
         res.render('./shopping/shoppingCart');
     },
     editShop: (req, res) => {
