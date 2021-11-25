@@ -98,7 +98,7 @@ const adminControllers = {
   // ***PRODUCTS***
   adminProducts: (req, res) => {
     db.Product.findAll({
-      include: [{ Association: "images" }, { Association: "sizes" }]
+      include: ['images']
     })
       .then(products => {
         res.render("./admin/productsAdmin", { products });
