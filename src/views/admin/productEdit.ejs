@@ -86,17 +86,17 @@
                 </div>
                 <div class="box">
                     <p>
-                        <label class="create-text">Colores Disponibles</label>
+                        <label class="create-text">Colores</label>
                     </p>
                     <p class="currentData">
-                        Modelos actuales:
-                        <% for (let i=0; i < data.length; i++) { %>
-                            <%= data[i].model.colors %>
+                        Colores actuales:
+                        <% for (let i=0; i < product.colors.length; i++) { %>
+                            <%= product.colors[i].color %>
                         <% } %>
                     </p>
                         <div class="add-button">Agregar mas colores +</div>
                     <p class="conteiner-add-button">
-                        <input class="create-input" type="color" name="models"></input>
+                        <input class="create-input" type="color" name="colors"></input>
                     </p>
                 </div>
                 <div class="box">

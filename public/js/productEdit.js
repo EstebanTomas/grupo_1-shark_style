@@ -3,6 +3,6 @@ window.onload = function () {
     let conteiner = document.querySelector(".conteiner-add-button");
 
     addButton.addEventListener('click', function () {
-        conteiner.innerHTML += '<input class="create-input" type="color" name="models"></input>'
+        conteiner.innerHTML += '<input class="create-input" type="color" name="colors"></input>'
     })
 }

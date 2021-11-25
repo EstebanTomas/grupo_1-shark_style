@@ -21,23 +21,46 @@ const productsControllers = {
       })
   },
   productDetail: (req, res) => {
-    db.ProductModel.findAll({
-      where: { 
-        product_id: req.params.id 
-      },
-      include: ['model']
+    db.Product.findByPk(req.params.id, {
+      include: ['images', 'sizes', 'colors']
     })
-    .then(data => {
-      db.Product.findByPk(req.params.id, {
-        include: ['images', 'sizes', 'product_models']
-      })
-      .then(product => {
-        // console.log(data[0].model.colors);
-        res.render("./product/productDetail", { product, data });
-      })
-      .catch(error => {
-        return res.send(error);
-      });  
+    .then(product => {
+      res.render("./product/productDetail", { product });
+    })
+    .catch(error => {
+      return res.send(error);
+    });  
+  },
+  productShop: (req, res) => {
+    // ** product_shop
+    db.Product.findByPk(req.params.id)
+    .then( product => {
+      console.log(product.id);
+      console.log(req.body.size);
+      // console.log(req.session.userToLogged.id);
+      // db.ProductShop.create({
+      //   product_id: product.id,
+      //   size: req.body.size,
+      //   color: req.body.color,
+      //   amount: 1,
+      //   subtotal: product.price
+      // })
+      // .then ( productShop => {
+      //   db.Shopping.create({
+      //     product_shop_id: productShop.id,
+      //     user_id: req.session.userToLogged.id,
+      //     total: 22
+      //   })
+      // })
+      // .catch(error => {
+      //   return res.send(error);
+      // })
+    })
+    .then( shopping => {
+      res.send('Hola mundo');
+    })
+    .catch(error => {
+      return res.send(error);
     })
   },
   //barra de busqueda
