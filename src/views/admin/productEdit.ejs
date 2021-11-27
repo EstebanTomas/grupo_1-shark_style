@@ -13,10 +13,10 @@
     </div>
     <main>
         <div class="create">
-            <form class="create-form" action="/administration/products/edit/<%= product.id %>?_method=PUT" method="POST">
+            <form class="create-form" action="/administration/products/edit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <div class="box">
                     <p>
-                        <label class="create-text">Nombre del producto</label>
+                        <label class="create-text" for="name">Nombre del producto</label>
                     </p>
                     <p>
                         <input class="create-input" type="text" name="name" value="<%= product.name%>"></input>
@@ -24,7 +24,7 @@
                 </div>
                 <div class="box">
                     <p>
-                        <label class="create-text">Descripción</label>
+                        <label class="create-text" for="description">Descripción</label>
                     </p>
                     <p>
                         <input class="create-input" type="text" name="description" value="<%= product.description %>"></input>
@@ -32,7 +32,7 @@
                 </div>
                 <div class="box">
                     <p>
-                        <label class="create-text">Precio</label>
+                        <label class="create-text" for="price">Precio</label>
                     </p>
                     <p>
                         <input class="create-input" type="number" name="price" value="<%= product.price %>"></input>
@@ -40,7 +40,7 @@
                 </div>
                 <div class="box">
                     <p>
-                        <label class="create-text">Talles disponibles</label>
+                        <label class="create-text" for="sizes">Talles disponibles</label>
                     </p>
                     <p class="currentData">
                         Talles actuales:
@@ -72,7 +72,7 @@
                 </div>
                 <div class="box">
                     <p>
-                        <label class="create-text">Imagenes del producto</label>
+                        <label class="create-text" for="images">Imagenes del producto</label>
                     </p>
                     <p class="currentData">
                         Imágenes actuales:
@@ -81,12 +81,12 @@
                         <% } %>
                     </p>
                     <p>
-                        <input class="create-img" type="file" accept="image/*" name="img" id="img" multiple>
+                        <input class="create-img" type="file" accept="image/*" name="images" id="images" multiple>
                     </p>
                 </div>
                 <div class="box">
                     <p>
-                        <label class="create-text">Colores</label>
+                        <label class="create-text" for="colors">Colores</label>
                     </p>
                     <p class="currentData">
                         Colores actuales:
@@ -101,7 +101,7 @@
                 </div>
                 <div class="box">
                     <p>
-                        <label class="create-text">Género</label>
+                        <label class="create-text" for="gender">Género</label>
                     </p>
                     <p class="currentData">
                         Género actual:
@@ -117,7 +117,7 @@
                 </div>
                 <div class="box">
                     <p>
-                        <label class="create-text">Categoría</label>
+                        <label class="create-text" for="category">Categoría</label>
                     </p>
                     <p class="currentData">
                         Categoría actual:

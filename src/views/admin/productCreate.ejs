@@ -16,65 +16,65 @@
             <form class="create-form" action="/administration/products/create" method="POST" enctype="multipart/form-data">
                 <div class="box">
                     <p>
-                        <label class="create-text">Nombre del producto</label>
+                        <label class="create-text" for="name">Nombre del producto</label>
                     </p>
                     <p>
-                        <input class="create-input" type="text" name="name"></input>
-                    </p>
-                </div>
-                <div class="box">
-                    <p>
-                        <label class="create-text">Descripción</label>
-                    </p>
-                    <p>
-                        <input class="create-input" type="text" name="description"></input>
+                        <input class="create-input" type="text" name="name" id="name"></input>
                     </p>
                 </div>
                 <div class="box">
                     <p>
-                        <label class="create-text">Precio</label>
+                        <label class="create-text" for="description">Descripción</label>
                     </p>
                     <p>
-                        <input class="create-input" type="number" name="price"></input>
+                        <input class="create-input" type="text" name="description" id="description"></input>
                     </p>
                 </div>
                 <div class="box">
                     <p>
-                        <label class="create-text">Talles disponibles</label>
+                        <label class="create-text" for="price">Precio</label>
                     </p>
                     <p>
-                        <div class="create-options" name="size" multiple>
-                            <label><input type="checkbox" name="sizes" value="xs">XS</label>
-                            <label><input type="checkbox" name="sizes" value="s">S</label>
-                            <label><input type="checkbox" name="sizes" value="m">M</label>
-                            <label><input type="checkbox" name="sizes" value="l">L</label>
-                            <label><input type="checkbox" name="sizes" value="xl">XL</label>
+                        <input class="create-input" type="number" name="price" id="price"></input>
+                    </p>
+                </div>
+                <div class="box">
+                    <p>
+                        <label class="create-text" for="sizes">Talles disponibles</label>
+                    </p>
+                    <p>
+                        <div class="create-options" multiple>
+                            <label><input type="checkbox" name="sizes" id="sizes" value="xs">XS</label>
+                            <label><input type="checkbox" name="sizes" id="sizes" value="s">S</label>
+                            <label><input type="checkbox" name="sizes" id="sizes" value="m">M</label>
+                            <label><input type="checkbox" name="sizes" id="sizes" value="l">L</label>
+                            <label><input type="checkbox" name="sizes" id="sizes" value="xl">XL</label>
                         </div>
                     </p>
                 </div>
                 <div class="box">
                     <p>
-                        <label class="create-text">Imagenes del producto</label>
+                        <label class="create-text" for="images">Imagenes del producto</label>
                     </p>
                     <p>
-                        <input class="create-img" type="file" accept="image/*" name="img" id="img" multiple>
+                        <input class="create-img" type="file" accept="image/*" name="images" id="images" multiple>
                     </p>
                 </div>
                 <div class="box">
                     <p>
-                        <label class="create-text">Colores</label>
+                        <label class="create-text" for="colors">Colores</label>
                     </p>
                         <div class="add-button">Agregar mas colores +</div>
                     <p class="conteiner-add-button">
-                        <input class="create-input" type="color" name="colors"></input>
+                        <input class="create-input" type="color" name="colors" id="colors"></input>
                     </p>
                 </div>
                 <div class="box">
                     <p>
-                        <label class="create-text">Género</label>
+                        <label class="create-text" for="gender">Género</label>
                     </p>
                     <p>
-                        <select class="create-options" name="gender">
+                        <select class="create-options" name="gender" id="gender">
                             <option type="checkbox" name="gender-men">Hombre</option>
                             <option type="checkbox" name="gender-women">Mujer</option>
                             <option type="checkbox" name="gender-unisex">Unisex</option>
@@ -83,10 +83,10 @@
                 </div>
                 <div class="box">
                     <p>
-                        <label class="create-text">Categoría</label>
+                        <label class="create-text" for="category">Categoría</label>
                     </p>
                     <p>
-                        <select class="create-options" name="category">
+                        <select class="create-options" name="category" id="category">
                             <option type="checkbox" name="category-long-tshirt">Remeras Manga Larga</option>
                             <option type="checkbox" name="category-short-tshirt">Remeras Manga Corta</option>
                             <option type="checkbox" name="category-sleeveless">Musculosas</option>
