@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head') -%>
+        <link rel="stylesheet" href="/css/productList.css">
+        <title>Search Results</title>
+</head>
+
+<body>
+    <div>
+        <%- include('../partials/header') %>
+    </div>
+    <main>
+        <section class="section">
+            <article class="article-conteiner">
+                    <% array.forEach(product => { %>
+                        <div class="article">
+                            <div>
+                                <div class="conteinerOfImages">
+                                    <a href="/products/detail/<%= product.id %>">
+                                    <img class="img" src="/img/productImage/<%= product.images[0].img %>" width="300px" height="300px" alt="" />
+                                    </a>
+                                </div>
+                                <div class=line>
+                                    <div class="shipping"><i class="fas fa-truck"></i></div>
+                                    <div class="box-text">
+                                        <div class="price">
+                                            AR $<%= product.price %>
+                                        </div>
+                                    </div>
+                                    <div class="productName">
+                                        <%= product.name %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <% }); %>
+            </article>
+        </section>
+    </main>
+    <div>
+        <%- include('../partials/footer') -%>
+    </div>
+</body>
+
+</html>

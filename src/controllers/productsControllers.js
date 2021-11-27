@@ -62,18 +62,30 @@ const productsControllers = {
   },
   //barra de busqueda
   searchProduct: (req, res) => {
-  //   db.Product.findAll({
-  //     where: {
-  //       name: { [Op.LIKE] : `%${req.body.search}%` },
-  //       let= 
-  //     }
-      
-  //   })
-  //     .then(function (product) {
-  //       res.render('searchResults', { result: product });
-  //     });
-  //     console.log(searchProduct);
-  },
+    db.Product.findAll({
+      where: {
+        name: { 
+          [Op.like] : '%' + req.body.search + '%' 
+        }
+      }, 
+      include: ['images']
+    })
+    .then(product => {
+      let array = [];
+      for ( let i = 0;  i < product.length; i++) {
+        array.push(product[i]);
+      }
+      // ****No puedo mostrarle otra cosa cuando no trae resultados***
+      // if ( product == [] ) {
+      //   res.redirect('/');
+      // } else {
+        res.render('./product/searchResults', { array });
+      // }
+    })
+    .catch(error => {
+      return res.send(error);
+    })
+  }
 };
 
 module.exports = productsControllers;
