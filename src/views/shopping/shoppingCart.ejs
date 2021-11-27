@@ -26,71 +26,75 @@
 
         <div class="conteiner">
             <section class="section-two">
-                <% shopping.forEach( data => { %>
-                    <article>
-                        <div class="conteiner-image">
-                            <img class="image" src="/img/productImage/<%= data.product_shop.product.images[0].img %> " alt="Imagen del producto del carrito">
-                        </div>
-                        <div class="conteiner-data">
-                            <div class="data">
-                                <div class="title"><%= data.product_shop.product.name %></div>
-                                <div class="size">Talle: <%= data.product_shop.size %></div>
-                                <div class="color">Color: <%= data.product_shop.color %></div>
-                                <div class="units">
-                                    <div class="amount">Cantidad: <%= data.product_shop.amount %></div>
-                                    <div>Subtotal $<%= data.product_shop.subtotal %></div>    
-                                </div>
+                <% if ( shopping == '') { %> 
+                    <div class="without">Todavia no agregaste ningún producto al carrito</div>
+                <% } else { %> 
+                    <% shopping.forEach( data => { %>
+                        <article>
+                            <div class="conteiner-image">
+                                <img class="image" src="/img/productImage/<%= data.product_shop.product.images[0].img %> " alt="Imagen del producto del carrito">
                             </div>
-                            <form class="form-edit none" action="/shopping/edit/<%= data.product_shop.id %>?_method=PUT" method="POST">
-                                <div class="title"></div>
-                                <div class="size">Talle: <%= data.product_shop.size %></div>
-                                <select class="" name="size">
-                                    <% if (data.product_shop.product.sizes[0].xs == true) { %> 
-                                        <option name="size" value="xs">XS</option>
-                                    <% } %> 
-                                    <% if (data.product_shop.product.sizes[0].s == true) { %>
-                                        <option name="size" value="s">S</option> 
-                                    <% } %> 
-                                    <% if (data.product_shop.product.sizes[0].m == true) { %> 
-                                        <option name="size" value="m">M</option>
-                                    <% } %> 
-                                    <% if (data.product_shop.product.sizes[0].l == true) { %> 
-                                        <option name="size" value="l">L</option>
-                                    <% } %> 
-                                    <% if (data.product_shop.product.sizes[0].xl == true) { %> 
-                                        <option name="size" value="xl">XL</option>
-                                    <% } %>                                 
-                                </select>
-                                <div class="color">Color: <%= data.product_shop.color %></div>
-                                <select class="" name="color">
-                                    <% for (let i=0; i < data.product_shop.product.colors.length; i++) { %>
-                                        <option name="color" value="<%= data.product_shop.product.colors[i].color %>"><%= data.product_shop.product.colors[i].color %></option>
-                                    <% } %>
-                                </select>
-                                <div class="units">
-                                    <div class="amount">Cantidad: 
-                                        <input class="" type="number" name="amount" value="<%= data.product_shop.amount %>"></input>
+                            <div class="conteiner-data">
+                                <div class="data">
+                                    <div class="title"><%= data.product_shop.product.name %></div>
+                                    <div class="size">Talle: <%= data.product_shop.size %></div>
+                                    <div class="color">Color: <%= data.product_shop.color %></div>
+                                    <div class="units">
+                                        <div class="amount">Cantidad: <%= data.product_shop.amount %></div>
+                                        <div>Subtotal $<%= data.product_shop.subtotal %></div>    
                                     </div>
-                                    <div>Subtotal $<%= data.product_shop.subtotal %></div>
                                 </div>
-                                <button id="edit" type="submit">Actualizar</button>
-                                <button id="delete" type="reset">Cancelar</button>
-                            </form>
-                        </div>
-                        <div class="conteiner-button">
-                            <!-- Edit data of product_shop -->
-                            <div class="sub-conteiner">
-                                <div class="edit-view" id="button-edit"><i class="fas fa-edit"></i></div>
-                                <form action="/shopping/delete/<%= data.product_shop.id %>?_method=DELETE" method="POST">
-                                    <button id="button-delete" type="submit"><i class="fas fa-trash-alt"></i></button>
-                                </form>    
+                                <form class="form-edit none" action="/shopping/edit/<%= data.product_shop.id %>?_method=PUT" method="POST">
+                                    <div class="title"></div>
+                                    <div class="size">Talle: <%= data.product_shop.size %></div>
+                                    <select class="" name="size">
+                                        <% if (data.product_shop.product.sizes[0].xs == true) { %> 
+                                            <option name="size" value="xs">XS</option>
+                                        <% } %> 
+                                        <% if (data.product_shop.product.sizes[0].s == true) { %>
+                                            <option name="size" value="s">S</option> 
+                                        <% } %> 
+                                        <% if (data.product_shop.product.sizes[0].m == true) { %> 
+                                            <option name="size" value="m">M</option>
+                                        <% } %> 
+                                        <% if (data.product_shop.product.sizes[0].l == true) { %> 
+                                            <option name="size" value="l">L</option>
+                                        <% } %> 
+                                        <% if (data.product_shop.product.sizes[0].xl == true) { %> 
+                                            <option name="size" value="xl">XL</option>
+                                        <% } %>                                 
+                                    </select>
+                                    <div class="color">Color: <%= data.product_shop.color %></div>
+                                    <select class="" name="color">
+                                        <% for (let i=0; i < data.product_shop.product.colors.length; i++) { %>
+                                            <option name="color" value="<%= data.product_shop.product.colors[i].color %>"><%= data.product_shop.product.colors[i].color %></option>
+                                        <% } %>
+                                    </select>
+                                    <div class="units">
+                                        <div class="amount">Cantidad: 
+                                            <input class="" type="number" name="amount" value="<%= data.product_shop.amount %>"></input>
+                                        </div>
+                                        <div>Subtotal $<%= data.product_shop.subtotal %></div>
+                                    </div>
+                                    <button id="edit" type="submit">Actualizar</button>
+                                    <button id="delete" type="reset">Cancelar</button>
+                                </form>
                             </div>
-                            <div>
-                                <a class="button-detail" href="/products/detail/<%= data.product_shop.product_id %>">Ver detalle</a>
+                            <div class="conteiner-button">
+                                <!-- Edit data of product_shop -->
+                                <div class="sub-conteiner">
+                                    <div class="edit-view" id="button-edit"><i class="fas fa-edit"></i></div>
+                                    <form action="/shopping/delete/<%= data.product_shop.id %>?_method=DELETE" method="POST">
+                                        <button id="button-delete" type="submit"><i class="fas fa-trash-alt"></i></button>
+                                    </form>    
+                                </div>
+                                <div>
+                                    <a class="button-detail" href="/products/detail/<%= data.product_shop.product_id %>">Ver detalle</a>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                <% }); %>
+                        </article>
+                    <% }); %>
+                <% } %> 
             </section>            
             <section class="section-three">
                 <form action="/shopping" method="POST">

@@ -29,16 +29,21 @@ const shoppingControllers = {
             }]
         })
         .then( shopping => {
-            // console.log(shopping[0].product_shop.subtotal);
-            let array = [];
-            for ( let i = 0;  i < shopping.length; i++) {
-                array.push(shopping[i].product_shop.subtotal);
+            if (shopping != '') {
+                let array = [];
+                for ( let i = 0;  i < shopping.length; i++) {
+                    array.push(shopping[i].product_shop.subtotal);
+                }
+                let total = array.reduce( function (acum, num) {
+                    return acum + num;
+                })
+                let carrito = shopping.length; 
+                res.render('./shopping/shoppingCart', { carrito, shopping, total });
+            } else {
+                carrito = 0;
+                total = 0;
+                res.render('./shopping/shoppingCart', { carrito, shopping, total });
             }
-            let total = array.reduce( function (acum, num) {
-                return acum + num;
-            })
-            let carrito = shopping.length;
-            res.render('./shopping/shoppingCart', { carrito, shopping, total });
         })
         .catch( error => {
             return res.send(error)
