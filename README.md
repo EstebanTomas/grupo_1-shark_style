@@ -1,6 +1,6 @@
 # Grupo_1_Tienda de ropa Deportiva
 >
-**NUESTRO CATÁLOGO DE PRODUCTOS PARA  MUJERES Y HOMBRES**	
+## NUESTRO CATÁLOGO DE PRODUCTOS PARA  MUJERES Y HOMBRES
 
 >Remeras manga larga, manga corta, musculosas.
 
@@ -10,22 +10,19 @@
 
 >Calzado deportivo.
 >
-**¿A QUIENES NOS DIRIGIMOS?**
+## ¿A QUIENES NOS DIRIGIMOS?
 
 Nuestros productos están enfocados en adolescentes y adultos, tanto masculino como femenino. Que residan en Argentina y tengan un poder adquisitivo medio-alto, posicionándose en una clase social media, y media-alta. En los que forme parte de sus hábitos cotidianos realizar deportes con frecuencia, participen en ámbitos deportivos o simplemente se sientan más cómodos usando ropa deportiva.
 >
-**DESCRIPCIONES DE LOS INTEGRANTES**
+## DESCRIPCIONES DE LOS INTEGRANTES
 
 **Riquelme Federico:* me gusta la música, jugar videojuegos, mirar series, tomar mates y aprender de todo un poco.
 
 **Tomás Valiente:* me gustan los deportes, la naturaleza, me agrada pasar tiempo con mis amistades y hacer actividades entre amigos y amigas.
 
 **Agustin Larralde:* me gusta aprender cosas nuevas, me da mucha intriga la programación y sus posibilidades. Además me gustan mucho las películas y series de cualquier género.
-
-**Cámara Milagros:* un fuerte gusto por el aprendizaje, el arte rococó y el diseño e implementaciones  en los sistemas computacionales.
-
 >
-**SITIOS DE REFERENCIA PARA EL DESARROLLO DEL WIREFRAME**
+## SITIOS DE REFERENCIA PARA EL DESARROLLO DEL WIREFRAME
 
 [***Hennes & Mauritz***](https://eg.hm.com/en/) ==> me gustaron los circulitos con imágenes generales de las categorías casi llegando a la zona del footer.
 
@@ -37,10 +34,10 @@ Nuestros productos están enfocados en adolescentes y adultos, tanto masculino c
 
 [***OpenSports***](https://www.opensports.com.ar/) ==> el footer de esta página a mi parecer está bien dimensionado y distribuido, de aspecto simple, no descuida la funcionalidad y practicidad.
 
-**LINK DE LA CARPETA EN GOOGLE DRIVE**
+## LINK DE LA CARPETA EN GOOGLE DRIVE
 
 [***Wireframe-Primer Sprint***](https://drive.google.com/drive/folders/1OcWxKugjIgtP-cWyixxae7LUyMTi2l0y?usp=sharing)
 
-**LINK DEL TABLERO PARA ORGANIZAR EL TRABAJO**
+## LINK DEL TABLERO PARA ORGANIZAR EL TRABAJO
 
 [***Trello***](https://trello.com/b/Qu4oy3C7/tablero-grupo-1)
