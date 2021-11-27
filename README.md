@@ -21,9 +21,6 @@ Nuestros productos están enfocados en adolescentes y adultos, tanto masculino c
 **Tomás Valiente:* me gustan los deportes, la naturaleza, me agrada pasar tiempo con mis amistades y hacer actividades entre amigos y amigas.
 
 **Agustin Larralde:* me gusta aprender cosas nuevas, me da mucha intriga la programación y sus posibilidades. Además me gustan mucho las películas y series de cualquier género.
-
-**Cámara Milagros:* un fuerte gusto por el aprendizaje, el arte rococó y el diseño e implementaciones  en los sistemas computacionales.
-
 >
 ## SITIOS DE REFERENCIA PARA EL DESARROLLO DEL WIREFRAME
 
