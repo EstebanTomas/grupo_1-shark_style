@@ -4,7 +4,7 @@
 <head>
     <%- include('../partials/head') -%>
         <link rel="stylesheet" href="">
-        <title>Lista de Productos</title>
+        <title>resultadosDeProductos</title>
 </head>
 
 <body>
@@ -14,6 +14,7 @@
     <main>
         <section class="section">
             <h4><%= result.name %>
+            <h2>hola</h2>
             </h4>
         </section>
     </main>

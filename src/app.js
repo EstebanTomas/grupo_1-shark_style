@@ -7,6 +7,7 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser');
 //const  ejsLint  =  require ( 'ejs-lint' );
 const userLoggued = require("../middlewares/userLogguedMiddlewares");
+const apiRoutsProducts = require('./routes/product.js');
 // variables with files inside the router
 var indexRouter = require('./routes/index');
 var administrationRouter = require('./routes/admin');
@@ -53,7 +54,8 @@ app.use("/cart", indexRouter);
 app.use( "/users", usersRouter);
 app.use("/products", productRouter);
 app.use("/shopping", shoppingRouter);
-
+//  app.use("/searchResults", productRouter);
+app.use('/product', apiRoutsProducts); 
 app.use((req, res, next) => {
     res.status(404).render('error')
 })
