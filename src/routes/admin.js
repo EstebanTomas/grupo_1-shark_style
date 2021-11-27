@@ -5,7 +5,7 @@ const adminControllers = require("../controllers/adminControllers");
 const Upload = require("../../middlewares/saveImgUserMidlewares");
 const ValidationsOfUser = require("../../middlewares/validationsOfUser");
 const UploadProducts = require("../../middlewares/saveImgProductsMiddlewares");
-const administratorMiddlewares = require("../../middlewares/administratorMiddkeware");
+const administratorMiddlewares = require("../../middlewares/administratorMiddlewares");
 const profileMiddlewares = require("../../middlewares/profileMiddlewares");
 const validationUserEditMiddlewares = require("../../middlewares/validationUserEditMiddlewares");
 

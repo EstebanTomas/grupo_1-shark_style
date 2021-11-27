@@ -35,36 +35,33 @@ const productsControllers = {
     // ** product_shop
     db.Product.findByPk(req.params.id)
     .then( product => {
-      console.log(product.id);
-      console.log(req.body.size);
-      // console.log(req.session.userToLogged.id);
-      // db.ProductShop.create({
-      //   product_id: product.id,
-      //   size: req.body.size,
-      //   color: req.body.color,
-      //   amount: 1,
-      //   subtotal: product.price
-      // })
-      // .then ( productShop => {
-      //   db.Shopping.create({
-      //     product_shop_id: productShop.id,
-      //     user_id: req.session.userToLogged.id,
-      //     total: 22
-      //   })
-      // })
-      // .catch(error => {
-      //   return res.send(error);
-      // })
+      db.ProductShop.create({
+        product_id: product.id,
+        size: req.body.size,
+        color: req.body.color,
+        amount: 1,
+        subtotal: product.price
+      })
+      .then ( productShop => {
+          db.Shopping.create({
+            product_shop_id: productShop.id,
+            user_id: req.session.userToLogged.id,
+            total: 0
+        })
+      })
+      .catch(error => {
+        return res.send(error);
+      })
     })
     .then( shopping => {
-      res.send('Hola mundo');
+      res.redirect('/shopping');
     })
     .catch(error => {
       return res.send(error);
     })
   },
   //barra de busqueda
-  searchProduct: function (req, res) {
+  searchProduct: (req, res) => {
   //   db.Product.findAll({
   //     where: {
   //       name: { [Op.LIKE] : `%${req.body.search}%` },

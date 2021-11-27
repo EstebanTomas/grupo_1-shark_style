@@ -50,6 +50,7 @@ main .conteiner {
 /* le doy estilo y posición a section-two*/
 main .section-two {
     width: 65vw;
+    margin-bottom: 10px
 }
 
 main .section-two article {
@@ -77,7 +78,18 @@ main section article .conteiner-data{
     padding-left: 10px;
 }
 
-main section article form .title{
+main section article .form-edit{
+}
+
+.block {
+    display: block;
+}
+
+.none {
+    display: none;
+}
+
+main section article .title{
     font-size: 22px;
     text-align: left;
     color: rgb(192, 96, 20);
@@ -85,21 +97,21 @@ main section article form .title{
     padding-bottom: 6px;
 }
 
-main section article form .size{
+main section article .size{
     font-size: 18px;
     text-align: left;
     color: rgb(83, 97, 98);
     padding-bottom: 4px;
 }
 
-main section article form .color{
+main section article .color{
     font-size: 18px;
     text-align: left;
     color: rgb(83, 97, 98);
     padding-bottom: 4px;
 }
 
-main section article form .units{
+main section article .units{
     display: flex;
     align-items: center;
     font-size: 18px;
@@ -107,14 +119,14 @@ main section article form .units{
     color: rgb(83, 97, 98);
 }
 
-main section article form .amount {
+main section article .amount {
     padding-right: 15px;
     margin-right: 5px;
     border-right: solid 2px rgb(83, 97, 98);
 }
 
 main section article #edit {
-    display: none;
+    font-family: 'Roboto Condensed', sans-serif;
     background-color: rgb(192, 96, 20);
     color: rgb(243, 244, 237);
     border: solid 2px rgb(192, 96, 20);
@@ -128,6 +140,23 @@ main section article #edit {
 main section article #edit:hover {
     box-shadow: 0px 0px 10px rgb(83, 97, 98);
     border: solid 2px #b85b11;
+}
+
+main section article #delete {
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: rgb(83, 97, 98);
+    color: rgb(243, 244, 237);
+    border: solid 2px rgb(83, 97, 98);
+    border-radius: 4px;
+    font-size: 16px;
+    width: auto;
+    padding-left: 2px;
+    padding-right: 2px;
+    transition: box-shadow 450ms;
+}
+main section article #delete:hover {
+    box-shadow: 0px 0px 10px rgb(91, 104, 105);;
+    border: solid 2px rgb(63, 70, 71);
 }
 
 main section article .conteiner-button{
