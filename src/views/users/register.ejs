@@ -32,7 +32,7 @@
                         </div>
                         <div class="data-field">
                             <label class="nombre">Usuario:</label>
-                            <input type="text" name="name" class="cam" placeholder=" Juan Simón">
+                            <input type="text" name="name" class="cam" id="name" placeholder=" Juan Simón">
                             <% if ( locals.errors && errors.name ) {%>
                                 <p class="msg-error">
                                     <%= errors.name.msg %>
@@ -82,10 +82,10 @@
             </form>
         </div>
     </main>
-
     <div>
         <%- include('../partials/footer') %>
     </div>
+    <script src="/js/register.js" text="text/javascript"></script>
 </body>
 
 </html>

@@ -1,7 +1,7 @@
 window.onload = function () {
     /* DEPLOYABLE NAVIGATION BAR */
     let bar = document.querySelector(".container-navbar");
-    let articleOne = document.querySelector("header")
+    let articleOne = document.querySelector(".container")
 
     articleOne.addEventListener("mouseover", function () {
         bar.classList.add("deployable");
