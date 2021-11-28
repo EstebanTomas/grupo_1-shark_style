@@ -9,12 +9,12 @@
 
 <body>
     <div>
-        <%- include('../partials/header') %>
+        <%- include('../partials/header') -%>
     </div>
 
     <main>
         <div class="div-main">
-<form method="POST" action="/administration/register" class="main-form" enctype="multipart/form-data">
+            <form method="POST" action="/administration/register" class="main-form" enctype="multipart/form-data">
                 <section class="section-logo">
                     <div>
                         <img src="/img/logo-shark.png" alt="logo" class="shark-logo">
@@ -39,7 +39,7 @@
                                 </p>
                                 <% } %>
                         </div>
-                    
+
                         <div class="data-field">
                             <label class="nombre">Apellido:</label>
                             <input type="text" name="lastName" id="lastName" class="cam" placeholder=" avellaneda">
@@ -69,7 +69,7 @@
                                 </p>
                                 <% } %>
                         </div>
-                        
+
                         <div class="terminos">
                             <input type="radio">
                             <label>Acepta nuestras condiciones de servicio y política de privacidad</label>

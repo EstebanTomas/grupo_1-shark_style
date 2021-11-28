@@ -7,6 +7,7 @@ const ValidationsOfRegister = require("../../middlewares/validationsOfUser");
 const Validation = require("../../middlewares/loginOfUserMiddlewares");
 const guestMiddlewares = require("../../middlewares/guestMiddleware");
 const profile = require("../../middlewares/profileMiddlewares");
+const userLogguedMiddleware = require("../../middlewares/userLogguedMiddlewares");
 // require files
 const usersControllers = require('../controllers/usersControllers');
 const { devNull } = require('os');
