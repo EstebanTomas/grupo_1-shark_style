@@ -4,10 +4,10 @@
             <div class="logo-text">
                 <h2>Shark Style</h2>
             </div>
-            <form action="/product/search" method="get" class="form-search">
+            <form action="/products/searchProduct" method="POST" class="form-search">
                 <div class="search">
-                    <span class=""><i class="fas fa-search"></i></span>
-                    <input type="search" id="search"  placeholder="Buscar" class="search-main" />
+                    <span><i class="fas fa-search"></i></span>
+                    <input class="search-main" type="search" name="search" id="search" placeholder="Buscar"/>
                 </div>
             </form>
         </article>
@@ -19,8 +19,8 @@
             <div class="">
                 <a href=""><i class="fas fa-search"></i></a>
             </div> -->
-            <% if (locals.isLogged) { %>
-                <% if ( locals.userToLogged.role==9 ) { %>
+            <% if (locals.isLogged) { %> 
+                <% if ( locals.userToLogged.role == 9 ) { %>
                     <div class="right_bar">
                         <h5>
                             <a href="/administration/products">admin</a>
@@ -32,7 +32,7 @@
                                 <img src="/img/user_photo/<%# locals.userToLogged.image[0] %>"
                                     alt="imagen de usuario" width="40px" class="img"> -->
                                     
-                                <img src="/img/user_photo/<%= locals.userToLogged.Image[0].avatar %> "
+                                <img src="/img/user_photo/<%= locals.userToLogged.Image? locals.userToLogged.Image[0].avatar : "user_anonimo.jpg" %>"
                                 alt="imagen de usuario" width="40px" class="img">
                                 <h4>
                                     <%= locals.userToLogged.name %>

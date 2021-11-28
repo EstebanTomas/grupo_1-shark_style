@@ -18,8 +18,8 @@
                 <section class="picture">
                     <% for (let i = 0; i < product.images.length; i++) { %> 
                         <div class="photos">
-                            <img id="p1" class="pic" src="/img/productImage/<%= product.images[i].img %>" width="50px"
-                            height="55px" alt="" />
+                            <img class="pic" src="/img/productImage/<%= product.images[i].img %>" width="50px" 
+                            height="55px" alt="imagenes del producto" />
                         </div>
                     <% } %> 
                 </section>
@@ -29,7 +29,7 @@
                     <div class="principalPicture">
                         <!--aca va la foto principal-->
                         <img class="img-principalPicture" id="imagen-principal" src="/img/productImage/<%= product.images[0].img %>"
-                            alt="imagenes que varian" />
+                            alt="imagen principal del producto" />
                     </div>
                 </div>
 
@@ -54,73 +54,64 @@
                             ARS $<%= product.price %>
                         </div>
                     </article>
+                    <form action="/products/detail/<%= product.id %> " method="POST">
+                        <article>
+                            <div class="colorModel">
+                                <!--colores y modelos disponibles-->
+                                Colores disponibles
+                            </div>
 
-                    <article>
-                        <div class="colorModel">
-                            <!--colores y modelos disponibles-->
-                            Modelos disponibles
-                        </div>
-
-                        <!-- *** Una pequeña imagen del modelo de color (voy a probar con forma circular) *** -->
-                        <div class="model">
-                            <% for (let i = 0; i < product.models.length; i++) { %> 
-                                <div>
-                                    <img class = "mod" src="/img/productImage/<%= product.models[i].img %>" width = "80px" height = "110px" alt="<%= product.models[i].colors %>"/>
-                                </div>
-                            <% } %> 
-                        </div> 
-                    </article>
-
-                    <article>
-                        <div class="measures">
-                            <!--talles-->
-                            Talles
-                        </div>
-                        <div class="size">
-                            <% if (product.sizes[0].xs == true) { %> 
-                                <div id="xs" class="siz">XS</div>
-                            <% } %> 
-                            <% if (product.sizes[0].s == true) { %> 
-                                <div id="s" class="siz">S</div>
-                            <% } %> 
-                            <% if (product.sizes[0].m == true) { %> 
-                                <div id="m" class="siz">M</div>
-                            <% } %> 
-                            <% if (product.sizes[0].l == true) { %> 
-                                <div id="l" class="siz">L</div>
-                            <% } %> 
-                            <% if (product.sizes[0].xl == true) { %> 
-                                <div id="xl" class="siz">XL</div>
-                            <% } %> 
-                        </div>
-                    </article>
-                        <div class="article-action">
-                            <article>
-                                <a href="/shopping" style="text-decoration: none;">
-                                    <div class="buy">
-                                        <!--boton de comprar te lleva al carrito de compras y agrega el producto-->
-                                        Comprar
-                                    </div>
-                                </a>
-                            </article>
-
-                            <article class="action">
-                                <div class="saveCart">
+                            <!-- *** Una pequeña imagen del modelo de color (voy a probar con forma circular) *** -->
+                            <div class="model">
+                                <% for (let i = 0; i < product.colors.length; i++) { %> 
                                     <div>
-                                        <!--imagen del carrito-->
-                                        <i id="cart" class="fas fa-cart-plus"></i>
+                                        <input class="mod" type="radio" name="color" value="<%= product.colors[i].color %>"><%= product.colors[i].color %>
                                     </div>
-                                    <div class="save">
-                                        <!--agregar al carrito-->
-                                        <button type="submit" class="button-cart">Agregar al carrito</button>
-                                    </div>
-                                </div>
-                                <div class="follow">
-                                    <!--compartir-->
-                                    Compartir
-                                </div>
-                            </article>
-                        </div>
+                                <% } %> 
+                            </div> 
+                        </article>
+
+                        <article>
+                            <div class="measures">
+                                <!--talles-->
+                                Talles
+                            </div>
+                            <div class="size">
+                                <% if (product.sizes[0].xs == true) { %> 
+                                    <input type="radio" name="size" value="xs">
+                                    <div id="xs" class="siz">XS</div>
+                                <% } %> 
+                                <% if (product.sizes[0].s == true) { %> 
+                                    <input type="radio" name="size" value="s">
+                                    <div id="s" class="siz">S</div>
+                                <% } %> 
+                                <% if (product.sizes[0].m == true) { %> 
+                                    <input type="radio" name="size" value="m">
+                                    <div id="m" class="siz">M</div>
+                                <% } %> 
+                                <% if (product.sizes[0].l == true) { %> 
+                                    <input type="radio" name="size" value="l">
+                                    <div id="l" class="siz">L</div>
+                                <% } %> 
+                                <% if (product.sizes[0].xl == true) { %> 
+                                    <input type="radio" name="size" value="xl">
+                                    <div id="xl" class="siz">XL</div>
+                                <% } %> 
+                            </div>
+                        </article>
+                        <article class="action">
+                            <div class="saveCart">
+                                <!--imagen del carrito-->
+                                <i id="cart" class="fas fa-cart-plus"></i>
+                                <!--agregar al carrito-->
+                                <button type="submit" class="button-cart">Agregar al carrito</button>
+                            </div>
+                            <div class="follow">
+                                <!--compartir-->
+                                <i id="arrow" class="fas fa-share"></i>   
+                            </div>
+                        </article>
+                    </form>
                 </div>
         </section>
     </main>

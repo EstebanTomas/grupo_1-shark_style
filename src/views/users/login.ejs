@@ -11,7 +11,7 @@
     <div>
         <%- include('../partials/header') %>
     </div>
-    
+
     <main>
         <div class="login-container">
             <div class="login-info-container">
@@ -21,15 +21,18 @@
                             <%= errors.email.msg %>
                         </div>
                         <% } %>
-                    <input class="input" type="email" placeholder="E-mail" name="email"
-                        value="<%= locals.values_olds && values_olds.email ? values_olds.email : " " %>">
-                        <% if(locals.errors && errors.password){ %>
-                            <div>
-                                <%= errors.password.msg %>
-                            </div>
-                            <% } %>
-                            <input class="input" type="password" placeholder="Password" name="password" value="<%# locals.values_olds && values_olds.email ? values_olds.email : " " %>"">
-                           
+                            <input class="input" type="email" placeholder="E-mail" name="email"
+                                value="<%= locals.values_olds && values_olds.email ? values_olds.email : " " %>">
+                            <% if(locals.errors && errors.password){ %>
+                                <div>
+                                    <%= errors.password.msg %>
+                                </div>
+                                <% } %>
+                                    <input class="input" type="password" placeholder="Password" name="password"
+                                        value="<%# locals.values_olds && values_olds.email ? values_olds.email : " " %>">
+                                        <label>
+                                            <input type="checkbox" class="checkbox" name="remember_user">Recordame
+                                        </label>
                                     <button type="submit" class="boton">Login</button>
                                     <span class="span"><a href="/users/register">¿no tienes una
                                             cuenta?</a></span>

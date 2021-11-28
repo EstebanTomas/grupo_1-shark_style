@@ -5,18 +5,15 @@ const { check } = require('express-validator');
 
 var controllersOfProducts = require('../controllers/productsControllers');
 
-
-
 // paths to product list
 router.get('/', controllersOfProducts.productList);
 
-//searchproduct.
-// router.get('/searchResults', controllersOfProducts.searchResults);
-router.get('/search', controllersOfProducts.search);
-
 // routes in detail
 router.get('/detail/:id', controllersOfProducts.productDetail);
+router.post('/detail/:id', controllersOfProducts.productShop);
 
+//searchproduct.
+router.post('/searchProduct', controllersOfProducts.searchProduct);
 
 
 module.exports = router;

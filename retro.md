@@ -125,6 +125,6 @@ _____________
 >Mantenernos enfocados.
 >
 *Que debemos dejar de hacer.*
->Estimar cuidadosamente el tiempo que nos va a llevar completar la tarea.
+>Subestimar el tiempo que nos va a llevar completar la tarea.
 >
 >Procurar no atrasarse con las actividades que demanda el nuevo sprint, en post de terminar las del sprint pasado.

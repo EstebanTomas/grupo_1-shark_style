@@ -16,101 +16,209 @@ main {
     background-color: white;
 }
 
-.section-one {
-    border-bottom: solid 1px black;
-} 
-
-.options-of-nav {
-    width: 100%;
-    font-weight: 600;
+main .section-one {
+    padding-left: 30px;
+    padding-top: 10px;
+    font-size: 25px;
 }
 
-section nav ol li {
-    list-style: none
+main section .return-button {
+    background-color: rgb(192, 96, 20);
+    color: rgb(243, 244, 237);
+    border: solid 2px rgb(192, 96, 20);
+    border-radius: 4px;
+    font-size: 20px;
+    width: 145px;
+    padding-left: 4px;
+    transition: box-shadow 450ms;
+}
+main section .return-button:hover {
+    box-shadow: 0px 0px 10px rgb(83, 97, 98);
+    border: solid 2px #b85b11;
 }
 
-section nav ol {
+main .line {
+    margin-top: 15px;
+    height: 2px;
+    background-color: black;
+}
+
+main .conteiner {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    padding-left: 0px;
-}
-
-.section-main {
-    display: flex;
-    flex-direction: column;
     align-items: center;
 }
 /* le doy estilo y posición a section-two*/
-.section-two {
-    width: 100%;
+main .section-two {
+    width: 65vw;
+    margin-bottom: 10px
 }
 
-.section-two article div img {
-    border-radius: 10px
-}
-
-.section-two article p {
-    font-weight: 700;
-}
-.units {
+main .section-two article {
     display: flex;
-    justify-content: space-around;
-    width: 100px;
-}
-.units a i {
-    color: #C06014;
-}
-
-.color {
-    background-color: gray;
-    text-align: center;
-    padding-bottom: 20px;
-    width: 35px;
-    height: 16px;
-    border-radius: 2px;
-}
-
-.section-two article {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
     margin: auto;
     width: 90%;
     margin-top: 5px;
+    border: solid 2px grey;
+    border-radius: 4px;
+} 
+
+main section article .conteiner-image {
+    width: 20%;
 }
 
-.return-button {
-    margin: 0px 0px 10px 10%;
-
-}
-
-.return-button a input {
-    border-radius: 5px;
-    background-color: #C06014;
-    color: white;
-    transition: background-color 450ms;
-}
-
-.return-button a input:hover {
-    background-color: #ad4e03;
-}
-
-.title-summary {
-    font-size: 20px;
-}
-    /* le doy estilo y posición a section-three*/
-
-.section-three {
+main section article .image {
     width: 100%;
-    border-top: solid 3px #810000;
+    border-radius: 4px;
+}
+
+main section article .conteiner-data{
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+}
+
+main section article .form-edit{
+}
+
+.block {
+    display: block;
+}
+
+.none {
+    display: none;
+}
+
+main section article .title{
+    font-size: 22px;
+    text-align: left;
+    color: rgb(192, 96, 20);
+    font-weight: bold;
+    padding-bottom: 6px;
+}
+
+main section article .size{
+    font-size: 18px;
+    text-align: left;
+    color: rgb(83, 97, 98);
+    padding-bottom: 4px;
+}
+
+main section article .color{
+    font-size: 18px;
+    text-align: left;
+    color: rgb(83, 97, 98);
+    padding-bottom: 4px;
+}
+
+main section article .units{
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    text-align: left;
+    color: rgb(83, 97, 98);
+}
+
+main section article .amount {
+    padding-right: 15px;
+    margin-right: 5px;
+    border-right: solid 2px rgb(83, 97, 98);
+}
+
+main section article #edit {
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: rgb(192, 96, 20);
+    color: rgb(243, 244, 237);
+    border: solid 2px rgb(192, 96, 20);
+    border-radius: 4px;
+    font-size: 16px;
+    width: auto;
+    padding-left: 2px;
+    padding-right: 2px;
+    transition: box-shadow 450ms;
+}
+main section article #edit:hover {
+    box-shadow: 0px 0px 10px rgb(83, 97, 98);
+    border: solid 2px #b85b11;
+}
+
+main section article #delete {
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: rgb(83, 97, 98);
+    color: rgb(243, 244, 237);
+    border: solid 2px rgb(83, 97, 98);
+    border-radius: 4px;
+    font-size: 16px;
+    width: auto;
+    padding-left: 2px;
+    padding-right: 2px;
+    transition: box-shadow 450ms;
+}
+main section article #delete:hover {
+    box-shadow: 0px 0px 10px rgb(91, 104, 105);;
+    border: solid 2px rgb(63, 70, 71);
+}
+
+main section article .conteiner-button{
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+main section article .sub-conteiner{
+    display: flex;
+    justify-content: space-around;
+}
+
+main section article #button-edit {
+    color: gray;
+    font-size: 20px;
+    transition: color 350ms;
+}
+main section article #button-edit:hover {
+    color: black
+}
+
+main section article #button-delete {
+    color: gray;
+    font-size: 20px;
+    background-color: white;
+    border: none;
+    transition: color 350ms;
+}
+main section article #button-delete:hover {
+    color: black
+}
+
+main section article .button-detail {
+    background-color: rgb(192, 96, 20);
+    color: rgb(243, 244, 237);
+    border: solid 2px rgb(192, 96, 20);
+    border-radius: 4px;
+    font-size: 16px;
+    width: auto;
+    padding-left: 2px;
+    padding-right: 2px;
+    transition: box-shadow 450ms;
+}
+main section article .button-detail:hover {
+    box-shadow: 0px 0px 10px rgb(83, 97, 98);
+    border: solid 2px #b85b11;
+}
+
+
+main .section-three {
+    width: 35vw;
+    border-left: solid 2px black;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
 }
 
-.shipments-and-subtotal {
+main section form .total {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -118,37 +226,33 @@ section nav ol {
     font-weight: 600;
 }
 
-.style-button {
+main section form .style-button {
     margin-bottom: 30px
 }
 
-.shipments-and-subtotal a {
-    text-decoration: none;
-    color: black;
-}
-
-.section-three div a input {
+main section form div a #buy {
     width: 200px;
     height: 35px;
+    background-color: rgb(192, 96, 20);
+    color: rgb(243, 244, 237);
+    border: solid 2px rgb(192, 96, 20);
     border-radius: 8px;
     font-size: 20px;
-    color: white;
-    background-color: #C06014;
-    transition: background-color 450ms;
+    transition: box-shadow 450ms;
+}
+main section form div a #buy:hover {
+    box-shadow: 0px 0px 10px rgb(83, 97, 98);
+    border: solid 2px #b85b11;
 }
 
-.section-three div a input:hover {
-    background-color: #ad4e03;
-}
 
-
-@media (min-width: 767px) {
+/* @media (min-width: 767px) {
     main {
-        margin-top: 180px;
+        margin-top: 60px;
         margin-bottom: 50px;
         max-width: 1000px;
     }
-    /* le doy estilo y posición a la section-one*/
+    le doy estilo y posición a la section-one
     .div-conteiner-shark-style {
         border-bottom: solid 3px #810000;
         width: 95%;
@@ -168,7 +272,7 @@ section nav ol {
     .section-main {
     flex-direction: row;
     }
-    /* le doy estilo y posición a section-two*/
+    le doy estilo y posición a section-two
     .section-two {
         width: 60%;
     }
@@ -186,7 +290,7 @@ section nav ol {
         width: 200px;
         height: 30px;
     }
-        /* le doy estilo y posición a section-three*/
+        le doy estilo y posición a section-three
     
     .section-three {
         width: 40%;
@@ -210,4 +314,4 @@ section nav ol {
         text-decoration: none;
         color: black;
     }
-}
+} */

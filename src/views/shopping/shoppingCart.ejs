@@ -4,7 +4,6 @@
 <head>
     <%- include('../partials/head') %>
         <link rel="stylesheet" href="/css/shopping.css">
-        <script src="https://kit.fontawesome.com/7a73fadbcd.js" crossorigin="anonymous"></script>
         <title>Carrito Compras</title>
 </head>
 
@@ -15,88 +14,108 @@
 
     <main>
         <section class="section-one">
-            <nav class="options-of-nav">
-                <ol>
-                    <li>Producto</li>
-                    <li>Precio</li>
-                    <li>Cantidad</li>
-                    <li>Total</li>
-                </ol>
-            </nav>
+            <div> 
+                Mi Carrito > <%= carrito %> items
+            </div>
+            <div class="return-button">
+                <a href="/">Seguir buscando</a>
+            </div>
         </section>
-        <section class="section-main">
+
+        <div class="line"></div>
+
+        <div class="conteiner">
             <section class="section-two">
-                <article>
-                    <div>
-                        <img width="100px" height="100px" src="/img/3.jpg" alt="">
-                    </div>
-                    <p>$1000</p>
-                    <div class="units">
-                        <a href="#"><i class="fas fa-minus"></i></a>
-                        <div class="color">0</div>
-                        <a href="#"><i class="fas fa-plus"></i></a>
-                    </div>
-                    <p>$1000</p>
-                </article>
-                <article>
-                    <div class="units">
-                        <img width="100px" height="100px" src="/img/4.jpg" alt="">
-                    </div>
-                    <p>$1000</p>
-                    <div class="units">
-                        <a href="#"><i class="fas fa-minus"></i></a>
-                        <div class="color">0</div>
-                        <a href="#"><i class="fas fa-plus"></i></a>
-                    </div>
-                    <p>$1000</p>
-                </article>
-                <article>
-                    <div>
-                        <img width="100px" height="100px" src="/img/5.jpg" alt="">
-                    </div>
-                    <p>$1000</p>
-                    <div class="units">
-                        <a href="#"><i class="fas fa-minus"></i></a>
-                        <div class="color">0</div>
-                        <a href="#"><i class="fas fa-plus"></i></a>
-                    </div>
-                    <p>$1000</p>
-                </article>
-                <article>
-                    <div>
-                        <img width="100px" height="100px" src="/img/17.jpg" alt="">
-                    </div>
-                    <p>$1000</p>
-                    <div class="units">
-                        <a href="#"><i class="fas fa-minus"></i></a>
-                        <div class="color">0</div>
-                        <a href="#"><i class="fas fa-plus"></i></a>
-                    </div>
-                    <p>$1000</p>
-                </article>
-                <div class="return-button">
-                    <a href="/"><input type="button" value="Seguir comprando"></a>
-                </div>
-            </section>
+                <% shopping.forEach( data => { %>
+                    <article>
+                        <div class="conteiner-image">
+                            <img class="image" src="/img/productImage/<%= data.product_shop.product.images[0].img %> " alt="Imagen del producto del carrito">
+                        </div>
+                        <div class="conteiner-data">
+                            <div class="data">
+                                <div class="title"><%= data.product_shop.product.name %></div>
+                                <div class="size">Talle: <%= data.product_shop.size %></div>
+                                <div class="color">Color: <%= data.product_shop.color %></div>
+                                <div class="units">
+                                    <div class="amount">Cantidad: <%= data.product_shop.amount %></div>
+                                    <div>Subtotal $<%= data.product_shop.subtotal %></div>    
+                                </div>
+                            </div>
+                            <form class="form-edit none" action="/shopping/edit/<%= data.product_shop.id %>?_method=PUT" method="POST">
+                                <div class="title"></div>
+                                <div class="size">Talle: <%= data.product_shop.size %></div>
+                                <select class="" name="size">
+                                    <% if (data.product_shop.product.sizes[0].xs == true) { %> 
+                                        <option name="size" value="xs">XS</option>
+                                    <% } %> 
+                                    <% if (data.product_shop.product.sizes[0].s == true) { %>
+                                        <option name="size" value="s">S</option> 
+                                    <% } %> 
+                                    <% if (data.product_shop.product.sizes[0].m == true) { %> 
+                                        <option name="size" value="m">M</option>
+                                    <% } %> 
+                                    <% if (data.product_shop.product.sizes[0].l == true) { %> 
+                                        <option name="size" value="l">L</option>
+                                    <% } %> 
+                                    <% if (data.product_shop.product.sizes[0].xl == true) { %> 
+                                        <option name="size" value="xl">XL</option>
+                                    <% } %>                                 
+                                </select>
+                                <div class="color">Color: <%= data.product_shop.color %></div>
+                                <select class="" name="color">
+                                    <% for (let i=0; i < data.product_shop.product.colors.length; i++) { %>
+                                        <option name="color" value="<%= data.product_shop.product.colors[i].color %>"><%= data.product_shop.product.colors[i].color %></option>
+                                    <% } %>
+                                </select>
+                                <div class="units">
+                                    <div class="amount">Cantidad: 
+                                        <input class="" type="number" name="amount" value="<%= data.product_shop.amount %>"></input>
+                                    </div>
+                                    <div>Subtotal $<%= data.product_shop.subtotal %></div>
+                                </div>
+                                <button id="edit" type="submit">Actualizar</button>
+                                <button id="delete" type="reset">Cancelar</button>
+                            </form>
+                        </div>
+                        <div class="conteiner-button">
+                            <!-- Edit data of product_shop -->
+                            <div class="sub-conteiner">
+                                <div class="edit-view" id="button-edit"><i class="fas fa-edit"></i></div>
+                                <form action="/shopping/delete/<%= data.product_shop.id %>?_method=DELETE" method="POST">
+                                    <button id="button-delete" type="submit"><i class="fas fa-trash-alt"></i></button>
+                                </form>    
+                            </div>
+                            <div>
+                                <a class="button-detail" href="/products/detail/<%= data.product_shop.product_id %>">Ver detalle</a>
+                            </div>
+                        </div>
+                    </article>
+                <% }); %>
+            </section>            
             <section class="section-three">
-                <div class="title-summary">
-                    <h2>Resumen del pedido</h2>
-                </div>
-                <div class="shipments-and-subtotal">
-                    <p>Subtotal</p><a href="">$1000</a>
-                </div>
-                <div class="style-button">
-                    <a href="/shopping">
-                        <input type="button" value="Comprar">
-                    </a>
-                </div>
+                <form action="/shopping" method="POST">
+                    <div class="title-summary">
+                        <h2>Resumen del pedido</h2>
+                    </div>
+                    <div class="total">
+                        <p>
+                            Total............$<%= total %>
+                        </p>
+                    </div>
+                    <div class="style-button">
+                        <a href="/shopping">
+                            <button id="buy" type="submit">Comprar</button>
+                        </a>
+                    </div>
+                </form>
             </section>
-        </section>
+        </div>
     </main>
 
     <div>
         <%- include('../partials/footer') %>
     </div>
+    <script src="/js/shoppingCart.js" type="text/javascript"></script>
 </body>
 
 </html>
