@@ -13,30 +13,34 @@
     </div>
     <main class="main">
         <div class="div-container">
-            <!-- 
             <article class="profileUser">
-                    <div class="container-image">
-                        <img src="/img/user_photo/<%#= user.Image[0].avatar %>" alt="imagen del usuario">
-                    </div>
-                    <h2>
-                        <%#= user.name + " " + user.lastname %>
-                    </h2>
-            </article> -->
-        <form action="/administration/edit/<%= user.id %>" method="post" enctype="multipart/form-data">
+                <div class="container-image">
+                    <img src="/img/user_photo/<%= user.Image[0].avatar %>" alt="imagen del usuario">
+                </div>
+                <h2>
+                    <%= user.name + " " + user.lastname %>
+                </h2>
+            </article>
+            <form class="formulario" action="/administration/edit/<%= user.id %>" method="post"
+                enctype="multipart/form-data">
+                <div id="divError">
+                    <ul></ul>
+                </div>
                 <section>
                     <article class="article">
                         <div class="boxes">
                             <label>Cambiar foto de perfil
                                 <br>
-                                <input type="file" name="avatarEdit" id="avatarEdit" class="file" value="<%= user.Image[0].avatar %>">
+                                <input type="file" name="avatarEdit" id="avatarEdit" class="file"
+                                    value="<%= user.Image[0].avatar %>">
                             </label>
                         </div>
                         <div class="boxes">
                             <label class="nombre">Cambiar nombre de usuario:
                                 <br>
-                                <input type="text" name="nameEdit" id="nameEdit" class="campo" value="<%= user.name %>">
+                                <input type="text" name="nameEdit" id="name" class="campo" value="<%= user.name %>">
                             </label>
-                            <% if( locals.errors && errors.nameEdit){ %>
+                            <% if( locals.errors && errors.nameEdit ) { %>
                                 <h4>
                                     <%= errors.nameEdit.msg %>
                                 </h4>
@@ -45,7 +49,8 @@
                         <div class="boxes">
                             <label class="nombre">Cambiar apellido:
                                 <br>
-                                <input type="text" name="lastNameEdit" id="lastName" class="campo" value="<%= user.lastname %>">
+                                <input type="text" name="lastNameEdit" id="lastName" class="campo"
+                                    value="<%= user.lastname %>">
                             </label>
                             <% if( locals.errors && errors.lastNameEdit ) { %>
                                 <h4>
@@ -69,7 +74,8 @@
                         <div class="boxes">
                             <label class="nombre">Cambiar contraseña:
                                 <br>
-                                <input type="password" name="passwordEdit" id="passwordEdit" value="<%= user.password %>" class="campo">
+                                <input type="password" name="passwordEdit" id="password" value="<%= user.password %>"
+                                    class="campo">
                             </label>
                             <% if(locals.errors && errors.passwordEdit ){ %>
                                 <h4>
@@ -95,6 +101,7 @@
     <div>
         <%- include('../partials/footer') %>
     </div>
+    <script src="/js/userEdit.js" text="text/javascript"></script>
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-<header>
+<header class="container">
     <div class="main-container">
         <article class="articleOne">
             <div class="logo-text">
@@ -12,14 +12,14 @@
             </form>
         </article>
         <article class="twoArticle">
-            <!-- 
+            <!--
             <div class="">
                 <a href=""><i class="fas fa-bars"></i></a>
             </div>
             <div class="">
                 <a href=""><i class="fas fa-search"></i></a>
             </div> -->
-            <% if (locals.isLogged) { %> 
+            <% if (locals.isLogged) { %>
                 <% if ( locals.userToLogged.role == 9 ) { %>
                     <div class="right_bar">
                         <h5>
@@ -28,10 +28,9 @@
                     </div>
                     <% } %>
                         <article id="img" class="right_bar">
-                            <div class="div-container002"><!-- 
+                            <div class="div-container002"><!--
                                 <img src="/img/user_photo/<%# locals.userToLogged.image[0] %>"
                                     alt="imagen de usuario" width="40px" class="img"> -->
-                                    
                                 <img src="/img/user_photo/<%= locals.userToLogged.Image? locals.userToLogged.Image[0].avatar : "user_anonimo.jpg" %>"
                                 alt="imagen de usuario" width="40px" class="img">
                                 <h4>

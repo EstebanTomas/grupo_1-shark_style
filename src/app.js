@@ -5,7 +5,7 @@ const app = express();
 const methodOverride = require('method-override');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
-//const  ejsLint  =  require ( 'ejs-lint' );
+//const ejsLint = require('ejs-lint');
 const userLoggued = require("../middlewares/userLogguedMiddlewares");
 const apiRoutsProducts = require('./routes/product.js');
 // variables with files inside the router
@@ -31,7 +31,7 @@ app.use(session({
 app.use(userLoggued);
 //   setting globally to cookie
 app.use(cookieParser());
-
+//app.use(ejsLint("ejs", "preprocessorInclude"));
 // view engine setup
 const publicpath = path.join(__dirname, '../public');
 app.use(express.static(publicpath));

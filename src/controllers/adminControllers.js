@@ -9,6 +9,7 @@ const { Association } = require('sequelize');
 const { reset } = require('nodemon');
 //const { error } = require('jquery');
 const { data } = require("jquery");
+const { error } = require('console');
 
 const User = db.User;
 const Image = db.UserImg;
@@ -52,10 +53,11 @@ const adminControllers = {
     User.findByPk(req.params.id, {
       include: ["Image"]
     })
-      .then(users => {
+      .then(user => {/* 
         res.locals.user = users;
-        console.log(req.locals.userToEdit, "naa");
-        return res.render("./users/userEdit", { "user": res.locals.user });
+        console.log(req.locals.userToEdit, "naa"); 
+        console.log(user, "acá");*/
+        return res.render("./users/userEdit", { user });
       })
       .catch((error) => {
         return res.send(error);
@@ -63,7 +65,7 @@ const adminControllers = {
   },
   save: function (req, res) {
     var validations = validationResult(req);
-    console.log(validations);
+    //    console.log(validations);
     if (validations.isEmpty()) {
       User.update({
         name: req.body.name,
@@ -89,9 +91,18 @@ const adminControllers = {
           return res.send(error);
         });
     } else {
-      return res.render("./users/userEdit", {
-        "errors": validations.mapped(),
-      });
+      db.User.findByPk(req.params.id, {
+        include: ["Images"]
+      })
+        .then(data => {
+          return res.render("./users/userEdit", {
+            data,
+            "errors": validations.mapped()
+          });
+        })
+        .catch(error => {
+          res.send(error);
+        });
     }
   },
 
