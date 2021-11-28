@@ -111,20 +111,6 @@ const adminControllers = {
     res.render("./admin/productCreate");
   },
   create: (req, res) => {
-    // intentando validar los campos del create
-    // const resultValidation = validationResult(req)
-
-    // if (resultValidation.errors.length > 0) {
-    //     console.log(req.body);
-    //     let errors = resultValidation.mapped()
-    //     console.log(errors);
-    //     return res.render("./admin/productCreate", {
-    //       errors: resultValidation.mapped(),
-    //       oldData: req.body
-    //     });
-    // } else {
-    //   console.log('Perfectooo!!!!1 POR FINNNN');
-    // }
     // console.log(req.body);
     // ** products
     db.Product.create({
@@ -183,20 +169,9 @@ const adminControllers = {
         .then ( () => {
           // ** colors
           let colors = req.body.colors;
-          // ** pregunto si viene mas de un color, para que no me itere sobre el nombre del color.
-          if (Array.isArray(colors)) {
-            for (let i = 0; i < colors.length; i++) {
-              db.Color.create({
-                color: colors[i],
-                product_id: product.id
-              })
-              .catch(error => {
-                return res.send(error);
-              })
-            }
-          } else {
+          for (let i = 0; i < colors.length; i++) {
             db.Color.create({
-              color: colors,
+              color: colors[i],
               product_id: product.id
             })
             .catch(error => {
@@ -231,7 +206,7 @@ const adminControllers = {
     });
   },
   edit: (req, res) => {
-    // ** products  
+    // ** products  .........Me falta editar las imagenes nomas.........
     db.Product.update({
       name: req.body.name,
       description: req.body.description,
@@ -300,44 +275,46 @@ const adminControllers = {
       .catch(error => {
         return res.send(error);
       })
-      .then ( () => {
+      // .then ( () => {
         // ** images
-        db.Image.findAll({
-          where: { 
-            product_id: req.params.id 
-          }
-        })
-        .then( data => {
-          let id0 = data[0].id;
-          let id1 = data[1].id;
-          let id2 = data[2].id;
-          console.log(req.files);
+        // db.Image.findAll({
+        //   where: { 
+        //     product_id: req.params.id 
+        //   }
+        // })
+        // .then( data => {
+        //   let id0 = data[0].id;
+        //   let id1 = data[1].id;
+        //   let id2 = data[2].id;
+        //   console.log(id0);
+        //   console.log(id1);
+        //   console.log(id2);
+        //   console.log(req.files);
 
-          let img0 = db.Image.update({
-            img: req.files[0].filename,
-            product_id: req.params.id
-          }, {
-            where: {id: id0}
-          })
-          let img1 = db.Image.update({
-            img: req.files[1].filename,
-            product_id: req.params.id
-          }, {
-            where: {id: id1}
-          })
-          let img2 = db.Image.update({
-            img: req.files[2].filename,
-            product_id: req.params.id
-          }, {
-            where: {id: id2}
-          })
-          Promise.all([img0, img1, img2])
-        })
-        .catch(error => {
-          return res.send(error);
-        })
+        //   let img0 = db.Image.update({
+        //     img: req.files[0].filename,
+        //     product_id: req.params.id
+        //   }, {
+        //     where: {id: id0}
+        //   })
+        //   let img1 = db.Image.update({
+        //     img: req.files[1].filename,
+        //     product_id: req.params.id
+        //   }, {
+        //     where: {id: id1}
+        //   })
+        //   let img2 = db.Image.update({
+        //     img: req.files[2].filename,
+        //     product_id: req.params.id
+        //   }, {
+        //     where: {id: id2}
+        //   })
+        //   Promise.all([img0, img1, img2])
+        // })
+        // .catch(error => {
+        //   return res.send(error);
+        // })
       })
-    })
     .then(() => {
       res.redirect("/administration/products");
     })
