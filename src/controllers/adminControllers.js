@@ -109,7 +109,7 @@ const adminControllers = {
   // ***PRODUCTS***
   adminProducts: (req, res) => {
     db.Product.findAll({
-      include: [{ Association: "images" }, { Association: "sizes" }]
+      include: ['images']
     })
       .then(products => {
         res.render("./admin/productsAdmin", { products });
@@ -122,7 +122,21 @@ const adminControllers = {
     res.render("./admin/productCreate");
   },
   create: (req, res) => {
-    console.log(req.body);
+    // intentando validar los campos del create
+    // const resultValidation = validationResult(req)
+
+    // if (resultValidation.errors.length > 0) {
+    //     console.log(req.body);
+    //     let errors = resultValidation.mapped()
+    //     console.log(errors);
+    //     return res.render("./admin/productCreate", {
+    //       errors: resultValidation.mapped(),
+    //       oldData: req.body
+    //     });
+    // } else {
+    //   console.log('Perfectooo!!!!1 POR FINNNN');
+    // }
+    // console.log(req.body);
     // ** products
     db.Product.create({
       name: req.body.name,
@@ -131,203 +145,257 @@ const adminControllers = {
       gender: req.body.gender,
       category: req.body.category
     })
-      .then(product => {
-        //** images 
-        let img0 = db.Image.create({
-          img: req.files[0].filename,
-          product_id: product.id
-        })
-        let img1 = db.Image.create({
-          img: req.files[1].filename,
-          product_id: product.id
-        })
-          .then(() => {
-            res.redirect("/products/");
-          })
-        Promise.all([img0, img1, img2])
-          .then(images => {
-            // ** sizes
-            let sizes = req.body.sizes;
-            let xsData = 0;
-            let sData = 0;
-            let mData = 0;
-            let lData = 0;
-            let xlData = 0;
-            if (sizes.includes("xs")) {
-              xsData = 1;
-            }
-            if (sizes.includes("s")) {
-              sData = 1;
-            }
-            if (sizes.includes("m")) {
-              mData = 1;
-            }
-            if (sizes.includes("l")) {
-              lData = 1;
-            }
-            if (sizes.includes("xl")) {
-              xlData = 1;
-            }
-            db.Size.create({
-              product_id: product.id,
-              xs: xsData,
-              s: sData,
-              m: mData,
-              l: lData,
-              xl: xlData
-            });
-          })
-          .catch(error => {
-            return res.send(error);
-          })
-          .then(sizes => {
-            // ** models
-            let models = req.body.models;
-            for (let i = 0; i < models.length; i++) {
-              db.Model.create({
-                img: null,
-                colors: req.body.models[i]
-              })
-                .then(model => {
-                  // console.log(model.id);
-                  // console.log(product.id);
-                  db.ProductModel.create({
-                    product_id: product.id,
-                    model_id: model.id
-                  })
-                })
-                .catch(error => {
-                  return res.send(error);
-                })
-            }
-          })
-          .catch(error => {
-            return res.send(error);
-          })
+    .then( product => {
+      //** images 
+      let img0 = db.Image.create({
+        img: req.files[0].filename,
+        product_id: product.id
       })
-      .then(() => {
-        res.redirect("/administration/products");
+      let img1 = db.Image.create({
+        img: req.files[1].filename,
+        product_id: product.id
+      })
+      let img2 = db.Image.create({
+        img: req.files[2].filename,
+        product_id: product.id
+      })
+      Promise.all([img0, img1, img2])
+      .then ( () => {
+        // ** sizes
+        let sizes = req.body.sizes;
+        let xsData = 0;
+        let sData = 0;
+        let mData = 0;
+        let lData = 0;
+        let xlData = 0;
+        if (sizes.includes("xs")) {
+          xsData = 1;
+        }
+        if (sizes.includes("s")) {
+          sData = 1;
+        }
+        if (sizes.includes("m")) {
+          mData = 1;
+        }
+        if (sizes.includes("l")) {
+          lData = 1;
+        }
+        if (sizes.includes("xl")) {
+          xlData = 1;
+        }
+        db.Size.create({
+          product_id: product.id,
+          xs: xsData,
+          s: sData,
+          m: mData,
+          l: lData,
+          xl: xlData
+        })
+        .then ( () => {
+          // ** colors
+          let colors = req.body.colors;
+          // ** pregunto si viene mas de un color, para que no me itere sobre el nombre del color.
+          if (Array.isArray(colors)) {
+            for (let i = 0; i < colors.length; i++) {
+              db.Color.create({
+                color: colors[i],
+                product_id: product.id
+              })
+              .catch(error => {
+                return res.send(error);
+              })
+            }
+          } else {
+            db.Color.create({
+              color: colors,
+              product_id: product.id
+            })
+            .catch(error => {
+              return res.send(error);
+            })
+          }
+        })
+        .catch(error => {
+          return res.send(error);
+        })
       })
       .catch(error => {
         return res.send(error);
-      });
+      })
+    })
+    .then(() => {
+      res.redirect("/administration/products");
+    })
+    .catch(error => {
+      return res.send(error);
+    });
   },
   editProduct: (req, res) => {
-    db.ProductModel.findAll({
-      where: {
-        product_id: req.params.id
-      },
-      include: ['model']
+    db.Product.findByPk(req.params.id, {
+      include: ['images', 'sizes', 'colors']
     })
-      .then(data => {
-        db.Product.findByPk(req.params.id, {
-          include: ['images', 'sizes', 'product_models']
+    .then(product => {
+      res.render("./admin/productEdit", { product });
+    })
+    .catch(error => {
+      return res.send(error);
+    });
+  },
+  edit: (req, res) => {
+    // ** products  
+    db.Product.update({
+      name: req.body.name,
+      description: req.body.description,
+      price: req.body.price,
+      gender: req.body.gender,
+      category: req.body.category
+    }, {
+      where: {id: req.params.id}
+    })
+    .then( product => {
+    // ** sizes
+      let sizes = req.body.sizes;
+      let xsData = 0;
+      let sData = 0;
+      let mData = 0;
+      let lData = 0;
+      let xlData = 0;
+      if (sizes.includes("xs")) {
+        xsData = 1;
+      }
+      if (sizes.includes("s")) {
+        sData = 1;
+      }
+      if (sizes.includes("m")) {
+        mData = 1;
+      }
+      if (sizes.includes("l")) {
+        lData = 1;
+      }
+      if (sizes.includes("xl")) {
+        xlData = 1;
+      }
+      db.Size.update({
+        product_id: product.id,
+        xs: xsData,
+        s: sData,
+        m: mData,
+        l: lData,
+        xl: xlData
+      }, {
+        where: {product_id: req.params.id}
+      })
+      .then ( () => {
+        // ** models
+        db.Color.destroy({
+          where: {
+            product_id: req.params.id
+          }
         })
-          .then(product => {
-            // console.log(data[0].model.colors);
-            res.render("./admin/productEdit", { product, data });
-          })
-          .catch(error => {
-            return res.send(error);
-          });
+        .then (() => {
+          let colors = req.body.colors;
+          for (let i = 0; i < colors.length; i++) {
+            db.Color.create({
+              color: colors[i],
+              product_id: req.params.id
+            })
+            .catch(error => {
+              return res.send(error);
+            })
+          }
+        })
+        .catch(error => {
+          return res.send(error);
+        })
       })
       .catch(error => {
         return res.send(error);
-      });
+      })
+      .then ( () => {
+        // ** images
+        db.Image.findAll({
+          where: { 
+            product_id: req.params.id 
+          }
+        })
+        .then( data => {
+          let id0 = data[0].id;
+          let id1 = data[1].id;
+          let id2 = data[2].id;
+          console.log(req.files);
+
+          let img0 = db.Image.update({
+            img: req.files[0].filename,
+            product_id: req.params.id
+          }, {
+            where: {id: id0}
+          })
+          let img1 = db.Image.update({
+            img: req.files[1].filename,
+            product_id: req.params.id
+          }, {
+            where: {id: id1}
+          })
+          let img2 = db.Image.update({
+            img: req.files[2].filename,
+            product_id: req.params.id
+          }, {
+            where: {id: id2}
+          })
+          Promise.all([img0, img1, img2])
+        })
+        .catch(error => {
+          return res.send(error);
+        })
+      })
+    })
+    .then(() => {
+      res.redirect("/administration/products");
+    })
+    .catch(error => {
+      return res.send(error);
+    })
   },
-  // ** NO FUNCIONA TODAVIA
-  edit: (req, res) => {
-    //   console.log(req.body);
-    //   // ** products
-    //   db.Product.update({
-    //     name: req.body.name,
-    //     description: req.body.description,
-    //     price: req.body.price,
-    //     gender: req.body.gender,
-    //     category: req.body.category
-    //   }, {
-    //     where: {id: req.params.id}
-    //   })
-    //   .then( product => {
-    //     // ** sizes
-    //     let sizes = req.body.sizes;
-    //     let xsData = 0;
-    //     let sData = 0;
-    //     let mData = 0;
-    //     let lData = 0;
-    //     let xlData = 0;
-    //     if (sizes.includes("xs")) {
-    //       xsData = 1;
-    //     }
-    //     if (sizes.includes("s")) {
-    //       sData = 1;
-    //     }
-    //     if (sizes.includes("m")) {
-    //       mData = 1;
-    //     }
-    //     if (sizes.includes("l")) {
-    //       lData = 1;
-    //     }
-    //     if (sizes.includes("xl")) {
-    //       xlData = 1;
-    //     }
-    //     db.Size.update({
-    //       product_id: product.id,
-    //       xs: xsData,
-    //       s: sData,
-    //       m: mData,
-    //       l: lData,
-    //       xl: xlData
-    //     }, {
-    //       where: {product_id: req.params.id}
+  delete: (req, res) => {
+    // ***Tratando de borrar los productos de todos los carritos antes de borrar el producto en si***
+    // let shopping = db.ProductShop.findAll({
+    //   where: {
+    //     product_id: req.params.id
+    //   }
+    // })
+    // .then( product_shop => {
+    //   for( let i = 0; i < product_shop.length; i++) {
+    //     db.Shopping.destroy({
+    //       where: {
+    //         product_shop_id: product_shop[i].id
+    //       }
     //     })
-    //     // .then ( sizes => {
-    //     //   // ** models
-    //     //   let models = req.body.models;
-    //     //   for ( model of models) {
-    //     //     db.Model.create({
-    //     //       img: null,
-    //     //       colors: models
-    //     //     })
-    //     //   }
-    //     // })
-    //     // .catch(error => {
-    //     //   return res.send(error);
-    //     // })
-    //     .then ( models => {
-    //       // ** images
-    //       db.Image.findAll({
-    //         where: { 
-    //           product_id: req.params.id 
-    //         },
-    //       })
-    //       .then( data => {
-    //         for( let i = 0; i < data.length; i++) {
-    //           db.Image.update({
-    //             img: req.files[i].filename,
-    //           }, {
-    //             where: {id: data[i].id}
-    //           });
+    //     .then( () => {
+    //       db.ProductShop.destroy({
+    //         where: {
+    //           id: product_shop[i].id
     //         }
     //       })
-    //       .catch(error => {
+    //       .catch( error => {
     //         return res.send(error);
     //       })
     //     })
-    //   })
-    //   .then(() => {
-    //     res.redirect("/administration/products");
-    //   })
-    //   .catch(error => {
-    //     return res.send(error);
-    //   })
-  },
-  delete: (req, res) => {
+    //     .catch( error => {
+    //       return res.send(error);
+    //     })
+    //   }
+    // })
+    // .catch( error => {
+    //   return res.send(error);
+    // })
 
     let sizes = db.Size.destroy({
       where: {
         product_id: req.params.id
       }
+    })
+    .catch( error => {
+      return res.send(error);
     })
 
     let images = db.Image.destroy({
@@ -335,27 +403,35 @@ const adminControllers = {
         product_id: req.params.id
       }
     })
+    .catch( error => {
+      return res.send(error);
+    })
+
+    let colors = db.Color.destroy({
+      where: {
+        product_id: req.params.id
+      }
+    })
+    .catch( error => {
+      return res.send(error);
+    })
 
     let product = db.Product.destroy({
       where: {
         id: req.params.id
       }
     })
-
-    let product_models = db.ProductModel.destroy({
-      where: {
-        product_id: req.params.id
-      }
+    .catch( error => {
+      return res.send(error);
     })
 
-    Promise.all([sizes, images, product, product_models])
-
-      .then(() => {
-        res.redirect("/administration/products");
-      })
-      .catch(error => {
-        return res.send(error);
-      });
+    Promise.all([sizes, images, colors, product])
+    .then(() => {
+      res.redirect("/administration/products");
+    })
+    .catch(error => {
+      return res.send(error);
+    });
   },
   deleteUsers: (req, res) => {
     let imgUser = db.User.destroy({

@@ -10,9 +10,10 @@ router.get('/', controllersOfProducts.productList);
 
 // routes in detail
 router.get('/detail/:id', controllersOfProducts.productDetail);
+router.post('/detail/:id', controllersOfProducts.productShop);
 
 //searchproduct.
-router.get('/searchProduct', controllersOfProducts.searchProduct);
+router.post('/searchProduct', controllersOfProducts.searchProduct);
 
 
 module.exports = router;

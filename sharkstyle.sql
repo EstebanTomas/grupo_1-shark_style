@@ -106,57 +106,30 @@ INSERT INTO `images` VALUES (1,'t-shirt.orange.jpg',1),(2,'t-shirt.black.jpg',2)
 UNLOCK TABLES;
 
 --
--- Table structure for table `models`
+-- Table structure for table `colors`
 --
 
-DROP TABLE IF EXISTS `models`;
+DROP TABLE IF EXISTS `colors`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `models` (
+CREATE TABLE `colors` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `img` varchar(200) DEFAULT NULL,
-  `colors` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `models`
---
-
-LOCK TABLES `models` WRITE;
-/*!40000 ALTER TABLE `models` DISABLE KEYS */;
-INSERT INTO `models` VALUES (1,'t-shirt.black.jpg','negro'),(2,'t-shirt.skyblue.jpg','celeste'),(3,'t-shirt.white.jpg','blanco'),(4,'t-shirt.orange.jpg','naranja');
-/*!40000 ALTER TABLE `models` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `product_model`
---
-
-DROP TABLE IF EXISTS `product_model`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `product_model` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `product_id` int(10) unsigned NOT NULL COMMENT 'pivot table that relates the products to the different product models',
-  `model_id` int(10) unsigned NOT NULL,
+  `color` varchar(100) NOT NULL,
+  `product_id` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   KEY `product_id_idx` (`product_id`),
-  KEY `model_id_idx` (`model_id`),
-  CONSTRAINT `model_id` FOREIGN KEY (`model_id`) REFERENCES `models` (`id`),
   CONSTRAINT `product_id_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `product_model`
+-- Dumping data for table `colors`
 --
 
-LOCK TABLES `product_model` WRITE;
-/*!40000 ALTER TABLE `product_model` DISABLE KEYS */;
-INSERT INTO `product_model` VALUES (1,1,1),(2,1,2),(3,1,3),(4,2,2),(5,2,3),(6,2,4),(7,3,1),(8,3,2),(9,3,4),(10,4,1),(11,4,3),(12,4,4);
-/*!40000 ALTER TABLE `product_model` ENABLE KEYS */;
+LOCK TABLES `colors` WRITE;
+/*!40000 ALTER TABLE `colors` DISABLE KEYS */;
+INSERT INTO `colors` VALUES (1,'negro', 2),(2,'celeste', 3),(3,'blanco', 4),(4,'naranja', 1);
+/*!40000 ALTER TABLE `colors` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
