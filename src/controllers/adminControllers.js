@@ -183,9 +183,20 @@ const adminControllers = {
         .then ( () => {
           // ** colors
           let colors = req.body.colors;
-          for (let i = 0; i < colors.length; i++) {
+          // ** pregunto si viene mas de un color, para que no me itere sobre el nombre del color.
+          if (Array.isArray(colors)) {
+            for (let i = 0; i < colors.length; i++) {
+              db.Color.create({
+                color: colors[i],
+                product_id: product.id
+              })
+              .catch(error => {
+                return res.send(error);
+              })
+            }
+          } else {
             db.Color.create({
-              color: colors[i],
+              color: colors,
               product_id: product.id
             })
             .catch(error => {
