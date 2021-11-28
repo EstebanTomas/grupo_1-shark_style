@@ -1,61 +1,65 @@
-<header class="header">
+<header>
     <div class="main-container">
-        <article class="articleOne">
-            <div class="logo-text">
-                <h2>Shark Style</h2>
-            </div>
-            <form action="/products/searchProduct" method="get" class="form-search">
-                <div class="search">
-                    <span class=""><i class="fas fa-search"></i></span>
-                    <input type="search" id="search" placeholder="Buscar" class="search-main" />
+        <div>
+            <article class="articleOne">
+                <div class="logo-text">
+                    <h2>Shark Style</h2>
                 </div>
-            </form>
-        </article>
-        <article class="twoArticle">
-            <!-- 
+                <form action="/products/searchProduct" method="get" class="form-search">
+                    <div class="search">
+                        <span class=""><i class="fas fa-search"></i></span>
+                        <input type="search" id="search" placeholder="Buscar" class="search-main" />
+                    </div>
+                </form>
+            </article>
+            <article class="twoArticle">
+                <!-- 
             <div class="">
                 <a href=""><i class="fas fa-bars"></i></a>
             </div>
             <div class="">
                 <a href=""><i class="fas fa-search"></i></a>
             </div> -->
-            <% if (locals.isLogged) { %> 
-                <% if ( locals.userToLogged.role == 9 ) { %>
-                    <div class="right_bar">
-                        <h5>
-                            <a href="/administration/products">admin</a>
-                        </h5>
-                    </div>
-                    <% } %>
-                        <article id="img" class="right_bar">
-                            <div class="div-container002"><!-- 
+                <% if (locals.isLogged) { %>
+                    <% if ( locals.userToLogged.role==9 ) { %>
+                        <div class="right_bar">
+                            <h5>
+                                <a href="/administration/products">admin</a>
+                            </h5>
+                        </div>
+                        <% } %>
+                            <article id="img" class="right_bar">
+                                <div class="div-container002">
+                                    <!-- 
                                 <img src="/img/user_photo/<%# locals.userToLogged.image[0] %>"
                                     alt="imagen de usuario" width="40px" class="img"> -->
-                                    
-                                <img src="/img/user_photo/<%= locals.userToLogged.Image? locals.userToLogged.Image[0].avatar : "user_anonimo.jpg" %>"
-                                alt="imagen de usuario" width="40px" class="img">
-                                <h4>
-                                    <%= locals.userToLogged.name %>
-                                </h4>
-                            </div>
-                            <ul class="dropdown">
-                                <li><a href="/users/destroy" class="a">Salir</a></li>
-                                <li><a href="/users/profile/<%= locals.userToLogged.id %>" class="a">Mi perfil</a></li>
-                            </ul>
-                        </article>
-                        <% } else { %>
-                            <div class="right_bar">
-                                <a href="/users/login">Iniciar sesion</a>
-                                <!-- <i class="fas fa-sign-in-alt"></i> -->
-                            </div>
-                            <div class="right_bar">
-                                <a href="/users/register">Registrate</i></a>
-                            </div>
-                            <% } %>
-                                <div class="right_bar">
-                                    <a href="/shopping"><i class="fas fa-cart-plus"></i></a>
+                                    <img src="/img/user_photo/<%= locals.userToLogged.Image? locals.userToLogged.Image[0].avatar : "
+                                        user_anonimo.jpg" %>"
+                                    alt="imagen de usuario" width="40px" class="img">
+                                    <h4>
+                                        <%= locals.userToLogged.name %>
+                                    </h4>
                                 </div>
-        </article>
+                                <ul class="dropdown">
+                                    <li><a href="/users/destroy" class="a">Salir</a></li>
+                                    <li><a href="/users/profile/<%= locals.userToLogged.id %>" class="a">Mi perfil</a>
+                                    </li>
+                                </ul>
+                        </article>
+             <% } else { %>
+                                <div class="right_bar">
+                                    <a href="/users/login">Iniciar sesion</a>
+                                    <!-- <i class="fas fa-sign-in-alt"></i> -->
+                                </div>
+                                <div class="right_bar">
+                                    <a href="/users/register">Registrate</i></a>
+                                </div>
+                                <% } %>
+                                    <div class="right_bar">
+                                        <a href="/shopping"><i class="fas fa-cart-plus"></i></a>
+                                    </div>
+            </article>
+        </div>
     </div>
     <article class="container-navbar">
         <nav class="navbar">
