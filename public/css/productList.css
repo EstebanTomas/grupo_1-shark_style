@@ -1,9 +1,9 @@
 body {
     background-color: rgb(243, 244, 237);
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 main {
-    font-family: 'Roboto Condensed', sans-serif;
     padding-top: 100px;
     padding-bottom: 40px;
     margin: auto;

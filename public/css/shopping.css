@@ -53,6 +53,15 @@ main .section-two {
     margin-bottom: 10px
 }
 
+/* si no hay productos en el carrito */
+main section .without {
+    text-align: center;
+    font-size: 25px;
+    color: rgb(201, 65, 65);
+}
+
+/* -- */
+
 main .section-two article {
     display: flex;
     margin: auto;
@@ -78,8 +87,8 @@ main section article .conteiner-data{
     padding-left: 10px;
 }
 
-main section article .form-edit{
-}
+/* main section article .form-edit{
+} */
 
 .block {
     display: block;
