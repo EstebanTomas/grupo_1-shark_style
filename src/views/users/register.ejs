@@ -14,7 +14,7 @@
 
     <main>
         <div class="div-main">
-            <form method="POST" action="/administration/register" class="main-form" enctype="multipart/form-data">
+            <form method="POST" action="/administration/register" id="form" class="main-form" enctype="multipart/form-data">
                 <section class="section-logo">
                     <div>
                         <img src="/img/logo-shark.png" alt="logo" class="shark-logo">
@@ -32,6 +32,7 @@
                         </div>
                         <div class="data-field">
                             <label class="nombre">Usuario:</label>
+                            <h4 class="name"></h4>
                             <input type="text" name="name" class="cam" id="name" placeholder=" Juan Simón">
                             <% if ( locals.errors && errors.name ) {%>
                                 <p class="msg-error">
@@ -42,6 +43,7 @@
 
                         <div class="data-field">
                             <label class="nombre">Apellido:</label>
+                            <h4 class="lastName"></h4>
                             <input type="text" name="lastName" id="lastName" class="cam" placeholder=" avellaneda">
                             <% if ( locals.errors && errors.lastName ) {%>
                                 <p class="msg-error">
@@ -51,6 +53,7 @@
                         </div>
                         <div class="data-field">
                             <label class="nombre">Email:</label>
+                            <h4 class="email"></h4>
                             <input type="email" name="email" id="email" class="cam"
                                 placeholder=" juanSimon@gmail.com.ar">
                             <% if ( locals.errors && errors.email ) {%>
@@ -62,6 +65,7 @@
                         <div class="data-field">
 
                             <label class="nombre">Contraseña:</label>
+                            <h4 class="password"></h4>
                             <input type="password" name="password" id="password" class="cam" placeholder=" simon546789">
                             <% if ( locals.errors && errors.password ) {%>
                                 <p class="msg-error">

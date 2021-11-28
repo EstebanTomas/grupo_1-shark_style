@@ -21,7 +21,9 @@ main .section-logo {
 .hh2 {
     display: none;
 }
-
+h4 {
+    color: black;
+}
 .shark-logo {
     width      : 90%;
     margin-left: 7%;
