@@ -49,24 +49,4 @@ window.onload = function () {
             return false
         }
     });
-    /* 
-             Descripción
-            Editar
-○ Nombre y apellido
-
-■ Obligatorio.
-■ Deberá tener al menos 2 caracteres.
-
-○ Email
-
-■ Obligatorio.
-■ Deberá ser un formato de e-mail válido.
-
-○ Contraseña
-
-■ Obligatoria.
-■ Deberá tener al menos 8 caracteres.
-■ (Opcional) → Deberá tener letras mayúsculas, minúsculas, un
-              número y un carácter especial. */
-
 }
