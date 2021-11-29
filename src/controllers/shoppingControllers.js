@@ -49,6 +49,27 @@ const shoppingControllers = {
             return res.send(error)
         })
     },
+    shoppingEdit: (req, res) => {
+        db.ProductShop.findByPk(req.params.id, {
+            include: [{
+                association: 'product',
+                include: [{
+                    association: 'images',
+                }, {
+                    association: 'sizes' 
+                }, {
+                    association: 'colors',
+                }]
+            }]
+        })
+        .then( product_shop => {
+            console.log(product_shop);
+            res.render('./shopping/shoppingEdit', { data: product_shop });
+        })
+        .catch( error => {
+            return res.send(error)
+        })
+    },
     edit: (req, res) => {
         // ** product_shop
         db.ProductShop.findByPk(req.params.id, {

@@ -56,16 +56,18 @@
                     </article>
                     <form action="/products/detail/<%= product.id %> " method="POST">
                         <article>
-                            <div class="colorModel">
+                            <div class="colorTitle">
                                 <!--colores y modelos disponibles-->
                                 Colores disponibles
                             </div>
 
-                            <!-- *** Una pequeña imagen del modelo de color (voy a probar con forma circular) *** -->
-                            <div class="model">
+                            <!-- *** Una forma circular con los colores *** -->
+                            <div class="colors">
                                 <% for (let i = 0; i < product.colors.length; i++) { %> 
-                                    <div>
-                                        <input class="mod" type="radio" name="color" value="<%= product.colors[i].color %>"><%= product.colors[i].color %>
+                                    <div class="conteiner-color">
+                                        <div class="circle"></div>
+                                        <input class="selected" type="radio" name="color" value="<%= product.colors[i].color %>">
+                                        <div class="propertyColor"><%= product.colors[i].color %></div>
                                     </div>
                                 <% } %> 
                             </div> 

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head') %>
+        <link rel="stylesheet" href="/css/shoppingEdit.css">
+        <title>Edita un producto de tu carrito</title>
+</head>
+
+<body>
+    <div>
+        <%- include('../partials/header') %>
+    </div>
+
+    <main>
+        <div class="conteiner">
+            <section class="section-two">
+                <article>
+                    <div class="conteiner-image">
+                        <img class="image" src="/img/productImage/<%= data.product.images[0].img %> " alt="Imagen del producto del carrito">
+                    </div>
+                    <div class="conteiner-data">
+                        <form class="form-edit" action="/shopping/edit/<%= data.id %>?_method=PUT" method="POST">                                    
+                            <div class="title"><%= data.product.name %></div>
+                            <div class="size">Talle: <%= data.size %></div>
+                            <select class="" name="size">
+                                <% if (data.product.sizes[0].xs == true) { %> 
+                                    <option name="size" value="xs">XS</option>
+                                <% } %> 
+                                <% if (data.product.sizes[0].s == true) { %>
+                                    <option name="size" value="s">S</option> 
+                                <% } %> 
+                                <% if (data.product.sizes[0].m == true) { %> 
+                                    <option name="size" value="m">M</option>
+                                <% } %> 
+                                <% if (data.product.sizes[0].l == true) { %> 
+                                    <option name="size" value="l">L</option>
+                                <% } %> 
+                                <% if (data.product.sizes[0].xl == true) { %> 
+                                    <option name="size" value="xl">XL</option>
+                                <% } %>                                 
+                            </select>
+                            <div class="color">Color: 
+                                <div class="circle"></div>
+                                <div class="propertyColor none"><%= data.color %></div>
+                            </div>
+                            <select class="" name="color">
+                                <% for (let i=0; i < data.product.colors.length; i++) { %>
+                                    <option name="color" value="<%= data.product.colors[i].color %>"><%= data.product.colors[i].color %></option>
+                                <% } %>
+                            </select>
+                            <div class="units">
+                                <div class="amount">Cantidad: 
+                                    <input class="input-number" type="number" name="amount" value="<%= data.amount %>"></input>
+                                </div>
+                                <div>Subtotal $<%= data.subtotal %></div>
+                            </div>
+                                <button id="edit" type="submit">Actualizar</button>
+                                <a id="delete" href="/shopping">Cancelar</a>
+                            </div>
+                        </form>
+                    </div>
+                </article>
+            </section>            
+        </div>
+    </main>
+
+    <div>
+        <%- include('../partials/footer') %>
+    </div>
+    <script src="/js/shoppingEdit.js" type="text/javascript"></script>
+</body>
+
+</html>
