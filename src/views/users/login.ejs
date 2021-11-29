@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <%- include('../partials/head') -%>
         <link rel="stylesheet" href="/css/login.css">
         <title> Ingresá tu cuenta</title>
 </head>
-
 <body>
     <div>
-        <%- include('../partials/header') %>
+        <%- include('../partials/header') -%>
     </div>
-
     <main>
         <div class="login-container">
             <div class="login-info-container">
@@ -21,15 +18,16 @@
                             <%= errors.email.msg %>
                         </div>
                         <% } %>
-                            <input class="input" type="email" placeholder="E-mail" name="email"
+                        <small class="msg-email"></small>
+                            <input class="input" type="email" placeholder="E-mail" id="confirmEmail" name="email"
                                 value="<%= locals.values_olds && values_olds.email ? values_olds.email : " " %>">
                             <% if(locals.errors && errors.password){ %>
                                 <div>
                                     <%= errors.password.msg %>
                                 </div>
                                 <% } %>
-                                    <input class="input" type="password" placeholder="Password" name="password"
-                                        value="<%# locals.values_olds && values_olds.email ? values_olds.email : " " %>">
+                                <small class="msg-password"></small>
+                                    <input class="input" type="password" placeholder="Password" name="password" id="confirmPassword">
                                         <label>
                                             <input type="checkbox" class="checkbox" name="remember_user">Recordame
                                         </label>
@@ -60,6 +58,6 @@
     <div>
         <%- include('../partials/footer') -%>
     </div>
+    <script src="/js/login.js" text="text/javascript"></script>
 </body>
-
 </html>

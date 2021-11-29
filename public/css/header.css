@@ -1,7 +1,12 @@
 * {
     box-sizing: border-box;
 }
-
+.header {
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+    top: 0px;
+}
 .main-container {
     width           : 100%;
     display         : flex;
@@ -10,12 +15,12 @@
     height          : 55px;
     border          : solid 1px green;
     background-color: rgb(63, 136, 85);
+    position: inherit;
+    z-index: 2;
 }
-
 .a {
     color: black;
 }
-
 .articleOne {
     width          : 33%;
     display        : flex;
@@ -27,7 +32,6 @@
 .form-searh {
     text-align-last: center;
 }
-
 .logo-text {
     height         : 100%;
     text-align     : center;
@@ -44,301 +48,73 @@ a {
     text-decoration: none;
     color          : whitesmoke;
 }
-
 .twoArticle {
     width          : 30%;
     height         : 100%;
-    display        : flex;/* 
-    justify-content: space-around; */
+    display        : flex;
     align-content  : center;
     align-items    : center;
 }
-
 #img {
     height       : 40px;
     border-radius: 15px;
     background   : whitesmoke;
 }
-
 .img {
     width        : 30px;
     border-radius: 100%;
     margin-right : 4px;
 }
-
 .div-container002 {
     display    : flex;
     align-items: center;
     padding    : 0px 5px;
     height     : 100%;
 }
-
 .dropdown {
-
     margin       : 0px;
     padding      : 8px 0px 0px 12px;
-    /* border    : solid rgb(49, 255, 8) 1
-px
-; */
     position     : absolute;
     top          : 49px;
     height       : 60px;
     width        : 92px;
-    /* text-align: center; */
     background   : whitesmoke
 }
-
 .search {
     display: inline-flex;
 }
-
 .Shark {
     object-fit: cover;
 }
-
+/* NAVBAR */
 .container-navbar {
-    height          : 25px;
-    border-radius   : 0px 0px 12px 0px;
-    width           : 45%;
+    height          : 55px;
+    width           : 100%;
     background-color: black;
     display         : flex;
     justify-content : center;
     align-items     : center;
+    position: inherit;
+    top: 0px;
+    transition: all 0.8s;
 }
-
+.deployable {
+   top: 50px;
+    transition: all 0.8s;
+}
+.return {
+    top: 0px;
+}
 .options-navbar {
     padding: 0px 10px;
 }
-/* 
-article {
-    border: solid red 1px
-}
- 
-header div article div {
-    border: solid rgb(83, 42, 235) 1px
-}*/
-
 .navbar ul {
     display        : flex;
     justify-content: space-evenly;
     list-style     : none;
 }
-
 .search-main {
     height       : 21px;
     border       : solid 1px black;
     border-radius: 4px;
 }
-
-/* 
-body {
-    margin: 0px;
-}
-
-/*editing for mobile devices
-header article section p {
-    position: fixed;
-    top: -9px;
-    left: 81px;
-}
-*
-header .main-header {
-    background-color: rgb(180, 183, 182);
-    padding-top     : 13px;
-    font-family     : 'Roboto', sans-serif;
-}
-
-header .inside-the-first-article-header {
-    display: none;
-}
-
-header .article-main-header {
-    display       : flex;
-    flex-direction: column-reverse;
-}
-
-header .conteiner-logo {
-    margin         : 27px 0px 0px 0px;
-    display        : flex;
-    flex-direction : row;
-    justify-content: center;
-}
-
-header .logotipo-shark {
-    width : 100%;
-    height: 120px;
-}
-
-header .conteiner-shark {
-    display: none;
-}
-
-header .icons2 {
-    padding         : 15px 14px 0px;
-    display         : flex;
-    justify-content : space-around;
-    margin          : 0px;
-    position        : fixed;
-    width           : 100%;
-    height          : 43px;
-    top             : 0px;
-    background-color: #C06014;
-    z-index         : 8;
-}
-
-header .icons2 div a {
-    color: black;
-}
-
-header .menu-hamburger {
-    padding-right: 130px;
-}
-
-header .navbar {
-    display: none;
-}
-
-header div article div div p {
-    display: none;
-}
-
-/*primer media queries*
-
-@media (min-width: 481px) {
-    header .icons2 {
-        font-size  : 20px;
-        padding-top: 10px;
-    }
-
-    header .menu-hamburger {
-        font-size: 20px;
-    }
-
-    header .conteiner-logo img {
-        width: 380px;
-    }
-}
-
-/*segunda media queries*
-@media (min-width: 767px) {
-    header div article div div p {
-        display: block;
-        padding: 0px 20px 2px 0px;
-    }
-
-    header .conteiner-logo {
-        display: none;
-    }
-
-    header .conteiner-logo img {
-        width     : 200px;
-        height    : 105px;
-        object-fit: contain;
-    }
-
-    header .icons2 {
-        display: none;
-    }
-
-    header .main-header {
-        position: fixed;
-        width   : 100%;
-        height  : 90px;
-        top     : -20px;
-        z-index : 8;
-    }
-
-    header .article-main-header {
-        flex-direction : row;
-        align-items    : center;
-        justify-content: space-around;
-        font-size      : 18px;
-        width          : 90%;
-        margin         : auto;
-    }
-
-    header .search-main {
-        height       : 21px;
-        border       : solid 1px black;
-        border-radius: 4px;
-    }
-
-    header .conteiner-logo {
-        margin: -33px 0px 0px;
-        ;
-    }
-
-    header .conteiner-shark {
-        display    : flex;
-        align-items: center;
-    }
-
-    header .logotipo-shark {
-        margin: 0px;
-        width : 250px;
-        height: 100px;
-    }
-
-    header .inside-the-first-article-header a {
-        color: black;
-    }
-
-    header .navbar {
-        padding         : 0px 9%;
-        display         : block;
-        height          : 27px;
-        background-color: rgb(180, 183, 182);
-        border-bottom   : solid 0.5px rgb(107, 107, 107);
-    }
-
-    header div article div nav ul {
-        display        : flex;
-        justify-content: center;
-        align-items    : center;
-        height         : 100%;
-        margin-top     : -7px;
-        padding        : 0px 0px 0px;
-        font-size      : 15px;
-    }
-
-    header ul li {
-        list-style   : none;
-        padding      : 4px 29px;
-        height       : 100%;
-        border-radius: 2px;
-        background-color: rgb(180, 183, 182);
-        transition      : background-color 450ms;
-    }
-
-    header ul li:hover {
-        background-color: rgb(144, 146, 146);
-    }
-
-    header .option-navbar {
-        color     : black;
-        transition: color 450ms;
-    }
-
-    header .option-navbar:hover {
-        color: black;
-    }
-
-    header .inside-the-first-article-header {
-        display: block;
-    }
-
-    header .div-1-conteiner {
-        display        : flex;
-        width          : 400px;
-        justify-content: flex-start;
-        align-items    : center;
-        font-family    : cursive;
-        font-weight    : 600;
-    }
-
-    header .div-2-conteiner {
-        display        : flex;
-        width          : 80px;
-        justify-content: space-between;
-    }
-} */

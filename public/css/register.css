@@ -21,7 +21,9 @@ main .section-logo {
 .hh2 {
     display: none;
 }
-
+h4 {
+    color: black;
+}
 .shark-logo {
     width      : 90%;
     margin-left: 7%;
@@ -31,7 +33,10 @@ main .section-logo {
 .text-p {
     display: none;
 }
-
+.msg {
+    margin: 2px 0px;
+    color: red;
+}
 .section-form {
     display         : flex;
     flex-direction  : column;
@@ -39,7 +44,10 @@ main .section-logo {
     padding         : 10;
     background-color: rgb(180, 183, 182);
 }
-
+.name, .lastName, .email, .password {
+    margin: 2px 0px;
+    color: red;
+}
 h2 {
     font-size: 28px;
     margin   : 8px 0px;

@@ -11,34 +11,20 @@ const multerStorage = multer.diskStorage({
         cb( null, format);
     }
 });
-
 const upload = multer({
     storage: multerStorage,
-    fileFilter: function (req, file, callback) {
+    fileFilter: function (req, file, cb) {
         let ext = path.extname(file.originalname);
         //aca se especifica los archivos q admite
         if(ext !== '.png' && ext !== '.jpg' && ext !== '.jpeg') {
-            return callback(new Error('solo imagenes pa'))
+            return callback(new Error('Solo aceptamos imagenes con extensión JPG, JPEG, PNG'))
         }
-        callback(null, true)
+        cb(null, true)
     },
     limits:{
-        fileSize: 1400 * 1400,
+        fileSize: 1500 * 1500,
         files: 3
     }
 });
 
-/* fileFilter: function (req, file, callback) {
-        let ext = path.extname(file.originalname);
-        //aca se especifica los archivos q admite
-        if(ext !== '.png' && ext !== '.jpg' && ext !== '.jpeg') {
-            return callback(new Error('solo imagenes pa'))
-        }
-        callback(null, true)
-    },
-    //aca se especifica los limites, se aceptan aprox 2MB each foto, and only 3 files sino no se sube
-    limits:{
-        fileSize: 1424 * 1424,
-        files: 3
-    } */
 module.exports = upload;

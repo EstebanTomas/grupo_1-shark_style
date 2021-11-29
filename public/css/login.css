@@ -73,7 +73,14 @@ body {
     height: 3.125rem;
     font-size: 1em;
 }
-
+.msg-email {
+    color: red;
+    font-size: 15px;
+}
+.msg-password {
+    color: red;
+    font-size: 15px;
+}
 /* le agregue una sombra en el hover */
 .input {
     padding-left: 20px;
