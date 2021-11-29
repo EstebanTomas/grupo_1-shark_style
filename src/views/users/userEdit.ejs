@@ -23,16 +23,13 @@
             </article>
             <form class="formulario" action="/administration/edit/<%= user.id %>" method="post"
                 enctype="multipart/form-data">
-                <div id="divError">
-                    <ul></ul>
-                </div>
                 <section>
                     <article class="article">
                         <div class="boxes">
                             <label>Cambiar foto de perfil
                                 <br>
                                 <input type="file" name="avatarEdit" id="avatarEdit" class="file"
-                                    value="<%= user.Image[0].avatar %>">
+                                ><!-- onchange="ValidarImagen(this);" -->
                             </label>
                         </div>
                         <div class="boxes">
@@ -40,6 +37,7 @@
                                 <br>
                                 <input type="text" name="nameEdit" id="name" class="campo" value="<%= user.name %>">
                             </label>
+                            <small id="msgName"></small>
                             <% if( locals.errors && errors.nameEdit ) { %>
                                 <h4>
                                     <%= errors.nameEdit.msg %>
@@ -52,6 +50,7 @@
                                 <input type="text" name="lastNameEdit" id="lastName" class="campo"
                                     value="<%= user.lastname %>">
                             </label>
+                            <small id="msgLastName"></small>
                             <% if( locals.errors && errors.lastNameEdit ) { %>
                                 <h4>
                                     <%= errors.lastNameEdit.msg %>
@@ -61,10 +60,12 @@
                     </article>
                     <article class="article">
                         <div class="boxes">
+                           
                             <label class="nombre">Cambiar email:
                                 <br>
                                 <input type="email" name="emailEdit" id="emailEdit" value="<%= user.email %>" class="campo">
                             </label>
+                            <small id="msgEmail"></small>
                             <% if( locals.errors && errors.emailEdit ){ %>
                                 <h4>
                                     <%= errors.emailEdit.msg %>
@@ -77,6 +78,7 @@
                                 <input type="password" name="passwordEdit" id="password" value="<%= user.password %>"
                                     class="campo">
                             </label>
+                            <small id="msgPassword"></small>
                             <% if(locals.errors && errors.passwordEdit ){ %>
                                 <h4>
                                     <%= errors.passwordEdit.msg %>

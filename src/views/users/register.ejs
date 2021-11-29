@@ -11,10 +11,10 @@
     <div>
         <%- include('../partials/header') -%>
     </div>
-
     <main>
         <div class="div-main">
-            <form method="POST" action="/administration/register" id="form" class="main-form" enctype="multipart/form-data">
+            <form method="POST" action="/administration/register" id="form" class="main-form"
+                enctype="multipart/form-data">
                 <section class="section-logo">
                     <div>
                         <img src="/img/logo-shark.png" alt="logo" class="shark-logo">
@@ -30,21 +30,21 @@
                             <label>Ingresa una imagen</label>
                             <input type="file" name="avatar" id="avatar" class="file">
                         </div>
+                        <h4 id="msg"></h4>
                         <div class="data-field">
                             <label class="nombre">Usuario:</label>
-                            <h4 class="name"></h4>
-                            <input type="text" name="name" class="cam" id="name" placeholder=" Juan Simón">
+                            <h5 class="name"></h5>
+                            <input type="text" name="name" class="cam" id="name" placeholder="Nick">
                             <% if ( locals.errors && errors.name ) {%>
                                 <p class="msg-error">
                                     <%= errors.name.msg %>
                                 </p>
                                 <% } %>
                         </div>
-
                         <div class="data-field">
                             <label class="nombre">Apellido:</label>
-                            <h4 class="lastName"></h4>
-                            <input type="text" name="lastName" id="lastName" class="cam" placeholder=" avellaneda">
+                            <h5 class="lastName"></h5>
+                            <input type="text" name="lastName" id="lastName" class="cam" placeholder="Kennedy">
                             <% if ( locals.errors && errors.lastName ) {%>
                                 <p class="msg-error">
                                     <%= errors.lastName.msg %>
@@ -53,27 +53,25 @@
                         </div>
                         <div class="data-field">
                             <label class="nombre">Email:</label>
-                            <h4 class="email"></h4>
-                            <input type="email" name="email" id="email" class="cam"
-                                placeholder=" juanSimon@gmail.com.ar">
-                            <% if ( locals.errors && errors.email ) {%>
-                                <p class="msg-error">
-                                    <%= errors.email.msg %>
-                                </p>
-                                <% } %>
+                                <input type="email" name="email" id="email" class="cam"
+                                    placeholder="nickennedy@gmail.com.ar">
+                                    <h5 class="email"></5>
+                                <% if ( locals.errors && errors.email ) {%>
+                                    <p class="msg-error">
+                                        <%= errors.email.msg %>
+                                    </p>
+                                    <% } %>
                         </div>
                         <div class="data-field">
-
-                            <label class="nombre">Contraseña:</label>
-                            <h4 class="password"></h4>
-                            <input type="password" name="password" id="password" class="cam" placeholder=" simon546789">
+                            <label class="nombre">Contraseña:</label>  
+                            <input type="password" name="password" id="password" class="cam" placeholder="aABj12ksjs2020">
+                            <h5 class="password"></h5>
                             <% if ( locals.errors && errors.password ) {%>
                                 <p class="msg-error">
                                     <%= errors.password.msg %>
                                 </p>
                                 <% } %>
                         </div>
-
                         <div class="terminos">
                             <input type="radio">
                             <label>Acepta nuestras condiciones de servicio y política de privacidad</label>

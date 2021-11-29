@@ -78,12 +78,11 @@ const productsControllers = {
       for ( let i = 0;  i < product.length; i++) {
         array.push(product[i]);
       }
-      // ****No puedo mostrarle otra cosa cuando no trae resultados***
-      if ( Product  == [] ) {
-         res.redirect('/');
-       } else {
+      if ( array == "" ) {
+        res.redirect('/');
+      } else {
         res.render('./product/searchResults', { array });
-       }
+      }
     })
     .catch(error => {
       return res.send(error);

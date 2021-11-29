@@ -1,12 +1,12 @@
 * {
     box-sizing: border-box;
 }
+/* 
 .header {
     position: fixed;
-    z-index: 3;
     width: 100%;
     top: 0px;
-}
+} */
 .main-container {
     width           : 100%;
     display         : flex;
@@ -87,6 +87,7 @@ a {
     object-fit: cover;
 }
 /* NAVBAR */
+
 .container-navbar {
     height          : 55px;
     width           : 100%;

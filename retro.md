@@ -128,3 +128,30 @@ _____________
 >Subestimar el tiempo que nos va a llevar completar la tarea.
 >
 >Procurar no atrasarse con las actividades que demanda el nuevo sprint, en post de terminar las del sprint pasado.
+>
+>
+_____________
+>
+**RETROSPECTIVA DEL SÉPTIMO SPRINT**
+>
+*Que debemos comenzar a hacer como equipo.*
+>Repartir las tareas pendientes equitativamente.
+>
+>Ser transparente cuando nos surgen errores, y no tener miedo de comunicarlo al equipo.
+>
+*Que podemos hacer para mejorar.*
+>Procurar no subir cosas que fallen o se rompan, revisar con cuidado antes de pushear. Pero lo mas importante es avisar al resto del equipo si algo anda mal.
+>
+>Terminar todas las actividades.
+>
+>Dedicarle todo el tiempo disponible al proyecto integrador.
+>
+>Si nos trabamos con una tarea, no perder mucho tiempo intentando solucionarla, y tomar otra que sepamos hacer.
+>
+*Que debemos seguir haciendo.*
+>Mantenernos enfocados.
+>
+*Que debemos dejar de hacer.*
+>Subestimar el tiempo que nos va a llevar completar la tarea.
+>
+>Procurar no atrasarse con las actividades que nos quedan y disfrutar de esta última etapa.

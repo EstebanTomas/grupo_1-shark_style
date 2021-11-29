@@ -40,7 +40,7 @@ main section .return-button:hover {
 main .line {
     margin-top: 15px;
     height: 2px;
-    background-color: black;
+    background-color: rgb(63, 70, 71);
 }
 
 main .conteiner {
@@ -59,7 +59,6 @@ main section .without {
     font-size: 25px;
     color: rgb(201, 65, 65);
 }
-
 /* -- */
 
 main .section-two article {
@@ -90,10 +89,6 @@ main section article .conteiner-data{
 /* main section article .form-edit{
 } */
 
-.block {
-    display: block;
-}
-
 .none {
     display: none;
 }
@@ -118,6 +113,18 @@ main section article .color{
     text-align: left;
     color: rgb(83, 97, 98);
     padding-bottom: 4px;
+    position: relative;
+}
+
+main section article .circle {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-right: 10px;
+    position: absolute;
+    top: -1px;
+    left: 50px;
+    border: rgb(63, 70, 71) solid 1px;
 }
 
 main section article .units{
@@ -132,40 +139,6 @@ main section article .amount {
     padding-right: 15px;
     margin-right: 5px;
     border-right: solid 2px rgb(83, 97, 98);
-}
-
-main section article #edit {
-    font-family: 'Roboto Condensed', sans-serif;
-    background-color: rgb(192, 96, 20);
-    color: rgb(243, 244, 237);
-    border: solid 2px rgb(192, 96, 20);
-    border-radius: 4px;
-    font-size: 16px;
-    width: auto;
-    padding-left: 2px;
-    padding-right: 2px;
-    transition: box-shadow 450ms;
-}
-main section article #edit:hover {
-    box-shadow: 0px 0px 10px rgb(83, 97, 98);
-    border: solid 2px #b85b11;
-}
-
-main section article #delete {
-    font-family: 'Roboto Condensed', sans-serif;
-    background-color: rgb(83, 97, 98);
-    color: rgb(243, 244, 237);
-    border: solid 2px rgb(83, 97, 98);
-    border-radius: 4px;
-    font-size: 16px;
-    width: auto;
-    padding-left: 2px;
-    padding-right: 2px;
-    transition: box-shadow 450ms;
-}
-main section article #delete:hover {
-    box-shadow: 0px 0px 10px rgb(91, 104, 105);;
-    border: solid 2px rgb(63, 70, 71);
 }
 
 main section article .conteiner-button{
@@ -184,6 +157,8 @@ main section article .sub-conteiner{
 main section article #button-edit {
     color: gray;
     font-size: 20px;
+    background-color: white;
+    border: none;
     transition: color 350ms;
 }
 main section article #button-edit:hover {
@@ -220,19 +195,34 @@ main section article .button-detail:hover {
 
 main .section-three {
     width: 35vw;
-    border-left: solid 2px black;
+    border-left: solid 2px rgb(63, 70, 71);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
 }
 
-main section form .total {
+main section form .resume{
+    color: rgb(36, 67, 71);
+}
+
+main section form .conteiner-total {
     display: flex;
     justify-content: space-around;
-    align-items: center;
-    width: 60%;
+    margin-bottom: 15px;
     font-weight: 600;
+}
+
+main section form .total-title {
+    font-size: 20px;
+    color: rgb(83, 97, 98);
+    align-items: left;
+}
+
+main section form .total-price {
+    font-size: 25px;
+    color: rgb(83, 97, 98);
+    align-items: right;
 }
 
 main section form .style-button {
