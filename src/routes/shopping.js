@@ -7,6 +7,7 @@ var shoppingControllers = require('../controllers/shoppingControllers')
 router.get('/', shoppingControllers.shopping);
 
 // editar un product_shop
+router.get('/edit/:id', shoppingControllers.shoppingEdit);
 router.put('/edit/:id', shoppingControllers.edit);
 
 // comprar todo en el carrito

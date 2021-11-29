@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: rgb(243, 244, 237);
+}
+
+main {
+    width: 50%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 10px rgb(83 97 98);
+    border-radius: 8px;
+    background-color: white;
+}
+
+main .conteiner {
+    display: flex;
+    align-items: center;
+}
+/* le doy estilo y posición a section-two*/
+main .section-two {
+    width: 100%;
+    margin-bottom: 10px
+}
+
+main .section-two article {
+    display: flex;
+    margin: auto;
+    width: 95%;
+    margin-top: 10px;
+    border: solid 2px grey;
+    border-radius: 4px;
+} 
+
+main section article .conteiner-image {
+    width: 40%;
+}
+
+main section article .image {
+    width: 100%;
+    border-radius: 4px;
+}
+
+main section article .conteiner-data{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10px;
+}
+
+.none {
+    display: none;
+}
+
+main section article .title{
+    font-size: 25px;
+    text-align: left;
+    color: rgb(192, 96, 20);
+    font-weight: bold;
+    padding-bottom: 6px;
+}
+
+main section article .size{
+    font-size: 18px;
+    text-align: left;
+    color: rgb(83, 97, 98);
+    padding-bottom: 4px;
+}
+
+main section article .color{
+    font-size: 18px;
+    text-align: left;
+    color: rgb(83, 97, 98);
+    padding-bottom: 4px;
+    padding-top: 4px;
+    position: relative;
+}
+
+main section article .circle {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-right: 10px;
+    position: absolute;
+    top: -1px;
+    left: 50px;
+    border: rgb(63, 70, 71) solid 1px;
+}
+
+main section article .units{
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    text-align: left;
+    color: rgb(83, 97, 98);
+    padding-bottom: 8px;
+    padding-top: 6px;
+}
+
+main section article .amount {
+    padding-right: 15px;
+    margin-right: 5px;
+    border-right: solid 2px rgb(83, 97, 98);
+}
+
+main section article .input-number {
+    width: 40px;
+}
+
+main section article #edit {
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: rgb(192, 96, 20);
+    color: rgb(243, 244, 237);
+    border: solid 2px rgb(192, 96, 20);
+    border-radius: 4px;
+    font-size: 16px;
+    width: auto;
+    padding-left: 2px;
+    padding-right: 2px;
+    margin-right: 6px;
+    transition: box-shadow 450ms;
+}
+main section article #edit:hover {
+    box-shadow: 0px 0px 10px rgb(83, 97, 98);
+    border: solid 2px #b85b11;
+}
+
+main section article #delete {
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: rgb(83, 97, 98);
+    color: rgb(243, 244, 237);
+    border: solid 2px rgb(83, 97, 98);
+    border-radius: 4px;
+    font-size: 16px;
+    width: auto;
+    padding-left: 2px;
+    padding-right: 2px;
+    transition: box-shadow 450ms;
+}
+main section article #delete:hover {
+    box-shadow: 0px 0px 10px rgb(91, 104, 105);;
+    border: solid 2px rgb(63, 70, 71);
+}
