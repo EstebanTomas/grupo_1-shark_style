@@ -1,9 +1,9 @@
 window.addEventListener("load", function () {
     let form = document.querySelector("form.formulario");
-    let nameInput = document.querySelector("input#name")
-    let lastNameInput = document.querySelector("input#lastName")
-    let emailInput = document.querySelector("input#email")
-    let passwordInput = document.querySelector("input#password")
+    let nameInput = document.querySelector("input#name");
+    let lastNameInput = document.querySelector("input#lastName");
+    let emailInput = document.querySelector("input#email");
+    let passwordInput = document.querySelector("input#password");
     //let nameInput = document.querySelector("input.")
     let errors = [];
 
