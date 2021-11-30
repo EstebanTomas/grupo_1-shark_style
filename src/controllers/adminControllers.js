@@ -14,24 +14,6 @@ const { error } = require('console');
 const User = db.User;
 const Image = db.UserImg;
 
-// ○ Nombre
-
-// ■ Obligatorio.
-// ■ Deberá tener al menos 5 caracteres.
-
-// ○ Descripción
-
-// ■ Deberá tener al menos 20 caracteres.
-
-// ○ Imagen
-
-// ■ Deberá ser un archivo válido (JPG, JPEG, PNG, GIF).
-
-// ○ (Opcional) Tablas secundarias
-
-// ■ Verificar que los valores existan en base. Es decir, que los valores
-// de talles, colores, etc. que lleguen sean válidos en la base.
-
 const adminControllers = {
   // ***USERS***
   saveRegister: function (req, res) {
@@ -71,10 +53,8 @@ const adminControllers = {
     User.findByPk(req.params.id, {
       include: ["Image"]
     })
-      .then(user => {/* 
-        res.locals.user = users;
-        console.log(req.locals.userToEdit, "naa"); 
-        console.log(user, "acá");*/
+      .then(user => {
+        req.session.updateUser = user
         return res.render("./users/userEdit", { user });
       })
       .catch((error) => {
@@ -83,6 +63,7 @@ const adminControllers = {
   },
   save: function (req, res) {
     var validations = validationResult(req);
+    console.log(validations.mapped(), "etyy");
     //    console.log(validations);
     if (validations.isEmpty()) {
       User.update({
@@ -90,7 +71,7 @@ const adminControllers = {
         lastname: req.body.lastName,
         email: req.body.email,
         password: bcryptjs.hashSync(req.body.password, 10),
-        role: 1
+        role: req.body.role == 9 ? 9 : 9
       }, {
         where: { id: req.params.id }
       })
@@ -109,19 +90,26 @@ const adminControllers = {
           return res.send(error);
         });
     } else {
-      db.User.findByPk(req.params.id, {
-        include: ["Images"]
-      })
-        .then(data => {
-          return res.render("./users/userEdit", {
-            data,
-            "errors": validations.mapped()
-          });
-        })
-        .catch(error => {
-          res.send(error);
-        });
-    }
+      return res.render("./users/userEdit", {
+        user: req.session.updateUser,
+        "data": req.body,
+        "validationErrors": {
+          name: {
+            msg: "Debes escribir un nombre de usuario con más de 2 caracteres"
+          },
+          lastName: {
+            msg: "Debes escribir un apellido de usuario con más de 2 caracteres"
+          },
+          email: {
+            msg: "Debes escribir un email valido"
+          },
+          password: {
+            msg: "Debes escribir una contraseña con más de 8 caracteres"
+          }
+        }
+      });
+    } /* validations.mapped(), */
+
   },
 
   // ***PRODUCTS***
@@ -140,6 +128,20 @@ const adminControllers = {
     res.render("./admin/productCreate");
   },
   create: (req, res) => {
+    // intentando validar los campos del create
+    // const resultValidation = validationResult(req)
+
+    // if (resultValidation.errors.length > 0) {
+    //     console.log(req.body);
+    //     let errors = resultValidation.mapped()
+    //     console.log(errors);
+    //     return res.render("./admin/productCreate", {
+    //       errors: resultValidation.mapped(),
+    //       oldData: req.body
+    //     });
+    // } else {
+    //   console.log('Perfectooo!!!!1 POR FINNNN');
+    // }
     // console.log(req.body);
     // ** products
     db.Product.create({
@@ -149,22 +151,114 @@ const adminControllers = {
       gender: req.body.gender,
       category: req.body.category
     })
-    .then( product => {
-      //** images 
-      let img0 = db.Image.create({
-        img: req.files[0].filename,
-        product_id: product.id
+      .then(product => {
+        //** images 
+        let img0 = db.Image.create({
+          img: req.files[0].filename,
+          product_id: product.id
+        })
+        let img1 = db.Image.create({
+          img: req.files[1].filename,
+          product_id: product.id
+        })
+        let img2 = db.Image.create({
+          img: req.files[2].filename,
+          product_id: product.id
+        })
+        Promise.all([img0, img1, img2])
+          .then(() => {
+            // ** sizes
+            let sizes = req.body.sizes;
+            let xsData = 0;
+            let sData = 0;
+            let mData = 0;
+            let lData = 0;
+            let xlData = 0;
+            if (sizes.includes("xs")) {
+              xsData = 1;
+            }
+            if (sizes.includes("s")) {
+              sData = 1;
+            }
+            if (sizes.includes("m")) {
+              mData = 1;
+            }
+            if (sizes.includes("l")) {
+              lData = 1;
+            }
+            if (sizes.includes("xl")) {
+              xlData = 1;
+            }
+            db.Size.create({
+              product_id: product.id,
+              xs: xsData,
+              s: sData,
+              m: mData,
+              l: lData,
+              xl: xlData
+            })
+              .then(() => {
+                // ** colors
+                let colors = req.body.colors;
+                // ** pregunto si viene mas de un color, para que no me itere sobre el nombre del color.
+                if (Array.isArray(colors)) {
+                  for (let i = 0; i < colors.length; i++) {
+                    db.Color.create({
+                      color: colors[i],
+                      product_id: product.id
+                    })
+                      .catch(error => {
+                        return res.send(error);
+                      })
+                  }
+                } else {
+                  db.Color.create({
+                    color: colors,
+                    product_id: product.id
+                  })
+                    .catch(error => {
+                      return res.send(error);
+                    })
+                }
+              })
+              .catch(error => {
+                return res.send(error);
+              })
+          })
+          .catch(error => {
+            return res.send(error);
+          })
       })
-      let img1 = db.Image.create({
-        img: req.files[1].filename,
-        product_id: product.id
+      .then(() => {
+        res.redirect("/administration/products");
       })
-      let img2 = db.Image.create({
-        img: req.files[2].filename,
-        product_id: product.id
+      .catch(error => {
+        return res.send(error);
+      });
+  },
+  editProduct: (req, res) => {
+    db.Product.findByPk(req.params.id, {
+      include: ['images', 'sizes', 'colors']
+    })
+      .then(product => {
+        res.render("./admin/productEdit", { product });
       })
-      Promise.all([img0, img1, img2])
-      .then ( () => {
+      .catch(error => {
+        return res.send(error);
+      });
+  },
+  edit: (req, res) => {
+    // ** products  
+    db.Product.update({
+      name: req.body.name,
+      description: req.body.description,
+      price: req.body.price,
+      gender: req.body.gender,
+      category: req.body.category
+    }, {
+      where: { id: req.params.id }
+    })
+      .then(product => {
         // ** sizes
         let sizes = req.body.sizes;
         let xsData = 0;
@@ -187,169 +281,86 @@ const adminControllers = {
         if (sizes.includes("xl")) {
           xlData = 1;
         }
-        db.Size.create({
+        db.Size.update({
           product_id: product.id,
           xs: xsData,
           s: sData,
           m: mData,
           l: lData,
           xl: xlData
+        }, {
+          where: { product_id: req.params.id }
         })
-        .then ( () => {
-          // ** colors
-          let colors = req.body.colors;
-          for (let i = 0; i < colors.length; i++) {
-            db.Color.create({
-              color: colors[i],
-              product_id: product.id
+          .then(() => {
+            // ** models
+            db.Color.destroy({
+              where: {
+                product_id: req.params.id
+              }
             })
-            .catch(error => {
-              return res.send(error);
+              .then(() => {
+                let colors = req.body.colors;
+                for (let i = 0; i < colors.length; i++) {
+                  db.Color.create({
+                    color: colors[i],
+                    product_id: req.params.id
+                  })
+                    .catch(error => {
+                      return res.send(error);
+                    })
+                }
+              })
+              .catch(error => {
+                return res.send(error);
+              })
+          })
+          .catch(error => {
+            return res.send(error);
+          })
+          .then(() => {
+            // ** images
+            db.Image.findAll({
+              where: {
+                product_id: req.params.id
+              }
             })
-          }
-        })
-        .catch(error => {
-          return res.send(error);
-        })
-      })
-      .catch(error => {
-        return res.send(error);
-      })
-    })
-    .then(() => {
-      res.redirect("/administration/products");
-    })
-    .catch(error => {
-      return res.send(error);
-    });
-  },
-  editProduct: (req, res) => {
-    db.Product.findByPk(req.params.id, {
-      include: ['images', 'sizes', 'colors']
-    })
-    .then(product => {
-      res.render("./admin/productEdit", { product });
-    })
-    .catch(error => {
-      return res.send(error);
-    });
-  },
-  edit: (req, res) => {
-    // ** products  .........Me falta editar las imagenes nomas.........
-    db.Product.update({
-      name: req.body.name,
-      description: req.body.description,
-      price: req.body.price,
-      gender: req.body.gender,
-      category: req.body.category
-    }, {
-      where: {id: req.params.id}
-    })
-    .then( product => {
-    // ** sizes
-      let sizes = req.body.sizes;
-      let xsData = 0;
-      let sData = 0;
-      let mData = 0;
-      let lData = 0;
-      let xlData = 0;
-      if (sizes.includes("xs")) {
-        xsData = 1;
-      }
-      if (sizes.includes("s")) {
-        sData = 1;
-      }
-      if (sizes.includes("m")) {
-        mData = 1;
-      }
-      if (sizes.includes("l")) {
-        lData = 1;
-      }
-      if (sizes.includes("xl")) {
-        xlData = 1;
-      }
-      db.Size.update({
-        product_id: product.id,
-        xs: xsData,
-        s: sData,
-        m: mData,
-        l: lData,
-        xl: xlData
-      }, {
-        where: {product_id: req.params.id}
-      })
-      .then ( () => {
-        // ** models
-        db.Color.destroy({
-          where: {
-            product_id: req.params.id
-          }
-        })
-        .then (() => {
-          let colors = req.body.colors;
-          for (let i = 0; i < colors.length; i++) {
-            db.Color.create({
-              color: colors[i],
-              product_id: req.params.id
-            })
-            .catch(error => {
-              return res.send(error);
-            })
-          }
-        })
-        .catch(error => {
-          return res.send(error);
-        })
-      })
-      .catch(error => {
-        return res.send(error);
-      })
-      // .then ( () => {
-        // ** images
-        // db.Image.findAll({
-        //   where: { 
-        //     product_id: req.params.id 
-        //   }
-        // })
-        // .then( data => {
-        //   let id0 = data[0].id;
-        //   let id1 = data[1].id;
-        //   let id2 = data[2].id;
-        //   console.log(id0);
-        //   console.log(id1);
-        //   console.log(id2);
-        //   console.log(req.files);
+              .then(data => {
+                let id0 = data[0].id;
+                let id1 = data[1].id;
+                let id2 = data[2].id;
+                console.log(req.files);
 
-        //   let img0 = db.Image.update({
-        //     img: req.files[0].filename,
-        //     product_id: req.params.id
-        //   }, {
-        //     where: {id: id0}
-        //   })
-        //   let img1 = db.Image.update({
-        //     img: req.files[1].filename,
-        //     product_id: req.params.id
-        //   }, {
-        //     where: {id: id1}
-        //   })
-        //   let img2 = db.Image.update({
-        //     img: req.files[2].filename,
-        //     product_id: req.params.id
-        //   }, {
-        //     where: {id: id2}
-        //   })
-        //   Promise.all([img0, img1, img2])
-        // })
-        // .catch(error => {
-        //   return res.send(error);
-        // })
+                let img0 = db.Image.update({
+                  img: req.files[0].filename,
+                  product_id: req.params.id
+                }, {
+                  where: { id: id0 }
+                })
+                let img1 = db.Image.update({
+                  img: req.files[1].filename,
+                  product_id: req.params.id
+                }, {
+                  where: { id: id1 }
+                })
+                let img2 = db.Image.update({
+                  img: req.files[2].filename,
+                  product_id: req.params.id
+                }, {
+                  where: { id: id2 }
+                })
+                Promise.all([img0, img1, img2])
+              })
+              .catch(error => {
+                return res.send(error);
+              })
+          })
       })
-    .then(() => {
-      res.redirect("/administration/products");
-    })
-    .catch(error => {
-      return res.send(error);
-    })
+      .then(() => {
+        res.redirect("/administration/products");
+      })
+      .catch(error => {
+        return res.send(error);
+      })
   },
   delete: (req, res) => {
     // ***Tratando de borrar los productos de todos los carritos antes de borrar el producto en si***
@@ -389,44 +400,44 @@ const adminControllers = {
         product_id: req.params.id
       }
     })
-    .catch( error => {
-      return res.send(error);
-    })
+      .catch(error => {
+        return res.send(error);
+      })
 
     let images = db.Image.destroy({
       where: {
         product_id: req.params.id
       }
     })
-    .catch( error => {
-      return res.send(error);
-    })
+      .catch(error => {
+        return res.send(error);
+      })
 
     let colors = db.Color.destroy({
       where: {
         product_id: req.params.id
       }
     })
-    .catch( error => {
-      return res.send(error);
-    })
+      .catch(error => {
+        return res.send(error);
+      })
 
     let product = db.Product.destroy({
       where: {
         id: req.params.id
       }
     })
-    .catch( error => {
-      return res.send(error);
-    })
+      .catch(error => {
+        return res.send(error);
+      })
 
     Promise.all([sizes, images, colors, product])
-    .then(() => {
-      res.redirect("/administration/products");
-    })
-    .catch(error => {
-      return res.send(error);
-    });
+      .then(() => {
+        res.redirect("/administration/products");
+      })
+      .catch(error => {
+        return res.send(error);
+      });
   },
   deleteUsers: (req, res) => {
     let imgUser = db.User.destroy({
