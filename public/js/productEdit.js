@@ -19,7 +19,7 @@ window.onload = function () {
 
             var uploadFile = images.files[0];
 
-            var expressionImg = /\.(jpg|jpeg|png|gif)$/i;
+            var expressionImage = /\.(jpg|jpeg|png|gif)$/i;
 
             let messageName = document.querySelector("small#messageName");
 
@@ -29,7 +29,7 @@ window.onload = function () {
 
 
             form.addEventListener("submit", (e) => {
-                if (!expressionImg.test(uploadFile.name)) {
+                if (!expressionImgage.test(uploadFile.name)) {
                     e.preventDefault();
                     alert("El archivo que adjuntaste no es una imagen");
                     return false;
