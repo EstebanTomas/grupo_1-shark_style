@@ -47,30 +47,4 @@ window.addEventListener("load", function () {
             return false;
         }
     });
-<<<<<<< HEAD
 });
-=======
-    /* ○ Nombre y apellido
-
-■ Obligatorio.
-■ Deberá tener al menos 2 caracteres.
-
-○ Email
-
-■ Obligatorio.
-■ Deberá ser un formato de e-mail válido.
-■ No puede repetirse con los e-mails ya registrados.
-
-○ Contraseña
-
-■ Obligatoria.
-■ Deberá tener al menos 8 caracteres.
-■ (Opcional) → Deberá tener letras mayúsculas, minúsculas, un
-número y un carácter especial.
-
-○ Imagen
-
-■ Deberá ser un archivo válido (JPG, JPEG, PNG, GIF).
- */
-});
->>>>>>> 6b19da5a2a2b4c38dfcc6f09affc8aa0144c4c29
