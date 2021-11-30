@@ -21,65 +21,67 @@
                     <%= user.name + " " + user.lastname %>
                 </h2>
             </article>
-            <form class="formulario" action="/administration/edit/<%= user.id %>" method="post"
+            <form class="formulario" action="/administration/edit/<%= user.id %>" method="POST"
                 enctype="multipart/form-data">
-                <div id="divError">
-                    <ul></ul>
-                </div>
                 <section>
                     <article class="article">
                         <div class="boxes">
                             <label>Cambiar foto de perfil
                                 <br>
                                 <input type="file" name="avatarEdit" id="avatarEdit" class="file"
-                                    value="<%= user.Image[0].avatar %>">
+                                ><!-- onchange="ValidarImagen(this);" -->
                             </label>
                         </div>
                         <div class="boxes">
                             <label class="nombre">Cambiar nombre de usuario:
                                 <br>
-                                <input type="text" name="nameEdit" id="name" class="campo" value="<%= user.name %>">
+                                <input type="text" name="name" id="name" class="campo" value="<%= locals.data && data.name ? data.name : user.name %>">
                             </label>
-                            <% if( locals.errors && errors.nameEdit ) { %>
+                            <small id="msgName"></small>
+                            <% if( locals.validationErrors && validationErrors.name ) { %>
                                 <h4>
-                                    <%= errors.nameEdit.msg %>
+                                    <%= validationErrors.name.msg %>
                                 </h4>
                                 <% } %>
                         </div>
                         <div class="boxes">
                             <label class="nombre">Cambiar apellido:
                                 <br>
-                                <input type="text" name="lastNameEdit" id="lastName" class="campo"
-                                    value="<%= user.lastname %>">
+                                <input type="text" name="lastname" id="lastName" class="campo"
+                                    value="<%= locals.data && data.lastname ? data.lastname : user.lastname %>">
                             </label>
-                            <% if( locals.errors && errors.lastNameEdit ) { %>
+                            <small id="msgLastName"></small>
+                            <% if( locals.validationErrors && validationErrors.lastName ) { %>
                                 <h4>
-                                    <%= errors.lastNameEdit.msg %>
+                                    <%= validationErrors.lastName.msg %>
                                 </h4>
                                 <% } %>
                         </div>
                     </article>
                     <article class="article">
                         <div class="boxes">
+                           
                             <label class="nombre">Cambiar email:
-                                <br>
-                                <input type="email" name="emailEdit" id="email" value="<%= user.email %>" class="campo">
+                                <br><!-- value="<%#= user.email%>" -->
+                                <input type="email" name="email" id="email"  value="<%= locals.data && data.email ? data.email : user.email %>" class="campo">
                             </label>
-                            <% if( locals.errors && errors.emailEdit ){ %>
+                            <small id="msgEmail"></small>
+                            <% if( locals.validationErrors && validationErrors.email ){ %>
                                 <h4>
-                                    <%= errors.emailEdit.msg %>
+                                    <%= validationErrors.email.msg %>
                                 </h4>
                                 <% } %>
                         </div>
                         <div class="boxes">
                             <label class="nombre">Cambiar contraseña:
                                 <br>
-                                <input type="password" name="passwordEdit" id="password" value="<%= user.password %>"
+                                <input type="password" name="password" id="password" value="<%= locals.data && data.password ? data.password : user.password %>"
                                     class="campo">
                             </label>
-                            <% if(locals.errors && errors.passwordEdit ){ %>
+                            <small id="msgPassword"></small>
+                            <% if(locals.validationErrors && validationErrors.password ){ %>
                                 <h4>
-                                    <%= errors.passwordEdit.msg %>
+                                    <%= validationErrors.password.msg %>
                                 </h4>
                                 <% } %>
                         </div>

@@ -126,13 +126,13 @@ const adminControllers = {
     const resultValidation = validationResult(req)
 
     if (resultValidation.errors.length > 0) {
-        console.log(req.body);
-        let errors = resultValidation.mapped()
-        console.log(errors);
-        // return res.render("./admin/productCreate", {
-        //   errors: resultValidation.mapped(),
-        //   oldData: req.body
-        // });
+      console.log(req.body);
+      let errors = resultValidation.mapped()
+      console.log(errors);
+      // return res.render("./admin/productCreate", {
+      //   errors: resultValidation.mapped(),
+      //   oldData: req.body
+      // });
     } else {
       // ** products
       db.Product.create({

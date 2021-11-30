@@ -1,28 +1,50 @@
+
 window.addEventListener("load", function () {
+    /* bringing form */
     let form = document.querySelector("form.formulario");
+    /* bringing fields */
     let nameInput = document.querySelector("input#name")
     let lastNameInput = document.querySelector("input#lastName")
     let emailInput = document.querySelector("input#email")
     let passwordInput = document.querySelector("input#password")
+    let image = document.querySelector("input#avatarEdit");
     //let nameInput = document.querySelector("input.")
-    let errors = [];
+    let msgName = document.querySelector("small#msgName");
+    let msgLastName = document.querySelector("small#msgLastName");
+    let msgEmail = document.querySelector("small#msgEmail");
+    let msgPassword = document.querySelector("small#msgPassword");
+
+    /* validations with expressions and validation of image*/
+    /* (JPG, JPEG, PNG, GIF) */
+    var uploadFile = image.files[0];
+    var expression = /\w+@\w+\.+[a-z]/;
+    var expressionImg = /\.(jpg|jpeg|png|gif)$/i;
 
     form.addEventListener("submit", (e) => {
-        if (nameInput.value == "") {
-            errors.push("Debes escribir un nombre y debe ser de más de dos caracteres");
-        } else if (lastNameInput.value == "") {
-            errors.push("Tu apellido debe ser de más de dos caracteres");
-        } else if (emailInput.value == "") {
-            errors.push("Debes escribir un email valido");
-        } else if (passwordInput.length > 8) {
-            errors.push("Debes escribir una contraseña de más de 8 caracteres");
-        }
-        if (errors.length > 0) {
+        if (!expressionImg.test(uploadFile.name)) {
             e.preventDefault();
-            let error = document.querySelector("#divError ul");
-            for (let i = 0; i < errors.length; i++) {
-                error.innerHTML += "<li>" + errors[i] + "</li>";
-            }
+            alert("El archivo que adjuntaste no es una imagen");
+            return false;
         }
-    })
+        if (nameInput.value == "" || nameInput.value < 2) {
+            e.preventDefault();
+            msgName.innerHTML = "Debes escribir un nombre y debe contener más de 2 caracteres";
+            return false;
+        }
+        if (lastNameInput.value == "" || lastNameInput.value < 2) {
+            e.preventDefault();
+            msgLastName.innerHTML = "Debes escribir un apellido y debe ser de más de 4 caracteres";
+            return false;
+        }
+        if (!expression.test(emailInput.value)) {
+            e.preventDefault();
+            msgEmail.innerHTML = "Debes escribir un email valido";
+            return false;
+        }
+        if (passwordInput.value == "" || passwordInput.value.length > 8) {
+            e.preventDefault();
+            msgPassword.innerHTML = "Debes escribir una contraseña y debe contener más de 8 caracteres";
+            return false;
+        }
+    });
 });

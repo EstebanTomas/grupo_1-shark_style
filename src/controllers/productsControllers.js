@@ -9,8 +9,11 @@ const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 const { data } = require("jquery");
 const { search } = require("../routes/product");
+const product = db.product;
+
 
 const productsControllers = {
+
   productList: (req, res) => {
     db.Product.findAll({
       include: ['images']

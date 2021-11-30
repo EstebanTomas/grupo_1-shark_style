@@ -13,22 +13,38 @@
     </div>
     <main>
         <div class="create">
-            <form class="create-form" action="/administration/products/edit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form class="create-form" action="/administration/products/edit/<%= product.id %>?_method=PUT" method="POST"
+                enctype="multipart/form-data">
                 <div class="box">
                     <p>
                         <label class="create-text" for="name">Nombre del producto</label>
                     </p>
                     <p>
-                        <input class="create-input" type="text" name="name" value="<%= product.name%>"></input>
+                        <input class="create-input" type="text" name="name" value="<%= product.name%>">
                     </p>
+                    </label>
+                    <small id="msgLastName"></small>
+                    <% if( locals.errors && errors.lastNameEdit ) { %>
+                        <h4>
+                            <%= errors.lastNameEdit.msg %>
+                        </h4>
+                        <% } %>
                 </div>
                 <div class="box">
                     <p>
-                        <label class="create-text" for="description">Descripción</label>
+                        <label class="create-text" for="description">Descripción
                     </p>
                     <p>
-                        <input class="create-input" type="text" name="description" value="<%= product.description %>"></input>
+                        <input class="create-input" type="text" name="description"
+                            value="<%= product.description %>"></input>
                     </p>
+                    </label>
+                    <small id="msgLastName"></small>
+                    <% if( locals.errors && errors.lastNameEdit ) { %>
+                        <h4>
+                            <%= errors.lastNameEdit.msg %>
+                        </h4>
+                        <% } %>
                 </div>
                 <div class="box">
                     <p>
@@ -46,43 +62,45 @@
                         Talles actuales:
                         <% if (product.sizes[0].xs==true) { %>
                             XS
-                        <% } %>
-                        <% if (product.sizes[0].s==true) { %>
-                            S
-                        <% } %>
-                        <% if (product.sizes[0].m==true) { %>
-                            M
-                        <% } %>
-                        <% if (product.sizes[0].l==true) { %>
-                            L
-                        <% } %>
-                        <% if (product.sizes[0].xl==true) { %>
-                            XL
-                        <% } %>
+                            <% } %>
+                                <% if (product.sizes[0].s==true) { %>
+                                    S
+                                    <% } %>
+                                        <% if (product.sizes[0].m==true) { %>
+                                            M
+                                            <% } %>
+                                                <% if (product.sizes[0].l==true) { %>
+                                                    L
+                                                    <% } %>
+                                                        <% if (product.sizes[0].xl==true) { %>
+                                                            XL
+                                                            <% } %>
                     </p>
                     <p>
-                        <div class="create-options" name="size" multiple>
-                            <label><input type="checkbox" name="sizes" value="xs">XS</label>
-                            <label><input type="checkbox" name="sizes" value="s">S</label>
-                            <label><input type="checkbox" name="sizes" value="m">M</label>
-                            <label><input type="checkbox" name="sizes" value="l">L</label>
-                            <label><input type="checkbox" name="sizes" value="xl">XL</label>
-                        </div>
+                    <div class="create-options" name="size" multiple>
+                        <label><input type="checkbox" name="sizes" value="xs">XS</label>
+                        <label><input type="checkbox" name="sizes" value="s">S</label>
+                        <label><input type="checkbox" name="sizes" value="m">M</label>
+                        <label><input type="checkbox" name="sizes" value="l">L</label>
+                        <label><input type="checkbox" name="sizes" value="xl">XL</label>
+                    </div>
                     </p>
                 </div>
                 <div class="box">
                     <p>
-                        <label class="create-text" for="images">Imagenes del producto</label>
+                        <label class="create-text" for="images">Imagenes del producto
                     </p>
                     <p class="currentData">
                         Imágenes actuales:
                         <% for (let i=0; i < product.images.length; i++) { %>
                             <%= product.images[i].img %>
-                        <% } %>
+                                <% } %>
                     </p>
                     <p>
                         <input class="create-img" type="file" accept="image/*" name="images" id="images" multiple>
                     </p>
+                    </label>
+                    
                 </div>
                 <div class="box">
                     <p>
@@ -92,9 +110,9 @@
                         Colores actuales:
                         <% for (let i=0; i < product.colors.length; i++) { %>
                             <%= product.colors[i].color %>
-                        <% } %>
+                                <% } %>
                     </p>
-                        <div class="add-button">Agregar mas colores +</div>
+                    <div class="add-button">Agregar mas colores +</div>
                     <p class="conteiner-add-button">
                         <input class="create-input" type="color" name="colors"></input>
                     </p>
