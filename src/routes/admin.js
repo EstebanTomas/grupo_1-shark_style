@@ -7,13 +7,13 @@ const ValidationsOfUser = require("../../middlewares/validationsOfUser");
 const UploadProducts = require("../../middlewares/saveImgProductsMiddlewares");
 const administratorMiddlewares = require("../../middlewares/administratorMiddlewares");
 const profileMiddlewares = require("../../middlewares/profileMiddlewares");
-const validationUserEditMiddlewares = require("../../middlewares/validationUserEditMiddlewares");
+//const validationUserEditMiddlewares = require("../../middlewares/validationUserEditMiddlewares");
 
 // **USERS**
 router.post("/register", Upload.single('avatar'), ValidationsOfUser, adminControllers.saveRegister);
 
 router.get("/edit/:id", profileMiddlewares, adminControllers.updateRegister);
-router.post("/edit/:id", validationUserEditMiddlewares, Upload.single("avatarEdit"), adminControllers.save);
+router.post("/edit/:id", Upload.single("avatarEdit"), ValidationsOfUser, adminControllers.save);
 
 // **PRODUCTS**
 router.get('/products', profileMiddlewares, administratorMiddlewares, adminControllers.adminProducts)
