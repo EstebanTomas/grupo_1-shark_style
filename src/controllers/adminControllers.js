@@ -130,33 +130,7 @@ const adminControllers = {
     // intentando validar los campos del create
     const resultValidation = validationResult(req)
 
-<<<<<<< HEAD
-    // if (resultValidation.errors.length > 0) {
-    //     console.log(req.body);
-    //     let errors = resultValidation.mapped()
-    //     console.log(errors);
-    //     return res.render("./admin/productCreate", {
-    //       errors: resultValidation.mapped(),
-    //       oldData: req.body
-    //     });
-    // } else {
-    //   console.log('Perfectooo!!!!1 POR FINNNN');
-    // }
-    // console.log(req.body);
-    // ** products
     if (resultValidation.isEmpty()) {
-=======
-    if (resultValidation.errors.length > 0) {
-      console.log(req.body);
-      let errors = resultValidation.mapped()
-      console.log(errors);
-      // return res.render("./admin/productCreate", {
-      //   errors: resultValidation.mapped(),
-      //   oldData: req.body
-      // });
-    } else {
-      // ** products
->>>>>>> 2d013cc645b4b1c9e9425d013d5642f434d2f1e5
       db.Product.create({
         name: req.body.name,
         description: req.body.description,
@@ -248,7 +222,6 @@ const adminControllers = {
         .catch(error => {
           return res.send(error);
         });
-<<<<<<< HEAD
     } else {
       return res.render("./admin/productCreate", {
         resultValidation: {
@@ -276,8 +249,6 @@ const adminControllers = {
         },
         data: req.body
       })
-=======
->>>>>>> 2d013cc645b4b1c9e9425d013d5642f434d2f1e5
     }
   },
   editProduct: (req, res) => {
