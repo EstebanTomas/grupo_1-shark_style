@@ -17,6 +17,10 @@ var usersRouter = require('./routes/users');
 var productRouter = require('./routes/product');
 // route to shopping.js
 var shoppingRouter = require('./routes/shopping');
+
+// ** api **
+const apiUsersRouter = require('./routes/api/users')
+
 //configuration to be able to use put and delete.
 app.use(methodOverride('_method'));
 //configuration to be able to capture the information of the form and process it.
@@ -48,8 +52,11 @@ app.use("/cart", indexRouter);
 app.use( "/users", usersRouter);
 app.use("/products", productRouter);
 app.use("/shopping", shoppingRouter);
-//  app.use("/searchResults", productRouter);
 app.use('/product', apiRoutsProducts); 
+
+// api
+app.use(apiUsersRouter);
+
 app.use((req, res, next) => {
     res.status(404).render('error');
 });
