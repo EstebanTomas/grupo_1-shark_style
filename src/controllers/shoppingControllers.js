@@ -63,7 +63,6 @@ const shoppingControllers = {
             }]
         })
         .then( product_shop => {
-            console.log(product_shop);
             res.render('./shopping/shoppingEdit', { data: product_shop });
         })
         .catch( error => {
