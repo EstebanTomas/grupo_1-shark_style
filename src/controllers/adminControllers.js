@@ -27,7 +27,7 @@ const adminControllers = {
               lastname: req.body.lastName,
               email: req.body.email,
               password: bcryptjs.hashSync(req.body.password, 10),
-              role: 1
+              role: 9
             })
               .then((user) => {
                 Image.create({
@@ -63,7 +63,6 @@ const adminControllers = {
   },
   save: function (req, res) {
     var validations = validationResult(req);
-    console.log(validations.mapped(), "etyy");
     //    console.log(validations);
     if (validations.isEmpty()) {
       User.update({
@@ -71,7 +70,7 @@ const adminControllers = {
         lastname: req.body.lastName,
         email: req.body.email,
         password: bcryptjs.hashSync(req.body.password, 10),
-        role: req.body.role == 9 ? 9 : 9
+        role: req.body.role == 9 ? 9 : 1
       }, {
         where: { id: req.params.id }
       })
@@ -129,7 +128,7 @@ const adminControllers = {
   },
   create: (req, res) => {
     // intentando validar los campos del create
-    // const resultValidation = validationResult(req)
+    const resultValidation = validationResult(req)
 
     // if (resultValidation.errors.length > 0) {
     //     console.log(req.body);
@@ -144,97 +143,126 @@ const adminControllers = {
     // }
     // console.log(req.body);
     // ** products
-    db.Product.create({
-      name: req.body.name,
-      description: req.body.description,
-      price: req.body.price,
-      gender: req.body.gender,
-      category: req.body.category
-    })
-      .then(product => {
-        //** images 
-        let img0 = db.Image.create({
-          img: req.files[0].filename,
-          product_id: product.id
-        })
-        let img1 = db.Image.create({
-          img: req.files[1].filename,
-          product_id: product.id
-        })
-        let img2 = db.Image.create({
-          img: req.files[2].filename,
-          product_id: product.id
-        })
-        Promise.all([img0, img1, img2])
-          .then(() => {
-            // ** sizes
-            let sizes = req.body.sizes;
-            let xsData = 0;
-            let sData = 0;
-            let mData = 0;
-            let lData = 0;
-            let xlData = 0;
-            if (sizes.includes("xs")) {
-              xsData = 1;
-            }
-            if (sizes.includes("s")) {
-              sData = 1;
-            }
-            if (sizes.includes("m")) {
-              mData = 1;
-            }
-            if (sizes.includes("l")) {
-              lData = 1;
-            }
-            if (sizes.includes("xl")) {
-              xlData = 1;
-            }
-            db.Size.create({
-              product_id: product.id,
-              xs: xsData,
-              s: sData,
-              m: mData,
-              l: lData,
-              xl: xlData
-            })
-              .then(() => {
-                // ** colors
-                let colors = req.body.colors;
-                // ** pregunto si viene mas de un color, para que no me itere sobre el nombre del color.
-                if (Array.isArray(colors)) {
-                  for (let i = 0; i < colors.length; i++) {
+    if (resultValidation.isEmpty()) {
+      db.Product.create({
+        name: req.body.name,
+        description: req.body.description,
+        price: req.body.price,
+        gender: req.body.gender,
+        category: req.body.category
+      })
+        .then(product => {
+          //** images 
+          let img0 = db.Image.create({
+            img: req.files[0].filename,
+            product_id: product.id
+          })
+          let img1 = db.Image.create({
+            img: req.files[1].filename,
+            product_id: product.id
+          })
+          let img2 = db.Image.create({
+            img: req.files[2].filename,
+            product_id: product.id
+          })
+          Promise.all([img0, img1, img2])
+            .then(() => {
+              // ** sizes
+              let sizes = req.body.sizes;
+              let xsData = 0;
+              let sData = 0;
+              let mData = 0;
+              let lData = 0;
+              let xlData = 0;
+              if (sizes.includes("xs")) {
+                xsData = 1;
+              }
+              if (sizes.includes("s")) {
+                sData = 1;
+              }
+              if (sizes.includes("m")) {
+                mData = 1;
+              }
+              if (sizes.includes("l")) {
+                lData = 1;
+              }
+              if (sizes.includes("xl")) {
+                xlData = 1;
+              }
+              db.Size.create({
+                product_id: product.id,
+                xs: xsData,
+                s: sData,
+                m: mData,
+                l: lData,
+                xl: xlData
+              })
+                .then(() => {
+                  // ** colors
+                  let colors = req.body.colors;
+                  // ** pregunto si viene mas de un color, para que no me itere sobre el nombre del color.
+                  if (Array.isArray(colors)) {
+                    for (let i = 0; i < colors.length; i++) {
+                      db.Color.create({
+                        color: colors[i],
+                        product_id: product.id
+                      })
+                        .catch(error => {
+                          return res.send(error);
+                        })
+                    }
+                  } else {
                     db.Color.create({
-                      color: colors[i],
+                      color: colors,
                       product_id: product.id
                     })
                       .catch(error => {
                         return res.send(error);
                       })
                   }
-                } else {
-                  db.Color.create({
-                    color: colors,
-                    product_id: product.id
-                  })
-                    .catch(error => {
-                      return res.send(error);
-                    })
-                }
-              })
-              .catch(error => {
-                return res.send(error);
-              })
-          })
-          .catch(error => {
-            return res.send(error);
-          })
+                })
+                .catch(error => {
+                  return res.send(error);
+                })
+            })
+            .catch(error => {
+              return res.send(error);
+            })
+        })
+        .then(() => {
+          res.redirect("/administration/products");
+        })
+        .catch(error => {
+          return res.send(error);
+        });
+    } else {
+      return res.render("./admin/productCreate", {
+        resultValidation: {
+          name: {
+            msg: "Este campo no debe estar vacío y tiene un máximo de 80 caracteres."
+          },
+          description: {
+            msg: "Este campo debe tener un minimo de 20 caracteres y máximo 100."
+          },
+          price: {
+            msg: "Este campo no debe estar vacio y solo se aceptan numeros"
+          },
+          sizes: {
+            msg: "Debes seleccionar almenos un talle, 'sizes'."
+          },
+          colors: {
+            msg: "Selecciona un color"
+          },
+          gender: {
+            msg : "Selecciona un genero"
+          },
+          category: {
+            msg : "Selecciona una categoria"
+          }
+        },
+        data: req.body
       })
-      .then(() => {
-        res.redirect("/administration/products");
-      })
-      .catch(error => {
-        return res.send(error);
-      });
+    }
   },
   editProduct: (req, res) => {
     db.Product.findByPk(req.params.id, {
