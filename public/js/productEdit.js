@@ -11,12 +11,11 @@ window.onload = function () {
 
             let form = document.querySelector("form.create-form");
 
-
             let name = document.querySelector("input#name");
 
             let description = document.querySelector("input#description");
 
-            let images = document.querySelector("input#images-");
+            let images = document.querySelector("input#images");
 
             var uploadFile = images.files[0];
 
@@ -30,7 +29,7 @@ window.onload = function () {
 
 
             form.addEventListener("submit", (e) => {
-                if (!expressionImgage.test(uploadFile.name)) {
+                if (!expressionImage.test(uploadFile.name)) {
                     e.preventDefault();
                     alert("El archivo que adjuntaste no es una imagen");
                     return false;

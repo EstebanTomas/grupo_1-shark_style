@@ -1,0 +1,20 @@
+const { check } = require("express-validator");
+
+const editProductValidation = [
+
+    check('name').notEmpty().isLength({ min: 5 }).withMessage('Este campo no puede estar vació. El nombre del producto tiene que contener más de 5 caracteres'),
+
+    check('description').notEmpty().isLength({ min: 20 }).withMessage('Este campo no puede estar vació .Su descripcion del producto debe tener más de 20 caracteres'),
+
+    check("price").notEmpty().isNumeric().whiteMessage("Este campo no puede estar vacío. Coloque un precio a su producto/s."),
+
+    check("size").notEmpty().withMessage("Este campo no puede estar vació. Debe seleccionar un talle."),
+
+    check("colors").notEmpty().withMessage("Este campo no puede estar vacío."),
+
+    check("category").notEmpty().withMessage("Este campo no puede estar vació."),
+];
+
+
+module.exports = editProductValidation;
+
