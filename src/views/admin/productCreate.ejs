@@ -19,24 +19,33 @@
                         <label class="create-text" for="name">Nombre del producto</label>
                     </p>
                     <p>
-                        <input class="create-input" type="text" name="name" id="name"></input>
+                        <input class="create-input" type="text" name="name" id="name" value="<%= locals.data && data.name? data.name : "" %>"></input>
                     </p>
+                    <% if (locals.resultValidation && resultValidation.name) { %>
+                      <%= resultValidation.name.msg %> 
+                        <% } %> 
                 </div>
                 <div class="box">
                     <p>
                         <label class="create-text" for="description">Descripción</label>
                     </p>
                     <p>
-                        <input class="create-input" type="text" name="description" id="description"></input>
+                        <input class="create-input" type="text" name="description" id="description" value="<%= locals.data && data.description? data.description : "" %>" ></input>
                     </p>
+                    <% if (locals.resultValidation && resultValidation.description) { %>
+                        <%= resultValidation.description.msg %> 
+                     <% } %>
                 </div>
                 <div class="box">
                     <p>
                         <label class="create-text" for="price">Precio</label>
                     </p>
                     <p>
-                        <input class="create-input" type="number" name="price" id="price"></input>
+                        <input class="create-input" type="number" name="price" id="price" value="<%= locals.data && data.price? data.price : "" %>"></input>
                     </p>
+                    <% if (locals.resultValidation && resultValidation.price) { %>
+                        <%= resultValidation.price.msg %> 
+                     <% } %>
                 </div>
                 <div class="box">
                     <p>
@@ -51,6 +60,9 @@
                             <label><input type="checkbox" name="sizes" id="sizes" value="xl">XL</label>
                         </div>
                     </p>
+                    <% if (locals.resultValidation && resultValidation.sizes) { %>
+                        <%= resultValidation.sizes.msg %> 
+                     <% } %>
                 </div>
                 <div class="box">
                     <p>
@@ -66,8 +78,11 @@
                     </p>
                         <div class="add-button">Agregar mas colores +</div>
                     <p class="conteiner-add-button">
-                        <input class="create-input" type="color" name="colors" id="colors"></input>
+                        <input class="create-input" type="color" name="colors" id="colors" value="<%= locals.data && data.colors? data.colors : "" %>"></input>
                     </p>
+                    <% if (locals.resultValidation && resultValidation.colors) { %>
+                        <%= resultValidation.colors.msg %> 
+                     <% } %>
                 </div>
                 <div class="box">
                     <p>
@@ -80,6 +95,9 @@
                             <option type="checkbox" name="gender-unisex">Unisex</option>
                         </select>
                     </p>
+                    <% if (locals.resultValidation && resultValidation.gender) { %>
+                        <%= resultValidation.gender.msg %> 
+                     <% } %>
                 </div>
                 <div class="box">
                     <p>
@@ -96,7 +114,11 @@
                             <option type="checkbox" name="category-divers">Buzos</option>
                             <option type="checkbox" name="category-sets">Conjuntos</option>
                         </select>
+                    <% if (locals.resultValidation && resultValidation.category) { %>
+                        <%= resultValidation.category.msg %> 
+                     <% } %>
                     </p>
+
                 </div>
                 <div class="box-button">
                     <p class="box-button-send">
