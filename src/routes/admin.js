@@ -16,6 +16,10 @@ router.post("/register", Upload.single('avatar'), ValidationsOfUser, adminContro
 
 router.get("/edit/:id", profileMiddlewares, adminControllers.updateRegister);
 router.post("/edit/:id", Upload.single("avatarEdit"), ValidationsOfUser, adminControllers.save);
+/* 
+router.get("destroy_user/:id", administratorMiddlewares, adminControllers.destroyUser)
+router.delete("destroy_user/:id", adminControllers.delete)
+ */
 
 // **PRODUCTS**
 router.get('/products', profileMiddlewares, administratorMiddlewares, adminControllers.adminProducts)
@@ -27,8 +31,5 @@ router.get('/products/edit/:id', profileMiddlewares, administratorMiddlewares, a
 router.put('/products/edit/:id', profileMiddlewares, administratorMiddlewares, UploadProducts.array("images", 3), adminControllers.edit);
 // routes in delete
 router.delete('/products/delete/:id', profileMiddlewares, administratorMiddlewares, adminControllers.delete);
-/* 
-router.get("destroy_user/:id", administratorMiddlewares, adminControllers.destroyUser)
-router.delete("destroy_user/:id", adminControllers.delete)
- */
+
 module.exports = router;
