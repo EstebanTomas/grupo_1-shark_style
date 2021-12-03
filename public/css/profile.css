@@ -1,13 +1,14 @@
 * {
     box-sizing: border-box;
 }
-
+/* body */
 .all_container {
     font-family: 'Roboto Condensed', sans-serif;
+    margin: 0px;
 }
 
 main {
-    margin : 50px auto;
+    margin : 100px auto 50px;
     border : solid black 1px;
     display: flex;
 }

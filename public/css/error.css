@@ -5,6 +5,7 @@
 body {
     background-image : url('../img/relevant-images/error-404.jpg');
     background-position: top center;
+    margin: 0px;
 }
 
 main {
