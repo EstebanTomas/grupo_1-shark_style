@@ -33,9 +33,6 @@
                         <% } %>
                             <article id="img" class="right_bar">
                                 <div class="div-container002">
-                                    <!--
-                                <img src="/img/user_photo/<%# locals.userToLogged.image[0] %>"
-                                    alt="imagen de usuario" width="40px" class="img"> -->
                                     <img src="/img/user_photo/<%= locals.userToLogged.Image? locals.userToLogged.Image[0].avatar : 'user_anonimo.jpg'%>"
                                         alt="imagen de usuario" width="40px" class="img">
                                     <h4 class="name-session">
