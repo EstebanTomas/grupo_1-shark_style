@@ -20,7 +20,7 @@ window.onload = function () {
         small.innerText = "";
     });
     confirmPassword.addEventListener("focus", function () {
-        smallPassword.innerText = "Tu contraseña debe contener más de 8 caracteres";
+        smallPassword.innerText = "Ingresa tu contraseña";
     });
     confirmPassword.onchange = () => {
         console.log(this.currentTarget, "eah");

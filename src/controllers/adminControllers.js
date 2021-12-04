@@ -27,7 +27,7 @@ const adminControllers = {
               lastname: req.body.lastName,
               email: req.body.email,
               password: bcryptjs.hashSync(req.body.password, 10),
-              role: 9
+              role: 1
             })
               .then((user) => {
                 Image.create({

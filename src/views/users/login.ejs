@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <%- include('../partials/head') -%>
         <link rel="stylesheet" href="/css/login.css">
         <title> Ingresá tu cuenta</title>
 </head>
+
 <body>
     <div>
         <%- include('../partials/header') -%>
     </div>
-    <main>
+    <main class="elementMain">
         <div class="login-container">
             <div class="login-info-container">
+                <article class="containerOfImgAndTitle">
+                    <img src="/img/logo-shoes.svg" alt="logo-shoes" class="" width="100px">
+                    <h3 class="title-shark">Shark Style</h3>
+                </article>
                 <form class="inputs-container" action="/users/login" method="POST">
                     <% if(locals.errors && errors.email){ %>
                         <div>
                             <%= errors.email.msg %>
                         </div>
                         <% } %>
-                        <small class="msg-email"></small>
+                            <small class="msg-email"></small>
                             <input class="input" type="email" placeholder="E-mail" id="confirmEmail" name="email"
                                 value="<%= locals.values_olds && values_olds.email ? values_olds.email : " " %>">
                             <% if(locals.errors && errors.password){ %>
@@ -26,28 +32,28 @@
                                     <%= errors.password.msg %>
                                 </div>
                                 <% } %>
-                                <small class="msg-password"></small>
-                                    <input class="input" type="password" placeholder="Password" name="password" id="confirmPassword">
-                                        <label>
-                                            <input type="checkbox" class="checkbox" name="remember_user">Recordame
-                                        </label>
-                                    <button type="submit" class="boton">Login</button>
-                                    <span class="span"><a href="/users/register">¿no tienes una
-                                            cuenta?</a></span>
-                                    <span class="span">olvidaste tu contraseña?</span>
+                                    <small class="msg-password"></small>
+                                    <input class="input" type="password" placeholder="Password" name="password"
+                                        id="confirmPassword">
+                                    <label>
+                                        <input type="checkbox" class="checkbox" name="remember_user">Recordame
+                                    </label>
+                                    <button type="submit" class="boton">Iniciar sesión</button>
+                                    <span class="span">¿Olvidaste tu contraseña?</span>
+                                    <span class="span">¿No tienes una cuenta?<a href="/users/register" class="link-register">   Registrate</a></span>
                 </form>
-                <p>or</p>
-                <h1 class="title">Log in with</h1>
+                <h3 class="title">Inicia sesión con google o facebook</h3>
                 <div class="redes-login">
+                    
                     <div class="redes-login-element">
                         <a
                             href="https://accounts.google.com/signin/v2/identifier?hl=es&passive=true&continue=https%3A%2F%2Fwww.google.com%2F&ec=GAZAmgQ&flowName=GlifWebSignIn&flowEntry=ServiceLogin">
-                            <img src="../img/google.svg" alt="google-image">
+                            <i class="fab fa-google"></i>
                         </a>
                     </div>
                     <div class="redes-login-element">
                         <a href="https://es-la.facebook.com/">
-                            <img src="../img/facebook.svg" alt="facebook-image">
+                            <i class="fab fa-facebook"></i>
                         </a>
                     </div>
                 </div>
@@ -60,4 +66,5 @@
     </div>
     <script src="/js/login.js" text="text/javascript"></script>
 </body>
+
 </html>

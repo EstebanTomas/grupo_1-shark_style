@@ -5,7 +5,7 @@
 @media (max-width: 485px) {
 
     /* header top */
-    .container {
+    .container-header {
         position: fixed;
         width   : 100%;
         top     : 0px;
@@ -130,7 +130,7 @@
         z-index         : 1;
     }
 
-    .container {
+    .container-header {
         background-color: #132C33;
         position        : fixed;
         width           : 100%;
@@ -278,9 +278,9 @@
     }
 
     .options-navbar {
-        padding            : 0px 10px;
+        padding            : 0px 20px;
         color              : #132C33;
-        font-size          : 23px;
+        font-size          : 20px;
         font-weight        : 600;
         -webkit-text-stroke: medium;
         letter-spacing     : 2px;
