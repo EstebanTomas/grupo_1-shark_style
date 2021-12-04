@@ -20,6 +20,9 @@ var shoppingRouter = require('./routes/shopping');
 
 // ** api **
 const apiUsersRouter = require('./routes/api/users')
+const apiProductsRouter = require('./routes/api/products')
+const apiProductShopRouter = require('./routes/api/productShop')
+
 
 //configuration to be able to use put and delete.
 app.use(methodOverride('_method'));
@@ -56,6 +59,9 @@ app.use('/product', apiRoutsProducts);
 
 // api
 app.use(apiUsersRouter);
+app.use(apiProductsRouter);
+app.use(apiProductShopRouter);
+
 
 app.use((req, res, next) => {
     res.status(404).render('error');
