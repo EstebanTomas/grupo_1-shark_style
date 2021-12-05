@@ -4,6 +4,7 @@
 body {
     font-family: 'Roboto Condensed', sans-serif;
     background-color: #f2f2f2;
+    margin: 0px;
     /* también le puse de color de fondo al cremita clarito de la paleta de colores que usamos */
 }
 .main {

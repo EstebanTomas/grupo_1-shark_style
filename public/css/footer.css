@@ -1,7 +1,7 @@
 /*de aqui para abajo se encuentra el estilo del footer*/
 
 footer {
-    background-color: rgb(243, 244, 237);
+    background-color: #D8E3E7;
     font-family: 'Roboto Condensed', sans-serif;
 }
 
@@ -12,7 +12,7 @@ footer section {
 }
 
 footer section .conteiner-suscriptor-first-block {
-    background-color: rgb(66, 70, 66);
+    background-color: #132C33;
     text-align: left;
     padding: 30px;
 }
@@ -30,7 +30,7 @@ footer section .suscriptor {
 }
 
 footer section .email {
-    background-color: rgb(243, 244, 237);
+    background-color: #D8E3E7;
     color:rgb(66, 70, 66);
     font-size: 18px;
     font-style: italic;

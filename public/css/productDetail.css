@@ -1,6 +1,7 @@
 body {
     background-color: rgb(243, 244, 237);
     font-family: 'Roboto Condensed', sans-serif;
+    margin: 0px;
 }
 
 main {
@@ -262,7 +263,7 @@ main section form article .follow:hover {
     main {
         margin-top: 60px;
     }
-    main section .container {
+    main section .container-principalPicture {
         width: 45%;
     }
     main section .detail {

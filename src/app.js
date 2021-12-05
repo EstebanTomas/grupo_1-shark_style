@@ -20,6 +20,9 @@ var shoppingRouter = require('./routes/shopping');
 
 // ** api **
 const apiUsersRouter = require('./routes/api/users')
+const apiProductsRouter = require('./routes/api/products')
+const apiProductShopRouter = require('./routes/api/productShop')
+
 
 //configuration to be able to use put and delete.
 app.use(methodOverride('_method'));
@@ -42,8 +45,8 @@ app.use(express.static(publicpath));
 app.set('views', path.resolve(__dirname, './views'));
 app.set('view engine', 'ejs');
 // server
-app.listen( 3000, () => {
-    console.log('Server on port 3000');
+app.listen( 3030, () => {
+    console.log('Server on port 3030');
 });
 // main routes
 app.use("/", indexRouter);
@@ -56,6 +59,9 @@ app.use('/product', apiRoutsProducts);
 
 // api
 app.use(apiUsersRouter);
+app.use(apiProductsRouter);
+app.use(apiProductShopRouter);
+
 
 app.use((req, res, next) => {
     res.status(404).render('error');
