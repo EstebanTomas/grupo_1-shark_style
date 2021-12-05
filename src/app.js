@@ -45,8 +45,8 @@ app.use(express.static(publicpath));
 app.set('views', path.resolve(__dirname, './views'));
 app.set('view engine', 'ejs');
 // server
-app.listen( 3000, () => {
-    console.log('Server on port 3000');
+app.listen( 3030, () => {
+    console.log('Server on port 3030');
 });
 // main routes
 app.use("/", indexRouter);
