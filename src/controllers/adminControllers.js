@@ -70,7 +70,7 @@ const adminControllers = {
         lastname: req.body.lastName,
         email: req.body.email,
         password: bcryptjs.hashSync(req.body.password, 10),
-        role: req.body.role == 9 ? 9 : 1
+        role: req.body.role == 9 ? 9 : 1 
       }, {
         where: { id: req.params.id }
       })
@@ -253,9 +253,11 @@ const adminControllers = {
   },
   editProduct: (req, res) => {
     db.Product.findByPk(req.params.id, {
-      include: ['images', 'sizes', 'colors']
+      include: [{Association:"images"}, {Association:"sizes"}, {Association:"colors"}]
     })
       .then(product => {
+        req.session.ofProduct = product;
+        console.log(product, "amigo");
         res.render("./admin/productEdit", { product });
       })
       .catch(error => {
@@ -264,8 +266,8 @@ const adminControllers = {
   },
   edit: (req, res) => {
     // ** products  
-    const resultValidation = validationResult(req)
-    if (resultValidation.isEmpty()) {
+    const editProductValidation = validationResult(req)
+    if (editProductValidation.isEmpty()) {
       db.Product.update({
         name: req.body.name,
         description: req.body.description,
@@ -378,9 +380,10 @@ const adminControllers = {
         .catch(error => {
           return res.send(error);
         })
-    }{
+    } {
       return res.render("./admin/productCreate", {
-        resultValidation: {
+        product: req.session.ofProduct,
+        editProductValidation: {
           name: {
             msg: "Este campo no debe estar vacío y tiene un máximo de 80 caracteres."
           },
@@ -403,7 +406,7 @@ const adminControllers = {
             msg: "Selecciona una categoria"
           }
         },
-        data: req.body
+        allDataProduts: req.body
       })
     }
   },

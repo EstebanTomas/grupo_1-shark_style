@@ -20,9 +20,9 @@
                         <label class="create-text" for="name">Nombre del producto</label>
                     </p>
                     <p>
-                        <input class="create-input" type="text" name="name" value="<%= locals.data && data.name? data.name : "" %>">
-                    </p>  <% if (locals.resultValidation && resultValidation.name) { %>
-                        <%= resultValidation.name.msg %> 
+                        <input class="create-input" type="text" name="name" value="<%= locals.data && data.name? data.name : product.name %>">
+                    </p>  <% if (locals.editProductValidation && editProductValidation.name) { %>
+                        <%= editProductValidation.name.msg %> 
                           <% } %> 
                     </label>
                   
@@ -33,9 +33,9 @@
                     </p>
                     <p>
                         <input class="create-input" type="text" name="description"
-                        value="<%= locals.data && data.description? data.description : "" %>"></input>
-                    </p>  <% if (locals.resultValidation && resultValidation.description) { %>
-                        <%= resultValidation.description.msg %> 
+                        value="<%= locals.data && data.description? data.description : product.description %>"></input>
+                    </p>  <% if (locals.editProductValidation && editProductValidation.description) { %>
+                        <%= editProductValidation.description.msg %> 
                           <% } %> 
                     </label>
                    
@@ -45,9 +45,9 @@
                         <label class="create-text" for="price">Precio</label>
                     </p>
                     <p>
-                        <input class="create-input" type="number" name="price" value="<%= locals.data && data.price? data.price : "" %>"></input>
-                    </p>  <% if (locals.resultValidation && resultValidation.price) { %>
-                        <%= resultValidation.price.msg %> 
+                        <input class="create-input" type="number" name="price" value="<%= locals.allDataProduts && allDataProduts.price? allDataProduts.price : product.price %>"></input>
+                    </p>  <% if (locals.editProductValidation && editProductValidation.price) { %>
+                        <%= editProductValidation.price.msg %> 
                           <% } %> 
                 </div>
                 <div class="box">
@@ -56,7 +56,7 @@
                     </p>
                     <p class="currentData">
                         Talles actuales:
-                        <% if (product.sizes[0].xs==true) { %>
+                        <% if (product.size[0].xs==true) { %>
                             XS
                             <% } %>
                                 <% if (product.sizes[0].s==true) { %>
@@ -80,8 +80,8 @@
                         <label><input type="checkbox" name="sizes" value="l">L</label>
                         <label><input type="checkbox" name="sizes" value="xl">XL</label>
                     </div>
-                    </p>  <% if (locals.resultValidation && resultValidation.size) { %>
-                        <%= resultValidation.size.msg %> 
+                    </p>  <% if (locals.editProductValidation && editProductValidation.size) { %>
+                        <%= editProductValidation.size.msg %> 
                           <% } %> 
                 </div>
                 <div class="box">
@@ -112,9 +112,9 @@
                     </p>
                     <div class="add-button">Agregar mas colores +</div>
                     <p class="conteiner-add-button">
-                        <input class="create-input" type="color" name="colors" value="<%= locals.data && data.colors? data.colors : "" %>"></input>
-                    </p>  <% if (locals.resultValidation && resultValidation.colors) { %>
-                        <%= resultValidation.colors.msg %> 
+                        <input class="create-input" type="color" name="colors" value="<%= locals.data && data.colors? data.colors : product.colors%>"></input>
+                    </p>  <% if (locals.editProductValidation && editProductValidation.colors) { %>
+                        <%= editProductValidation.colors.msg %> 
                           <% } %> 
                 </div>
                 <div class="box">
@@ -131,8 +131,8 @@
                             <option type="checkbox" name="gender-women">Mujer</option>
                             <option type="checkbox" name="gender-unisex">Unisex</option>
                         </select>
-                    </p>  <% if (locals.resultValidation && resultValidation.gender) { %>
-                        <%= resultValidation.gender.msg %> 
+                    </p>  <% if (locals.editProductValidation && editProductValidation.gender) { %>
+                        <%= editProductValidation.gender.msg %> 
                           <% } %> 
                 </div>
                 <div class="box">
@@ -158,8 +158,8 @@
                             <option type="checkbox" name="category-socks">Medias</option>
                             <option type="checkbox" name="category-sports-shoes">Calzado Deportivo</option>
                         </select>
-                    </p>  <% if (locals.resultValidation && resultValidation.category) { %>
-                        <%= resultValidation.category.msg %> 
+                    </p>  <% if (locals.editProductValidation && editProductValidation.category) { %>
+                        <%= editProductValidation.category.msg %> 
                           <% } %> 
                 </div>
                 <div class="box-button">
