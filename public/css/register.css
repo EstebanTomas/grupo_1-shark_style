@@ -3,13 +3,45 @@
 }
 
 body {
-    font-family: 'Roboto Condensed', sans-serif;
-    margin: 0px;
+    font-family          : 'Roboto Condensed', sans-serif;
+    margin               : 0px;
+    background-image     : url('../img/relevant-images/jorda.jpg');
+    background-repeat    : no-repeat;
+    background-size      : cover;
+    background-attachment: fixed;
+    background-position  : center center;
     /* también le puse de color de fondo al cremita clarito de la paleta de colores que usamos */
 }
 
+.elementContainerOfRegister {
+    border: 1px solid red;
+    margin: 68px 0px -102px 0px;
+}
+
+.div-main {
+    margin: 100px auto;
+    border: solid 1px gold;
+}
+.conteinerOfAllTheElements {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.name, .lastName, .email, .password {
+    margin: 0px 0px;
+    color: white;
+}
+
+.formOfRegister {
+    border          : dodgerblue 1px dotted;
+    background-color: #126e82cf;
+    width           : 30%;
+    margin          : 0px 0px 40px 15%;
+}
+
 /* agregue esta estas lineas de código para darle un border radius */
-main .main-form {
+/* main .main-form {
     border-radius: 8px;
 }
 
@@ -17,7 +49,7 @@ main .section-logo {
     border-radius: 8px;
 }
 
-/* hasta aca */
+/* hasta aca /
 
 .hh2 {
     display: none;
@@ -86,7 +118,7 @@ h2 {
     margin: auto;
 }
 
-/* le cambie el color del boton y ajuste el tamaño de la letra */
+/* le cambie el color del boton y ajuste el tamaño de la letra /
 .conteiner-button {
     text-align: center;
 }
@@ -190,4 +222,4 @@ h2 {
     .text-p {
         display: block;
     }
-}
+} */
