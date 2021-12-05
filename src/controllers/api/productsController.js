@@ -40,19 +40,42 @@ const productsController = {
                         price: data.price,
                         gender: data.gender,
                         category: data.category,
-                        detail: `/products/detail/${data.id}`
                     };
                     products.push(product);
                 })
                 let countCategories = [
-                    {remeras: data[0]},
-                    {musculosas: data[1]},
-                    {pantalones_largos: data[2]},
-                    {shorts: data[3]},
-                    {calzas_termicas: data[4]},
-                    {camperas: data[5]},
-                    {buzos: data[6]},
-                    {conjuntos: data[7]}
+                    {
+                        name: "Remeras",
+                        amount: data[0]
+                    },
+                    {
+                        name: "Musculosas",
+                        amount: data[1]
+                    },
+                    {
+                        name: "Pantalones Largos",
+                        amount: data[2]
+                    },
+                    {
+                        name: "Shorts",
+                        amount: data[3]
+                    },
+                    {
+                        name: "Calzas Termicas",
+                        amount: data[4]
+                    },
+                    {
+                        name: "Camperas",
+                        amount: data[5]
+                    },
+                    {
+                        name: "Buzos",
+                        amount: data[6]
+                    },
+                    {
+                        name: "Conjuntos",
+                        amount: data[7]
+                    }
                 ]
                 res.status(200).json( {
                     meta: {
@@ -98,9 +121,10 @@ const productsController = {
                     price: data.price,
                     gender: data.gender,
                     category: data.category,
+                    detail: `http://localhost:3030/products/detail/${data.id}`,
                     colors: colorsArray,
                     sizes: sizesArray,
-                    image: `/img/productImage/${data.images[0].img}`
+                    image: `http://localhost:3030/img/productImage/${data.images[0].img}`
                 };
                 res.status(200).json( {
                     meta: {

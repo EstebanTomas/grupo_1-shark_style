@@ -108,26 +108,40 @@ const adminControllers = {
         }
       });
     } /* validations.mapped(), */
-
+  },
+  deleteUsers: (req, res) => {
+    let imgUser = db.User.destroy({
+      where: {
+        user_id: req.params.id
+      }
+    });
+    let user = db.User.destroy({
+      where: {
+        id: req.params.id
+      }
+    });
+    Promise.all([imgUser, user])
+      .then(() => {
+        res.redirect('/');
+      });
   },
 
   // ***PRODUCTS***
-  adminProducts: (req, res) => {
-    db.Product.findAll({
-      include: ['images']
-    })
-      .then(products => {
-        res.render("./admin/productsAdmin", { products });
-      })
-      .catch(error => {
-        return res.send(error);
-      });
-  },
+  // adminProducts: (req, res) => {
+  //   db.Product.findAll({
+  //     include: ['images']
+  //   })
+  //     .then(products => {
+  //       res.render("./admin/productsAdmin", { products });
+  //     })
+  //     .catch(error => {
+  //       return res.send(error);
+  //     });
+  // },
   productCreate: (req, res) => {
     res.render("./admin/productCreate");
   },
   create: (req, res) => {
-    // intentando validar los campos del create
     const resultValidation = validationResult(req)
 
     if (resultValidation.isEmpty()) {
@@ -217,7 +231,7 @@ const adminControllers = {
             })
         })
         .then(() => {
-          res.redirect("/administration/products");
+          res.redirect("http://localhost:3000/");
         })
         .catch(error => {
           return res.send(error);
@@ -373,7 +387,7 @@ const adminControllers = {
             })
         })
         .then(() => {
-          res.redirect("/administration/products");
+          res.redirect("http://localhost:3000/");
         })
         .catch(error => {
           return res.send(error);
@@ -478,26 +492,10 @@ const adminControllers = {
 
     Promise.all([sizes, images, colors, product])
       .then(() => {
-        res.redirect("/administration/products");
+        res.redirect("http://localhost:3000/");
       })
       .catch(error => {
         return res.send(error);
-      });
-  },
-  deleteUsers: (req, res) => {
-    let imgUser = db.User.destroy({
-      where: {
-        user_id: req.params.id
-      }
-    });
-    let user = db.User.destroy({
-      where: {
-        id: req.params.id
-      }
-    });
-    Promise.all([imgUser, user])
-      .then(() => {
-
       });
   }
 }

@@ -75,6 +75,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'Agustin','Larralde','admin@gmail.com','$2a$10$FoTgqnBibbHITC.IEL33VO6EO5hIJznQIHf.UxYCph2pQcA72mi4i',9),(2,'Carlos Agustin','Larralde Bona','dosagus66@gmail.com','$2a$10$nRT22gcWgMDYOzxGTm/LaOA2modxcyD2H2vYmtnPUwwMqlHL1JdS.',1);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -299,7 +300,7 @@ CREATE TABLE `user_img` (
 
 LOCK TABLES `user_img` WRITE;
 /*!40000 ALTER TABLE `user_img` DISABLE KEYS */;
-INSERT INTO `user_img` VALUES (1,'user_anonimo.jpg',1);
+INSERT INTO `user_img` VALUES (1,'user_anonimo.jpg',1),(2,'user_anonimo.jpg',2);
 /*!40000 ALTER TABLE `user_img` ENABLE KEYS */;
 UNLOCK TABLES;
 
