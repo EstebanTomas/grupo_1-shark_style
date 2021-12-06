@@ -15,23 +15,66 @@ const User = db.User;
 const Image = db.UserImg;
 
 const adminControllers = {
-  // ***USERS***
-  saveRegister: function (req, res) {
-    let errors = validationResult(req);
-    User.findAll()
-      .then(users => {
-        for (let i = 0; i < users.length; i++) {
-          if (req.body.email == users[i]) {
-            return res.render("./users/register", {
-              errors: {
-                name: {
-                  msg: "Debes escribir un nombre de usuario con más de 2 caracteres"
-                },
-                lastName: {
-                  msg: "Debes escribir un apellido con más de 4 caracteres"
-                },
-                email: {
-                  msg: "Debes escribir un email valido"
+    // ***USERS***
+    saveRegister: function(req, res) {
+        let errors = validationResult(req);
+        /*  User.findAll()
+           .then(users => {
+             for (let i = 0; i < users.length; i++) {
+               if (req.body.email === users[i]) {
+                 return res.render("./users/register", {
+                   errors: {
+                     name: {
+                       msg: "Debes escribir un nombre de usuario con más de 2 caracteres"
+                     },
+                     lastName: {
+                       msg: "Debes escribir un apellido con más de 4 caracteres"
+                     },
+                     email: {
+                       msg: "Debes escribir un email valido"
+                     },
+                     password: {
+                       msg: "Debes escribir una contraseña con más de 8 caracteres"
+                     }
+                   },
+                   incomingData: req.body
+                 });
+               }
+             }
+           }); */
+        User.findAll()
+        if (errors.isEmpty()) {
+            User.create({
+                    name: req.body.name,
+                    lastname: req.body.lastname,
+                    email: req.body.email,
+                    password: bcryptjs.hashSync(req.body.password, 10),
+                    role: 1
+                })
+                .then((user) => {
+                    Image.create({
+                        avatar: req.file ? req.file.filename : "user_anonimo.jpg",
+                        user_id: user.id
+                    });
+                    return res.redirect("/users/login")
+                }).catch((error) => {
+                    return res.send(error)
+                });
+        } else {
+            res.render("./users/register", {
+                errors: {
+                    name: {
+                        msg: "Debes escribir un nombre de usuario con más de 2 caracteres"
+                    },
+                    lastname: {
+                        msg: "Debes escribir un apellido con más de 4 caracteres"
+                    },
+                    email: {
+                        msg: "Debes escribir un email valido"
+                    },
+                    password: {
+                        msg: "Debes escribir una contraseña con más de 8 caracteres"
+                    }
                 },
                 incomingData: req.body
             })
@@ -96,25 +139,13 @@ const adminControllers = {
                     }
                 }
             });
-          }
-        }
-      });
-    if (errors.isEmpty()) {
-      User.create({
-        name: req.body.name,
-        lastname: req.body.lastname,
-        email: req.body.email,
-        password: bcryptjs.hashSync(req.body.password, 10),
-        role: 1
-      })
-        .then((user) => {
-          Image.create({
-            avatar: req.file ? req.file.filename : "user_anonimo.jpg",
-            user_id: user.id
-          });
-          return res.redirect("/users/login")
-        }).catch((error) => {
-          return res.send(error)
+        } /* validations.mapped(), */
+    },
+    deleteUsers: (req, res) => {
+        let imgUser = db.User.destroy({
+            where: {
+                user_id: req.params.id
+            }
         });
         let user = db.User.destroy({
             where: {
