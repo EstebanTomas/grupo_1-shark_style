@@ -23,7 +23,6 @@ router.delete("destroy_user/:id", adminControllers.delete)
  */
 
 // **PRODUCTS**
-// router.get('/products', profileMiddlewares, administratorMiddlewares, adminControllers.adminProducts)
 // route of create
 router.get('/products/create', profileMiddlewares, administratorMiddlewares, adminControllers.productCreate);
 router.post('/products/create', profileMiddlewares, administratorMiddlewares, UploadProducts.array("images", 3), productCreateValidations, adminControllers.create);

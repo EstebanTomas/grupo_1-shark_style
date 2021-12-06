@@ -19,6 +19,7 @@ main .general-box {
     width: 90%;
     margin: auto;
     margin-bottom: 30px;
+    margin-top: 90px;
     padding-top: 15px;
     padding-bottom: 15px;
     border-radius: 7px;
@@ -69,7 +70,7 @@ main section article .category {
 main section article .name {
     font-size: 40px;
     text-align: left;
-    color: rgb(192, 96, 20);
+    color: rgb(18, 110, 130);
     font-weight: bold;
 }
 
@@ -83,7 +84,7 @@ main section article .description {
 main section article .price {
     font-size: 45px;;
     text-align: left;
-    color: rgb(66, 70, 66);
+    color: rgb(19, 44, 51);
     padding-top: 5px;
 }
 
@@ -162,23 +163,23 @@ main section form .action {
 }
 
 main section form article .saveCart {
-    background-color: rgb(192, 96, 20);
-    color: rgb(243, 244, 237);
-    border: solid 2px rgb(192, 96, 20);
+    background-color: rgb(81, 196, 211);
+    color: white;
+    border: solid 2px rgb(81, 196, 211);
     border-radius: 4px;
     margin-right: 5px;
     font-size: 20px;
 }
 main section form article .saveCart:hover {
     box-shadow: 0px 0px 10px rgb(83, 97, 98);
-    border: solid 2px #b85b11;
+    border: solid 2px rgb(63, 168, 182);;
 }
 
 main section form article .button-cart {
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 20px;
-    background-color: #C06014;
-    color: rgb(243, 244, 237);
+    background-color: rgb(81, 196, 211);
+    color: white;
     border: 0px;
 }
 
@@ -188,11 +189,11 @@ main section form article .follow {
     padding-left: 8px;
     padding-right: 8px;
     padding-top: 3px ;
-    color:rgb(66, 70, 66);
+    color:rgb(19, 44, 51);
 }
 main section form article .follow:hover {
-    background-color: grey;
-    color: white;
+    background-color: rgb(19, 44, 51);
+    color: rgb(216, 227, 231);
 }
 
 

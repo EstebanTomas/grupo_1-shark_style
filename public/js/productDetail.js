@@ -1,5 +1,4 @@
 window.onload = function () {
-
     // Para copiar la url en el portapeles
     let follow = document.querySelector(".follow");
 
@@ -21,4 +20,5 @@ window.onload = function () {
         circle = circles[i];
         circle.style.backgroundColor = color;
     }
+
 }

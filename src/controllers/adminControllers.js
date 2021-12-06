@@ -299,7 +299,7 @@ const adminControllers = {
     },
     editProduct: (req, res) => {
         db.Product.findByPk(req.params.id, {
-                include: [{ Association: "images" }, { Association: "sizes" }, { Association: "colors" }]
+                include: ["images", "sizes", "colors"]
             })
             .then(product => {
                 req.session.ofProduct = product;

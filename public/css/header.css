@@ -112,16 +112,10 @@
     }
     .container-header {
         background-color: #132C33;
-<<<<<<< HEAD
         position        : fixed;
         width           : 100%;
         top             : 0px;
         z-index: 6;
-=======
-        position: fixed;
-        width: 100%;
-        top: 0px;
->>>>>>> cf5214cbd04e5d9da3320df8568b3f520c098eee
     }
     .main-container {
         width: 100%;
