@@ -19,28 +19,28 @@ const adminControllers = {
     saveRegister: function(req, res) {
         let errors = validationResult(req);
         /*  User.findAll()
-           .then(users => {
-             for (let i = 0; i < users.length; i++) {
-               if (req.body.email === users[i]) {
-                 return res.render("./users/register", {
-                   errors: {
-                     name: {
-                       msg: "Debes escribir un nombre de usuario con más de 2 caracteres"
-                     },
-                     lastName: {
-                       msg: "Debes escribir un apellido con más de 4 caracteres"
-                     },
-                     email: {
-                       msg: "Debes escribir un email valido"
-                     },
-                     password: {
-                       msg: "Debes escribir una contraseña con más de 8 caracteres"
-                     }
-                   },
-                   incomingData: req.body
-                 });
-               }
-             }
+            .then(users => {
+                for (let i = 0; i < users.length; i++) {
+                    if (req.body.email === users[i]) {
+                        return res.render("./users/register", {
+                            errors: {
+                            name: {
+                            msg: "Debes escribir un nombre de usuario con más de 2 caracteres"
+                        },
+                        lastName: {
+                            msg: "Debes escribir un apellido con más de 4 caracteres"
+                        },
+                        email: {
+                            msg: "Debes escribir un email valido"
+                        },
+                            password: {
+                        msg: "Debes escribir una contraseña con más de 8 caracteres"
+                        }
+                    },
+                    incomingData: req.body
+                });
+                }
+            }
            }); */
         User.findAll()
         if (errors.isEmpty()) {
