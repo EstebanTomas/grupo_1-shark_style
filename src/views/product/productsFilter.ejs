@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head') -%>
+        <link rel="stylesheet" href="/css/productFilter.css">
+        <title>Lista de Productos</title>
+</head>
+
+<body>
+    <div>
+        <%- include('../partials/header') %>
+    </div>
+    <section class="informationContainerForAllProducts">
+        <h2 class="titleOfProduct">Remeras</h2>
+        <article class="productSubContainer">
+             <% information.forEach(( data ) => { %>  
+            <article class="elementsOfProducts">
+                <div class="imageAndLinkOfProduct">
+                    <a href="/products/detail/<%= data.id %> ">
+                        <img src="/img/productImage/<%= data.images[0].img %>" alt="imegen del producto" width="100px" class="imageMainOfTheProducts">
+                    </a>
+                </div>
+                <article class="priceAndNameComponents">
+                    <h5 class="priceAndName">
+                        AR $<%= data.price %> 
+                    </h5>
+                    <h6 class="priceAndName">
+                        <%= data.name %> 
+                    </h6>
+                </article>
+            </article>
+            <% }); %>
+        </article>
+    </section class="sectionOfAllProducts">
+    <div>
+        <%- include('../partials/footer') -%>
+    </div>
+</body>
+
+</html>

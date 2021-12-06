@@ -1,9 +1,8 @@
-/* function App() {}
+function App() {}
 
-window.onload = function (event) {
+window.onload = function () {
     var app = new App();
     window.app = app;
-};
 
 App.prototype.processingButton = function(event) {
     const btn = event.currentTarget;
@@ -32,4 +31,5 @@ let nextAction = (leftPosition,trackWidth,listWidth,slickWidth,track) => {
     if(leftPosition < (trackWidth - listWidth)) {
         track.style.left = `${-1 * (leftPosition + slickWidth)}px`;
     }
-} */
+}
+};

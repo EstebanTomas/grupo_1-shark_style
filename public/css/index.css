@@ -3,108 +3,91 @@
 }
 
 body {
-    margin          : 0px;
-    padding         : 0px;
-    font-family     : 'Roboto', sans-serif;
-}
-/* 
-main {
-    margin-top: 122px;
+    margin     : 0px;
+    padding    : 0px;
+    font-family: 'Roboto', sans-serif;
 }
 
-.carousel-section {
-    display: none;
+.imgOfBannerLink {
+    width : 100%;
+    margin: 0px
 }
 
-/*inicio del slider banner/
-.image-session-two {
-    margin: 5px 0px;
-    height: 150px;
+.contentsImgTop {
+    width : 100%;
+    margin: 45px auto 0px auto;
 }
 
-.container-of-banner {
-    width: 100%;
+.titleOfProduct {
+    text-align : center;
+    font-weight: lighter;
+    background : #51c4d3
 }
 
-.sub-element-conteiner,
-.lili {
-    padding   : 0;
-    margin    : 0;
-    list-style: none;
+.productSubContainer {
+    display       : flex;
+    flex-direction: row;
+    flex-wrap     : wrap;
 }
 
-ul.sub-element-conteiner {
-    position: relative;
-    width   : 100%;
+.elementsOfProducts {
+    box-shadow: 0px 0px 2px black;
+    width     : 40%;
+    padding   : 4px;
+    margin    : 10px auto;
+    transition: all 0.5s;
 }
 
-ul.sub-element-conteiner li {
-    position  : absolute;
-    left      : 0px;
-    top       : 0px;
-    opacity   : 0;
-    width     : inherit;
-    height    : inherit;
-    transition: opacity .5s;
-    background: #fff;
+.elementsOfProducts:hover {
+    box-shadow: 0px 0px 5px black;
 }
 
-/* 
-ul.sub-element-conteiner li img /
-.imagesCarrousel {
-    width     : 100vw;
-    object-fit: contain;
-}
-
-ul.sub-element-conteiner li:first-child {
-    opacity: 1;
-    /*Mostramos el primer <li>/
-}
-
-ul.sub-element-conteiner li:target {
-    opacity: 1;
-}
-
-.contents {
-    background-color: white;
-}
-
-.command-of-menu {
-    position  : relative;
+.imageAndLinkOfProduct {
     text-align: center;
-    bottom    : -140px;
+}
+
+.priceAndNameComponents {
+    text-align: start;
+    padding   : 0px 0px 0px 10px;
     margin    : 0px;
 }
 
-.command-of-menu li {
-    display: inline-block;
+.priceAndName {
+    margin: 5px 0px 0px 0px;
 }
-
-.command-of-menu li a {
-    display         : inline-block;
-    text-decoration : none;
-    background-color: grey;
-    width           : 15px;
-    height          : 15px;
-    border-radius   : 60%;
-}
-
-/*------- FIN DEL SLIDER BANNER-------/
-@media (max-width: 460px) {
-
-    h4,
-    small,
-    a {
-        margin : 0;
-        padding: 0;
+@media (max-width: 486px ) {
+    .contentsImgTop {
+        margin: 55px auto 0px auto;
     }
+
+    .informationContainerForAllProducts {
+        margin: auto;
+    }
+
+    .productSubContainer {
+        display       : flex;
+        flex-direction: row;
+        flex-wrap     : wrap;
+        width         : 85%;
+        margin        : auto;
+    }
+
+    .elementsOfProducts {
+        width  : 30%;
+        padding: 10px;
+        margin : 5px auto;
+    }
+
+    /* start carrousel  */
 
     a {
         text-decoration: none;
+        margin         : 0;
+        padding        : 0;
     }
 
     .Carousel {
-        width: 100%;
+        width : 100%;
     }
 
     .Carousel h2 {
@@ -117,25 +100,23 @@ ul.sub-element-conteiner li:target {
         text-align    : center;
     }
 
-    /* images /
-    h3,
-    h5 {
-        margin: 0px;
-    }
+    /* images */
 
     .slick-list {
         position   : relative;
         display    : flex;
         align-items: center;
         width      : fit-content;
-        height     : 102%;
-        margin     : 0px auto;
-        max-width  : 85vw;
+        height     : 304px;
+        padding    : 10px 0px;
+        max-width  : 90vw;
         overflow   : hidden;
     }
 
     .slick-track {
         position       : relative;
+        top            : 0;
+        left           : 0;
         display        : flex;
         justify-content: center;
         transition     : .5s ease-in-out;
@@ -143,20 +124,14 @@ ul.sub-element-conteiner li:target {
 
     .slick {
         position      : relative;
-        width         : 281px;
-        padding       : 0 8px;
+        width         : 200px;
+        padding       : 0px 18px;
         float         : left;
         box-sizing    : border-box;
         display       : flex;
-        height        : 100%;
+        /* height     : 100%; */
         flex-direction: column;
-        border        : solid 1px red;
-    }
-
-    .conteinerOfText {
-        display        : flex;
-        justify-content: space-around;
-        align-items    : center;
+        align-items   : center;
     }
 
     .slick h4 {
@@ -174,26 +149,35 @@ ul.sub-element-conteiner li:target {
     }
 
     .slick a img {
-        object-fit: cover;
-        height    : 300px;
-        width     : 100%;
+        object-fit   : cover;
+        width        : 180px;
+        border-radius: 4px;
+        /* 
+        box-shadow   : 0 2px 5px 0 rgba(0, 0, 0, .5); */
+        transition   : .3s ease-in-out;
     }
 
     .slick a img:hover {
         opacity: .85;
     }
 
-    /* buttons /
+    /* buttons */
+
     .slick-arrow {
-        border-radius   : 3px;
+        border-radius   : 30px;
         background-color: #fff;
         position        : absolute;
-        z-index         : 1;
+        z-index         : 4;
+        width           : 48px;
         height          : 48px;
         text-align      : center;
+        box-shadow      : 0 2px 5px 0 rgba(0, 0, 0, .15);
+        border          : 0;
+        cursor          : pointer;
+    }
 
-        border: 0;
-        cursor: pointer;
+    .descriptionOfdataOfTheProducts {
+        margin: 5px 0px;
     }
 
     .slick-arrow:focus {
@@ -214,82 +198,77 @@ ul.sub-element-conteiner li:target {
         right: 0px;
     }
 
-    /*two carousel/
-    .conteinerOfCarouseltwo {
-        margin     : 0;
-        padding    : 0;
-        font-family: Arial, Helvetica, sans-serif;
-        display    : flex;
-        height     : 400px;
-        width      : 100%;
-        align-items: center;
-        background : radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(226, 226, 226, 1) 110%);
-        margin-top : 50px;
+    .conteinerOfText {
+        padding: 0px 0px 0px 20px;
     }
+
 }
-
-/*inicio la primera medida query/
-
-@media (min-width: 481px) {
-    body {
-        margin          : 0px 0px;
-        background-color: #f2f2f2;
+@media (min-width: 486px) {
+    .contentsImgTop {
+        margin: 55px auto 0px auto;
     }
 
-    main {
-        margin-top         : 70px;
-        padding-top        : 600px;
-        margin-bottom      : 270px;
-        background-image   : url('../img/relevant-images/nik.jpg');
-        background-position: center top;
-        background-repeat  : no-repeat;
-
+    .informationContainerForAllProducts {
+        margin: auto;
     }
 
-    h4,
-    small,
-    a {
-        margin : 0;
-        padding: 0;
+    .productSubContainer {
+        display       : flex;
+        flex-direction: row;
+        flex-wrap     : wrap;
+        width         : 85%;
+        margin        : auto;
     }
+
+    .elementsOfProducts {
+        width  : 30%;
+        padding: 10px;
+        margin : 5px auto;
+    }
+
+    /* start carrousel  */
 
     a {
         text-decoration: none;
+        margin         : 0;
+        padding        : 0;
+    }
+    .sectionOfAllProducts {
+        margin-top: 30px;
     }
 
     .Carousel {
-        width: 100%;
+        width : 100%;
     }
 
     .Carousel h2 {
         font-size     : 26px;
         line-height   : 38px;
+        padding-bottom: 24px;
         opacity       : .9;
         text-transform: uppercase;
         letter-spacing: 10px;
         text-align    : center;
     }
 
-    /* images /
-
-    h3,
-    h5 {
-        margin: 0px;
-    }
+    /* images */
 
     .slick-list {
         position   : relative;
         display    : flex;
         align-items: center;
         width      : fit-content;
-        height     : 102%;
+        height     : 304px;
+        padding    : 10px 0px;
         margin     : 0px auto;
-        max-width  : 85vw;
+        max-width  : 90vw;
         overflow   : hidden;
     }
 
     .slick-track {
         position       : relative;
+        top            : 0;
+        left           : 0;
         display        : flex;
         justify-content: center;
         transition     : .5s ease-in-out;
@@ -297,22 +276,14 @@ ul.sub-element-conteiner li:target {
 
     .slick {
         position      : relative;
-        width         : 192px;
-        padding       : 0 8px;
+        width         : 200px;
+        padding       : 0px 18px;
         float         : left;
         box-sizing    : border-box;
         display       : flex;
-        height        : 100%;
+        /* height     : 100%; */
         flex-direction: column;
-    }
-
-    .conteinerOfText {
-        display         : flex;
-        align-items     : center;
-        flex-direction  : column-reverse;
-        flex-wrap       : wrap;
-        background-color: white;
-        margin-top      : -3px;
+        align-items   : center;
     }
 
     .slick h4 {
@@ -330,131 +301,11 @@ ul.sub-element-conteiner li:target {
     }
 
     .slick a img {
-        object-fit: cover;
-        height    : 235px;
-        width     : 100%;
-    }
-
-    .slick a img:hover {
-        opacity: .85;
-    }
-
-    /* buttons /
-    .slick-arrow {
-        border-radius   : 30px;
-        background-color: #ffffff9c;
-        position        : absolute;
-        z-index         : 1;
-        height          : 40px;
-        width           : 40px;
-        text-align      : center;
-        box-shadow      : 0 2px 5px 0 rgb(0 0 0 / 15%);
-        border          : 0;
-        cursor          : pointer;
-    }
-
-    .slick-arrow:focus {
-        outline: 0;
-    }
-
-    .slick-arrow svg {
-        width : 15px;
-        height: 100%;
-        color : black;
-    }
-
-    .slick-prev {
-        left: 0px;
-    }
-
-    .slick-next {
-        right: 0px;
-    }
-
-    /*two carousel/
-    .conteinerOfCarouseltwo {
-        margin     : 0;
-        padding    : 0;
-        font-family: Arial, Helvetica, sans-serif;
-        display    : flex;
-        height     : 400px;
-        width      : 100%;
-        align-items: center;
-        margin-top : 50px;
-    }
-
-    /*------ SLIDER BANNER(SEGUNDA RESOLUCIÓN)-------/
-    .image-session-two {
-        margin: 0px 0px;
-    }
-
-    .command-of-menu {
-        bottom: -200px;
-    }
-
-    .command-of-menu li a {
-        background-color: rgb(27, 27, 27);
-    }
-}
-
-/*inicio la segunda medida query y fin de la primera/
-@media (min-width: 767px) {
-    main {
-        background-image   : url('../img/relevant-images/nik.jpg');
-        background-position: center top;
-        background-repeat  : no-repeat;
-    }
-
-    .banner-men {
-        width   : 100%;
-        position: relative;
-        top     : 277px;
-    }
-
-    .banner-girl {
-        width   : 100%;
-        position: relative;
-        top     : 65px;
-    }
-
-    .toBuy {
-        width     : 224px;
-        height    : 71px;
-        margin    : 0px;
-        border    : solid 1px black;
-        position  : absolute;
-        right     : 47px;
-        top       : 536px;
-        box-shadow: 0px 0px 5px black;
-    }
-
-    /* images /
-    .slick-list {
-        max-width: 90vw;
-    }
-
-    .slick {
-        width: 275px;
-    }
-
-    .slick h4 {
-        position   : absolute;
-        z-index    : 1;
-        font-size  : 22px;
-        line-height: 23px;
-        color      : #fff;
-        padding    : 15px;
-    }
-
-    .slick h4 small {
-        font-size: 15px;
-        display  : block;
-    }
-
-    .slick a img {
-        height       : 300px;
-        border-radius: 2px;
-        box-shadow   : 0 2px 5px 0 rgb(0 0 0 / 50%);
+        object-fit   : cover;
+        width        : 180px;
+        border-radius: 4px;
+        /* 
+        box-shadow   : 0 2px 5px 0 rgba(0, 0, 0, .5); */
         transition   : .3s ease-in-out;
     }
 
@@ -462,15 +313,33 @@ ul.sub-element-conteiner li:target {
         opacity: .85;
     }
 
-    /* buttons /
+    /* buttons */
+
     .slick-arrow {
+        border-radius   : 30px;
         background-color: #fff;
+        position        : absolute;
+        z-index         : 4;
         width           : 48px;
         height          : 48px;
+        text-align      : center;
+        box-shadow      : 0 2px 5px 0 rgba(0, 0, 0, .15);
+        border          : 0;
+        cursor          : pointer;
+    }
+
+    .descriptionOfdataOfTheProducts {
+        margin: 5px 0px;
     }
 
     .slick-arrow:focus {
         outline: 0;
+    }
+
+    .slick-arrow svg {
+        width : 12px;
+        height: 100%;
+        color : rgba(0, 0, 0, .7);
     }
 
     .slick-prev {
@@ -481,88 +350,38 @@ ul.sub-element-conteiner li:target {
         right: 0px;
     }
 
-    /*two carousel/
-    .conteinerOfCarouseltwo {
-        margin-top: 60px;
+    .conteinerOfText {
+        padding: 0px 0px 0px 20px;
     }
 
-    /*edicion de los baners/
-    .container-of-banner {
-        width : 95%;
-        height: 350px;
-        margin: auto;
-    }
-
-    .sub-element-conteiner {
-        position: relative;
-        height  : 240px;
-        width   : 94%;
-    }
-
-    /*----- SLIDER BANNER(TERCERA RESOLUCIÓN)---/
-    .image-session-two {
-        margin: 72px 0px 0px 0px;
-    }
-
-    .container-of-banner {
-        width: 100%;
-    }
-
-    .sub-element-conteiner,
-    .lili {
-        padding   : 0;
-        margin    : 0;
-        list-style: none;
-    }
-
-    ul.sub-element-conteiner {
-        position: relative;
-        width   : 100%;
-        height  : 80px;
-    }
-
-    .contents {
-        background-color: white;
-    }
-
-    .command-of-menu {
-        position: relative;
-        top     : 310px;
-        left    : -14px;
-    }
-
-    .command-of-menu li {
-        display: inline-block;
-    }
-
-    .command-of-menu li a {
-        display         : inline-block;
-        text-decoration : none;
-        background-color: rgb(27, 27, 27);
-        width           : 15px;
-        height          : 15px;
-        border-radius   : 60%;
-    }
-
-    /*--FIN--/
 }
 
-@media (min-width: 1280px) {
-    .image-none {
-        display: block;
+@media (min-width: 786px) {
+    .informationContainerForAllProducts {
+        max-width: 800px;
     }
 
-    .image-session-three {
-        width     : 90%;
-        margin    : auto;
-        margin-top: 20vh;
+    .elementsOfProducts {
+        width: 22%;
     }
 
-    .image-session-three article {
-        width: 50%;
+    .Carousel {
+        margin: 0px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .informationContainerForAllProducts {
+        max-width: 1200px;
     }
 
-    .command-menu {
-        margin-left: 95px;
+    .elementsOfProducts {
+        width: 22%;
     }
-} */
+
+    .productSubContainer {
+        width: 85%;
+    }
+
+
+}

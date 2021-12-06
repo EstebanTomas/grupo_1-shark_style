@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+}
+
+.informationContainerForAllProducts {
+    margin: auto;
+}
+.productSubContainer {
+    display       : flex;
+    flex-direction: row;
+    flex-wrap     : wrap;
+    width         : 85%;
+    margin        : auto;
+}
+
+.elementsOfProducts {
+    width  : 30%;
+    padding: 10px;
+    margin : 5px auto;
+}
+.imageAndLinkOfProduct {
+    text-align: center;
+}
+.priceAndNameComponents {
+    text-align: start;
+    padding   : 0px 0px 0px 10px;
+    margin    : 0px;
+}
+.priceAndName {
+    margin: 5px 0px 0px 0px;
+}
+.sectionOfAllProducts {
+    margin-top: 30px;
+}

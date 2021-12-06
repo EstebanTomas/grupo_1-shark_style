@@ -19,11 +19,34 @@ const mainControllers = {
     },
     // envio los productos a la vista index.
     home: (req, res) => {
-        let database = JSON.parse(fs.readFileSync(path.join(__dirname, "../../data/products.json"), { encoding: "utf-8", }));
-        res.render("index", { database });
+        db.Product.findAll({
+            include: ["images"]
+        })
+            .then((allProducts) => {
+                return res.render("index", {
+                    "allProducts": allProducts
+                });
+            })
+
     },
     filterHome: (req, res) => {
-        let nes = "";
+        db.findAll()
+        .then((dataPtoducts) => {
+            if (req.params.id == 1 ) {
+                let information = dataPtoducts.filter((h) => {
+                    return h.gender == "Hombre";
+                });
+                return res.render("/product/productsFilter", {information});
+            }
+            if (req.params.id == 2 ) {
+                let information = dataPtoducts.filter((h) => {
+                    return h.gender == "Hombre";
+                });
+                return res.render("/product/productsFilter", {information});
+            }
+        }).catch(error => {
+            res.send(error);
+        })
     },
     carrousel: (req, res) => {
         res.render('carrousel');

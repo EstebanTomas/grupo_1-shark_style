@@ -18,10 +18,10 @@ const adminControllers = {
   // ***USERS***
   saveRegister: function (req, res) {
     let errors = validationResult(req);
-   /*  User.findAll()
+    User.findAll()
       .then(users => {
         for (let i = 0; i < users.length; i++) {
-          if (req.body.email === users[i]) {
+          if (req.body.email == users[i]) {
             return res.render("./users/register", {
               errors: {
                 name: {
@@ -41,8 +41,7 @@ const adminControllers = {
             });
           }
         }
-      }); */
-      User.findAll()
+      });
     if (errors.isEmpty()) {
       User.create({
         name: req.body.name,
