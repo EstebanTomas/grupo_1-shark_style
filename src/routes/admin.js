@@ -29,7 +29,7 @@ router.get('/products/create', profileMiddlewares, administratorMiddlewares, adm
 router.post('/products/create', profileMiddlewares, administratorMiddlewares, UploadProducts.array("images", 3), productCreateValidations, adminControllers.create);
 // this path shows the edit form
 router.get('/products/edit/:id', profileMiddlewares, administratorMiddlewares, adminControllers.editProduct);
-router.put('/products/edit/:id', profileMiddlewares, administratorMiddlewares, UploadProducts.array("images", 3) , adminControllers.edit);
+router.put('/products/edit/:id', profileMiddlewares, administratorMiddlewares, UploadProducts.array("images", 3), adminControllers.edit);
 // routes in delete
 router.delete('/products/delete/:id', profileMiddlewares, administratorMiddlewares, adminControllers.delete);
 
