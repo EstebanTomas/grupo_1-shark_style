@@ -18,36 +18,68 @@ const adminControllers = {
   // ***USERS***
   saveRegister: function (req, res) {
     let errors = validationResult(req);
-    User.findAll()
+   /*  User.findAll()
       .then(users => {
-        if (users.email != req.body.email) {
-          if (errors.isEmpty()) {
-            User.create({
-              name: req.body.name,
-              lastname: req.body.lastName,
-              email: req.body.email,
-              password: bcryptjs.hashSync(req.body.password, 10),
-              role: 1
-            })
-              .then((user) => {
-                Image.create({
-                  avatar: req.file ? req.file.filename : "user_anonimo.jpg",
-                  user_id: user.id
-                });
-              })
-              .then(() => {
-                return res.redirect("/users/login");
-              })
-              .catch((error) => {
-                return res.send(error)
-              });
-          } else {
-            res.render("./users/register", { errors: errors.mapped(), incomingData: req.body })
+        for (let i = 0; i < users.length; i++) {
+          if (req.body.email === users[i]) {
+            return res.render("./users/register", {
+              errors: {
+                name: {
+                  msg: "Debes escribir un nombre de usuario con más de 2 caracteres"
+                },
+                lastName: {
+                  msg: "Debes escribir un apellido con más de 4 caracteres"
+                },
+                email: {
+                  msg: "Debes escribir un email valido"
+                },
+                password: {
+                  msg: "Debes escribir una contraseña con más de 8 caracteres"
+                }
+              },
+              incomingData: req.body
+            });
           }
-        } else {
-          return res.render("./users/register", { errors: errors.mapped(), incomingData: req.body })
         }
-      });
+      }); */
+      User.findAll()
+    if (errors.isEmpty()) {
+      User.create({
+        name: req.body.name,
+        lastname: req.body.lastname,
+        email: req.body.email,
+        password: bcryptjs.hashSync(req.body.password, 10),
+        role: 1
+      })
+        .then((user) => {
+          Image.create({
+            avatar: req.file ? req.file.filename : "user_anonimo.jpg",
+            user_id: user.id
+          });
+          return res.redirect("/users/login")
+        }).catch((error) => {
+          return res.send(error)
+        });
+    } else {
+      res.render("./users/register", {
+        errors: {
+          name: {
+            msg: "Debes escribir un nombre de usuario con más de 2 caracteres"
+          },
+          lastname: {
+            msg: "Debes escribir un apellido con más de 4 caracteres"
+          },
+          email: {
+            msg: "Debes escribir un email valido"
+          },
+          password: {
+            msg: "Debes escribir una contraseña con más de 8 caracteres"
+          }
+        },
+        incomingData: req.body
+      })
+    }
+
   },
   updateRegister: function (req, res) {
     User.findByPk(req.params.id, {

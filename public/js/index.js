@@ -1,4 +1,4 @@
-function App() {}
+/* function App() {}
 
 window.onload = function (event) {
     var app = new App();
@@ -32,4 +32,4 @@ let nextAction = (leftPosition,trackWidth,listWidth,slickWidth,track) => {
     if(leftPosition < (trackWidth - listWidth)) {
         track.style.left = `${-1 * (leftPosition + slickWidth)}px`;
     }
-}
+} */

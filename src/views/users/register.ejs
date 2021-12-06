@@ -11,61 +11,62 @@
     <div>
         <%- include('../partials/header') -%>
     </div>
-    <main>
+    <main class="elementContainerOfRegister">
         <div class="div-main">
-            <form method="POST" action="/administration/register" id="form" class="main-form"
+            <form method="POST" action="/administration/register" id="form" class="formOfRegister"
                 enctype="multipart/form-data">
-                <section class="section-logo">
-                    <div>
-                        <img src="/img/logo-shark.png" alt="logo" class="shark-logo">
-                    </div>
-                </section>
                 <section class="section-form">
-                    <div class="conteiner">
-                        <div class="title-form">
-                            <h2>¡Crea tu cuenta!</h2>
-                            <p class="text-p">¡Goza del estilo Shark Style y nuestros descuentos!</p>
-                        </div>
-                        <div class="data-field">
-                            <label>Ingresa una imagen</label>
-                            <input type="file" name="avatar" id="avatar" class="file">
+                    <div class="conteinerOfAllTheElements">
+                        <article>
+                            <img src="/img/logo-shoes.svg" alt="logo of shark style" class="imageOfLogoShoes">
+                            <h1 class="elementOfLogoShoes">Shark Style</h1>
+                        </article>
+                        <h2 class="subtitleOfRegister">Registrate para poder comprar y ver todos los productos</h2>
+                        <div class="containerOfCountryOfRegister">
+                            <label><h5 class="titlesOfTheForms">Ingresa una imagen para tu perfil</h5>
+                                <input type="file" name="avatar" id="avatar" class="fileOfPhoto">
+                            </label>
                         </div>
                         <h4 id="msg"></h4>
-                        <div class="data-field">
-                            <label class="nombre">Usuario:</label>
-                            <h5 class="name"></h5>
-                            <input type="text" name="name" class="cam" id="name" placeholder="Nick">
+                        <div class="containerOfCountryOfRegister">
+                            <label class="nombre"><h5 class="titlesOfTheForms">Nombre de usuario</h5>
+                                <h5 class="name"></h5>
+                                <input type="text" name="name" class="countryWithInformationOfRegister" id="name" placeholder="Nick" value="<%= locals.incomingData && incomingData.name? incomingData.name : '' %>">
+                            </label>
                             <% if ( locals.errors && errors.name ) {%>
                                 <p class="msg-error">
                                     <%= errors.name.msg %>
                                 </p>
                                 <% } %>
                         </div>
-                        <div class="data-field">
-                            <label class="nombre">Apellido:</label>
-                            <h5 class="lastName"></h5>
-                            <input type="text" name="lastName" id="lastName" class="cam" placeholder="Kennedy">
+                        <div class="containerOfCountryOfRegister">
+                            <label class="nombre"><h5 class="titlesOfTheForms">Apellido del usuario</h5>
+                                <h5 class="lastName"></h5>
+                                <input type="text" name="lastname" id="lastname" class="countryWithInformationOfRegister" placeholder="Kennedy" value="<%= locals.incomingData && incomingData.lastname? incomingData.lastname : '' %>">
+                            </label>
                             <% if ( locals.errors && errors.lastName ) {%>
                                 <p class="msg-error">
                                     <%= errors.lastName.msg %>
                                 </p>
                                 <% } %>
                         </div>
-                        <div class="data-field">
-                            <label class="nombre">Email:</label>
-                                <input type="email" name="email" id="email" class="cam"
-                                    placeholder="nickennedy@gmail.com.ar">
-                                    <h5 class="email"></5>
-                                <% if ( locals.errors && errors.email ) {%>
-                                    <p class="msg-error">
-                                        <%= errors.email.msg %>
-                                    </p>
-                                    <% } %>
+                        <div class="containerOfCountryOfRegister">
+                            <label class="nombre">
+                                <h5 class="titlesOfTheForms">Escribe tu correo electronico</h5>
+                                <input type="email" name="email" id="emailWithInformation" class="countryWithInformationOfRegister" placeholder="nickennedy@gmail.com.ar" value="<%= locals.incomingData && incomingData.email? incomingData.email : '' %>">
+                            </label>
+                            <h5 class="msgOfErrorOfEmail"></5>
+                            <% if ( locals.errors && errors.email ) {%>
+                                <p class="msg-error">
+                                    <%= errors.email.msg %>
+                                </p>
+                                <% } %>
                         </div>
-                        <div class="data-field">
-                            <label class="nombre">Contraseña:</label>  
-                            <input type="password" name="password" id="password" class="cam" placeholder="aABj12ksjs2020">
-                            <h5 class="password"></h5>
+                        <div class="containerOfCountryOfRegister">
+                            <label class="nombre"><h5 class="titlesOfTheForms">Contraseña</h5>
+                                <h5 class="password"></h5>
+                                <input type="password" name="password" id="password" class="countryWithInformationOfRegister" placeholder="aABj12ksjs2020">
+                            </label>
                             <% if ( locals.errors && errors.password ) {%>
                                 <p class="msg-error">
                                     <%= errors.password.msg %>
@@ -73,11 +74,15 @@
                                 <% } %>
                         </div>
                         <div class="terminos">
-                            <input type="radio">
-                            <label>Acepta nuestras condiciones de servicio y política de privacidad</label>
+                            <label>
+                                <h5 class="termsAndConditions">
+                                    <input type="radio">
+                                    Acepta nuestras condiciones de servicio y política de privacidad
+                                </h5>
+                            </label>
                         </div>
                         <div class="conteiner-button">
-                            <button type="submit" class="button">Crear cuenta</button>
+                            <button type="submit" class="buttonOfAccound">Crear cuenta</button>
                         </div>
                     </div>
                 </section>

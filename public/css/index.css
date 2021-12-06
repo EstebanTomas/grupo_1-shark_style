@@ -5,10 +5,9 @@
 body {
     margin          : 0px;
     padding         : 0px;
-    background-color: #536162;
     font-family     : 'Roboto', sans-serif;
 }
-
+/* 
 main {
     margin-top: 122px;
 }
@@ -17,7 +16,7 @@ main {
     display: none;
 }
 
-/*inicio del slider banner*/
+/*inicio del slider banner/
 .image-session-two {
     margin: 5px 0px;
     height: 150px;
@@ -51,7 +50,7 @@ ul.sub-element-conteiner li {
 }
 
 /* 
-ul.sub-element-conteiner li img */
+ul.sub-element-conteiner li img /
 .imagesCarrousel {
     width     : 100vw;
     object-fit: contain;
@@ -59,7 +58,7 @@ ul.sub-element-conteiner li img */
 
 ul.sub-element-conteiner li:first-child {
     opacity: 1;
-    /*Mostramos el primer <li>*/
+    /*Mostramos el primer <li>/
 }
 
 ul.sub-element-conteiner li:target {
@@ -90,7 +89,7 @@ ul.sub-element-conteiner li:target {
     border-radius   : 60%;
 }
 
-/*------- FIN DEL SLIDER BANNER-------*/
+/*------- FIN DEL SLIDER BANNER-------/
 @media (max-width: 460px) {
 
     h4,
@@ -118,7 +117,7 @@ ul.sub-element-conteiner li:target {
         text-align    : center;
     }
 
-    /* images */
+    /* images /
     h3,
     h5 {
         margin: 0px;
@@ -184,7 +183,7 @@ ul.sub-element-conteiner li:target {
         opacity: .85;
     }
 
-    /* buttons */
+    /* buttons /
     .slick-arrow {
         border-radius   : 3px;
         background-color: #fff;
@@ -215,7 +214,7 @@ ul.sub-element-conteiner li:target {
         right: 0px;
     }
 
-    /*two carousel*/
+    /*two carousel/
     .conteinerOfCarouseltwo {
         margin     : 0;
         padding    : 0;
@@ -229,7 +228,7 @@ ul.sub-element-conteiner li:target {
     }
 }
 
-/*inicio la primera medida query*/
+/*inicio la primera medida query/
 
 @media (min-width: 481px) {
     body {
@@ -271,7 +270,7 @@ ul.sub-element-conteiner li:target {
         text-align    : center;
     }
 
-    /* images */
+    /* images /
 
     h3,
     h5 {
@@ -340,7 +339,7 @@ ul.sub-element-conteiner li:target {
         opacity: .85;
     }
 
-    /* buttons */
+    /* buttons /
     .slick-arrow {
         border-radius   : 30px;
         background-color: #ffffff9c;
@@ -372,7 +371,7 @@ ul.sub-element-conteiner li:target {
         right: 0px;
     }
 
-    /*two carousel*/
+    /*two carousel/
     .conteinerOfCarouseltwo {
         margin     : 0;
         padding    : 0;
@@ -384,7 +383,7 @@ ul.sub-element-conteiner li:target {
         margin-top : 50px;
     }
 
-    /*------ SLIDER BANNER(SEGUNDA RESOLUCIÓN)-------*/
+    /*------ SLIDER BANNER(SEGUNDA RESOLUCIÓN)-------/
     .image-session-two {
         margin: 0px 0px;
     }
@@ -398,7 +397,7 @@ ul.sub-element-conteiner li:target {
     }
 }
 
-/*inicio la segunda medida query y fin de la primera*/
+/*inicio la segunda medida query y fin de la primera/
 @media (min-width: 767px) {
     main {
         background-image   : url('../img/relevant-images/nik.jpg');
@@ -429,7 +428,7 @@ ul.sub-element-conteiner li:target {
         box-shadow: 0px 0px 5px black;
     }
 
-    /* images */
+    /* images /
     .slick-list {
         max-width: 90vw;
     }
@@ -463,7 +462,7 @@ ul.sub-element-conteiner li:target {
         opacity: .85;
     }
 
-    /* buttons */
+    /* buttons /
     .slick-arrow {
         background-color: #fff;
         width           : 48px;
@@ -482,12 +481,12 @@ ul.sub-element-conteiner li:target {
         right: 0px;
     }
 
-    /*two carousel*/
+    /*two carousel/
     .conteinerOfCarouseltwo {
         margin-top: 60px;
     }
 
-    /*edicion de los baners*/
+    /*edicion de los baners/
     .container-of-banner {
         width : 95%;
         height: 350px;
@@ -500,7 +499,7 @@ ul.sub-element-conteiner li:target {
         width   : 94%;
     }
 
-    /*----- SLIDER BANNER(TERCERA RESOLUCIÓN)---*/
+    /*----- SLIDER BANNER(TERCERA RESOLUCIÓN)---/
     .image-session-two {
         margin: 72px 0px 0px 0px;
     }
@@ -545,7 +544,7 @@ ul.sub-element-conteiner li:target {
         border-radius   : 60%;
     }
 
-    /*--FIN--*/
+    /*--FIN--/
 }
 
 @media (min-width: 1280px) {
@@ -566,4 +565,4 @@ ul.sub-element-conteiner li:target {
     .command-menu {
         margin-left: 95px;
     }
-}
+} */

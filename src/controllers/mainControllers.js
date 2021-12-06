@@ -22,6 +22,9 @@ const mainControllers = {
         let database = JSON.parse(fs.readFileSync(path.join(__dirname, "../../data/products.json"), { encoding: "utf-8", }));
         res.render("index", { database });
     },
+    filterHome: (req, res) => {
+        let nes = "";
+    },
     carrousel: (req, res) => {
         res.render('carrousel');
     }
